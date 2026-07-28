@@ -16,50 +16,50 @@ publish: false
 doi_or_url: null
 ---
 
-# \<Working title\>
+## \<Working title\>
 
 Journal paper template (e.g. IEEE Software). Copy to `publications/journal/<slug>.md`.
 
 Practitioner rigor: clear problem, actionable insight, evidence grounded in topic specs and notes.
 
-## Spine
+### Spine
 
-### Thesis
+#### Thesis
 
-### Audience
+#### Audience
 
-### Claim → section map
+#### Claim → section map
 
 | Claim | Section | Evidence (topic path) |
 |---|---|---|
 | | | |
 
-### Figures
+#### Figures
 
 | Figure | Source path | Notes |
 |---|---|---|
 | | | |
 
-### Out of scope
+#### Out of scope
 
 -
 
 ---
 
-## Abstract
+### Abstract
 
 -
 
-## Introduction
+### Introduction
 
-## Problem / context
+### Problem / context
 
-## Insights / approach
+### Insights / approach
 
-## Implications for practice
+### Implications for practice
 
-## Conclusion
+### Conclusion
 
-## References
+### References
 
 Keys from `references/bib/library.bib`.

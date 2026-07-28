@@ -5,11 +5,11 @@ type: governance
 status: active
 ---
 
-# Topics
+## Topics
 
 Canonical research lives here — one directory per topic.
 
-## Create a topic
+### Create a topic
 
 ```bash
 cp -R docs/templates/topic topics/<slug>
@@ -17,7 +17,7 @@ cp -R docs/templates/topic topics/<slug>
 
 Edit `charter.md` and `meta.yaml`, then register in `catalog/topics.yaml`.
 
-## Rules
+### Rules
 
 - Do not store venue articles under a topic.
 - Publications must reference topics via `source_topics`.

@@ -7,11 +7,11 @@ created: 2026-07-28
 updated: 2026-07-28
 ---
 
-# Research Workflow
+## Research Workflow
 
 Day-to-day operating model for this workspace.
 
-## Design decision
+### Design decision
 
 Work advances **inside a topic** through knowledge stages. Publications branch off after research is strong enough to narrate — they do not replace earlier stages.
 
@@ -23,14 +23,14 @@ Capture → Topic → Ideas → Notes + Literature → Architecture → Specific
 
 **Why this order:** Publishing before specification freezes invites rewriting “truth” to fit a word limit. Specs and ADRs keep claims stable across venues.
 
-## 1. Capture (`inbox/`)
+### 1. Capture (`inbox/`)
 
 - Drop raw thoughts as `YYYY-MM-DD-<slug>.md`.
 - Triage within about a week: promote into a topic, merge into an existing note, or delete noise.
 
 **Decision:** Inbox is deliberately shallow so capture stays frictionless without polluting `topics/`.
 
-## 2. Charter a topic
+### 2. Charter a topic
 
 1. Copy `docs/templates/topic/` → `topics/<slug>/`.
 2. Fill `charter.md` (purpose, scope, non-goals).
@@ -39,7 +39,7 @@ Capture → Topic → Ideas → Notes + Literature → Architecture → Specific
 
 **Decision:** A charter is mandatory. Topics without scope become dumping grounds within months.
 
-## 3. Ideas → notes → literature
+### 3. Ideas → notes → literature
 
 | Stage | Folder | Goal |
 |---|---|---|
@@ -51,13 +51,13 @@ Add bibliographic entries to `references/bib/library.bib` (one shared library).
 
 **Decision:** Literature notes are first-class Markdown summaries, not PDF filenames. Lab memory must survive without opening binaries.
 
-## 4. Architecture
+### 4. Architecture
 
 Record durable decisions in `architecture/` (ADRs, views, trade-offs). Keep editable diagram sources beside SVG exports.
 
 **Decision:** Architecture is separate from specifications so rationale (why) does not get mixed with normative text (what shall be).
 
-## 5. Specifications
+### 5. Specifications
 
 Promote stable, citeable rules into `specifications/` with semantic versions and clear status (`draft` → `review` → `accepted`).
 
@@ -65,12 +65,12 @@ Tag releases: `spec/<topic>/<name>@vX.Y.Z`.
 
 **Decision:** Only specifications are normative. Notes may be wrong; specs are what publications pin.
 
-## 6. Reviews and future work
+### 6. Reviews and future work
 
 - External/internal feedback → `reviews/YYYY-MM-DD-<context>.md` (append decisions).
 - Deferred threads → `future-work/` (do not delete unresolved questions from notes without a pointer).
 
-## 7. Derive publications
+### 7. Derive publications
 
 When claims are evidence-backed and specs are frozen enough:
 
@@ -78,7 +78,7 @@ When claims are evidence-backed and specs are frozen enough:
 2. Copy a venue template from `docs/templates/publications/`.
 3. Keep inventing claims in the topic, not in the draft.
 
-## Status vocabulary
+### Status vocabulary
 
 | Status | Typical use |
 |---|---|
@@ -90,14 +90,14 @@ When claims are evidence-backed and specs are frozen enough:
 | `published` | Released artifact |
 | `archived` | Topic moved under `archive/` |
 
-## Weekly rhythm (recommended)
+### Weekly rhythm (recommended)
 
 1. Empty or triage `inbox/`.
 2. Update claim inventories in active topics.
 3. Advance at least one note toward architecture or specification when claims stabilize.
 4. Sync `catalog/*.yaml` with reality.
 
-## What not to do
+### What not to do
 
 - Start an article folder without a topic.
 - Put venue prose in `notes/`.

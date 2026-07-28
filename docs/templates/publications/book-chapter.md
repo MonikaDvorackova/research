@@ -17,50 +17,50 @@ publish: false
 doi_or_url: null
 ---
 
-# \<Chapter title\>
+## \<Chapter title\>
 
 Book chapter template. Copy to `publications/books/<book-slug>/chapters/<chapter-slug>.md`.
 
 Chapters should accumulate from **mature** topics and spines — not invent a parallel knowledge base.
 
-## Spine
+### Spine
 
-### Pedagogical objective
+#### Pedagogical objective
 
 What the reader should be able to do or understand after this chapter.
 
-### Thesis
+#### Thesis
 
-### Claim → section map
+#### Claim → section map
 
 | Claim | Section | Evidence (topic path) |
 |---|---|---|
 | | | |
 
-### Figures
+#### Figures
 
 | Figure | Source path | Notes |
 |---|---|---|
 | | | |
 
-### Prerequisites
+#### Prerequisites
 
 Prior chapters or assumed knowledge.
 
-### Out of scope
+#### Out of scope
 
 -
 
 ---
 
-## Opening
+### Opening
 
 -
 
-## Core sections
+### Core sections
 
-## Summary
+### Summary
 
-## Further reading
+### Further reading
 
 Keys from `references/bib/library.bib` plus pointers to related topics.

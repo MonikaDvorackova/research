@@ -5,7 +5,7 @@ type: governance
 status: active
 ---
 
-# Topic template
+## Topic template
 
 Copy this entire directory to create a new topic:
 
@@ -19,7 +19,7 @@ Then:
 2. Replace `<slug>` placeholders.
 3. Add an entry to `catalog/topics.yaml`.
 
-## Layout
+### Layout
 
 | Path | Role |
 |---|---|

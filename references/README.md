@@ -5,7 +5,7 @@ type: governance
 status: active
 ---
 
-# References
+## References
 
 Shared citation corpus for all topics and publications.
 

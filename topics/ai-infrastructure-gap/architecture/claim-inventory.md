@@ -9,13 +9,13 @@ updated: 2026-07-28
 tags: [claims, architecture, governance]
 ---
 
-# Claim inventory
+## Claim inventory
 
 All items below are **hypotheses** unless later promoted with evidence. None should be cited in publications as established fact.
 
 ---
 
-## C1 — Reconstruction requirements exceed loosely coupled artifact retention
+### C1 — Reconstruction requirements exceed loosely coupled artifact retention
 
 | Field | Content |
 |---|---|
@@ -28,7 +28,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C2 — Justification, authorization, and validity are separable reconstruction targets
+### C2 — Justification, authorization, and validity are separable reconstruction targets
 
 | Field | Content |
 |---|---|
@@ -41,7 +41,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C3 — Temporal binding of criteria is a first-order requirement
+### C3 — Temporal binding of criteria is a first-order requirement
 
 | Field | Content |
 |---|---|
@@ -54,7 +54,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C4 — Distributed tracing does not encode normative basis
+### C4 — Distributed tracing does not encode normative basis
 
 | Field | Content |
 |---|---|
@@ -67,7 +67,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C5 — Provenance (including W3C PROV) does not equal justification
+### C5 — Provenance (including W3C PROV) does not equal justification
 
 | Field | Content |
 |---|---|
@@ -80,7 +80,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C6 — Policy decision logs are necessary but not sufficient
+### C6 — Policy decision logs are necessary but not sufficient
 
 | Field | Content |
 |---|---|
@@ -93,7 +93,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C7 — Explainability and reasoning traces are not durable justification records
+### C7 — Explainability and reasoning traces are not durable justification records
 
 | Field | Content |
 |---|---|
@@ -106,7 +106,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## C8 — If a residual gap remains, composition may still beat a new layer
+### C8 — If a residual gap remains, composition may still beat a new layer
 
 | Field | Content |
 |---|---|
@@ -119,7 +119,7 @@ All items below are **hypotheses** unless later promoted with evidence. None sho
 
 ---
 
-## Claim status legend
+### Claim status legend
 
 | Status | Meaning |
 |---|---|

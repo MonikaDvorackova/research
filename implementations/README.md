@@ -5,11 +5,11 @@ type: governance
 status: active
 ---
 
-# Implementations
+## Implementations
 
 Minimal reference code that **proves architectural or specification claims**.
 
-## Rules
+### Rules
 
 - One folder per implementation: `implementations/<impl-slug>/`
 - Keep demos small; this is not a product monorepo

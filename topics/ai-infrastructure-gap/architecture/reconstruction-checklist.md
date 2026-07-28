@@ -11,7 +11,7 @@ normative_for: evaluation
 version: 0.1.0
 ---
 
-# Reconstruction checklist
+## Reconstruction checklist
 
 **Document role:** Evaluation framework (criteria), not a solution architecture.  
 **Status:** `draft` — engineering criteria and hypotheses pending scenario validation.  
@@ -20,9 +20,9 @@ version: 0.1.0
 
 ---
 
-## 1. Purpose and non-purpose
+### 1. Purpose and non-purpose
 
-### 1.1 Purpose
+#### 1.1 Purpose
 
 This document defines the **minimum information categories and bindings** against which one may evaluate whether a historically situated **AI-assisted decision** can be **faithfully reconstructed** with respect to:
 
@@ -30,7 +30,7 @@ This document defines the **minimum information categories and bindings** agains
 2. **Authorization** — under what authority and governing rules the outcome was permitted;
 3. **Validity** — whether the outcome conformed to constraints and rules then in force.
 
-### 1.2 Non-purpose
+#### 1.2 Non-purpose
 
 This document **does not**:
 
@@ -39,7 +39,7 @@ This document **does not**:
 - assert that current systems fail (that is a separate empirical claim);
 - equate reconstruction with compliance certification in any jurisdiction.
 
-### 1.3 Independence from implementation technologies
+#### 1.3 Independence from implementation technologies
 
 **Engineering criterion:** Reconstruction adequacy SHALL be judged by whether required *information and bindings* are recoverable for a defined decision episode—not by whether a particular technology (logs, traces, ledgers, policy engines, graphs) is present.
 
@@ -49,7 +49,7 @@ This document **does not**:
 
 ---
 
-## 2. Terms (provisional)
+### 2. Terms (provisional)
 
 Unless marked *universally accepted*, definitions are **working senses** for this checklist and may be revised.
 
@@ -66,9 +66,9 @@ The triad *justification / authorization / validity* is treated as **separable e
 
 ---
 
-## 3. Faithful reconstruction
+### 3. Faithful reconstruction
 
-### 3.1 Definition (engineering criterion)
+#### 3.1 Definition (engineering criterion)
 
 **Faithful reconstruction** of a decision episode is achieved when a competent reconstructor, given only retained structured information (plus publicly stated reconstruction procedure for the system under test), can:
 
@@ -82,13 +82,13 @@ The triad *justification / authorization / validity* is treated as **separable e
 
 Completeness is scenario-relative: see requirement classes in §5.
 
-### 3.2 Adequacy threshold (hypothesis)
+#### 3.2 Adequacy threshold (hypothesis)
 
 **Hypothesis:** “Faithful” does **not** require bit-exact replay of all internal compute, full model weight reproducibility, or recovery of every discarded intermediate token. It requires recovery of the **normative and evidential basis** of the decision as retained structure—not an unlimited forensic dump.
 
 Evaluators MUST declare the scenario’s completeness bar (e.g. internal engineering review vs. external audit) before scoring.
 
-### 3.3 Failure modes (non-exhaustive)
+#### 3.3 Failure modes (non-exhaustive)
 
 Reconstruction is **not faithful** if the reconstructor must rely on:
 
@@ -99,7 +99,7 @@ Reconstruction is **not faithful** if the reconstructor must rely on:
 
 ---
 
-## 4. What reconstruction is not
+### 4. What reconstruction is not
 
 The following capabilities are **related but not equivalent**. Passing their native success criteria does **not**, by itself, establish faithful reconstruction under §3.
 
@@ -116,7 +116,7 @@ The following capabilities are **related but not equivalent**. Passing their nat
 
 ---
 
-## 5. Requirement classes
+### 5. Requirement classes
 
 Every information category in §6 is labeled with exactly one default class. Scenario profiles may elevate Optional → Conditionally required, or Conditionally required → Required.
 
@@ -130,7 +130,7 @@ Every information category in §6 is labeled with exactly one default class. Sce
 
 ---
 
-## 6. Information categories
+### 6. Information categories
 
 Categories are **candidates for minimum structure**. The set is **not claimed complete**. Items may be merged in an implementation if semantics are preserved; evaluators score **information presence**, not table row count.
 
@@ -141,9 +141,9 @@ For each category:
 - **When required** — default class and conditions  
 - **Omission** — whether omission prevents faithful reconstruction under the default class  
 
-### 6.1 Identity and outcome
+#### 6.1 Identity and outcome
 
-#### IC-01 Decision identity
+##### IC-01 Decision identity
 
 | | |
 |---|---|
@@ -152,7 +152,7 @@ For each category:
 | **When required** | **Required** for all scenarios |
 | **Omission** | **Prevents** faithful reconstruction |
 
-#### IC-02 Decision outcome
+##### IC-02 Decision outcome
 
 | | |
 |---|---|
@@ -161,7 +161,7 @@ For each category:
 | **When required** | **Required** |
 | **Omission** | **Prevents** faithful reconstruction |
 
-#### IC-03 Decision time
+##### IC-03 Decision time
 
 | | |
 |---|---|
@@ -170,9 +170,9 @@ For each category:
 | **When required** | **Required** |
 | **Omission** | **Prevents** faithful reconstruction for historically situated claims |
 
-### 6.2 Actors and authority
+#### 6.2 Actors and authority
 
-#### IC-04 Actor(s)
+##### IC-04 Actor(s)
 
 | | |
 |---|---|
@@ -181,7 +181,7 @@ For each category:
 | **When required** | **Required** when any human or non-system principal can affect the outcome; **Conditionally required** for fully autonomous system-only episodes if the scenario still demands accountability attribution (then the system principal counts as actor) |
 | **Omission** | **Prevents** when accountability/authorization attribution is in scope; otherwise may leave authorization incomplete |
 
-#### IC-05 Authority
+##### IC-05 Authority
 
 | | |
 |---|---|
@@ -190,9 +190,9 @@ For each category:
 | **When required** | **Conditionally required** when authorization is in scope for the scenario (default for governance/audit scenarios: treat as required) |
 | **Omission** | **Prevents** faithful *authorization* reconstruction when the condition holds |
 
-### 6.3 Policy and rules
+#### 6.3 Policy and rules
 
-#### IC-06 Governing policy
+##### IC-06 Governing policy
 
 | | |
 |---|---|
@@ -201,7 +201,7 @@ For each category:
 | **When required** | **Required** when the decision is policy-governed (hypothesis: most AI-assisted production decisions under this research program are); else N/A |
 | **Omission** | **Prevents** authorization (and often validity) reconstruction when policy-governed |
 
-#### IC-07 Policy version
+##### IC-07 Policy version
 
 | | |
 |---|---|
@@ -210,7 +210,7 @@ For each category:
 | **When required** | **Required** whenever IC-06 applies |
 | **Omission** | **Prevents** historically faithful authorization/validity reconstruction |
 
-#### IC-08 Applicable rules
+##### IC-08 Applicable rules
 
 | | |
 |---|---|
@@ -219,7 +219,7 @@ For each category:
 | **When required** | **Conditionally required** when policies contain multiple rules/paths and reconstruction must explain authorization/validity beyond allow/deny |
 | **Omission** | **Prevents** detailed authorization/validity reconstruction when the condition holds; allow/deny-only scenarios may still pass a reduced profile |
 
-#### IC-09 Constraints
+##### IC-09 Constraints
 
 | | |
 |---|---|
@@ -228,9 +228,9 @@ For each category:
 | **When required** | **Conditionally required** when constraints exist in the decision setting |
 | **Omission** | **Prevents** validity reconstruction when constraints existed and mattered |
 
-### 6.4 Evidence and reliance
+#### 6.4 Evidence and reliance
 
-#### IC-10 Evidence used (available to the decision process)
+##### IC-10 Evidence used (available to the decision process)
 
 | | |
 |---|---|
@@ -239,7 +239,7 @@ For each category:
 | **When required** | **Required** for justification reconstruction in evidence-using decisions (default for AI-assisted decisions) |
 | **Omission** | **Prevents** justification reconstruction |
 
-#### IC-11 Evidence actually relied upon
+##### IC-11 Evidence actually relied upon
 
 | | |
 |---|---|
@@ -248,7 +248,7 @@ For each category:
 | **When required** | **Required** whenever IC-10 applies and selection/attention/filtering can change justification |
 | **Omission** | **Prevents** faithful justification reconstruction when reliance is non-trivial |
 
-#### IC-12 Excluded evidence
+##### IC-12 Excluded evidence
 
 | | |
 |---|---|
@@ -257,9 +257,9 @@ For each category:
 | **When required** | **Conditionally required** when exclusion/filtering occurred or when the scenario profile demands negative evidential accounting |
 | **Omission** | **Prevents** faithful justification (and some validity) reconstruction when the condition holds |
 
-### 6.5 Model and tool context
+#### 6.5 Model and tool context
 
-#### IC-13 Model version
+##### IC-13 Model version
 
 | | |
 |---|---|
@@ -268,7 +268,7 @@ For each category:
 | **When required** | **Required** when model outputs materially participated; else N/A |
 | **Omission** | **Prevents** historically faithful reconstruction of model-participating decisions |
 
-#### IC-14 Prompts
+##### IC-14 Prompts
 
 | | |
 |---|---|
@@ -277,7 +277,7 @@ For each category:
 | **When required** | **Conditionally required** when prompts materially shaped the outcome |
 | **Omission** | **Prevents** justification reconstruction when the condition holds |
 
-#### IC-15 Tools
+##### IC-15 Tools
 
 | | |
 |---|---|
@@ -286,7 +286,7 @@ For each category:
 | **When required** | **Conditionally required** when tools were invoked |
 | **Omission** | **Prevents** justification (and sometimes outcome) reconstruction when the condition holds |
 
-#### IC-16 External services
+##### IC-16 External services
 
 | | |
 |---|---|
@@ -295,7 +295,7 @@ For each category:
 | **When required** | **Conditionally required** when external services materially participated |
 | **Omission** | **Prevents** reconstruction of dependent justification/authorization when the condition holds |
 
-#### IC-17 Confidence
+##### IC-17 Confidence
 
 | | |
 |---|---|
@@ -304,9 +304,9 @@ For each category:
 | **When required** | **Conditionally required** when confidence/thresholds affected the outcome |
 | **Omission** | **Prevents** justification/validity reconstruction when the condition holds |
 
-### 6.6 Assumptions and contexts
+#### 6.6 Assumptions and contexts
 
-#### IC-18 Assumptions
+##### IC-18 Assumptions
 
 | | |
 |---|---|
@@ -315,7 +315,7 @@ For each category:
 | **When required** | **Conditionally required** when the process relies on stated or default assumptions that are not otherwise implied by IC-06–IC-09 |
 | **Omission** | **May prevent** faithful justification/validity reconstruction when assumptions were material |
 
-#### IC-19 Temporal context
+##### IC-19 Temporal context
 
 | | |
 |---|---|
@@ -324,7 +324,7 @@ For each category:
 | **When required** | **Conditionally required** when reference data, policies, or entitlements are time-varying |
 | **Omission** | **Prevents** historically faithful reconstruction when the condition holds |
 
-#### IC-20 Legal context
+##### IC-20 Legal context
 
 | | |
 |---|---|
@@ -333,9 +333,9 @@ For each category:
 | **When required** | **Conditionally required** when multi-jurisdictional or explicitly regulated scenarios are in scope |
 | **Omission** | **Prevents** validity/authorization reconstruction for those scenarios; N/A for pure internal technical gates |
 
-### 6.7 Integrity and derivation
+#### 6.7 Integrity and derivation
 
-#### IC-21 Integrity information
+##### IC-21 Integrity information
 
 | | |
 |---|---|
@@ -344,7 +344,7 @@ For each category:
 | **When required** | **Optional** for base faithfulness of *content*; **Conditionally required** when the scenario profile demands tamper-evident reconstruction (audit/forensic profiles: elevate) |
 | **Omission** | Does **not** by itself fail §3.1 content faithfulness; **fails** integrity-elevated profiles |
 
-#### IC-22 Signatures
+##### IC-22 Signatures
 
 | | |
 |---|---|
@@ -353,7 +353,7 @@ For each category:
 | **When required** | **Optional** by default; **Conditionally required** under scenarios demanding non-repudiation |
 | **Omission** | Does **not** fail base faithfulness; **fails** non-repudiation profiles |
 
-#### IC-23 Provenance
+##### IC-23 Provenance
 
 | | |
 |---|---|
@@ -362,7 +362,7 @@ For each category:
 | **When required** | **Conditionally required** when lineage is necessary to interpret evidence/model trust for the scenario |
 | **Omission** | **May prevent** justification reconstruction when lineage is material; does not substitute for IC-06–IC-08 |
 
-#### IC-24 Lineage
+##### IC-24 Lineage
 
 | | |
 |---|---|
@@ -373,7 +373,7 @@ For each category:
 
 ---
 
-## 7. Binding and composition criteria
+### 7. Binding and composition criteria
 
 **Engineering criteria** (apply when scoring any system):
 
@@ -385,12 +385,12 @@ For each category:
 
 ---
 
-## 8. Evaluation checklist (scoring sheet)
+### 8. Evaluation checklist (scoring sheet)
 
 Use this sheet for each **system under test (SUT)** and each **scenario**.  
 Marks: `PASS` | `FAIL` | `N/A` | `PARTIAL` (PARTIAL requires written missing element).
 
-### 8.1 Header
+#### 8.1 Header
 
 | Field | Value |
 |---|---|
@@ -402,7 +402,7 @@ Marks: `PASS` | `FAIL` | `N/A` | `PARTIAL` (PARTIAL requires written missing ele
 | Date | |
 | Checklist document version | 0.1.0 |
 
-### 8.2 Category scores
+#### 8.2 Category scores
 
 | ID | Category | Class | Score | Evidence pointer (doc/field/API) | Notes |
 |---|---|---|---|---|---|
@@ -431,7 +431,7 @@ Marks: `PASS` | `FAIL` | `N/A` | `PARTIAL` (PARTIAL requires written missing ele
 | IC-23 | Provenance | Cond | | | |
 | IC-24 | Lineage | Opt / Cond | | | |
 
-### 8.3 Triad roll-up
+#### 8.3 Triad roll-up
 
 | Target | PASS only if | Score |
 |---|---|---|
@@ -441,7 +441,7 @@ Marks: `PASS` | `FAIL` | `N/A` | `PARTIAL` (PARTIAL requires written missing ele
 | **Faithful reconstruction (base)** | All three triad rows PASS under declared profile | |
 | **Faithful reconstruction (elevated)** | Base PASS + elevated IC-21/IC-22 as profiled | |
 
-### 8.4 Suggested SUT rows (empty templates)
+#### 8.4 Suggested SUT rows (empty templates)
 
 Run §8.2–8.3 separately for:
 
@@ -458,7 +458,7 @@ Run §8.2–8.3 separately for:
 
 ---
 
-## 9. Conformance language for later use
+### 9. Conformance language for later use
 
 When this checklist is cited by later specifications or publications:
 
@@ -468,7 +468,7 @@ When this checklist is cited by later specifications or publications:
 
 ---
 
-## 10. Revision policy
+### 10. Revision policy
 
 - Breaking changes to Required items increment **minor** version while `status: draft`, then **major** after acceptance.
 - Adding categories increments minor version.
@@ -476,7 +476,7 @@ When this checklist is cited by later specifications or publications:
 
 ---
 
-## 11. Open issues
+### 11. Open issues
 
 1. Is the justification/authorization/validity triad the right partition, or should “accountability” be a fourth target?
 2. Minimum bar for IC-11 (relied-upon evidence) in opaque model settings—hypothesis under active research.
@@ -485,7 +485,7 @@ When this checklist is cited by later specifications or publications:
 
 ---
 
-## Related artifacts
+### Related artifacts
 
 | Artifact | Relationship |
 |---|---|
