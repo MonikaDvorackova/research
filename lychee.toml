@@ -3,7 +3,7 @@ max_cache_age = "1d"
 max_retries = 3
 timeout = 20
 accept = [200, 206, 429]
-exclude_mail = true
+include_mail = false
 
 exclude = [
   "^http://localhost",
