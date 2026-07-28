@@ -15,7 +15,7 @@ Determine:
 
 Do not improve the wording before checking evidentiary support.
 
-Finish with one status:
+Finish with exactly one primary status:
 
 - supported,
 - provisionally supported,
@@ -23,3 +23,8 @@ Finish with one status:
 - overstated,
 - contradicted,
 - not yet testable.
+
+Choose the status that best describes the current wording of the claim.
+
+Do not combine multiple primary statuses. Secondary concerns may be noted
+separately, but the final audit status must contain exactly one value.
