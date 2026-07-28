@@ -60,3 +60,11 @@ Idea → Research → Architecture → Specification → Article → Conference 
 - **Exports are disposable** — Pandoc/Overleaf/HTML builds are derived; edit Markdown here.
 
 This repository is optimized for a 5–10 year program, not a single article.
+
+## License
+
+Unless otherwise stated, the research texts and documentation in this repository are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+
+See [LICENSE](LICENSE) for details.
+
+Source code, if added later, may be subject to a separate software license explicitly stated in the relevant directory.
