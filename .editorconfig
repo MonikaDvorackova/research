@@ -1,0 +1,26 @@
+# EditorConfig — Markdown is the canonical authoring format.
+# Derived formats (HTML, LaTeX, DOCX) are exports, not sources of truth.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+indent_style = space
+indent_size = 2
+max_line_length = off
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{bib,tex}]
+indent_style = space
+indent_size = 2
+
+[*.{js,ts,mjs,cjs,json}]
+indent_style = space
+indent_size = 2

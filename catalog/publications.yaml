@@ -1,0 +1,5 @@
+# Machine-readable publication registry.
+# Every publications/** draft intended for tracking must have an entry.
+# venue status values: planned | draft | review | submitted | accepted | published
+
+publications: []

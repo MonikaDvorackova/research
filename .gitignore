@@ -1,0 +1,31 @@
+.DS_Store
+Thumbs.db
+*~
+
+# Editor / local tooling
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node / Astro (when site/ is populated)
+node_modules/
+site/dist/
+site/.astro/
+.cache/
+
+# Pandoc / export scratch (never commit derived camera-ready dumps here)
+exports/
+tmp/
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Optional large sources — prefer linking; if used, track deliberately
+# references/sources/**/*.pdf

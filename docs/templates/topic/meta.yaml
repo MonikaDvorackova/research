@@ -1,0 +1,11 @@
+# Machine-readable topic metadata.
+# Copy this file with the topic template to topics/<slug>/meta.yaml
+
+id: <slug>
+title: "<Topic name>"
+status: active # active | review | archived
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+tags: []
+related_topics: []
+owners: []

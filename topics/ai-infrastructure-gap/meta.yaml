@@ -1,0 +1,37 @@
+# Topic metadata for ai-infrastructure-gap
+
+id: ai-infrastructure-gap
+title: "Preserving Justification in AI Systems"
+status: active
+created: 2026-07-28
+updated: 2026-07-28
+owners:
+  - "Monika Dvořáčková"
+related_topics: []
+keywords:
+  - ai-systems
+  - software-architecture
+  - justification
+  - decision-integrity
+  - accountability
+  - provenance
+  - auditability
+  - governance
+tags:
+  - architecture
+  - governance
+  - ai-systems
+research_questions:
+  - "What structured information must be retained to reconstruct why a historically situated AI-mediated decision was justified, authorized, and valid at the time it was made?"
+  - "Which existing architectural abstractions (logging, provenance, policy, workflow, tracing, etc.) already preserve that information, and under what conditions?"
+  - "If a gap remains, is it best framed as missing data, missing binding between artifacts, missing temporal semantics, or missing normative criteria—and does closing it require a new layer or disciplined composition of existing ones?"
+  - "How should candidate formulations (Decision Knowledge, Justification, Decision Integrity, Decision Reconstruction) be compared without presupposing that a new layer is necessary?"
+candidate_publications:
+  - venue: website
+    working_title: "Preserving Justification in AI Systems (problem framing)"
+    role: "Standalone architectural article describing the problem and kill-list evaluation"
+    status: planned
+  - venue: radar
+    working_title: "O'Reilly Radar follow-up (solution demonstration)"
+    role: "Follow-up only after a technical solution is proposed and demonstrated"
+    status: planned
