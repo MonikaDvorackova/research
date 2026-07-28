@@ -7,17 +7,17 @@ created: 2026-07-28
 updated: 2026-07-28
 ---
 
-# Publication Workflow
+## Publication Workflow
 
 How research becomes website articles, O’Reilly Radar pieces, conference papers, journal articles, whitepapers, and book chapters — without turning publications into the source of truth.
 
-## Design decision: project, do not rewrite
+### Design decision: project, do not rewrite
 
 Publications are **derived narratives**. Claims, decisions, and normative text live in `topics/`. Each publication declares `source_topics` and pinned `spec_refs`.
 
 **Why:** One research program yields many venue shapes. If the article is canonical, every reuse is a fork. If the topic is canonical, each venue is an adaptation.
 
-## Prerequisites
+### Prerequisites
 
 Before opening a publication draft:
 
@@ -26,7 +26,7 @@ Before opening a publication draft:
 3. Relevant specifications are frozen at a citeable version (when the piece depends on normative text).
 4. Catalog entry for the topic is up to date.
 
-## Templates
+### Templates
 
 Copy from `docs/templates/publications/`:
 
@@ -41,7 +41,7 @@ Copy from `docs/templates/publications/`:
 
 Every template includes a **spine** section (audience, thesis, claim→section map, figures, venue targets). Complete the spine before polishing prose.
 
-## Process
+### Process
 
 ```text
 Prepare (internal)          Submit (external)           Release (public)
@@ -52,28 +52,28 @@ Register in catalog         Track venue_status          Deploy site if applicabl
 Open review checklist       Store reviews/              Errata or new version only
 ```
 
-### Prepare
+#### Prepare
 
 1. Copy the venue template; set `id`, `source_topics`, `spec_refs`.
 2. Fill the spine; refuse sections that lack topic evidence.
 3. Add `catalog/publications.yaml` entry.
 4. Open a review checklist under the topic `reviews/` folder.
 
-### Submit
+#### Submit
 
 1. Export with Pandoc (or venue tooling) from Markdown — do not rewrite in Overleaf as the only copy.
 2. Tag a pre-release: `pub/<id>@v0.x`.
 3. Update `venue_status` in frontmatter and catalog.
 4. File reviewer/editor feedback in `reviews/` (append decisions). Feedback that changes knowledge must update the topic.
 
-### Release
+#### Release
 
 1. Set publication `status: published` and record `doi_or_url` when available.
 2. Tag `pub/<id>@v1.0`.
 3. For website pieces with `publish: true`, deploy via the Astro site pipeline.
 4. After release: substantive advances go to the topic (new spec version if needed). Public text changes via errata or a new publication version.
 
-## Venue adaptation matrix
+### Venue adaptation matrix
 
 | Venue | Emphasis | Typical export |
 |---|---|---|
@@ -84,13 +84,13 @@ Open review checklist       Store reviews/              Errata or new version on
 | Whitepaper | Problem, approach, implications | PDF via Pandoc or site |
 | Book chapter | Pedagogical arc | From mature topics/spines |
 
-## Overleaf and camera-ready
+### Overleaf and camera-ready
 
 Overleaf (or similar) is an **export target** for camera-ready LaTeX. Sync generated `.tex` if useful, but Markdown in this repository remains authoritative.
 
 **Decision:** Treating Overleaf as home creates an unreviewable second truth and breaks the website/Radar pipeline.
 
-## Git branches and tags
+### Git branches and tags
 
 | Pattern | Use |
 |---|---|
@@ -98,14 +98,14 @@ Overleaf (or similar) is an **export target** for camera-ready LaTeX. Sync gener
 | `pub/<id>@vX.Y.Z` | Tagged releases |
 | `spec/<topic>/<name>@vX.Y.Z` | Spec versions cited by publications |
 
-## Hard rules
+### Hard rules
 
 1. No publication without `source_topics`.
 2. No new research claims only in venue prose.
 3. Pin specification versions; do not cite “latest” implicitly.
 4. Do not silently rewrite DOI’d or publicly released text.
 
-## Related documents
+### Related documents
 
 - [workflow.md](workflow.md) — research lifecycle
 - [writing-guidelines.md](writing-guidelines.md) — authoring conventions

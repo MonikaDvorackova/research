@@ -5,7 +5,7 @@ type: governance
 status: active
 ---
 
-# Publication templates
+## Publication templates
 
 Reusable Markdown skeletons for venue outputs. Research claims still live under `topics/`.
 

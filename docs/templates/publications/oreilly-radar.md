@@ -15,50 +15,50 @@ publish: false
 doi_or_url: null
 ---
 
-# \<Working title\>
+## \<Working title\>
 
 O’Reilly Radar adaptation template. Copy to `publications/radar/<slug>.md`.
 
 Tone: trend, implication, and what practitioners should watch — derived from topic research, not a new research dump.
 
-## Spine
+### Spine
 
-### Thesis
+#### Thesis
 
 One paragraph (Radar-shaped).
 
-### Audience
+#### Audience
 
 Practitioners / decision-makers scanning signals.
 
-### Claim → section map
+#### Claim → section map
 
 | Claim | Section | Evidence (topic path) |
 |---|---|---|
 | | | |
 
-### Figures
+#### Figures
 
 | Figure | Source path | Notes |
 |---|---|---|
 | | | |
 
-### Out of scope
+#### Out of scope
 
 -
 
 ---
 
-## Signal
+### Signal
 
 What is changing?
 
-## Why it matters
+### Why it matters
 
-## Implications
+### Implications
 
-## What to watch next
+### What to watch next
 
-## References
+### References
 
 Keys from `references/bib/library.bib`.

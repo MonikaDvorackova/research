@@ -5,15 +5,15 @@ type: governance
 status: active
 ---
 
-# Site
+## Site
 
 Astro (or equivalent) project for the public **research section** of an existing website.
 
-## Design decision
+### Design decision
 
 `publications/articles/` (and other opted-in Markdown) feed content collections. Topic notes stay private unless explicitly flagged `publish: true`.
 
-## Status
+### Status
 
 Scaffold the Astro app here when the first article is ready to deploy. Until then, this folder documents intent only.
 

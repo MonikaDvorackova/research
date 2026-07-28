@@ -9,33 +9,33 @@ updated: YYYY-MM-DD
 tags: []
 ---
 
-# Topic: \<Name\>
+## Topic: \<Name\>
 
 Replace `<slug>` and placeholders when copying this template to `topics/<slug>/`.
 
-## Purpose
+### Purpose
 
 One paragraph: why this topic exists in the research program.
 
-## Scope
+### Scope
 
 - In scope:
 - Out of scope:
 
-## Non-goals
+### Non-goals
 
 -
 
-## Current status
+### Current status
 
 `active` | `review` | `archived`
 
-## Key questions
+### Key questions
 
 1.
 2.
 
-## Entry points
+### Entry points
 
 | Kind | Path |
 |---|---|
@@ -43,10 +43,10 @@ One paragraph: why this topic exists in the research program.
 | Primary specification | `specifications/` |
 | Active publications | `publications/` (catalog) |
 
-## Related topics
+### Related topics
 
 -
 
-## Design note
+### Design note
 
 The charter is the topic’s constitution. Without it, folders accumulate unrelated notes. Update scope deliberately; move out-of-scope threads to other topics or `future-work/`.

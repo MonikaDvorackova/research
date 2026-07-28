@@ -5,11 +5,11 @@ type: governance
 status: active
 ---
 
-# Figures
+## Figures
 
 Shared reusable figures. Topic-local diagrams stay under the topic’s `architecture/` (or a topic `figures/` folder if needed) until reused.
 
-## Conventions
+### Conventions
 
 - Prefer editable sources plus SVG export
 - Shared naming: `<topic>--<diagram>.svg`

@@ -8,7 +8,7 @@ updated: 2026-07-28
 tags: [meta, governance, workflow]
 ---
 
-# Research Workspace Architecture
+## Research Workspace Architecture
 
 This document defines the long-term structure and operating model for an independent research program covering software architecture, AI systems, governance, distributed systems, and multi-venue publication (website, O’Reilly Radar, IEEE Software, ACM, whitepapers, Overleaf, book chapters).
 
@@ -21,20 +21,20 @@ Operational docs: [workflow.md](workflow.md) · [writing-guidelines.md](writing-
 
 ---
 
-## 1. Design intent
+### 1. Design intent
 
-### 1.1 What this is
+#### 1.1 What this is
 
 A research lab / standards-organization workspace: durable knowledge, versioned specifications, review trails, catalogs, and publication projections.
 
-### 1.2 What this is not
+#### 1.2 What this is not
 
 - A personal notes dump
 - A blog repository where posts are the source of truth
 - A single-article project layout
 - A LaTeX-first academic folder that cannot feed a website
 
-### 1.3 North-star rule
+#### 1.3 North-star rule
 
 > Research is canonical. Articles, Radar pieces, IEEE/ACM papers, and book chapters are **projections** of research — never the other way around.
 
@@ -42,7 +42,7 @@ A research lab / standards-organization workspace: durable knowledge, versioned 
 
 ---
 
-## 2. Core design decisions
+### 2. Core design decisions
 
 | Decision | Choice | Rationale |
 |---|---|---|
@@ -60,7 +60,7 @@ A research lab / standards-organization workspace: durable knowledge, versioned 
 
 ---
 
-## 3. Repository tree
+### 3. Repository tree
 
 ```text
 research/
@@ -117,21 +117,21 @@ research/
         └── export-paper.yml
 ```
 
-### 3.1 Why topic-centric (not stage-centric)
+#### 3.1 Why topic-centric (not stage-centric)
 
 A stage-only tree (`ideas/`, `articles/`, …) scatters related work. At year five you cannot answer “everything we know about AI system boundaries.” Topic folders keep the knowledge graph local; stages are **subfolders inside the topic**.
 
-### 3.2 Why publications are outside topics
+#### 3.2 Why publications are outside topics
 
 Venue prose has different structure, length, tone, and IP constraints. Keeping it under `publications/` prevents research notes from being silently rewritten to please a word limit, and allows one topic to feed many publications.
 
-### 3.3 When to introduce `programs/`
+#### 3.3 When to introduce `programs/`
 
 Delay program-level grouping until you have ~30+ topics and natural clusters (e.g. governance, distributed systems). Premature taxonomy creates empty scaffolding and rename churn.
 
 ---
 
-## 4. Folder responsibilities
+### 4. Folder responsibilities
 
 | Path | Responsibility | Must not contain |
 |---|---|---|
@@ -155,7 +155,7 @@ Delay program-level grouping until you have ~30+ topics and natural clusters (e.
 
 ---
 
-## 5. Lifecycle model
+### 5. Lifecycle model
 
 ```text
 Idea → Research → Architecture → Specification → Article → Conference Paper → Book Chapter
@@ -173,7 +173,7 @@ Idea → Research → Architecture → Specification → Article → Conference 
 
 **Important:** Later stages do not delete earlier ones. Specifications remain citable after an article ships. Book chapters accumulate from mature topics; they do not invent a parallel knowledge base.
 
-### 5.1 Status vocabulary
+#### 5.1 Status vocabulary
 
 | Status | Meaning |
 |---|---|
@@ -188,9 +188,9 @@ Idea → Research → Architecture → Specification → Article → Conference 
 
 ---
 
-## 6. Naming conventions
+### 6. Naming conventions
 
-### 6.1 Files and folders
+#### 6.1 Files and folders
 
 - **kebab-case** everywhere
 - **Dates:** `YYYY-MM-DD` prefix for inbox items and review rounds
@@ -199,7 +199,7 @@ Idea → Research → Architecture → Specification → Article → Conference 
 - **Implementations:** same slug family as the topic when 1:1
 - **No venue names** in research filenames (`ieee-draft.md` belongs under `publications/`, not `notes/`)
 
-### 6.2 Document IDs
+#### 6.2 Document IDs
 
 Stable IDs in frontmatter, independent of filename:
 
@@ -209,15 +209,15 @@ id: note-boundary-threats
 
 Pattern: `<type>-<short-slug>` where type ∈ `idea | note | lit | adr | spec | review | pub | chap`.
 
-### 6.3 Citation keys
+#### 6.3 Citation keys
 
 `authorYearShortTitle` in `references/bib/library.bib`, e.g. `bass2021softwareArch`.
 
 ---
 
-## 7. Document metadata
+### 7. Document metadata
 
-### 7.1 Minimum frontmatter (all Markdown docs)
+#### 7.1 Minimum frontmatter (all Markdown docs)
 
 ```yaml
 ---
@@ -233,7 +233,7 @@ refs: [bass2021softwareArch]
 ---
 ```
 
-### 7.2 Specs (additional)
+#### 7.2 Specs (additional)
 
 ```yaml
 version: 1.2.0
@@ -242,7 +242,7 @@ normative: true
 supersedes: spec-boundary-model@1.1.0
 ```
 
-### 7.3 Publications (additional)
+#### 7.3 Publications (additional)
 
 ```yaml
 id: pub-2026-govai-boundaries
@@ -258,13 +258,13 @@ doi_or_url: null
 # Spine lives in the publication Markdown (see templates)
 ```
 
-### 7.4 Catalog entries
+#### 7.4 Catalog entries
 
 `catalog/topics.yaml` and `catalog/publications.yaml` are the **discovery index**. CI should fail PRs that add a topic folder without a catalog entry (and vice versa).
 
 ---
 
-## 8. Versioning
+### 8. Versioning
 
 | Artifact | Scheme | Mechanism |
 |---|---|---|
@@ -278,7 +278,7 @@ doi_or_url: null
 
 ---
 
-## 9. Diagrams
+### 9. Diagrams
 
 1. Prefer **text-first** sources: Mermaid (`.mmd`), PlantUML (`.puml`), Excalidraw (`.excalidraw`).
 2. Commit **exported SVG** (or PDF for papers) beside the source.
@@ -290,7 +290,7 @@ doi_or_url: null
 
 ---
 
-## 10. References
+### 10. References
 
 - Single library: `references/bib/library.bib`
 - Every `literature/` note includes `cite_key` and a 5–10 sentence summary (claim, method, relevance, critique)
@@ -299,15 +299,15 @@ doi_or_url: null
 
 ---
 
-## 11. Drafts and publication tracking
+### 11. Drafts and publication tracking
 
-### 11.1 Drafts
+#### 11.1 Drafts
 
 - Research drafts: `status: draft|active` in place (no parallel `drafts/` tree inside topics — status is enough)
 - Publication drafts: either `status: draft` on the main file or a `drafts/` subfolder **inside** that publication’s directory for venue experiments
 - Never fork research notes into a publication folder “to edit freely”; change claims in the topic, then re-project
 
-### 11.2 Tracking
+#### 11.2 Tracking
 
 Register every intended output in `catalog/publications.yaml`:
 
@@ -326,7 +326,7 @@ Review rounds: `topics/<slug>/reviews/YYYY-MM-DD-<venue>.md` (append-only decisi
 
 ---
 
-## 12. Writing workflow (multi-venue)
+### 12. Writing workflow (multi-venue)
 
 ```text
 1. Capture          → inbox/ or topics/*/ideas/
@@ -341,7 +341,7 @@ Review rounds: `topics/<slug>/reviews/YYYY-MM-DD-<venue>.md` (append-only decisi
 10. Review & tag    → reviews/ + pub/<id>@vX.Y.Z
 ```
 
-### 12.1 Story spine (required before serious drafting)
+#### 12.1 Story spine (required before serious drafting)
 
 Each publication template includes a **Spine** section. Complete it before polishing prose. It contains:
 
@@ -352,7 +352,7 @@ Each publication template includes a **Spine** section. Complete it before polis
 - Target venues and length budgets
 - What is **out of scope** for this narrative (points back to future-work)
 
-### 12.2 Venue adaptation
+#### 12.2 Venue adaptation
 
 | Venue | Tone / form | Home | Export |
 |---|---|---|---|
@@ -367,7 +367,7 @@ Each publication template includes a **Spine** section. Complete it before polis
 
 ---
 
-## 13. Publication workflow
+### 13. Publication workflow
 
 ```text
 Prepare (internal)     Submit (external)        Release (public)
@@ -382,9 +382,9 @@ After publication, substantive research advances go into the **topic** (new spec
 
 ---
 
-## 14. Git strategy
+### 14. Git strategy
 
-### 14.1 Branches
+#### 14.1 Branches
 
 | Branch | Purpose |
 |---|---|
@@ -395,17 +395,17 @@ After publication, substantive research advances go into the **topic** (new spec
 
 Prefer short-lived branches and small PRs. Long-running topic branches should rebase/merge from `main` regularly so catalog/CI rules stay current.
 
-### 14.2 Commit prefixes
+#### 14.2 Commit prefixes
 
 `research:` · `arch:` · `spec:` · `pub:` · `site:` · `chore:`
 
-### 14.3 Tags
+#### 14.3 Tags
 
 - `spec/<topic>/<name>@vX.Y.Z`
 - `pub/<id>@vX.Y.Z`
 - `site@YYYY.MM.DD`
 
-### 14.4 What not to do
+#### 14.4 What not to do
 
 - Force-push `main`
 - Commit secrets or licensed PDFs illegally
@@ -414,9 +414,9 @@ Prefer short-lived branches and small PRs. Long-running topic branches should re
 
 ---
 
-## 15. GitHub, Actions, Astro, deployment
+### 15. GitHub, Actions, Astro, deployment
 
-### 15.1 Natural integration shape
+#### 15.1 Natural integration shape
 
 ```text
 publications/articles/*.md  ──►  site/src/content/research/  ──►  Astro build  ──►  /research on existing site
@@ -424,7 +424,7 @@ catalog/*.yaml              ──►  validation + generated indexes
 topics/**                   ──►  private by default (opt-in publish: true)
 ```
 
-### 15.2 Recommended workflows
+#### 15.2 Recommended workflows
 
 | Workflow | Trigger | Job |
 |---|---|---|
@@ -434,13 +434,13 @@ topics/**                   ──►  private by default (opt-in publish: true)
 | `export-paper` | manual or `pub/*` tag | Pandoc → LaTeX/DOCX artifacts |
 | `link-check` | weekly cron | External URL health for published pages |
 
-### 15.3 Astro content collections
+#### 15.3 Astro content collections
 
 Map `publications/articles` (and optionally radar) to typed collections with a Zod schema matching publication frontmatter. Topic notes stay out of the collection unless explicitly flagged.
 
 ---
 
-## 16. Best practices
+### 16. Best practices
 
 1. **Triage inbox weekly** — undeleted inbox items older than 14 days are a process smell.
 2. **Charter before depth** — a topic without `charter.md` scope will sprawl.
@@ -453,7 +453,7 @@ Map `publications/articles` (and optionally radar) to typed collections with a Z
 9. **Write spines** — never jump from notes to IEEE formatting in one step.
 10. **CI as librarian** — humans forget structure; validators enforce it.
 
-### Anti-patterns
+#### Anti-patterns
 
 - Single global `notes/` dump
 - Article folders with no `source_topics`
@@ -466,7 +466,7 @@ Map `publications/articles` (and optionally radar) to typed collections with a Z
 
 ---
 
-## 17. Future scalability (hundreds of documents)
+### 17. Future scalability (hundreds of documents)
 
 | Pressure | Response |
 |---|---|
@@ -482,7 +482,7 @@ The structure is intentionally **shallow and repetitive** (same subfolders per t
 
 ---
 
-## 18. Bootstrap sequence (when you are ready to materialize)
+### 18. Bootstrap sequence (when you are ready to materialize)
 
 This design document is the first artifact. When initializing the working tree (still not “creating GitHub” as a product goal — just local structure):
 
@@ -496,7 +496,7 @@ This design document is the first artifact. When initializing the working tree (
 
 ---
 
-## 19. Summary
+### 19. Summary
 
 | Layer | Question it answers |
 |---|---|

@@ -15,52 +15,52 @@ publish: false
 doi_or_url: null
 ---
 
-# \<Working title\>
+## \<Working title\>
 
 Whitepaper template. Copy to `publications/whitepapers/<slug>.md`.
 
 Use for longer-form problem/approach/implication documents that are not yet (or not only) a venue paper.
 
-## Spine
+### Spine
 
-### Thesis
+#### Thesis
 
-### Audience
+#### Audience
 
-### Claim → section map
+#### Claim → section map
 
 | Claim | Section | Evidence (topic path) |
 |---|---|---|
 | | | |
 
-### Figures
+#### Figures
 
 | Figure | Source path | Notes |
 |---|---|---|
 | | | |
 
-### Out of scope
+#### Out of scope
 
 -
 
 ---
 
-## Executive summary
+### Executive summary
 
 -
 
-## Problem statement
+### Problem statement
 
-## Approach
+### Approach
 
-## Architecture / model
+### Architecture / model
 
 Cite pinned `spec_refs` and topic architecture ADRs.
 
-## Implications
+### Implications
 
-## Next steps
+### Next steps
 
-## References
+### References
 
 Keys from `references/bib/library.bib`.

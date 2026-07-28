@@ -9,7 +9,7 @@ updated: 2026-07-28
 tags: [architecture, governance]
 ---
 
-# Topic: ai-infrastructure-gap
+## Topic: ai-infrastructure-gap
 
 **Title:** Preserving Justification in AI Systems  
 **Owner:** Monika Dvořáčková  
@@ -17,7 +17,7 @@ tags: [architecture, governance]
 
 Investigate whether AI systems that retain execution state, events, traces, outputs, policies, and provenance still lack structured bindings needed to reconstruct historical justification, authorization, and validity—without assuming a new architectural layer.
 
-## Start here
+### Start here
 
 | Document | Role |
 |---|---|

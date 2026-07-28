@@ -9,13 +9,13 @@ updated: 2026-07-28
 tags: [architecture, governance, ai-systems]
 ---
 
-# Topic: Preserving Justification in AI Systems
+## Topic: Preserving Justification in AI Systems
 
 **Slug:** `ai-infrastructure-gap`  
 **Status:** `active`  
 **Owner:** Monika Dvořáčková
 
-## 1. Observed architectural problem
+### 1. Observed architectural problem
 
 Modern AI systems commonly retain rich operational and governance artifacts: execution state, events, traces, model outputs, policies, and provenance records. Despite that retention, it is not obvious that they retain *enough structured information*—in the right bindings, at the right times—to reconstruct **why a historically situated decision was justified, authorized, and valid** when it was made.
 
@@ -28,9 +28,9 @@ This is stated as an **open architectural question**, not as an established defi
 
 No new architectural layer is assumed to be necessary.
 
-## 2. Scope of the investigation
+### 2. Scope of the investigation
 
-**In scope**
+#### In scope
 
 - Decision episodes in AI-mediated systems where justification, authorization, and validity may need later reconstruction (audit, incident review, regulatory inquiry, engineering debugging of governance failures).
 - Structural properties of records and bindings required for such reconstruction.
@@ -38,20 +38,20 @@ No new architectural layer is assumed to be necessary.
 - Careful comparison of candidate *formulations* of any residual gap—without adopting a branded layer prematurely.
 - Relationship of findings to AIGov Core concepts and boundaries (see §9).
 
-**Out of scope (for this topic’s charter; may appear as adjacent work)**
+#### Out of scope (for this topic’s charter; may appear as adjacent work)
 
 - Building a production governance product.
 - Training or evaluating foundation models for “better explanations.”
 - Legal advice or jurisdiction-specific compliance checklists.
 - Exhaustive survey of every logging vendor or MLOps platform.
 
-## 3. Central research hypothesis
+### 3. Central research hypothesis
 
 **Hypothesis (provisional):** Systems that preserve execution state, events, traces, outputs, policies, and provenance **as loosely coupled artifact classes** still may fail to support faithful reconstruction of historical *justification*, *authorization*, and *validity*, because reconstruction requires durable binding among (a) the decision identity, (b) the criteria and authority under which it was allowed, (c) the evidence or inputs then considered decisive, and (d) the temporal and versioned context in which those criteria applied—bindings that current stacks often leave implicit, incomplete, or reconstructable only with unreliable external narrative.
 
 This hypothesis is **falsifiable**. If disciplined use of existing abstractions already provides those bindings in representative architectures, the hypothesis fails and the contribution becomes a composition guide rather than a gap claim.
 
-## 4. Competing explanations
+### 4. Competing explanations
 
 | Explanation | Claim |
 |---|---|
@@ -63,7 +63,7 @@ This hypothesis is **falsifiable**. If disciplined use of existing abstractions 
 
 Work proceeds by attempting to **kill E5 first** and to force a choice among E1–E4 with evidence.
 
-## 5. Candidate formulations (not adopted)
+### 5. Candidate formulations (not adopted)
 
 The following names are **competing candidate formulations** of a residual concern—not product names and not commitments:
 
@@ -74,7 +74,7 @@ The following names are **competing candidate formulations** of a residual conce
 
 Any eventual recommendation may conclude that **none** of these should exist as a separate layer, and that composition of existing abstractions is sufficient.
 
-## 6. Kill list — existing abstractions
+### 6. Kill list — existing abstractions
 
 For each candidate, state what would count as evidence that it **already solves** the reconstruction problem as framed above.
 
@@ -96,7 +96,7 @@ For each candidate, state what would count as evidence that it **already solves*
 
 Failure of an abstraction on this test does not imply a new layer; it may imply better composition (E2), semantics (E3), or temporality (E4).
 
-## 7. Falsification criteria
+### 7. Falsification criteria
 
 The central hypothesis is weakened or rejected if research shows that:
 
@@ -106,7 +106,7 @@ The central hypothesis is weakened or rejected if research shows that:
 
 The hypothesis is **supported** (not proven) only if residual reconstruction failures remain after charitable, expert composition of existing abstractions, and those failures cluster into stable missing properties.
 
-## 8. Research questions
+### 8. Research questions
 
 1. What minimal structured information and bindings are required to reconstruct why a historically situated AI-mediated decision was justified, authorized, and valid?
 2. Which kill-list abstractions already provide which parts of that minimum, and where do they stop?
@@ -114,7 +114,7 @@ The hypothesis is **supported** (not proven) only if residual reconstruction fai
 4. How should candidate layer formulations be compared if—and only if—E5 remains standing?
 5. What does a rigorous problem-framing article need as evidence before any solution article is warranted?
 
-## 9. Expected technical contributions
+### 9. Expected technical contributions
 
 - A precise problem statement and vocabulary (with unresolved terms listed explicitly).
 - A kill-list evaluation method and initial results against reconstruction requirements.
@@ -122,7 +122,7 @@ The hypothesis is **supported** (not proven) only if residual reconstruction fai
 - If a gap survives: a **composition or extension** proposal—possibly without a new layer.
 - If a gap does not survive: a negative result that is still publishable as architectural clarification.
 
-## 10. Relationship to AIGov Core
+### 10. Relationship to AIGov Core
 
 This topic is adjacent to **AIGov Core** insofar as governable AI systems require accountable decision episodes. The relationship is investigative, not product-roadmap:
 
@@ -130,7 +130,7 @@ This topic is adjacent to **AIGov Core** insofar as governable AI systems requir
 - This topic does **not** treat AIGov Core as proof that a new layer exists, nor as a venue to smuggle branding into research claims.
 - Interfaces, terminology, and boundaries relative to AIGov Core will be recorded as evidence accumulates; no implementation work is in scope for topic initialization.
 
-## 11. Intended publications
+### 11. Intended publications
 
 | Order | Venue | Intent |
 |---|---|---|
@@ -139,7 +139,7 @@ This topic is adjacent to **AIGov Core** insofar as governable AI systems requir
 
 No publication drafts are created in this initialization.
 
-## 12. Explicit non-goals
+### 12. Explicit non-goals
 
 - Declaring that a “Justification Layer” (or synonym) must be built.
 - Shipping reference implementation or CI/site scaffolding under this topic’s init.
@@ -148,7 +148,7 @@ No publication drafts are created in this initialization.
 - Conflating explainability UX with durable historical justification records.
 - Equating cryptographic integrity or trace completeness with justification completeness.
 
-## 13. Unresolved terminology
+### 13. Unresolved terminology
 
 The following terms are **not yet fixed**; working senses are provisional and must be sharpened or replaced:
 
@@ -162,7 +162,7 @@ The following terms are **not yet fixed**; working senses are provisional and mu
 | Historically situated | Bound to time, versions, and context of the original episode | What clock and version axes are mandatory |
 | Layer | A distinct architectural concern with interfaces | Whether “layer” is the right unit vs. pattern/profile |
 
-## Entry points
+### Entry points
 
 | Kind | Path |
 |---|---|
@@ -171,6 +171,6 @@ The following terms are **not yet fixed**; working senses are provisional and mu
 | Primary specification | `specifications/` (none yet) |
 | Active publications | none yet (see `meta.yaml` candidate_publications) |
 
-## Related topics
+### Related topics
 
 None registered yet.

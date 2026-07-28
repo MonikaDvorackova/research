@@ -5,19 +5,19 @@ type: governance
 status: active
 ---
 
-# Inbox
+## Inbox
 
 Untriaged capture. Low friction by design.
 
-## Purpose
+### Purpose
 
 Absorb ideas before they have a topic home.
 
-## Naming
+### Naming
 
 `YYYY-MM-DD-<slug>.md`
 
-## Rules
+### Rules
 
 - Triage within about a week: promote to a topic, merge, or delete.
 - Do not leave long-lived research only here.

@@ -16,58 +16,58 @@ publish: false
 doi_or_url: null
 ---
 
-# \<Working title\>
+## \<Working title\>
 
 Conference paper template (e.g. ACM). Copy to `publications/conference/<slug>.md`.
 
 Export to LaTeX/`acmart` or Overleaf from this Markdown when required. Markdown remains canonical.
 
-## Spine
+### Spine
 
-### Thesis
+#### Thesis
 
-### Audience
+#### Audience
 
 Program committee / academic readers.
 
-### Claim → section map
+#### Claim → section map
 
 | Claim | Section | Evidence (topic path) |
 |---|---|---|
 | | | |
 
-### Figures
+#### Figures
 
 | Figure | Source path | Notes |
 |---|---|---|
 | | | |
 
-### Out of scope
+#### Out of scope
 
 -
 
 ---
 
-## Abstract
+### Abstract
 
 -
 
-## 1. Introduction
+### 1. Introduction
 
-## 2. Background and related work
+### 2. Background and related work
 
 Link to `topics/<slug>/literature/` notes; do not invent related work only here.
 
-## 3. Approach / architecture
+### 3. Approach / architecture
 
-## 4. Discussion
+### 4. Discussion
 
-## 5. Conclusion
+### 5. Conclusion
 
-## Acknowledgments
+### Acknowledgments
 
 -
 
-## References
+### References
 
 Keys from `references/bib/library.bib` (Pandoc/CSL at export time).

@@ -9,7 +9,7 @@ updated: 2026-07-28
 tags: [future-work, research-plan]
 ---
 
-# Research plan
+## Research plan
 
 Minimum work required to earn two publications—**without** drafting them yet.
 
@@ -22,7 +22,7 @@ Minimum work required to earn two publications—**without** drafting them yet.
 
 ---
 
-## Phase 0 — Stabilize the question (prerequisite for A)
+### Phase 0 — Stabilize the question (prerequisite for A)
 
 1. Freeze working definitions for *decision*, *justification*, *authorization*, *validity*, and *reconstruction* sufficiently for evaluation (document remaining disputes in the charter’s terminology table).
 2. Select **3–5 decision scenarios** (AI-mediated) that make reconstruction demands concrete.
@@ -32,36 +32,36 @@ Minimum work required to earn two publications—**without** drafting them yet.
 
 ---
 
-## Phase 1 — Kill-list evaluation (core of A)
+### Phase 1 — Kill-list evaluation (core of A)
 
-4. For each kill-list abstraction in the charter, score against the checklist: *covers / partial / absent*, with notes on what “already solves it” would require.
-5. Attempt a **best-faith composition** (e.g., policy decision log + provenance + temporal versions + trace correlation). Record whether the checklist is met.
-6. Update `architecture/claim-inventory.md` statuses (support, weaken, reject, reframe)—never leave A dependent on untouched hypotheses presented as facts.
+1. For each kill-list abstraction in the charter, score against the checklist: *covers / partial / absent*, with notes on what “already solves it” would require.
+2. Attempt a **best-faith composition** (e.g., policy decision log + provenance + temporal versions + trace correlation). Record whether the checklist is met.
+3. Update `architecture/claim-inventory.md` statuses (support, weaken, reject, reframe)—never leave A dependent on untouched hypotheses presented as facts.
 
 **Exit:** Written evaluation table; explicit stance among competing explanations E1–E5.
 
 ---
 
-## Phase 2 — Article A only
+### Phase 2 — Article A only
 
-7. Draft publication **spine** (later, under `publications/articles/`) from: problem statement, scenarios, checklist, kill list, falsification, negative-or-positive conclusion.
-8. Keep solution proposals out of A except as *open options* (composition profile vs. candidate formulations).
+1. Draft publication **spine** (later, under `publications/articles/`) from: problem statement, scenarios, checklist, kill list, falsification, negative-or-positive conclusion.
+2. Keep solution proposals out of A except as *open options* (composition profile vs. candidate formulations).
 
 **Exit:** A ready for internal review; catalog publication entry when drafting begins.
 
 ---
 
-## Phase 3 — Minimum path to B (only if warranted)
+### Phase 3 — Minimum path to B (only if warranted)
 
-9. If E1 or successful composition: B becomes a Radar piece on **composition patterns**, not a new layer.
-10. If residual gap remains: choose the **smallest** intervention (schema/profile vs. candidate layer formulation) that closes the checklist on one reference scenario.
-11. Demonstrate on a **minimal** example (description or thin prototype later—not in topic init). Measure against the same checklist used in A.
+1. If E1 or successful composition: B becomes a Radar piece on **composition patterns**, not a new layer.
+2. If residual gap remains: choose the **smallest** intervention (schema/profile vs. candidate layer formulation) that closes the checklist on one reference scenario.
+3. Demonstrate on a **minimal** example (description or thin prototype later—not in topic init). Measure against the same checklist used in A.
 
 **Exit:** B has a demo-backed claim continuous with A’s evaluation—not a rebrand of provenance or policy logging.
 
 ---
 
-## Priority order (first work)
+### Priority order (first work)
 
 | Priority | Task | Supports |
 |---|---|---|
@@ -71,7 +71,7 @@ Minimum work required to earn two publications—**without** drafting them yet.
 | 4 | Decide E1–E5 stance; outline article A spine | A |
 | 5 | Only then: solution selection + demo plan for Radar | B |
 
-## Explicitly deferred
+### Explicitly deferred
 
 - Literature notes with real sources (add when reading begins; no artificial refs).
 - Specifications and implementations.

@@ -5,7 +5,7 @@ type: governance
 status: active
 ---
 
-# Publications
+## Publications
 
 Derived, venue-shaped outputs only. Not the research source of truth.
 
@@ -21,6 +21,6 @@ Derived, venue-shaped outputs only. Not the research source of truth.
 Templates: [docs/templates/publications/](../docs/templates/publications/).  
 Process: [docs/publication-workflow.md](../docs/publication-workflow.md).
 
-## Hard rule
+### Hard rule
 
 Every publication declares `source_topics` pointing at `topics/<slug>/`.

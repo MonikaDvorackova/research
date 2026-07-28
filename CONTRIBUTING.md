@@ -7,17 +7,17 @@ created: 2026-07-28
 updated: 2026-07-28
 ---
 
-# Contributing
+## Contributing
 
 This repository behaves like a small research lab. Contributions should preserve the separation between **research** (canonical) and **publications** (derived).
 
-## Before you write
+### Before you write
 
 1. Read [docs/workspace-architecture.md](docs/workspace-architecture.md).
 2. Follow [docs/workflow.md](docs/workflow.md) and [docs/writing-guidelines.md](docs/writing-guidelines.md).
 3. For anything public-facing, follow [docs/publication-workflow.md](docs/publication-workflow.md).
 
-## Markdown is canonical
+### Markdown is canonical
 
 - Author and edit **Markdown** (and YAML frontmatter) in this repository.
 - Do not treat Overleaf, Google Docs, Word, or the live website as the source of truth.
@@ -25,7 +25,7 @@ This repository behaves like a small research lab. Contributions should preserve
 
 **Why:** One source keeps diffs reviewable in Git, feeds Astro and Pandoc from the same files, and prevents venue forks from diverging silently.
 
-## Creating a topic
+### Creating a topic
 
 ```bash
 cp -R docs/templates/topic topics/<slug>
@@ -35,7 +35,7 @@ cp -R docs/templates/topic topics/<slug>
 
 `<slug>` is kebab-case and stable (e.g. `ai-system-boundaries`).
 
-## Creating a publication
+### Creating a publication
 
 1. Confirm the topic has defendable claims and, when applicable, a frozen specification version.
 2. Copy the matching template from `docs/templates/publications/` into `publications/<venue>/`.
@@ -44,7 +44,7 @@ cp -R docs/templates/topic topics/<slug>
 
 **Hard rule:** never start a publication that invents claims absent from `topics/`. Backfill the topic first.
 
-## Commit messages
+### Commit messages
 
 Use a short prefix:
 
@@ -57,16 +57,16 @@ Use a short prefix:
 | `site:` | Astro / deployment |
 | `chore:` | Catalog, templates, CI, docs governance |
 
-## Pull requests
+### Pull requests
 
 - Keep PRs focused (one topic or one publication when practical).
 - Update `catalog/*.yaml` when adding or archiving topics/publications.
 - Do not commit secrets, proprietary PDFs without license clarity, or generated `node_modules/`.
 
-## Reviews
+### Reviews
 
 Store review rounds under the topic’s `reviews/` (and venue notes under the publication folder if needed). Append decisions; do not erase history.
 
-## Questions
+### Questions
 
 If a contribution does not fit the tree, prefer extending documentation over inventing a one-off folder. Structural changes belong in `docs/workspace-architecture.md` first.
