@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use materials from this research repository, please cite it using the metadata below."
+type: generic
+title: "Research: AI Infrastructure, Governance, and Decision Knowledge"
+authors:
+  - family-names: "Dvořáčková"
+    given-names: "Monika"
+    orcid: "https://orcid.org/0009-0009-0879-1605"
+url: "https://github.com/MonikaDvorackova/research"
+repository-code: "https://github.com/MonikaDvorackova/research"
+license: "CC-BY-SA-4.0"
+version: "0.1.0"
+date-released: 2026-07-28
+keywords:
+  - artificial intelligence
+  - AI governance
+  - AI infrastructure
+  - decision knowledge
+  - faithful reconstruction
+  - auditability
+  - provenance
+abstract: >
+  Research workspace focused on AI infrastructure, AI governance,
+  knowledge continuity, faithful reconstruction of decisions,
+  provenance, auditability, authorization and validity.
