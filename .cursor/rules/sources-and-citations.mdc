@@ -1,0 +1,47 @@
+---
+description: Source handling, citation verification, and bibliographic integrity
+globs:
+  - "topics/**/literature/**/*.md"
+  - "topics/**/reviews/**/*.md"
+  - "references/**/*.md"
+alwaysApply: false
+---
+
+# Source and Citation Rules
+
+## Source Priority
+
+Prefer, in order:
+
+1. Official standards and regulations
+2. Original research publications
+3. Official technical documentation
+4. Institutional reports
+5. Secondary scholarly analyses
+
+## Verification
+
+Before adding a bibliographic record, verify:
+
+- title,
+- authors,
+- year,
+- venue or publisher,
+- DOI or stable identifier,
+- version where applicable.
+
+Do not fabricate citation metadata.
+
+## Evaluation Scope
+
+If the complete source is unavailable:
+
+- state that explicitly,
+- avoid definitive conclusions,
+- create a provisional note instead of a completed review.
+
+## Evidence Traceability
+
+Each evaluation must allow another researcher to identify the evidence used.
+
+Do not cite a source for claims it does not support.

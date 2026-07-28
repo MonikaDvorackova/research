@@ -1,0 +1,63 @@
+---
+description: Rules for reviewing publications, standards, frameworks, and engineering approaches
+globs:
+  - "topics/ai-infrastructure-gap/evaluation/**/*.md"
+  - "topics/ai-infrastructure-gap/evaluation/**/*.csv"
+alwaysApply: false
+---
+
+# Evaluation Rules
+
+## Unit of Analysis
+
+Evaluate one clearly identified publication, standard, framework, system, or
+engineering approach at a time.
+
+Do not conflate:
+
+- an individual publication,
+- a broader research field,
+- an implementation,
+- a commercial product,
+- a legal requirement,
+- and common industry practice.
+
+## Required Procedure
+
+1. Identify the exact source and version.
+2. Define the evaluated scope.
+3. Summarise the approach without evaluation.
+4. Extract explicit evidence.
+5. Map evidence to the reconstruction checklist.
+6. Assign scores only where the methodology permits.
+7. Explain every score.
+8. Record uncertainties and scope limitations.
+9. State what the source does not establish.
+10. Update aggregate data only after the individual review is complete.
+
+## Scoring Discipline
+
+Use the repository scoring scale exactly.
+
+A high score requires explicit and systematic support.
+
+A low score must not be based merely on missing keywords.
+
+Use N/A where a criterion is outside the legitimate scope of the evaluated
+approach.
+
+## Evidence Standard
+
+For each scored criterion record:
+
+- source location,
+- concise paraphrase,
+- relevance,
+- interpretation,
+- confidence.
+
+## Comparative Claims
+
+Avoid unsupported overall rankings.
+
+Prefer dimension-specific conclusions.
