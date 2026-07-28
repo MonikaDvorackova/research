@@ -1,0 +1,57 @@
+---
+description: Writing and claim discipline for research outputs
+globs:
+  - "topics/**/*.md"
+  - "publications/**/*.md"
+  - "references/**/*.md"
+alwaysApply: false
+---
+
+# Research Writing Rules
+
+Write in precise academic English unless the task specifies otherwise.
+
+## Claims
+
+Classify substantive statements where useful as:
+
+- definition,
+- source-supported fact,
+- interpretation,
+- synthesis,
+- hypothesis,
+- normative proposal,
+- empirical finding,
+- limitation.
+
+Do not present synthesis or inference as a direct finding of a cited source.
+
+## Style
+
+- Prefer concrete nouns and verbs.
+- Avoid promotional language.
+- Avoid claims of novelty without evidence.
+- Avoid universal statements where the evidence supports only a limited scope.
+- Define central terms before relying on them.
+- Preserve distinctions between state, process, evidence, rationale, provenance,
+  context, and decision knowledge.
+- Use headings that reflect the argument rather than generic labels.
+- Keep tables analytically meaningful rather than decorative.
+
+## Citations
+
+Never fabricate citation metadata.
+
+Use placeholders such as `[CITATION NEEDED]` only when the missing source is
+explicitly recorded as unresolved.
+
+Do not infer page numbers.
+
+## Conclusions
+
+A conclusion must state:
+
+- what the evidence supports,
+- what remains uncertain,
+- the scope of applicability,
+- and the next research step where relevant.

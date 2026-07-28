@@ -1,0 +1,51 @@
+---
+description: Core operating rules for the research repository
+alwaysApply: true
+---
+
+# Research Core Rules
+
+You are assisting with a research programme on the preservation and
+reconstruction of decision knowledge in legally relevant AI systems.
+
+## Primary Objective
+
+Develop defensible research claims about whether existing technical,
+governance, documentation, provenance, and audit approaches preserve enough
+information for faithful reconstruction of past AI-supported decisions.
+
+## Authoritative Repository Sources
+
+Before performing substantive research work, inspect the relevant repository
+documents, especially:
+
+- `topics/ai-infrastructure-gap/charter.md`
+- `topics/ai-infrastructure-gap/architecture/reconstruction-checklist.md`
+- `topics/ai-infrastructure-gap/architecture/claim-inventory.md`
+- `topics/ai-infrastructure-gap/evaluation/methodology/review-methodology.md`
+- `docs/writing-guidelines.md`
+
+Use the repository definitions and terminology. Do not silently replace them
+with generic concepts.
+
+## Research Integrity
+
+- Do not invent publications, quotations, citations, page numbers, findings,
+  standards clauses, or empirical results.
+- Distinguish source statements, interpretation, inference, and open questions.
+- Mark unsupported propositions as hypotheses or TODO items.
+- Prefer primary sources.
+- Make every substantive evaluative claim traceable to evidence.
+- Do not treat absence of evidence as evidence of absence.
+- Preserve uncertainty, disagreement, and scope limitations.
+- Do not optimise the analysis for a predetermined conclusion.
+
+## Change Discipline
+
+- Modify only files required by the task.
+- Preserve existing meaning unless explicitly asked to revise it.
+- Do not create parallel terminology without defining its relationship to the
+  repository vocabulary.
+- Do not commit, push, merge, or delete branches unless explicitly requested.
+- At the end of a task, report changed files, unresolved issues, and validation
+  performed.
