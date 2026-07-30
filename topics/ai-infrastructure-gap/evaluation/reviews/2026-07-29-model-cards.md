@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C1, C3]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,8 +29,8 @@ related_claims: [C1, C3]
 
 **DOI / URL:**
 
-- DOI: https://doi.org/10.1145/3287560.3287596
-- PDF (arXiv): https://arxiv.org/pdf/1810.03993.pdf
+- DOI: <https://doi.org/10.1145/3287560.3287596>
+- PDF (arXiv): <https://arxiv.org/pdf/1810.03993.pdf>
 
 **Primary sources inspected:**
 

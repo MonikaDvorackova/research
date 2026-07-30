@@ -25,7 +25,7 @@ unit_reviews_basis:
   - 2026-07-29-oasis-ws-humantask-human-review-workflow.md
 ---
 
-# Reconstruction scenarios and composition analysis
+## Reconstruction scenarios and composition analysis
 
 **Purpose:** Move from unit-source reviews to **adversarial scenarios** and **composition** analysis. Test whether families that individually contribute capabilities can reconstruct justification, authorization, and validity when combined **without** inventing cross-system bindings the sources do not define.
 

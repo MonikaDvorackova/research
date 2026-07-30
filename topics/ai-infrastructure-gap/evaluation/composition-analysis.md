@@ -29,7 +29,7 @@ unit_reviews_basis:
   - 2026-07-29-oasis-ws-humantask-human-review-workflow.md
 ---
 
-# Composition analysis: reconstructing historical AI-assisted decisions
+## Composition analysis: reconstructing historical AI-assisted decisions
 
 **Purpose.** Synthesize the completed unit-review corpus, coverage audit, and reconstruction scenarios into a **compositional** argument: what happens when independently adequate infrastructure components must jointly support **faithful reconstruction** of one historically situated AI-assisted decision (checklist v0.1.0 §3).
 

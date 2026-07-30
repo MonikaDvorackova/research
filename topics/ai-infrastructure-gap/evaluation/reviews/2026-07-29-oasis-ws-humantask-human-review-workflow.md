@@ -18,7 +18,7 @@ compares_to_reviews:
   - review-2026-07-29-eu-ai-act-decision-audit-records
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 

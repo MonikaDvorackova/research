@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C5]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,10 +29,10 @@ related_claims: [C5]
 
 **DOI / URL:**
 
-- Release: https://github.com/google/ml-metadata/releases/tag/v1.21.0
-- Repository: https://github.com/google/ml-metadata
-- Docs (tag): https://github.com/google/ml-metadata/blob/v1.21.0/docs/index.md
-- Published site: https://google.github.io/ml-metadata/
+- Release: <https://github.com/google/ml-metadata/releases/tag/v1.21.0>
+- Repository: <https://github.com/google/ml-metadata>
+- Docs (tag): <https://github.com/google/ml-metadata/blob/v1.21.0/docs/index.md>
+- Published site: <https://google.github.io/ml-metadata/>
 - No DOI asserted on sources inspected for this review
 
 **Primary sources inspected (SUT):**
@@ -143,7 +143,7 @@ Scores do **not** use conclusions from the PROV-DM or OpenTelemetry reviews.
 |---|---|
 | **Evidence** | `Event` INPUT/OUTPUT (and declared/internal variants) between executions and artifacts; docs: events record every artifact used and produced; recurse to upstream inputs; example questions about which dataset trained a model (`docs/index.md`). |
 | **Justification** | First-class input/output event typing substantially supports reconstructing which artifacts participated in a step—core evidential lineage for ML pipelines. |
-| **Why not higher** | No first-class distinction between evidence available vs evidence relied upon for a *decision* (IC-11), nor excluded evidence (IC-12). Event type nuances (DECLARED_* / INTERNAL_*) address pipeline declaration/caching semantics, not justification reliance. |
+| **Why not higher** | No first-class distinction between evidence available vs evidence relied upon for a *decision* (IC-11), nor excluded evidence (IC-12). Event type nuances (`DECLARED_*` / `INTERNAL_*`) address pipeline declaration/caching semantics, not justification reliance. |
 | **Confidence** | High |
 
 #### Rules — **Score: 0**

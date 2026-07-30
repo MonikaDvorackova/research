@@ -15,7 +15,7 @@ derived_from:
   - architecture/reconstruction-checklist.md
 ---
 
-# Knowledge Continuity Model — Conformance Specification
+## Knowledge Continuity Model — Conformance Specification
 
 **Document role.** Normative, technology-neutral conformance specification for implementations claiming support for the Knowledge Continuity Model (KCM).
 

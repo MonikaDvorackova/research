@@ -14,7 +14,7 @@ review_kind: complete
 primary_sources_available: true
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -28,9 +28,9 @@ primary_sources_available: true
 
 **DOI / URL:**
 
-- Release tag: https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.59.0
-- Spec tree at tag: https://github.com/open-telemetry/opentelemetry-specification/tree/v1.59.0/specification
-- Published docs entry: https://opentelemetry.io/docs/specs/otel/
+- Release tag: <https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.59.0>
+- Spec tree at tag: <https://github.com/open-telemetry/opentelemetry-specification/tree/v1.59.0/specification>
+- Published docs entry: <https://opentelemetry.io/docs/specs/otel/>
 - No DOI is asserted on the sources inspected for this review.
 
 **Primary documents inspected (SUT):**
@@ -49,8 +49,8 @@ primary_sources_available: true
 
 **Companion sources (identified; not the scored SUT):**
 
-- OpenTelemetry Semantic Conventions (separate repository), release **v1.43.0** (2026-07-03): https://github.com/open-telemetry/semantic-conventions  
-- GenAI semantic conventions have been moved to https://github.com/open-telemetry/semantic-conventions-genai (noted; not scored as a complete primary unit in this review)
+- OpenTelemetry Semantic Conventions (separate repository), release **v1.43.0** (2026-07-03): <https://github.com/open-telemetry/semantic-conventions>  
+- GenAI semantic conventions have been moved to <https://github.com/open-telemetry/semantic-conventions-genai> (noted; not scored as a complete primary unit in this review)
 - W3C Trace Context / W3C Baggage (referenced by OTel for propagation formats)
 
 **Evaluated unit:** OpenTelemetry **specification** information model for observability signals (traces, logs, metrics as defined, baggage, resource, context propagation) — what structured information the model can preserve. **Not** observability research generally; **not** vendor APM products; **not** language SDK implementations; **not** Collector pipelines.

@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C1, C3, C7]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 

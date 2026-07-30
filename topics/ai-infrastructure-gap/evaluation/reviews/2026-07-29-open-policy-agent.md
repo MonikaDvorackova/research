@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C6]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,8 +29,8 @@ related_claims: [C6]
 
 **DOI / URL:**
 
-- Release: https://github.com/open-policy-agent/opa/releases/tag/v1.18.2
-- Docs (versioned): https://www.openpolicyagent.org/docs/v1.18.2/
+- Release: <https://github.com/open-policy-agent/opa/releases/tag/v1.18.2>
+- Docs (versioned): <https://www.openpolicyagent.org/docs/v1.18.2/>
 - No DOI asserted on sources inspected
 
 **Primary sources inspected (SUT @ v1.18.2):**

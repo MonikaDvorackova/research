@@ -11,7 +11,7 @@ checklist_version: "0.1.0"
 scenarios_doc: evaluation/reconstruction-scenarios.md
 ---
 
-# Coverage audit of completed reconstruction reviews
+## Coverage audit of completed reconstruction reviews
 
 **Purpose:** Assess whether the current review corpus covers the main *families* of approaches relevant to reconstructing legally relevant AI decisions, and whether the corpus may stop unit-source expansion in favour of scenario/composition analysis.
 

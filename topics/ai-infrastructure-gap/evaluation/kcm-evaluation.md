@@ -19,7 +19,7 @@ depends_on:
 related_claims: [C1, C2, C3, C8]
 ---
 
-# Evaluation: Knowledge Continuity Model
+## Evaluation: Knowledge Continuity Model
 
 **Document role.** Unit-style evaluation of the proposed Knowledge Continuity Model (KCM) against reconstruction checklist v0.1.0, using the same scoring methodology applied to existing sources. This is **not** a literature review, **not** a new architectural proposal, and **not** a claim-status promotion.
 

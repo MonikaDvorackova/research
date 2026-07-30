@@ -16,7 +16,7 @@ derived_from:
   - evaluation/composition-analysis.md
 ---
 
-# Knowledge Continuity Model
+## Knowledge Continuity Model
 
 **Document role.** First normative engineering proposal of this research programme: a **technology-neutral composition architecture** that preserves the minimum information and bindings required for **deterministic faithful reconstruction** of one historically situated AI-assisted decision (reconstruction checklist v0.1.0 §3).
 

@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C5]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -32,11 +32,11 @@ related_claims: [C5]
 
 **DOI / URL:**
 
-- Release: https://github.com/OpenLineage/OpenLineage/releases/tag/1.52.0
-- Spec narrative: https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.md
-- Spec schema: https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.json
-- OpenAPI companion: https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.yml
-- Object model docs: https://openlineage.io/docs/spec/object-model/ (version 1.52.0)
+- Release: <https://github.com/OpenLineage/OpenLineage/releases/tag/1.52.0>
+- Spec narrative: <https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.md>
+- Spec schema: <https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.json>
+- OpenAPI companion: <https://github.com/OpenLineage/OpenLineage/blob/1.52.0/spec/OpenLineage.yml>
+- Object model docs: <https://openlineage.io/docs/spec/object-model/> (version 1.52.0)
 - No DOI asserted on sources inspected
 
 **Primary sources inspected (SUT):**
@@ -48,7 +48,7 @@ related_claims: [C5]
 | `spec/OpenLineage.yml` | OpenAPI for HTTP-based implementations (companion to core schema) |
 | `spec/Versioning.md` | Spec versioning rules |
 | Official facet schemas under `spec/facets/` named as **Standard Facets** in `OpenLineage.md` (e.g. ownership, schema, columnLineage, nominalTime, parent, errorMessage) | First-class standard facets |
-| https://openlineage.io/docs/spec/object-model/ (1.52.0) | Design intent / object-model documentation aligned to the release |
+| <https://openlineage.io/docs/spec/object-model/> (1.52.0) | Design intent / object-model documentation aligned to the release |
 
 **Primary source availability:** Sufficient for a complete specification review (`HTTP 200` for core markdown, JSON Schema, OpenAPI, standard facet schemas, and versioned object-model docs).
 
@@ -189,7 +189,7 @@ Scores do **not** use conclusions from PROV-DM, OpenTelemetry, or ML Metadata re
 | ID | Mark | Notes |
 |---|---|---|
 | IC-01 | PARTIAL | `runId` / job identity; not a decision-episode type |
-| IC-02 | PARTIAL | Outputs / COMPLETE|FAIL|ABORT; not decision outcome |
+| IC-02 | PARTIAL | Outputs / COMPLETE/FAIL/ABORT; not decision outcome |
 | IC-03 | PARTIAL | `eventTime` / nominalTime |
 | IC-04 | PARTIAL | ownership facets |
 | IC-05 | FAIL | Not first-class |

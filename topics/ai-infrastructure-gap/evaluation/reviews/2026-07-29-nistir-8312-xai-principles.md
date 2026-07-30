@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C7]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,8 +29,8 @@ related_claims: [C7]
 
 **DOI / URL:**
 
-- DOI: https://doi.org/10.6028/NIST.IR.8312
-- PDF: https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8312.pdf
+- DOI: <https://doi.org/10.6028/NIST.IR.8312>
+- PDF: <https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8312.pdf>
 
 **Primary sources inspected:**
 

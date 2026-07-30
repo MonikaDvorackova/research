@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C1, C3]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,9 +29,9 @@ related_claims: [C1, C3]
 
 **DOI / URL:**
 
-- Article: https://doi.org/10.1145/3458723
-- Open HTML: https://cacm.acm.org/research/datasheets-for-datasets/
-- Appendix (via ACM DL DOI page): https://dl.acm.org/doi/10.1145/3458723
+- Article: <https://doi.org/10.1145/3458723>
+- Open HTML: <https://cacm.acm.org/research/datasheets-for-datasets/>
+- Appendix (via ACM DL DOI page): <https://dl.acm.org/doi/10.1145/3458723>
 
 **Primary sources inspected:**
 

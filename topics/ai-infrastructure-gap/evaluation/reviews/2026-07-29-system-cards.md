@@ -15,7 +15,7 @@ primary_sources_available: true
 related_claims: [C1]
 ---
 
-# Review
+## Review
 
 ## Bibliographic Information
 
@@ -29,8 +29,8 @@ related_claims: [C1]
 
 **DOI / URL:**
 
-- Publication page: https://ai.meta.com/research/publications/system-level-transparency-of-machine-learning/
-- Companion blog (not scored as SUT body): https://ai.meta.com/blog/system-cards-a-new-resource-for-understanding-how-ai-systems-work/
+- Publication page: <https://ai.meta.com/research/publications/system-level-transparency-of-machine-learning/>
+- Companion blog (not scored as SUT body): <https://ai.meta.com/blog/system-cards-a-new-resource-for-understanding-how-ai-systems-work/>
 - No DOI asserted on the inspected PDF
 
 **Source attribution note:** The task brief cited *Google Research, “System Cards: Model Reporting for Complex AI Systems.”* No publication matching that exact title/attribution was located (arXiv / web search, 2026-07-29). The earliest peer-facing proposal that introduces **System Cards** as a named documentation artefact for complex multi-component ML systems is this Meta AI paper. **That paper is the SUT.** Gemini docs, later Google deployments, and other vendors’ “system cards” are out of scope.
