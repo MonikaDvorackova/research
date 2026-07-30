@@ -23,7 +23,7 @@ draft_sections_complete: [1, 2, 3, 4, 5, 6, 7, 8]
 
 ## Preserving decision knowledge in legally relevant AI systems
 
-**Status:** Sections 1–8 with audited References and integrated Figures 1–4. Abstract remains outstanding.
+**Status:** Sections 1–8 with audited References and integrated Figures 1–4; revised after simulated JURIX review (running example, reviewability residue, privacy trade-offs, reconstruction probe). Abstract remains outstanding.
 
 **Source of truth:** `../planning/jurix-specification.md`
 
@@ -608,8 +608,6 @@ This section claims only that legally relevant AI systems *can be designed* so t
 
 The contribution remains conceptual and compositional. This paper does **not** provide a formal ontology, KR axioms, a PROV profile, identity semantics, a distributed capture protocol, or a complete implementation architecture; nor does it report evaluation results beyond specifying the reconstruction probe (Section 5.6). Those tasks belong to future formalisation, engineering and empirical work (Section 7.4). Section 6 develops implications for AI & Law without treating the framework as a compliance certificate.
 
----
-
 ### 6. Implications for AI and Law
 
 Sections 2–5 argued that legally relevant AI systems need an engineered capacity to preserve Decision Knowledge under change. This section draws implications. The central claim is modest and cumulative: explainability is not only a model property; it also depends on whether the system preserved the knowledge necessary for future legal reasoning. The same dependence holds, with different institutional textures, for review, contestation, accountability and evidentiary reconstruction.
@@ -729,8 +727,6 @@ The answer developed here is conceptual. Systems should treat *Decision Knowledg
 The contribution is accordingly narrow: a problem diagnosis under technical mutability; definitions and a working inventory; a system-property framing; a conceptual preservation framework; and implications that treat explainability and related legal functions as dependent on preserved decision-time knowledge, not only on model-centric methods. The paper does not claim empirical proof, statutory identity with the AI Act, or a paradigm shift in AI & Law.
 
 Future research should formalise the artifact, implement and test compositional retention under change, and evaluate legal adequacy in concrete institutional settings. The forward-looking stake is practical: as legally relevant AI systems become longer-lived and more frequently updated, institutions will need reconstructable decision-time knowledge—or will discover, too late, that they retained only the present.
-
----
 
 ### Assumptions (internal drafting notes; remove before camera-ready)
 
