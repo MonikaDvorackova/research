@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100mm" height="118mm" viewBox="0 0 400 472" role="img" aria-labelledby="title desc">
+  <title id="title">Reconstruction process and probe</title>
+  <desc id="desc">A five-step vertical flowchart for reconstructing a past decision from retained Decision Knowledge, with a separate failure path when components are missing or only live system state is available, and a small panel summarising the reconstruction probe.</desc>
+  <defs>
+    <pattern id="stateHatch" patternUnits="userSpaceOnUse" width="5" height="5">
+      <path d="M0,5 L5,0" stroke="#777" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrV" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+      <polygon points="0 0, 7 0, 3.5 7" fill="#111"/>
+    </marker>
+    <marker id="arrH" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="200" y="16" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">Reconstruction process (conceptual)</text>
+
+  <!-- Success column -->
+  <text x="130" y="36" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#111">Success path</text>
+
+  <rect x="40" y="44" width="180" height="28" fill="#fff" stroke="#111" stroke-width="1.2" rx="1"/>
+  <text x="130" y="62" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">1. Identify decision object</text>
+  <line x1="130" y1="72" x2="130" y2="80" stroke="#111" stroke-width="1.1" marker-end="url(#arrV)"/>
+
+  <rect x="40" y="80" width="180" height="36" fill="#fff" stroke="#111" stroke-width="2.2" rx="1"/>
+  <text x="130" y="96" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">2. Retrieve bound</text>
+  <text x="130" y="108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Decision Knowledge</text>
+  <line x1="130" y1="116" x2="130" y2="124" stroke="#111" stroke-width="1.1" marker-end="url(#arrV)"/>
+
+  <rect x="40" y="124" width="180" height="36" fill="#fff" stroke="#111" stroke-width="1.2" rx="1"/>
+  <text x="130" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">3. Read outcome, anchors,</text>
+  <text x="130" y="152" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">components</text>
+  <line x1="130" y1="160" x2="130" y2="168" stroke="#111" stroke-width="1.1" marker-end="url(#arrV)"/>
+
+  <rect x="40" y="168" width="180" height="40" fill="#fff" stroke="#111" stroke-width="1.2" rx="1"/>
+  <text x="130" y="184" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">4. Separate decision-time</text>
+  <text x="130" y="196" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">content from system state</text>
+
+  <!-- Barrier to live state -->
+  <line x1="220" y1="188" x2="248" y2="188" stroke="#111" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <rect x="248" y="168" width="140" height="40" fill="url(#stateHatch)" stroke="#111" stroke-width="1" stroke-dasharray="3 2" rx="1"/>
+  <text x="318" y="184" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Current system</text>
+  <text x="318" y="196" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">state   do not use</text>
+
+  <line x1="130" y1="208" x2="130" y2="216" stroke="#111" stroke-width="1.1" marker-end="url(#arrV)"/>
+
+  <rect x="40" y="216" width="180" height="44" fill="#fff" stroke="#111" stroke-width="1.2" rx="1"/>
+  <text x="130" y="234" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">5. Forum account:</text>
+  <text x="130" y="248" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">explain / justify / review / contest</text>
+
+  <!-- Failure branch -->
+  <text x="318" y="36" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#333">Failure modes</text>
+  <rect x="248" y="44" width="140" height="100" fill="#fff" stroke="#555" stroke-width="1" stroke-dasharray="3 2" rx="1"/>
+  <text x="258" y="62" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- missing / unbound</text>
+  <text x="266" y="74" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">component</text>
+  <text x="258" y="90" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- only live state</text>
+  <text x="258" y="106" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- staff memory</text>
+  <text x="258" y="122" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- t1 XAI demo</text>
+  <text x="266" y="134" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#555">(not success)</text>
+
+  <line x1="220" y1="98" x2="248" y2="98" stroke="#555" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arrH)"/>
+
+  <!-- Probe panel -->
+  <rect x="16" y="280" width="368" height="176" fill="#fff" stroke="#111" stroke-width="1.4" rx="2"/>
+  <text x="200" y="298" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">Reconstruction probe (method only - no results)</text>
+
+  <rect x="28" y="310" width="70" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="63" y="326" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Inputs</text>
+  <text x="63" y="338" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">past decision</text>
+  <line x1="98" y1="328" x2="112" y2="328" stroke="#111" stroke-width="1" marker-end="url(#arrH)"/>
+
+  <rect x="112" y="310" width="78" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="151" y="326" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Change events</text>
+  <text x="151" y="338" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">after change</text>
+  <line x1="190" y1="328" x2="204" y2="328" stroke="#111" stroke-width="1" marker-end="url(#arrH)"/>
+
+  <rect x="204" y="310" width="78" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="243" y="326" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Attempt</text>
+  <text x="243" y="338" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">retained only</text>
+  <line x1="282" y1="328" x2="296" y2="328" stroke="#111" stroke-width="1" marker-end="url(#arrH)"/>
+
+  <rect x="296" y="308" width="76" height="20" fill="#fff" stroke="#111" stroke-width="1.4" rx="1"/>
+  <text x="334" y="322" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Success</text>
+  <rect x="296" y="332" width="76" height="20" fill="#fff" stroke="#555" stroke-width="1" stroke-dasharray="2 1.5" rx="1"/>
+  <text x="334" y="346" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">Failure</text>
+
+  <text x="28" y="372" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Success: mandatory components and bindings recoverable; not replaced by post-change state.</text>
+  <text x="28" y="386" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Failure: missing/unbound component; only current configuration; re-run of today's pipeline;</text>
+  <text x="28" y="400" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">or undocumented personal memory.</text>
+  <text x="28" y="424" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">Example class: eligibility screening at t0, probed after change at t1.</text>
+  <text x="28" y="444" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#555">Double border = Decision Knowledge artifact. Dashed = live state or failure path.</text>
+</svg>
