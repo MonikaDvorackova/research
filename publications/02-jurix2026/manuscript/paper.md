@@ -23,7 +23,7 @@ draft_sections_complete: [1, 2, 3, 4, 5, 6, 7, 8]
 
 ## Preserving decision knowledge in legally relevant AI systems
 
-**Status:** Sections 1–8 with audited References; revised after simulated JURIX review (running example, reviewability residue, privacy trade-offs, reconstruction probe). Abstract remains outstanding. Figure assets are planned but not yet created.
+**Status:** Sections 1–8 with audited References and integrated Figures 1–4; revised after simulated JURIX review (running example, reviewability residue, privacy trade-offs, reconstruction probe). Abstract remains outstanding.
 
 **Source of truth:** `../planning/jurix-specification.md`
 
@@ -155,9 +155,11 @@ When decision knowledge is not preserved, several legal and governance functions
 
 Governance instruments intensify the practical stakes without dissolving the engineering problem. Documentation regimes, risk-management frameworks and regulatory record-keeping duties (including, in the European setting, logging and transparency obligations under Regulation (EU) 2024/1689) create pressure to retain information. They do not, by themselves, specify the structured Decision Knowledge required for later legal reasoning about a specific AI-assisted decision. Compliance artefacts and live system state can therefore coexist with reconstruction failure. Section 6 returns to this point when relating the framework to governance and the AI Act.
 
-Having stated the loss mechanisms, we next ask how existing research programmes relate to the gap—and where they stop.
+Having stated the loss mechanisms, we next ask how existing research programmes relate to the gap—and where they stop. Figure 1 summarises the contrast between fragmented live preservations and the missing decision-bound package.
 
-*[Figure 1 — System State vs Decision Knowledge: planned; assets not yet created.]*
+![Fig. 1](figures/fig1-fragmented-preservations.pdf)
+
+**Fig. 1.** Fragmented preservations in contemporary AI deployments: operational artefacts remain available as mutable system state, while structured, decision-bound Decision Knowledge is not assembled. Ordinary change between decision time (*t0*) and review time (*t1*) widens the gap.
 
 ---
 
@@ -390,7 +392,11 @@ No claim is made that the following inventory is ontologically complete. It is a
 
 Two distinctions are essential when reading the inventory. First, *available* evidence is not the same as *relied-upon* evidence: retrieval context can be wide while justification depends on a narrower subset. Second, *policy identity* is not the same as *policy version and applicable path*: knowing that “a policy engine ran” does not reconstruct which constraints were in force. Section 2’s failure modes map onto these distinctions: overwritten prompts delete prompt context; index refresh deletes or falsifies retrieved evidence; model updates break model-version binding; approvals without rationale delete human rationale; missing policy constraints delete normative basis; disappearing legal context deletes legal criteria.
 
-In the eligibility example, Decision Knowledge for the contested screening would include, at minimum, the *t0* application inputs treated as operative, the prompt template then in force, the guidance passages relied upon, the income-tool result and version, the model version and score that gated escalation, the policy path that authorised the automated step, the institutional eligibility criteria then applied, the caseworker rationale, and explicit links from those elements to the allow/deny outcome. An archived final decision letter alone is not that package.
+In the eligibility example, Decision Knowledge for the contested screening would include, at minimum, the *t0* application inputs treated as operative, the prompt template then in force, the guidance passages relied upon, the income-tool result and version, the model version and score that gated escalation, the policy path that authorised the automated step, the institutional eligibility criteria then applied, the caseworker rationale, and explicit links from those elements to the allow/deny outcome. An archived final decision letter alone is not that package. Figure 2 depicts this structure as bindings to a decision object rather than as a flat checklist.
+
+![Fig. 2](figures/fig2-decision-knowledge-structure.pdf)
+
+**Fig. 2.** Structure of Decision Knowledge for one AI-assisted decision: working-inventory components are bound to a decision object so that later explanation, justification, review or contestation can recover decision-time basis—not only the final outcome.
 
 #### 4.3 Relationship to decisions and to system state
 
@@ -481,7 +487,11 @@ Architecturally, the proposal is a *logical* layering over AI systems that alrea
 - **Continuity services.** Retention, integrity, access control, and retrieval for later explanation, review, contestation and justification.
 - **Change plane (existing).** Model, index, tool and policy updates that must *not* silently rewrite retained Decision Knowledge.
 
-This layering is deliberately non-proprietary. It can be realised through extensions to existing platforms, through organisational record systems integrated with AI services, or through specialised stores—provided the information and bindings of Section 4 are preserved. Figure 3 (planned) will summarise the conceptual model; Figure 2 (planned) will show continuity across lifecycle stages.
+This layering is deliberately non-proprietary. It can be realised through extensions to existing platforms, through organisational record systems integrated with AI services, or through specialised stores—provided the information and bindings of Section 4 are preserved. Figure 3 summarises the conceptual model: capture and binding under an existing decision path, continuity services for later use, and a change plane that must not silently rewrite retained Decision Knowledge.
+
+![Fig. 3](figures/fig3-knowledge-continuity-model.pdf)
+
+**Fig. 3.** Conceptual model for engineering Knowledge Continuity: capture points on an existing decision path form a bound Decision Knowledge artifact; continuity services retain it for later use; the change plane must not silently rewrite past Decision Knowledge. Not an implementation architecture.
 
 #### 5.3 Principles
 
@@ -548,7 +558,11 @@ Faithful reconstruction, in this conceptual sense, fails when required component
 | **Success criterion** | Mandatory components and bindings for the sampled decision remain recoverable and are not silently replaced by post-change system state; the reviewer can state what was known, used, constrained and authorised at decision time from retained structure |
 | **Failure criterion** | Any mandatory component or binding is missing, unbound, or available only by inspecting current configuration, re-running today’s pipeline, or relying on undocumented personal memory |
 
-In the eligibility example, the probe succeeds only if, after the post-*t0* prompt, index, model and policy changes, an authorised reviewer can still recover the *t0* Decision Knowledge package described in Section 4.2. Passing a new model-explanation at *t1* does not count as success. Section 6 relates successful reconstruction conditions to legal and governance functions.
+In the eligibility example, the probe succeeds only if, after the post-*t0* prompt, index, model and policy changes, an authorised reviewer can still recover the *t0* Decision Knowledge package described in Section 4.2. Passing a new model-explanation at *t1* does not count as success. Figure 4 shows the reconstruction steps and the probe as a method sketch (no empirical results). Section 6 relates successful reconstruction conditions to legal and governance functions.
+
+![Fig. 4](figures/fig4-reconstruction-process.pdf){width=100%}
+
+**Fig. 4.** Conceptual reconstruction process and reconstruction probe (method only; no empirical results). Authorised reviewers recover Decision Knowledge for a past decision without substituting current system state; the probe tests this capacity after realistic change.
 
 #### 5.7 Evolution over time
 
@@ -559,7 +573,7 @@ AI systems evolve continuously. Knowledge Continuity requires that evolution of 
 - migrations of storage or format must preserve semantics of components and links;
 - institutional transfers (vendor change, agency hand-off) must export Decision Knowledge as structure, not only as opaque operational images.
 
-Figure 2 (planned) is intended to show this continuity thread across lifecycle stages and break points corresponding to Section 2’s loss mechanisms.
+The change plane in Figure 3 encodes this requirement: system evolution creates new decision-time contexts for future decisions without rewriting retained artifacts for past ones.
 
 #### 5.8 Integration with existing AI systems
 
@@ -593,10 +607,6 @@ This subsection does not claim to solve GDPR or any single privacy regime. It st
 This section claims only that legally relevant AI systems *can be designed* so that Decision Knowledge is preserved as an engineered artifact and Knowledge Continuity becomes an explicit system property. It does not claim that one graph database, one audit vendor, or one governance product is required. It does not claim that preservation alone makes decisions lawful or correct. It supplies conditions under which later legal reasoning remains epistemically possible.
 
 The contribution remains conceptual and compositional. This paper does **not** provide a formal ontology, KR axioms, a PROV profile, identity semantics, a distributed capture protocol, or a complete implementation architecture; nor does it report evaluation results beyond specifying the reconstruction probe (Section 5.6). Those tasks belong to future formalisation, engineering and empirical work (Section 7.4). Section 6 develops implications for AI & Law without treating the framework as a compliance certificate.
-
-*[Figures 2–4 — planned; assets not yet created.]*
-
----
 
 ### 6. Implications for AI and Law
 
@@ -717,20 +727,6 @@ The answer developed here is conceptual. Systems should treat *Decision Knowledg
 The contribution is accordingly narrow: a problem diagnosis under technical mutability; definitions and a working inventory; a system-property framing; a conceptual preservation framework; and implications that treat explainability and related legal functions as dependent on preserved decision-time knowledge, not only on model-centric methods. The paper does not claim empirical proof, statutory identity with the AI Act, or a paradigm shift in AI & Law.
 
 Future research should formalise the artifact, implement and test compositional retention under change, and evaluate legal adequacy in concrete institutional settings. The forward-looking stake is practical: as legally relevant AI systems become longer-lived and more frequently updated, institutions will need reconstructable decision-time knowledge—or will discover, too late, that they retained only the present.
-
----
-
-### Planned figures (from specification)
-
-- Figure 1 – System State vs Decision Knowledge
-
-- Figure 2 – Knowledge Continuity across the AI lifecycle
-- Figure 3 – Conceptual model of decision knowledge preservation
-- Figure 4 – Relationship between decision, evidence, rationale, policy constraints and review context
-
-*[Figure assets not yet created; see `figures/`.]*
-
----
 
 ### Assumptions (internal drafting notes; remove before camera-ready)
 
