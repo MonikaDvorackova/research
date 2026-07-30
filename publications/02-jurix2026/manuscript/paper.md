@@ -23,7 +23,7 @@ draft_sections_complete: [1, 2, 3, 4, 5, 6, 7, 8]
 
 ## Preserving decision knowledge in legally relevant AI systems
 
-**Status:** First complete prose draft of Sections 1–8 with compiled References. Abstract remains outstanding. Figure assets are planned but not yet created.
+**Status:** Sections 1–8 with audited References; revised after simulated JURIX review (running example, reviewability residue, privacy trade-offs, reconstruction probe). Abstract remains outstanding. Figure assets are planned but not yet created.
 
 **Source of truth:** `../planning/jurix-specification.md`
 
@@ -61,9 +61,11 @@ The practical problem is that state can be healthy while Decision Knowledge is g
 
 In short: engineering that preserves only system state under-serves institutions that must reason legally about decisions across time.
 
+**Running example (eligibility screening).** Throughout, a single concise episode illustrates the argument. An administrative agency uses an AI-assisted pipeline to screen applications for a means-tested benefit. At decision time *t0*, the system retrieves guidance passages from an internal corpus, applies a prompt template that frames eligibility criteria, calls an external income-verification tool, obtains a model recommendation with a confidence score, and records a caseworker allow/deny with a short free-text rationale. Months later, at review time *t1*, the applicant appeals. In the interval the agency has rewritten the prompt, refreshed the retrieval index, upgraded the model, and revised the policy bundle that gates automated recommendations. Live dashboards and current documentation remain healthy. Whether the appeal forum can still recover what was known, used, constrained and authorised at *t0* is the engineering question this paper addresses. The example is illustrative, not an empirical case study.
+
 #### 1.3 Research gap
 
-Neighbouring research addresses parts of this landscape without closing the engineering gap. Explainable AI illuminates model behaviour, typically at prediction time, but does not organise retention of decision-time context under deployment change. Legal explainability clarifies what reason-giving should achieve, while often assuming that relevant facts and reasons remain available when review arrives. Reviewability frameworks (notably Cobbe, Lee and Singh, 2021) establish socio-technical record-keeping for meaningful review—the closest neighbour—yet leave room for an explicit engineering artifact and system property focused on technical mutability in contemporary AI stacks. Provenance and decision-provenance work trace derivation and flow; they do not, without further design, guarantee legal criteria, human rationale, policy constraints or review context bound to one decision. Governance frameworks and regulatory logging duties raise retention pressure without specifying Decision Knowledge as defined here.
+Neighbouring research addresses parts of this landscape without closing the engineering gap. Explainable AI illuminates model behaviour, typically at prediction time, but does not organise retention of decision-time context under deployment change (Doshi-Velez and Kim, 2017; Lipton, 2018; Guidotti et al., 2018). Legal explainability clarifies what reason-giving should achieve, while often presupposing that relevant facts and reasons remain available when review arrives (Wachter, Mittelstadt and Russell, 2017; Edwards and Veale, 2017). Reviewability frameworks (notably Cobbe, Lee and Singh, 2021) establish socio-technical record-keeping for meaningful review—the closest neighbour—yet leave room for an explicit engineering artifact and system property focused on technical mutability in contemporary AI stacks. Provenance and decision-provenance work trace derivation and flow (Moreau and Missier, 2013; Singh, Cobbe and Norval, 2019); they do not, without further design, guarantee legal criteria, human rationale, policy constraints or review context bound to one decision. Governance frameworks and regulatory logging duties raise retention pressure without specifying Decision Knowledge as defined here (OECD, 2019; NIST, 2023; Regulation (EU) 2024/1689).
 
 Section 3 develops this comparison systematically and summarises it in Table 1. The gap statement used throughout is deliberately modest: existing approaches explain outputs, trace data or audit behaviour, but they do not—without further design—preserve the structured knowledge required for future legal reasoning about a specific AI-assisted decision.
 
@@ -126,6 +128,8 @@ The loss mechanisms that matter for legally relevant AI systems are ordinary eng
 **Disappearing legal context.** Jurisdiction, procedural posture, applicable legal criteria and institutional mandate are frequently kept outside the technical system—in tickets, emails or unspoken role knowledge. When that context is not bound to the decision as retained structure, later legal reasoning must re-import it from unstable institutional memory.
 
 These mechanisms can co-occur. A single contested decision may be separated from review by a prompt rewrite, an index refresh, a model upgrade, a policy bump and staff turnover. The live system at review time can be healthy and well logged while the decision-time knowledge is gone.
+
+In the eligibility-screening example, *t1* review may still show that “a recommendation was issued” and that “a caseworker approved.” Without decision-bound retention, however, the *t0* prompt wording, the passages actually retrieved, the income-tool result then relied upon, the model version, the policy path that authorised automation, and the caseworker’s rationale are no longer reliably recoverable from system state alone.
 
 #### 2.3 Why this is an engineering problem
 
@@ -191,7 +195,7 @@ Throughout, “supports reconstruction” means support for reconstructing decis
 
 **What it preserves.** Primarily conceptual and doctrinal requirements—what kinds of reasons or counterfactuals should be available to subjects, decision-makers or ecosystems—not an engineering schema for retention.
 
-**What it does not preserve.** The literature often *assumes* that relevant facts and reasons remain accessible at review time. It under-theorises the engineering disappearance of prompts, retrievals, tools and policy versions described in Section 2.
+**What it does not preserve.** The literature often *presupposes* that relevant facts and reasons remain accessible at review time (as in debates that treat explanation rights as operative once a decision setting is known: Wachter, Mittelstadt and Russell, 2017; Edwards and Veale, 2017). It under-theorises the engineering disappearance of prompts, retrievals, tools and policy versions described in Section 2.
 
 **Temporal scope.** Oriented to legal processes that unfold after the decision, but typically without an explicit model of technical mutability in LLM/tool-augmented stacks.
 
@@ -209,7 +213,7 @@ Throughout, “supports reconstruction” means support for reconstructing decis
 
 **What it preserves.** Process-relevant records sufficient for review—policies, roles, interventions, and related organisational documentation—as a reviewability programme.
 
-**What it does not preserve (relative to this paper’s focus).** Reviewability is the strongest adjacent framework. Overlap is real and must not be denied. Differentiation is narrower: Cobbe et al. establish *reviewability* as a socio-technical property of ADM systems and organisations. This paper isolates *Decision Knowledge* as a named engineering artifact and *Knowledge Continuity* as a system property centred on structured preservation under *technical change* characteristic of contemporary AI stacks (prompt overwrite, retrieval drift, tool churn, model swap). The claim is not that reviewability “does not care about records,” but that an engineering layer—what must remain bound to a decision after MLOps-style change so that later legal reasoning remains possible—still needs explicit articulation.
+**What it does not preserve (relative to this paper’s focus).** Reviewability is the strongest adjacent framework; overlap is real. Cobbe et al. establish *reviewability* as a socio-technical property of ADM systems and organisations. This paper isolates a narrower engineering residue under technical mutability (Section 3.3.1).
 
 **Temporal scope.** Across the ADM process and subsequent review; organisational time as well as technical time.
 
@@ -218,6 +222,16 @@ Throughout, “supports reconstruction” means support for reconstructing decis
 **Relation to Decision Knowledge.** Reviewability records are a major *supplier and consumer* of Decision Knowledge. Decision Knowledge is a more specific artifact type oriented to explain/justify/review/contest functions under the loss modes of Section 2.
 
 **Relation to Knowledge Continuity.** Closely related. Knowledge Continuity can be read as an engineering refinement emphasising persistence of Decision Knowledge across model/tool/prompt change, not as a rival that replaces reviewability.
+
+##### 3.3.1 Engineering residue after reviewability
+
+To state the distinction without repeating the comparative table:
+
+1. **What reviewability approaches typically preserve.** Organisational and process records that make ADM amenable to meaningful review: roles, interventions, policies, and related documentation spanning the decision process (Cobbe, Lee and Singh, 2021).
+2. **What Decision Knowledge additionally targets.** A decision-bound package for a *specific* episode—including prompt context, relied-upon retrieved evidence, versioned tool outputs, model version, applicable policy path, legal criteria then treated as governing, and human rationale—retained so those elements remain jointly interpretable after change.
+3. **Why continuous AI-system evolution leaves a gap.** Reviewability programmes can be satisfied at the organisational level while prompts, indices, tools, models and policy bundles continue to turn over. In the eligibility example, process records may show that screening and human approval occurred; without Knowledge Continuity, *t1* still cannot recover the *t0* decision-time basis those records presuppose for legally meaningful review.
+
+The claim is not that reviewability “does not care about records,” but that MLOps-style mutability creates an engineering preservation problem that naming Decision Knowledge and Knowledge Continuity makes assignable.
 
 #### 3.4 Decision provenance
 
@@ -333,7 +347,7 @@ The differentiation can be stated negatively with explicit reasons.
 
 **Not another explainability paper.** XAI and legal explainability address how to generate or demand reasons. This paper addresses whether the information those reasons depend on still exists after ordinary AI-system change. An explanation method cannot recover unretained Decision Knowledge (Section 2.4).
 
-**Not another reviewability framework.** Reviewability (Cobbe et al., 2021) is acknowledged as the closest socio-technical neighbour. The contribution claimed here is narrower and engineering-shaped: naming Decision Knowledge as artifact and Knowledge Continuity as system property under technical mutability. Novelty is not “first to value records.”
+**Not another reviewability framework.** Reviewability (Cobbe et al., 2021) is the closest socio-technical neighbour. Novelty is the engineering residue under technical mutability stated in Section 3.3.1—not “first to value records.”
 
 **Not another governance checklist.** OECD/NIST-style governance (OECD, 2019; NIST, 2023) and AI Act duties create institutional pressure and documentation obligations. They do not specify the structured decision-episode artifact argued in Sections 4–5. Compliance documentation can coexist with reconstruction failure (Section 2.5).
 
@@ -350,8 +364,6 @@ Across these programmes, a pattern recurs: each preserves something important—
 Section 2 argued that preserving mutable system state is not the same as preserving what later legal reasoning needs; Section 3 and Table 1 showed that neighbouring programmes leave that residue. This section supplies the positive vocabulary. It defines *Decision Knowledge* as an engineering artifact, defines *Knowledge Continuity* as a system property, and relates both to decisions, system state, temporal structure and engineering practice. The definitions follow the manuscript specification; the surrounding exposition is interpretive synthesis for JURIX readers and should not be read as empirical measurement.
 
 #### 4.1 Decision Knowledge: definition
-
-e: definition
 
 **Decision Knowledge** is the structured set of information required to explain, justify, review or contest a specific AI-assisted decision after the decision has been made.
 
@@ -378,6 +390,8 @@ No claim is made that the following inventory is ontologically complete. It is a
 
 Two distinctions are essential when reading the inventory. First, *available* evidence is not the same as *relied-upon* evidence: retrieval context can be wide while justification depends on a narrower subset. Second, *policy identity* is not the same as *policy version and applicable path*: knowing that “a policy engine ran” does not reconstruct which constraints were in force. Section 2’s failure modes map onto these distinctions: overwritten prompts delete prompt context; index refresh deletes or falsifies retrieved evidence; model updates break model-version binding; approvals without rationale delete human rationale; missing policy constraints delete normative basis; disappearing legal context deletes legal criteria.
 
+In the eligibility example, Decision Knowledge for the contested screening would include, at minimum, the *t0* application inputs treated as operative, the prompt template then in force, the guidance passages relied upon, the income-tool result and version, the model version and score that gated escalation, the policy path that authorised the automated step, the institutional eligibility criteria then applied, the caseworker rationale, and explicit links from those elements to the allow/deny outcome. An archived final decision letter alone is not that package.
+
 #### 4.3 Relationship to decisions and to system state
 
 A *decision*, for this paper, is an identifiable AI-assisted commit to an action, classification, recommendation acceptance, or controlled outcome. Decision Knowledge is the structured informational basis associated with that commit for later legal reasoning. The decision outcome is necessary but not sufficient: an archived final answer without bindings to evidence, constraints and rationale is not Decision Knowledge in the sense defined above.
@@ -392,9 +406,7 @@ This contrast is the conceptual core of Contribution 1 and the terminological ba
 
 #### 4.4 Temporal properties
 
-Decision
-
-Knowledge is historically situated. At least three temporal properties follow.
+Decision Knowledge is historically situated. At least three temporal properties follow.
 
 **Decision-time anchoring.** Components must be interpretable relative to the time of the decision (and, where relevant, to business time versus system time). Substituting current policies or models at review time falsifies reconstruction.
 
@@ -406,9 +418,7 @@ These properties connect Decision Knowledge to classical motivations in knowledg
 
 #### 4.5 Lifecycle of Decision Knowledge
 
-Decision
-
-Knowledge has a lifecycle distinct from the lifecycle of the model alone:
+Decision Knowledge has a lifecycle distinct from the lifecycle of the model alone:
 
 1. **Formation.** During the decision episode, transient context (prompts, retrievals, tool results, human rationale, applicable constraints) is captured and structured.
 2. **Binding.** Captured elements are associated with a stable decision identity and outcome.
@@ -429,9 +439,7 @@ Knowledge Continuity relates to Decision Knowledge as persistence relates to an 
 
 #### 4.7 Why Knowledge Continuity matters
 
-The importance of Knowledge
-
-Continuity follows directly from the temporal structure of legal and institutional oversight:
+The importance of Knowledge Continuity follows directly from the temporal structure of legal and institutional oversight:
 
 - legal review occurs later than the decision;
 - accountability requires reconstruction of basis, not only of outcome;
@@ -443,9 +451,7 @@ These points are design motivations, not doctrinal conclusions about any one sta
 
 #### 4.8 Engineering implications
 
-If Decision Knowledge is an engineering artifact and Knowledge
-
-Continuity a system property, several engineering implications follow before any particular architecture is chosen.
+If Decision Knowledge is an engineering artifact and Knowledge Continuity a system property, several engineering implications follow before any particular architecture is chosen.
 
 First, preservation must be *intentional*: Decision Knowledge should be a designed output of the decision path, not an accidental residue. Second, capture must target *transient* context at the moment it exists. Third, *bindings* among components and the decision identity are part of the artifact, not optional metadata. Fourth, retention must be planned jointly with privacy, proportionality and purpose limitation—Knowledge Continuity is not a licence for unbounded surveillance archives (Section 6). Fifth, evaluation of legally relevant AI systems should ask not only whether explanations can be generated, but whether Decision Knowledge for past decisions remains reconstructable after change.
 
@@ -459,9 +465,7 @@ This section describes, at a conceptual level, how legally relevant AI systems c
 
 #### 5.1 Design stance
 
-Three stances follow from
-
-Sections 2 and 4.
+Three stances follow from Sections 2 and 4.
 
 1. **Preservation is a first-class design concern.** If Decision Knowledge is required after change, capture and binding must be designed before deployment, not added only when a dispute arrives.
 2. **Logging is not the framework.** Operational logs, provenance graphs and policy decision records may serve as *substrates*. Knowledge Continuity additionally requires that the substrates be sufficient, bound to a decision identity, and retained for the legal functions at issue.
@@ -469,9 +473,7 @@ Sections 2 and 4.
 
 #### 5.2 Architecture as conceptual layering
 
-Architecturally, the proposal isa
-
-*logical* layering over AI systems that already perform inference, retrieval, tool use, policy checks and human gating:
+Architecturally, the proposal is a *logical* layering over AI systems that already perform inference, retrieval, tool use, policy checks and human gating:
 
 - **Decision path (existing).** The operational flow that produces an AI-assisted decision.
 - **Capture points.** Interfaces at which transient context is recorded (prompt instantiation, retrieval results, tool returns, policy evaluation, human gate, outcome emission).
@@ -514,9 +516,7 @@ Closest neighbours in the literature—reviewability frameworks, decision proven
 
 #### 5.5 Preservation mechanisms
 
-At the mechanism level, Knowledge
-
-Continuity requires three complementary operations.
+At the mechanism level, Knowledge Continuity requires three complementary operations.
 
 **Capture.** At defined points in the decision path, write Decision Knowledge components from transient state into durable structured form. Capture policies should state what is mandatory for a given class of legally relevant decision, mindful of proportionality.
 
@@ -526,11 +526,9 @@ Continuity requires three complementary operations.
 
 Replay, bit-exact model reproducibility and post-hoc explanation generation may assist some investigations. They are not the primary preservation mechanisms for Decision Knowledge: replay can restore computational paths without restoring normative basis; reproducibility may be impossible after model retirement; post-hoc explanation cannot recreate unretained context.
 
-#### 5.6 Reconstruction process
+#### 5.6 Reconstruction process and probe
 
-Reconstruction is the later use of retained Decision
-
-Knowledge to support explanation, justification, review or contestation. Conceptually:
+Reconstruction is the later use of retained Decision Knowledge to support explanation, justification, review or contestation. Conceptually:
 
 1. Identify the decision object.
 2. Retrieve the bound Decision Knowledge artifact.
@@ -538,11 +536,23 @@ Knowledge to support explanation, justification, review or contestation. Concept
 4. Separate decision-time content from current system state.
 5. Produce the account required by the forum (technical, administrative or legal), without silently substituting live configuration for retained structure.
 
-Faithful reconstruction, in this conceptual sense, fails when required components or bindings are missing, when only current state is available, or when the reconstructor must rely on undocumented personal memory. As Section 3 and Table 1 showed, XAI, provenance and audit trails do not, by default, prevent those failures. Section 6 relates successful reconstruction conditions to legal and governance functions.
+Faithful reconstruction, in this conceptual sense, fails when required components or bindings are missing, when only current state is available, or when the reconstructor must rely on undocumented personal memory. As Section 3 and Table 1 showed, XAI, provenance and audit trails do not, by default, prevent those failures.
+
+**Reconstruction probe (minimal evaluation method).** The paper does not report experimental results. It specifies a minimal method by which a deployment—or a future empirical study—can test for Knowledge Continuity without treating XAI demos or dashboard reviews as substitutes.
+
+| Element | Specification |
+|---|---|
+| **Inputs** | A sampled past decision identity (e.g. the eligibility screening at *t0*); the Decision Knowledge components declared mandatory for that decision class (Section 4.2); authorised reviewer access rules |
+| **Change events** | After capture, apply at least one realistic change from Section 2.2—prompt rewrite, retrieval-index refresh, tool or model upgrade, or policy-bundle revision—before the probe runs |
+| **Reconstruction attempt** | Using only retained Decision Knowledge (not live system state, not staff memory), attempt to recover outcome, decision-time anchors and mandatory components, and to answer the forum questions the decision class is expected to support (explain / justify / review / contest) |
+| **Success criterion** | Mandatory components and bindings for the sampled decision remain recoverable and are not silently replaced by post-change system state; the reviewer can state what was known, used, constrained and authorised at decision time from retained structure |
+| **Failure criterion** | Any mandatory component or binding is missing, unbound, or available only by inspecting current configuration, re-running today’s pipeline, or relying on undocumented personal memory |
+
+In the eligibility example, the probe succeeds only if, after the post-*t0* prompt, index, model and policy changes, an authorised reviewer can still recover the *t0* Decision Knowledge package described in Section 4.2. Passing a new model-explanation at *t1* does not count as success. Section 6 relates successful reconstruction conditions to legal and governance functions.
 
 #### 5.7 Evolution over time
 
-I systems evolve continuously. Knowledge Continuity requires that evolution of the *system* not entail silent evolution of *past Decision Knowledge*. Practically:
+AI systems evolve continuously. Knowledge Continuity requires that evolution of the *system* not entail silent evolution of *past Decision Knowledge*. Practically:
 
 - model, index, tool and policy updates create new decision-time contexts for *future* decisions;
 - retained artifacts for *past* decisions remain anchored to their original versions and bindings;
@@ -553,9 +563,7 @@ Figure 2 (planned) is intended to show this continuity thread across lifecycle s
 
 #### 5.8 Integration with existing AI systems
 
-Integration should prefer extension points over green
-
--field replacement:
+Integration should prefer extension points over green-field replacement:
 
 - observability pipelines can emit candidates for capture, but schemas must be enriched for Decision Knowledge components and bindings;
 - model registries can supply model-version identifiers to be bound into the decision object;
@@ -564,13 +572,27 @@ Integration should prefer extension points over green
 - human-workflow tools can capture rationale at approval gates;
 - case-management or records systems can provide retention and access control aligned with institutional review.
 
-The integration test is functional: after realistic change (prompt, retrieval, tool, model, policy), can authorised reviewers still reconstruct Decision Knowledge for a past decision? If not, Knowledge Continuity is absent regardless of how many adjacent tools are deployed.
+The integration test is the reconstruction probe of Section 5.6: after realistic change, can authorised reviewers still reconstruct Decision Knowledge for a past decision? If not, Knowledge Continuity is absent regardless of how many adjacent tools are deployed.
 
-#### 5.9 Scope of the claim
+#### 5.9 Proportionality, privacy and selective preservation
 
-This section claims only that legally relevant AI systems
+Knowledge Continuity is a capacity to preserve what later legal reasoning needs; it is not a licence to retain all context indefinitely. Engineering trade-offs are first-class design constraints.
 
-*can be designed* so that Decision Knowledge is preserved as an engineered artifact and Knowledge Continuity becomes an explicit system property. It does not claim that one graph database, one audit vendor, or one governance product is required. It does not claim that preservation alone makes decisions lawful or correct. It supplies conditions under which later legal reasoning remains epistemically possible. Section 6 develops the corresponding implications for AI & Law without treating the framework as a compliance certificate.
+**Proportionality.** Capture intensity should track decision class and institutional stakes. A routine screening may require a narrower mandatory set than a high-impact refusal; not every telemetry field belongs in Decision Knowledge.
+
+**Data minimisation and selective preservation.** Prefer relied-upon evidence over full retrieval dumps; prefer version identifiers and content hashes where full payloads are unnecessary for the forum; redact or tier access to prompt and rationale fields that contain personal data beyond what review requires.
+
+**Retention limits.** Bind retention schedules to purpose (appeal windows, audit cycles, statutory record periods). Expiry and transfer are part of the Decision Knowledge lifecycle (Section 4.5), not failures of Knowledge Continuity when designed explicitly.
+
+**Legal constraints.** Data-protection rules, secrecy duties and access-control regimes may forbid or condition retention of some components. Where law limits what may be kept, Knowledge Continuity requires documenting the permitted subset and the resulting reconstruction ceiling—not silently equating maximal archive with legal adequacy.
+
+This subsection does not claim to solve GDPR or any single privacy regime. It states that preservation design without proportionality, minimisation, retention limits and legal constraint-checks is incomplete as engineering for legally relevant systems. The eligibility example should retain what an appeal forum needs for the contested screening—not every conversational log from the caseworker’s shift.
+
+#### 5.10 Scope of the claim
+
+This section claims only that legally relevant AI systems *can be designed* so that Decision Knowledge is preserved as an engineered artifact and Knowledge Continuity becomes an explicit system property. It does not claim that one graph database, one audit vendor, or one governance product is required. It does not claim that preservation alone makes decisions lawful or correct. It supplies conditions under which later legal reasoning remains epistemically possible.
+
+The contribution remains conceptual and compositional. This paper does **not** provide a formal ontology, KR axioms, a PROV profile, identity semantics, a distributed capture protocol, or a complete implementation architecture; nor does it report evaluation results beyond specifying the reconstruction probe (Section 5.6). Those tasks belong to future formalisation, engineering and empirical work (Section 7.4). Section 6 develops implications for AI & Law without treating the framework as a compliance certificate.
 
 *[Figures 2–4 — planned; assets not yet created.]*
 
@@ -582,9 +604,7 @@ Sections 2–5 argued that legally relevant AI systems need an engineered capaci
 
 #### 6.1 Engineering implications
 
-If Decision Knowledge is treated as a first-class engineering artifact, several practice shifts follow from
-
-Sections 4–5.
+If Decision Knowledge is treated as a first-class engineering artifact, several practice shifts follow from Sections 4–5.
 
 **Design-time allocation.** Capture points, bindings and retention rules become design deliverables alongside model quality and latency. Preservation is scheduled before deployment, not improvised after a dispute.
 
@@ -592,21 +612,19 @@ Sections 4–5.
 
 **Change management.** Model, index, tool and policy updates are treated as events that create new decision-time contexts for *future* decisions without rewriting retained artifacts for *past* decisions. Release engineering gains an explicit non-goal: do not silently invalidate reconstructability.
 
-**Evaluation.** Acceptance tests for legally relevant systems include a reconstruction probe: after realistic change, can authorised reviewers recover Decision Knowledge for sampled past decisions? Passing XAI demos or dashboard reviews does not substitute for that probe.
+**Evaluation.** Acceptance tests for legally relevant systems include the reconstruction probe specified in Section 5.6. Passing XAI demos or dashboard reviews does not substitute for that probe.
 
-**Proportionality by design.** Because retention has privacy and cost implications, engineering must classify which decisions require which Decision Knowledge components, rather than archiving all context indiscriminately. Knowledge Continuity is a capacity, not a mandate to retain everything forever.
+**Proportionality by design.** Retention has privacy and cost implications; Section 5.9 treats proportionality, minimisation, retention limits and legal constraints as design requirements. Knowledge Continuity is a capacity, not a mandate to retain everything forever.
 
 None of these shifts requires a single vendor stack. They require that preservation responsibilities be assignable—the point of treating Decision Knowledge as an artifact.
 
 #### 6.2 Legal and governance implications
 
-Knowledge
-
-Continuity complements existing governance approaches. It does not replace reviewability programmes, contestability design, accountability frameworks or compliance documentation. Those programmes name duties, forums and affordances; Decision Knowledge names structured material those forums often need after technical change (Section 3; Table 1).
+Knowledge Continuity complements existing governance approaches. It does not replace reviewability programmes, contestability design, accountability frameworks or compliance documentation. Those programmes name duties, forums and affordances; Decision Knowledge names structured material those forums often need after technical change (Section 3; Table 1).
 
 For **legal explainability**, the implication is conditional: reason-giving standards can be met in practice only if decision-time inputs, constraints and rationales remain available. Technical XAI methods remain useful for understanding models; they do not discharge the preservation condition.
 
-For **reviewability**, Knowledge Continuity supplies an engineering refinement focused on MLOps-style mutability. Organisations pursuing reviewable ADM still need socio-technical records; this paper argues they also need decision-bound Decision Knowledge that survives prompt, retrieval, tool and model change.
+For **reviewability**, Knowledge Continuity supplies the engineering residue under MLOps-style mutability stated in Section 3.3.1. Organisations pursuing reviewable ADM still need socio-technical records; they also need decision-bound Decision Knowledge that survives prompt, retrieval, tool and model change.
 
 For **contestability**, affordances for challenge presuppose inspectable materials. Without Knowledge Continuity, contestation interfaces risk presenting current system behaviour as if it were the historical basis of the contested decision.
 
@@ -618,7 +636,7 @@ Governance checklists and risk registers remain necessary for programme control.
 
 #### 6.3 Relationship to the EU AI Act
 
-Regulation (EU) 2024/1689 imposes, among other things, logging, record-keeping and transparency-related duties for certain AI systems, and has prompted debate on explanation rights (including discussions around Article 86 in the emerging commentary). This paper does **not** claim that the AI Act expressly requires “Decision Knowledge” or “Knowledge Continuity” as defined here. Those terms are analytical constructs of this manuscript, not statutory terms.
+Regulation (EU) 2024/1689 imposes, among other things, logging, record-keeping and transparency-related duties for certain AI systems, and Article 86 addresses explanation-related rights in specified circumstances. This paper does **not** claim that the AI Act expressly requires “Decision Knowledge” or “Knowledge Continuity” as defined here. Those terms are analytical constructs of this manuscript, not statutory terms.
 
 The relationship claimed is instrumental and cautious. Where the Act (or similar regimes) requires durable records, logging or information that supports oversight and explanation, organisations still face an engineering design choice: retain unbound operational state and generic logs, or retain decision-bound structured knowledge adequate for later review. The framework in Sections 4–5 is offered as a way to strengthen long-term *reviewability and reconstructability* in systems that must already satisfy record-keeping pressure. Whether a particular retention design meets a particular legal obligation is a compliance determination outside the scope of this conceptual paper.
 
@@ -626,9 +644,7 @@ In short: the AI Act raises the stakes for preservation; it does not by itself s
 
 #### 6.4 Bridge to discussion
 
-Section 6 has stated implications under the assumption that the conceptual argument of
-
-Sections 2–5 is accepted. Open questions of maturity, alternative framings, institutional adoption and staged validation are taken up in Section 7, which also separates conceptual, engineering, empirical and legal next steps. Section 8 then answers the research question directly.
+Section 6 has stated implications under the assumption that the conceptual argument of Sections 2–5 is accepted. Open questions of maturity, alternative framings, institutional adoption and staged validation are taken up in Section 7, which also separates conceptual, engineering, empirical and legal next steps. Section 8 then answers the research question directly.
 
 ---
 
@@ -640,7 +656,7 @@ The preceding sections stated a problem, differentiated neighbours, defined term
 
 Within AI & Law, the paper sits at the junction of legal explainability, reviewability, contestability, provenance and knowledge representation (Table 1). It does not displace those programmes. It argues that they share an often implicit dependence on decision-time information remaining available after ordinary AI-system change, and that this dependence should be named and engineered as Decision Knowledge under a system property of Knowledge Continuity.
 
-Relative to JURIX concerns with justification and structured legal reasoning, the contribution is infrastructural rather than doctrinal: it asks what must be retained so that later legal reasoning about a *deployed* AI-assisted decision remains possible. Relative to hybrid symbolic–ML explanation research, it shifts attention from explaining legal structure in a reasoning system to preserving decision-time context in continuously updated production stacks.
+Relative to JURIX concerns with justification and structured legal reasoning, the contribution is infrastructural rather than doctrinal: it asks what must be retained so that later legal reasoning about a *deployed* AI-assisted decision remains possible. Relative to hybrid symbolic–ML explanation research (Mumford, Atkinson and Bench-Capon, 2022), it shifts attention from explaining legal structure in a reasoning system to preserving decision-time context in continuously updated production stacks.
 
 Relative to engineering practice, the framework is intentionally compositional. It assumes MLOps, observability, model registries, policy engines, provenance tooling and records systems already exist, and asks how they must be bound and retained to support later reconstruction (Section 5.8). The proposal is therefore closer to a missing design concern—or engineering layer in the narrow sense of assignable preservation responsibility—than to a call to replace current platforms. Readers seeking a new socio-technical paradigm will not find one; readers seeking a sharper artifact for long-lived, legally relevant AI systems may.
 
@@ -662,9 +678,9 @@ These strengths are conceptual. They do not establish empirical superiority.
 
 Several limitations should constrain how the paper is cited.
 
-**Conceptual nature.** The work offers definitions, a working inventory, principles and a logical layering. It provides neither formal semantics nor a reference implementation.
+**Conceptual nature.** The work offers definitions, a working inventory, principles, a logical layering, an illustrative running example and a minimal reconstruction-probe method. It provides neither formal semantics, ontology, PROV profile, distributed protocol, nor a reference implementation—and does not claim to.
 
-**Absence of empirical evaluation.** No reconstruction probe has been executed on a real deployment; no user study with auditors, reviewers or decision subjects is reported. Claims about practical difficulty are reasoned from engineering mechanisms (Section 2), not measured failure rates.
+**Absence of empirical evaluation.** The reconstruction probe is specified (Section 5.6) but not executed on a real deployment; no user study with auditors, reviewers or decision subjects is reported. Claims about practical difficulty are reasoned from engineering mechanisms (Section 2), not measured failure rates.
 
 **Preliminary artifact inventory.** The component list in Section 4.2 is derived from the research question’s legal functions and from observed loss modes. Alternative inventories—narrower minimal cores, or broader evidentiary packages—are possible. The list should not be read as a standard.
 
@@ -672,7 +688,7 @@ Several limitations should constrain how the paper is cited.
 
 **Restricted scope.** The analysis targets legally relevant AI-supported decisions for which later explanation, justification, review or contestation is institutionally plausible. It does not address all AI products, all logging problems, or all organisational knowledge-management issues.
 
-**Trade-offs not solved.** Over-documentation, storage cost, privacy, data minimisation, purpose limitation and access control are acknowledged (Sections 5–6) but not given a complete governance design. Knowledge Continuity can conflict with retention limits; proportionality is required, not optional. Institutional adoption faces incentives that favour shipping model improvements over investing in reconstructability.
+**Trade-offs not fully solved.** Section 5.9 states proportionality, minimisation, retention limits and legal constraints as design requirements, but does not deliver a complete privacy or records-governance design. Knowledge Continuity can still conflict with retention limits; institutional incentives may favour shipping model improvements over reconstructability.
 
 **Limits of reconstruction.** Even with preservation, reconstruction can fail: capture may be incomplete; rationales may be thin or contested; redaction may remove needed material; forums may disagree on what “relied upon” meant. Preserving Decision Knowledge is a necessary condition for many later legal-reasoning tasks, not a sufficient condition for correct, lawful or fair decisions.
 
@@ -684,7 +700,7 @@ Next steps should be staged and modest.
 
 **Engineering implementation.** Build reference compositions—observability plus policy logs plus records systems—implementing capture, binding and retention without a green-field platform. Publish schemas and failure-injection tests for prompt, retrieval, tool, model and policy change.
 
-**Empirical validation.** Apply the reconstruction probe of Section 5.8 to sampled decisions before and after realistic change. Compare compositions against unaugmented logging baselines. Include qualitative study of what reviewers actually need.
+**Empirical validation.** Apply the reconstruction probe of Section 5.6 to sampled decisions before and after realistic change. Compare compositions against unaugmented logging baselines. Include qualitative study of what reviewers actually need.
 
 **Legal evaluation.** Map Decision Knowledge components to concrete review and appeal procedures in chosen domains. Assess interaction with data-protection retention rules. Keep the AI Act (and similar regimes) as a stress-test for record-keeping pressure, not as a claim that the statute already defines Decision Knowledge (Section 6.3).
 
@@ -696,7 +712,7 @@ Until such work exists, Knowledge Continuity should be treated as a proposed sys
 
 This paper asked how AI systems should preserve decision knowledge so that legally relevant decisions remain explainable, reviewable, contestable and justifiable over time.
 
-The answer developed here is conceptual. Systems should treat *Decision Knowledge*—the structured, decision-bound information required for those four functions—as an engineering artifact, and should engineer *Knowledge Continuity* as the system property of preserving that artifact across time, technical change and institutional contexts. Ordinary AI delivery preserves mutable *system state*; legal and governance forums need decision-time basis. Neighbouring approaches in explainability, reviewability, provenance and governance address important adjacent problems but, as standardly formulated, do not coincide with that artifact and property (Table 1). A compositional framework of capture, binding and retention can extend existing stacks without replacing them (Section 5).
+The answer developed here is conceptual. Systems should treat *Decision Knowledge*—the structured, decision-bound information required for those four functions—as an engineering artifact, and should engineer *Knowledge Continuity* as the system property of preserving that artifact across time, technical change and institutional contexts. Ordinary AI delivery preserves mutable *system state*; legal and governance forums need decision-time basis. The eligibility-screening episode shows how healthy post-change state can coexist with failed reconstruction—and how capture, binding and retention of Decision Knowledge close that gap without replacing reviewability, provenance or governance programmes. Neighbouring approaches address important adjacent problems but, as standardly formulated, do not coincide with that artifact and property (Table 1; Section 3.3.1). A compositional framework of capture, binding and retention can extend existing stacks without replacing them (Section 5).
 
 The contribution is accordingly narrow: a problem diagnosis under technical mutability; definitions and a working inventory; a system-property framing; a conceptual preservation framework; and implications that treat explainability and related legal functions as dependent on preserved decision-time knowledge, not only on model-centric methods. The paper does not claim empirical proof, statutory identity with the AI Act, or a paradigm shift in AI & Law.
 
@@ -725,7 +741,7 @@ The drafted sections rely on the following assumptions. They are not empirical f
 3. **Working inventory assumption.** The Decision Knowledge component list is a working inventory derived from the research question’s legal functions and from Section 2 loss modes; it is not a final ontology.
 4. **Neighbour-complement assumption.** Section 3 treats reviewability, decision provenance, contestable-AI design, PROV/lineage, XAI, KR and governance as complementary neighbours that do not, as standardly formulated, coincide with Decision Knowledge plus Knowledge Continuity; compositions may narrow the gap without erasing the conceptual distinction.
 5. **Non-evaluation assumption.** Sections 1–8 are conceptual; no implementation or user study is claimed. Contribution language is correspondingly modest.
-6. **Citation status.** In-text citations and the References list below are compiled from `planning/literature-map.md` and the shared workspace BibTeX (`references/bib/library.bib`). Regulatory reference: Regulation (EU) 2024/1689 is cited as primary law for governance pressure, not as proof that the Act requires Decision Knowledge.
+6. **Citation status.** In-text citations and the References list below were audited against `planning/literature-map.md` and the shared workspace BibTeX (`references/bib/library.bib`) (2026-07-30). Every References entry is cited at least once; every in-text citation has a matching entry. Regulatory reference: Regulation (EU) 2024/1689 is cited as primary law for governance pressure, not as proof that the Act requires Decision Knowledge.
 7. **Contribution mapping.** C1↔§2; C2–C3↔§4; C4↔§5; C5↔§6. No contribution beyond the specification list is claimed.
 
 ---
@@ -742,13 +758,13 @@ Almada, M. (2019). Human Intervention in Automated Decision-Making: Toward the C
 
 Atkinson, K. and Bench-Capon, T. (2005). Legal Case-Based Reasoning as Practical Reasoning. *Artificial Intelligence and Law* 13(1): 93–131. doi:10.1007/s10506-006-9003-3.
 
-Cobbe, J., Lee, M. S. A. and Singh, J. (2021). Reviewable Automated Decision-Making: A Framework for Accountable Algorithmic Systems. In *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT ’21)*, pp. 598–609. ACM. doi:10.1145/3442188.3445921.
+Cobbe, J., Lee, M. S. A. and Singh, J. (2021). Reviewable Automated Decision-Making: A Framework for Accountable Algorithmic Systems. In *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency* (FAccT ’21), pp. 598–609. ACM. doi:10.1145/3442188.3445921.
 
 Doshi-Velez, F. and Kim, B. (2017). Towards a Rigorous Science of Interpretable Machine Learning. arXiv:1702.08608.
 
 Edwards, L. and Veale, M. (2017). Slave to the Algorithm? Why a ‘Right to an Explanation’ Is Probably Not the Remedy You Are Looking For. *Duke Law & Technology Review* 16(1): 18–84.
 
-European Parliament and Council of the European Union (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). *Official Journal of the European Union* L 2024/1689. <https://eur-lex.europa.eu/eli/reg/2024/1689/oj.>
+European Parliament and Council of the European Union (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). *Official Journal of the European Union* L 2024/1689. <https://eur-lex.europa.eu/eli/reg/2024/1689/oj>.
 
 Gebru, T., Morgenstern, J., Vecchione, B., Wortman Vaughan, J., Wallach, H., Daumé III, H. and Crawford, K. (2021). Datasheets for Datasets. *Communications of the ACM* 64(12): 86–92. doi:10.1145/3458723.
 
@@ -764,15 +780,15 @@ Lyons, H., Velloso, E. and Miller, T. (2021). Conceptualising Contestability: Pe
 
 McCarthy, J. and Hayes, P. J. (1969). Some Philosophical Problems from the Standpoint of Artificial Intelligence. In Meltzer, B. and Michie, D. (eds), *Machine Intelligence 4*, pp. 463–502. Edinburgh University Press.
 
-Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D. and Gebru, T. (2019). Model Cards for Model Reporting. In *Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* ’19)*. ACM. doi:10.1145/3287560.3287596.
+Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D. and Gebru, T. (2019). Model Cards for Model Reporting. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (FAT\* ’19). ACM. doi:10.1145/3287560.3287596.
 
-Moreau, L. and Missier, P. (eds) (2013). *PROV-DM: The PROV Data Model*. W3C Recommendation, 30 April 2013. <https://www.w3.org/TR/2013/REC-prov-dm-20130430/.>
+Moreau, L. and Missier, P. (eds) (2013). *PROV-DM: The PROV Data Model*. W3C Recommendation, 30 April 2013. <https://www.w3.org/TR/2013/REC-prov-dm-20130430/>.
 
 Mumford, J., Atkinson, K. and Bench-Capon, T. (2022). Reasoning with Legal Cases: A Hybrid ADF-ML Approach. In *Legal Knowledge and Information Systems: JURIX 2022* (FAIA 362), pp. 93–102. IOS Press. doi:10.3233/FAIA220452.
 
 National Institute of Standards and Technology (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. doi:10.6028/NIST.AI.100-1. (Cited in text as NIST, 2023.)
 
-OECD (2019). Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449. <https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449.>
+OECD (2019). Recommendation of the Council on Artificial Intelligence. OECD/LEGAL/0449. <https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449>.
 
 Phillips, P. J., Hahn, C. A., Fontana, P. C., Yates, A. N., Greene, K., Broniatowski, D. A. and Przybocki, M. A. (2021). *Four Principles of Explainable Artificial Intelligence*. NISTIR 8312. doi:10.6028/NIST.IR.8312.
 
@@ -782,6 +798,6 @@ Singh, J., Cobbe, J. and Norval, C. (2019). Decision Provenance: Harnessing Data
 
 Wachter, S., Mittelstadt, B. and Russell, C. (2017). Counterfactual Explanations Without Opening the Black Box: Automated Decisions and the GDPR. *Harvard Journal of Law & Technology* 31(2): 841–887 (journal issue 2018; widely cited as 2017).
 
-Wieringa, M. (2020). What to Account for When Accounting for Algorithms: A Systematic Literature Review on Algorithmic Accountability. In *Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency (FAT* ’20)*, pp. 1–18. ACM. doi:10.1145/3351095.3372833.
+Wieringa, M. (2020). What to Account for When Accounting for Algorithms: A Systematic Literature Review on Algorithmic Accountability. In *Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency* (FAT\* ’20), pp. 1–18. ACM. doi:10.1145/3351095.3372833.
 
 Yurrita, M., Balayn, A. and Gadiraju, U. (2023). Generating Process-Centric Explanations to Enable Contestability in Algorithmic Decision-Making: Challenges and Opportunities. arXiv:2305.00739.
