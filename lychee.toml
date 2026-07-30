@@ -2,11 +2,17 @@ cache = true
 max_cache_age = "1d"
 max_retries = 3
 timeout = 20
-accept = [200, 206, 429]
+# 202: EUR-Lex and similar official portals sometimes return Accepted for GETs.
+# Do not blanket-accept 403 — exclude only known bot-blocking publishers below.
+accept = [200, 202, 206, 429]
 include_mail = false
 
 exclude = [
   "^http://localhost",
   "^https://localhost",
-  "^https://github.com/MonikaDvorackova/research/issues/new"
+  "^https://github.com/MonikaDvorackova/research/issues/new",
+  # Automated checkers are consistently rejected (HTTP 403) by these hosts.
+  "^https?://doi\\.org/",
+  "^https?://dl\\.acm\\.org/",
+  "^https?://cacm\\.acm\\.org/"
 ]
