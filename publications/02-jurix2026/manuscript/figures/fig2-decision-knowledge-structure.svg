@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="122mm" height="62mm" viewBox="0 0 488 248" role="img" aria-labelledby="title desc">
+  <title id="title">Structure of Decision Knowledge</title>
+  <desc id="desc">A central decision object connected to surrounding components including inputs, prompt context, retrieved evidence, model version, tool outputs, policy constraints, legal criteria, human rationale and uncertainty, representing Decision Knowledge as a bound package.</desc>
+  <defs>
+    <marker id="arrowIn" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#111"/>
+    </marker>
+  </defs>
+
+  <!-- Outer frame: Decision Knowledge package -->
+  <rect x="8" y="8" width="472" height="220" fill="#fff" stroke="#111" stroke-width="2.4" rx="2"/>
+  <rect x="12" y="12" width="464" height="212" fill="none" stroke="#111" stroke-width="0.6" rx="1"/>
+  <text x="244" y="28" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">Decision Knowledge (bound package)</text>
+
+  <!-- Centre: Decision object -->
+  <ellipse cx="244" cy="120" rx="58" ry="36" fill="#fff" stroke="#111" stroke-width="2.2"/>
+  <text x="244" y="114" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">Decision object</text>
+  <text x="244" y="127" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">outcome + identity</text>
+
+  <!-- Satellite boxes -->
+  <!-- Top row -->
+  <rect x="30" y="44" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="80" y="58" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Input data</text>
+  <text x="80" y="69" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">supports</text>
+
+  <rect x="194" y="40" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="244" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Prompt context</text>
+  <text x="244" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">supports</text>
+
+  <rect x="358" y="44" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="408" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Retrieved evidence</text>
+  <text x="408" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">relied-upon</text>
+
+  <!-- Mid sides -->
+  <rect x="20" y="104" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="70" y="118" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Model version</text>
+  <text x="70" y="129" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">supports</text>
+
+  <rect x="368" y="104" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="418" y="118" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Tool outputs</text>
+  <text x="418" y="129" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">supports</text>
+
+  <!-- Lower mid -->
+  <rect x="30" y="160" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="80" y="174" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Policy constraints</text>
+  <text x="80" y="185" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">constrains / authorises</text>
+
+  <rect x="194" y="168" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="244" y="182" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Human rationale</text>
+  <text x="244" y="193" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">records</text>
+
+  <rect x="358" y="160" width="100" height="32" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="408" y="174" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Legal criteria</text>
+  <text x="408" y="185" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#555">constrains</text>
+
+  <!-- Uncertainty smaller -->
+  <rect x="194" y="204" width="100" height="24" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="244" y="219" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Uncertainty</text>
+
+  <!-- Edges (solid = knowledge dependency) -->
+  <line x1="130" y1="68" x2="198" y2="100" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="244" y1="72" x2="244" y2="84" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="358" y1="68" x2="290" y2="100" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="120" y1="120" x2="186" y2="120" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="368" y1="120" x2="302" y2="120" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="130" y1="168" x2="198" y2="142" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="244" y1="168" x2="244" y2="156" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="358" y1="168" x2="290" y2="142" stroke="#111" stroke-width="1" marker-end="url(#arrowIn)"/>
+  <line x1="244" y1="204" x2="244" y2="156" stroke="#111" stroke-width="0.9" marker-end="url(#arrowIn)"/>
+
+  <!-- Legend -->
+  <text x="16" y="242" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Solid edges: knowledge dependency (links between evidence, reasoning and outcome). Double border: Decision Knowledge artifact.</text>
+</svg>

@@ -1,0 +1,15 @@
+%% Figure 4. KCM objects and mandatory semantic bindings
+flowchart TB
+  D((Decision<br/>Decision ID · outcome · time))
+  D --- Inf[AI Inference]
+  Inf --- MV[Model Version]
+  D --- ES[Evidence Snapshot]
+  ES --- Rel[relied-upon ⊂ available]
+  D --- PV[Policy Version]
+  PV --- Eval[Evaluation result]
+  D --- HR[Human Review / Override]
+  HR --- Auth[Authority<br/>validity interval]
+  D --- Sub[Subject]
+  D -.->|optional| Exp[Explanation<br/>not sole justification]
+  note1[Shared identity: all solid edges join on Decision ID]
+  note2[Decision-time validity: Policy/Authority intervals cover act times]

@@ -1,0 +1,13 @@
+digraph fig1 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=10, bgcolor="white", margin="0.1"];
+  node [shape=box, style="rounded", fontname="Helvetica", fontsize=9, color="#222222", fontcolor="#111111"];
+  edge [fontname="Helvetica", fontsize=8, color="#222222", arrowsize=0.7];
+  A [label="Execution artefacts\n(logs, traces, provenance, policy evaluations)"];
+  B [label="Missing decision knowledge"];
+  C [label="Reconstruction requirements\n(Checklist, base triad, bindings)"];
+  D [label="Unit evaluation\n(13 infrastructure sources)"];
+  E [label="Compositional failure\n(no shared Decision ID)"];
+  F [label="Derived KCM response\n(Decision Episode, conformance)", style="rounded,dashed"];
+  A -> B -> C -> D -> E -> F;
+}

@@ -1,0 +1,12 @@
+%% Figure 5. Historical reconstruction process (fail-closed)
+flowchart TD
+  Q[Reconstruction request] --> R[Resolve Decision ID]
+  R --> S[Retrieve sealed objects]
+  S --> V[Version + temporal validity checks]
+  V --> T{Mandatory bindings present?}
+  T -->|no| U[Unavailable / Failed]
+  T -->|yes| Tri[Reconstruct triad:<br/>justification · authorization · temporal validity]
+  Tri --> Out{Coverage}
+  Out -->|all required| C[Complete]
+  Out -->|some retained| P[Partial]
+  Out -->|reliance deleted| F[Failed justification]

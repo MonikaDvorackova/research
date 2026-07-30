@@ -1,0 +1,51 @@
+digraph fig2 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=10, bgcolor="white", newrank=true, margin="0.1"];
+  node [shape=box, style="rounded", fontname="Helvetica", fontsize=9, color="#222222"];
+  edge [fontname="Helvetica", fontsize=8, color="#222222", arrowsize=0.7];
+
+  subgraph cluster_islands {
+    label="Default composition: capability islands";
+    labelloc="t";
+    style="rounded";
+    color="#555555";
+    rank=same;
+    P [label="PROV /\nlineage"];
+    O [label="Open-\nTelemetry"];
+    M [label="MLMD /\nOpenLineage"];
+    Pol [label="OPA /\nCedar"];
+    H [label="WS-\nHumanTask"];
+    Doc [label="Model /\nSystem Cards"];
+  }
+  X [label="Ambiguous correlation\n(no shared Decision ID)"];
+  FAIL [label="Faithful reconstruction: FAIL", style="rounded,bold"];
+
+  P -> X [style=dashed, constraint=true];
+  O -> X [style=dashed];
+  M -> X [style=dashed];
+  Pol -> X [style=dashed];
+  H -> X [style=dashed];
+  Doc -> X [style=dashed];
+  X -> FAIL;
+
+  subgraph cluster_bound {
+    label="Bound Decision Episode";
+    labelloc="t";
+    style="rounded";
+    color="#111111";
+    DID [label="Decision ID", shape=ellipse];
+    P2 [label="Provenance"];
+    I2 [label="Inference +\nmodel version"];
+    Pol2 [label="Policy version\n+ evaluation"];
+    H2 [label="Human review\n/ override"];
+    E2 [label="Evidence snapshot\n(available vs relied-upon)"];
+    DID -> P2 [dir=none];
+    DID -> I2 [dir=none];
+    DID -> Pol2 [dir=none];
+    DID -> H2 [dir=none];
+    DID -> E2 [dir=none];
+  }
+  PASS [label="Deterministic reconstruction path", style="rounded,bold"];
+  FAIL -> DID [style=invis];
+  DID -> PASS;
+}

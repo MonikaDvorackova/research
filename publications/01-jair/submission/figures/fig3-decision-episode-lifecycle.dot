@@ -1,0 +1,23 @@
+digraph fig3 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=10, bgcolor="white", margin="0.1"];
+  node [shape=box, style="rounded", fontname="Helvetica", fontsize=9, color="#222222"];
+  edge [fontname="Helvetica", fontsize=8, color="#222222", arrowsize=0.7];
+  A [label="Open episode"];
+  B [label="Bind evidence and policy versions"];
+  C [label="Model / human acts"];
+  D [label="Mandatory bindings present?", shape=diamond, width=2.2, height=1.0];
+  F1 [label="Fail-closed: refuse commitment\nor mark non-reconstructable"];
+  E [label="Commitment"];
+  G [label="Seal Decision ID and versions"];
+  H [label="Historical reconstruction"];
+  I [label="Required knowledge retained?", shape=diamond, width=2.2, height=1.0];
+  F2 [label="Unavailable / partial result"];
+  J [label="Complete triad reconstruction"];
+  A -> B -> C -> D;
+  D -> F1 [xlabel="no"];
+  D -> E [xlabel="yes"];
+  E -> G -> H -> I;
+  I -> F2 [xlabel="no"];
+  I -> J [xlabel="yes"];
+}

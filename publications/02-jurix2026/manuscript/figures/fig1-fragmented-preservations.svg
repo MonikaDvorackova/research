@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="122mm" height="58mm" viewBox="0 0 488 232" role="img" aria-labelledby="title desc">
+  <title id="title">Fragmented preservations and missing Decision Knowledge</title>
+  <desc id="desc">Several separate boxes for logs, model registry, policies, and live prompts sit on the left under system state. Broken arrows fail to reach a larger Decision Knowledge box on the right. A timeline shows changes between decision time t0 and review time t1.</desc>
+  <defs>
+    <pattern id="liveHatch" patternUnits="userSpaceOnUse" width="6" height="6">
+      <path d="M0,6 L6,0" stroke="#666" stroke-width="0.6"/>
+    </pattern>
+    <pattern id="breakHatch" patternUnits="userSpaceOnUse" width="5" height="5">
+      <path d="M0,0 L5,5 M5,0 L0,5" stroke="#444" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrowSolid" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#111"/>
+    </marker>
+    <marker id="arrowBroken" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Timeline -->
+  <line x1="24" y1="22" x2="464" y2="22" stroke="#111" stroke-width="1.2"/>
+  <circle cx="40" cy="22" r="3.5" fill="#111"/>
+  <circle cx="448" cy="22" r="3.5" fill="#111"/>
+  <text x="40" y="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">t0 decision</text>
+  <text x="448" y="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">t1 review</text>
+  <text x="244" y="14" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">prompt rewrite  /  index refresh  /  model upgrade  /  policy revision</text>
+
+  <!-- Left cluster: system state -->
+  <rect x="16" y="40" width="210" height="178" fill="none" stroke="#111" stroke-width="1.4" stroke-dasharray="4 2.5" rx="2"/>
+  <rect x="16" y="40" width="210" height="20" fill="url(#liveHatch)" stroke="#111" stroke-width="1.4" stroke-dasharray="4 2.5"/>
+  <text x="121" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">System state (live)</text>
+
+  <!-- Island boxes -->
+  <rect x="28" y="72" width="88" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="72" y="88" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Observability /</text>
+  <text x="72" y="99" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">logs</text>
+
+  <rect x="126" y="72" width="88" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="170" y="88" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Model</text>
+  <text x="170" y="99" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">registry</text>
+
+  <rect x="28" y="118" width="88" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="72" y="134" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Policy / access</text>
+  <text x="72" y="145" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">artefacts</text>
+
+  <rect x="126" y="118" width="88" height="36" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="170" y="134" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Session / tool</text>
+  <text x="170" y="145" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">histories</text>
+
+  <rect x="28" y="164" width="186" height="40" fill="#fff" stroke="#111" stroke-width="1" rx="1"/>
+  <text x="121" y="182" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Current prompts &amp; index</text>
+  <text x="121" y="194" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">(mutable configuration)</text>
+
+  <!-- Break zone -->
+  <rect x="238" y="100" width="36" height="70" fill="url(#breakHatch)" stroke="#555" stroke-width="0.8" opacity="0.85"/>
+  <text x="256" y="90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#333">no</text>
+  <text x="256" y="101" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#333">binding</text>
+
+  <!-- Broken arrows -->
+  <line x1="216" y1="90" x2="238" y2="120" stroke="#555" stroke-width="1.1" stroke-dasharray="3 2" marker-end="url(#arrowBroken)"/>
+  <line x1="216" y1="136" x2="238" y2="135" stroke="#555" stroke-width="1.1" stroke-dasharray="3 2" marker-end="url(#arrowBroken)"/>
+  <line x1="216" y1="184" x2="238" y2="155" stroke="#555" stroke-width="1.1" stroke-dasharray="3 2" marker-end="url(#arrowBroken)"/>
+  <line x1="274" y1="135" x2="292" y2="135" stroke="#555" stroke-width="1.1" stroke-dasharray="3 2" marker-end="url(#arrowBroken)"/>
+
+  <!-- Right: Decision Knowledge (missing / not assembled) -->
+  <rect x="296" y="48" width="176" height="162" fill="#fff" stroke="#111" stroke-width="2.4" rx="2"/>
+  <rect x="300" y="52" width="168" height="154" fill="none" stroke="#111" stroke-width="0.7" rx="1"/>
+  <text x="384" y="70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111">Decision Knowledge</text>
+  <text x="384" y="82" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#333">(decision-bound; not assembled)</text>
+
+  <text x="310" y="102" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- prompt context</text>
+  <text x="310" y="115" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- retrieved evidence</text>
+  <text x="310" y="128" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- model version</text>
+  <text x="310" y="141" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- tool outputs</text>
+  <text x="310" y="154" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- policy constraints</text>
+  <text x="310" y="167" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- legal criteria</text>
+  <text x="310" y="180" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- human rationale</text>
+  <text x="310" y="193" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">- links to outcome</text>
+
+  <!-- Legend -->
+  <rect x="16" y="222" width="12" height="8" fill="none" stroke="#111" stroke-width="1" stroke-dasharray="2 1.5"/>
+  <text x="32" y="229" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">live / mutable</text>
+  <rect x="110" y="222" width="12" height="8" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="126" y="229" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">Decision Knowledge artifact</text>
+  <line x1="280" y1="226" x2="300" y2="226" stroke="#555" stroke-width="1.1" stroke-dasharray="3 2"/>
+  <text x="306" y="229" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#111">missing binding</text>
+</svg>

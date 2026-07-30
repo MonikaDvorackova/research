@@ -1,0 +1,26 @@
+%% Figure 2. Fragmented execution islands vs bound Decision Episode
+flowchart TB
+  subgraph Islands[Default composition: capability islands]
+    P[PROV / lineage]
+    O[OpenTelemetry]
+    M[MLMD / OpenLineage]
+    Pol[OPA / Cedar]
+    H[WS-HumanTask]
+    Doc[Model / System Cards]
+  end
+  P -.->|no shared Decision ID| X[Ambiguous correlation]
+  O -.-> X
+  M -.-> X
+  Pol -.-> X
+  H -.-> X
+  Doc -.-> X
+  X --> FAIL[Faithful reconstruction FAIL]
+  subgraph Bound[Bound Decision Episode]
+    DID((Decision ID))
+    DID --- P2[Provenance graph]
+    DID --- I2[Inference + model version]
+    DID --- Pol2[Policy version + eval]
+    DID --- H2[Human review / override]
+    DID --- E2[Evidence snapshot<br/>available vs relied-upon]
+  end
+  Bound --> PASS[Deterministic reconstruction path]
