@@ -1,0 +1,30 @@
+digraph fig4 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=10, bgcolor="white", margin="0.1"];
+  node [shape=box, style="rounded", fontname="Helvetica", fontsize=9, color="#222222"];
+  edge [fontname="Helvetica", fontsize=8, color="#222222", arrowsize=0.7];
+  D [label="Decision\n(Decision ID, outcome, time)", shape=ellipse];
+  Inf [label="AI Inference"];
+  MV [label="Model Version"];
+  ES [label="Evidence Snapshot"];
+  Rel [label="relied-upon ⊂ available"];
+  PV [label="Policy Version"];
+  Eval [label="Evaluation result"];
+  HR [label="Human Review / Override"];
+  Auth [label="Authority\n(validity interval)"];
+  Sub [label="Subject"];
+  Exp [label="Explanation\n(not sole justification)"];
+  note [shape=plaintext, fontsize=8, label="Solid edges join on shared Decision ID.\nPolicy/Authority intervals must cover act times."];
+  D -> Inf [dir=none];
+  Inf -> MV [dir=none];
+  D -> ES [dir=none];
+  ES -> Rel [dir=none];
+  D -> PV [dir=none];
+  PV -> Eval [dir=none];
+  D -> HR [dir=none];
+  HR -> Auth [dir=none];
+  D -> Sub [dir=none];
+  D -> Exp [style=dashed, label="optional"];
+  note -> D [style=invis];
+  {rank=same; note}
+}

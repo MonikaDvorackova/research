@@ -1,0 +1,12 @@
+%% Figure 3. Decision Episode lifecycle with fail-closed outcomes
+flowchart LR
+  A[Open episode] --> B[Bind evidence + policy versions]
+  B --> C[Model / human acts]
+  C --> D{Mandatory bindings present?}
+  D -->|no| F1[Fail-closed: refuse commitment<br/>or mark non-reconstructable]
+  D -->|yes| E[Commitment]
+  E --> G[Seal Decision ID + versions]
+  G --> H[Historical reconstruction]
+  H --> I{Required knowledge retained?}
+  I -->|no| F2[Unavailable / partial result]
+  I -->|yes| J[Complete triad reconstruction]
