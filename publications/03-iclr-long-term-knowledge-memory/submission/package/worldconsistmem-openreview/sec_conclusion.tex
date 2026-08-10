@@ -1,0 +1,17 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented WorldConsistMem, a benchmark and evaluation methodology for cross-query consistency of long-term memory systems over evolving synthetic worlds. Dependent query bundles, a shared gold history, and machine-checkable world-history constraints make per-query Acc and jointly coherent answer sets separately measurable via BCR, CSR, ConsAcc, and Acc--consistency gaps.
+
+Frozen evidence supports four scoped findings. First, Acc and consistency are empirically distinct under corruption and at symbolic scale. Second, high-Acc retrieval regimes can still violate temporal, relational, transition, and provenance constraints across dependent queries. Third, under the completed Qwen H4 protocol, strict BCR floors while CSR remains weakly discriminative. Fourth, the structured hierarchical reference is not supported as a consistency winner under Qwen.
+
+These conclusions are limited to synthetic worlds, exact-match Acc, the frozen constraint library, and a single local 3B-class reader. They do not establish real-world generality, state-of-the-art rankings, or necessity of hierarchical memory. Within those bounds, WorldConsistMem operationalizes a residual measurement object at the intersection of persistent memory evaluation and world-history-derived cross-query constraints.
+
+\section*{Ethics Statement}
+WorldConsistMem uses fully synthetic worlds, templated observations, and machine-checkable constraints. No human subjects, personal data, or deployed decision systems are involved. We see no direct ethical risk beyond the usual dual-use considerations of publishing evaluation methodology for agent memory systems. Broader societal claims about real-world AI accountability are \textbf{not} made from this synthetic evidence.
+
+\section*{Reproducibility Statement}
+We release the seed-deterministic scaled dataset (seed 100; 102 worlds / 1{,}088 bundles / 7{,}140 queries), frozen symbolic and Qwen predictions, metric definitions (Acc, BCR, CSR, ConsAcc, gaps), decoding freeze for the Qwen reader, and reference system implementations needed to reproduce Tables~\ref{tab:corruption}--\ref{tab:coverage} and Figures~\ref{fig:pipeline}--\ref{fig:constraints}. Partial consistency diagnostics are recomputed offline from frozen predictions without new inference. Phi was not used for the Option A decision reported here.
+
+\section*{Acknowledgements}
+Omitted for double-blind review.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+  <style>
+    .box { fill:#eef6ff; stroke:#444; stroke-width:1.4; }
+    .fail { fill:#ffe8e8; stroke:#a33; stroke-width:1.6; }
+    .t { font-family:Helvetica,Arial,sans-serif; font-size:13px; text-anchor:middle; }
+    .title { font-family:Helvetica,Arial,sans-serif; font-size:14px; font-weight:bold; text-anchor:middle; }
+  </style>
+  <text class="title" x="450" y="30">Individually plausible answers that jointly violate a transition constraint</text>
+  <rect class="box" x="40" y="70" width="220" height="90" rx="8"/>
+  <text class="t" x="150" y="105">Current CEO</text>
+  <text class="t" x="150" y="125">Alice (Acc=1)</text>
+  <rect class="box" x="340" y="70" width="220" height="90" rx="8"/>
+  <text class="t" x="450" y="105">Previous CEO</text>
+  <text class="t" x="450" y="125">Bob (Acc=1)</text>
+  <rect class="box" x="640" y="70" width="220" height="90" rx="8"/>
+  <text class="t" x="750" y="100">Transition claim</text>
+  <text class="t" x="750" y="120">Alice → Carol</text>
+  <text class="t" x="750" y="140">(Acc=1, inconsistent)</text>
+  <line x1="150" y1="160" x2="450" y2="210" stroke="#a33" stroke-width="1.4"/>
+  <line x1="450" y1="160" x2="450" y2="210" stroke="#a33" stroke-width="1.4"/>
+  <line x1="750" y1="160" x2="450" y2="210" stroke="#a33" stroke-width="1.4"/>
+  <rect class="fail" x="230" y="210" width="440" height="70" rx="8"/>
+  <text class="t" x="450" y="240">Bundle Φ = 0 (transition coherence fails)</text>
+  <text class="t" x="450" y="260">High Acc, BCR contribution = 0</text>
+</svg>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+  <style>.t { font-family:Helvetica,Arial,sans-serif; font-size:12px; text-anchor:middle; }</style>
+  <text class="t" x="550" y="24" style="font-size:14px;font-weight:bold">Constraint-family violation rates (bundles with ≥1 failure)</text>
+  <text class="t" x="315.0" y="42" style="font-weight:bold">Symbolic</text>
+<text class="t" x="105.0" y="62" style="font-size:9px">uniqueness</text>
+<text class="t" x="175.0" y="62" style="font-size:9px">temporal</text>
+<text class="t" x="245.0" y="62" style="font-size:9px">transition</text>
+<text class="t" x="315.0" y="62" style="font-size:9px">relational</text>
+<text class="t" x="385.0" y="62" style="font-size:9px">provenance</text>
+<text class="t" x="455.0" y="62" style="font-size:9px">multi hop</text>
+<text class="t" x="525.0" y="62" style="font-size:9px">contradiction</text>
+<text class="t" x="52" y="112" style="font-size:11px;text-anchor:end">B3</text>
+<rect x="70" y="78" width="68" height="34" fill="rgb(255,227,168)" stroke="#888"/>
+<text class="t" x="104.0" y="100" style="font-size:10px;fill:#000">0.16</text>
+<rect x="140" y="78" width="68" height="34" fill="rgb(255,182,118)" stroke="#888"/>
+<text class="t" x="174.0" y="100" style="font-size:10px;fill:#000">0.41</text>
+<rect x="210" y="78" width="68" height="34" fill="rgb(255,188,125)" stroke="#888"/>
+<text class="t" x="244.0" y="100" style="font-size:10px;fill:#000">0.38</text>
+<rect x="280" y="78" width="68" height="34" fill="rgb(255,154,87)" stroke="#888"/>
+<text class="t" x="314.0" y="100" style="font-size:10px;fill:#fff">0.56</text>
+<rect x="350" y="78" width="68" height="34" fill="rgb(255,143,75)" stroke="#888"/>
+<text class="t" x="384.0" y="100" style="font-size:10px;fill:#fff">0.62</text>
+<rect x="420" y="78" width="68" height="34" fill="rgb(255,193,131)" stroke="#888"/>
+<text class="t" x="454.0" y="100" style="font-size:10px;fill:#000">0.34</text>
+<rect x="490" y="78" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="524.0" y="100" style="font-size:10px;fill:#000">0.00</text>
+<text class="t" x="52" y="148" style="font-size:11px;text-anchor:end">B4</text>
+<rect x="70" y="114" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="104.0" y="136" style="font-size:10px;fill:#000">0.00</text>
+<rect x="140" y="114" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="174.0" y="136" style="font-size:10px;fill:#000">0.00</text>
+<rect x="210" y="114" width="68" height="34" fill="rgb(255,233,176)" stroke="#888"/>
+<text class="t" x="244.0" y="136" style="font-size:10px;fill:#000">0.12</text>
+<rect x="280" y="114" width="68" height="34" fill="rgb(255,193,131)" stroke="#888"/>
+<text class="t" x="314.0" y="136" style="font-size:10px;fill:#000">0.34</text>
+<rect x="350" y="114" width="68" height="34" fill="rgb(255,244,188)" stroke="#888"/>
+<text class="t" x="384.0" y="136" style="font-size:10px;fill:#000">0.06</text>
+<rect x="420" y="114" width="68" height="34" fill="rgb(255,232,175)" stroke="#888"/>
+<text class="t" x="454.0" y="136" style="font-size:10px;fill:#000">0.12</text>
+<rect x="490" y="114" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="524.0" y="136" style="font-size:10px;fill:#000">0.00</text>
+<text class="t" x="52" y="184" style="font-size:11px;text-anchor:end">B1</text>
+<rect x="70" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="104.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="140" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="174.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="210" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="244.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="280" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="314.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="350" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="384.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="420" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="454.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<rect x="490" y="150" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="524.0" y="172" style="font-size:10px;fill:#000">0.00</text>
+<text class="t" x="52" y="220" style="font-size:11px;text-anchor:end">H0</text>
+<rect x="70" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="104.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+<rect x="140" y="186" width="68" height="34" fill="rgb(255,227,168)" stroke="#888"/>
+<text class="t" x="174.0" y="208" style="font-size:10px;fill:#000">0.16</text>
+<rect x="210" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="244.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+<rect x="280" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="314.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+<rect x="350" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="384.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+<rect x="420" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="454.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+<rect x="490" y="186" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="524.0" y="208" style="font-size:10px;fill:#000">0.00</text>
+  <text class="t" x="315.0" y="232" style="font-weight:bold">Qwen</text>
+<text class="t" x="105.0" y="252" style="font-size:9px">uniqueness</text>
+<text class="t" x="175.0" y="252" style="font-size:9px">temporal</text>
+<text class="t" x="245.0" y="252" style="font-size:9px">transition</text>
+<text class="t" x="315.0" y="252" style="font-size:9px">relational</text>
+<text class="t" x="385.0" y="252" style="font-size:9px">provenance</text>
+<text class="t" x="455.0" y="252" style="font-size:9px">multi hop</text>
+<text class="t" x="525.0" y="252" style="font-size:9px">contradiction</text>
+<text class="t" x="52" y="302" style="font-size:11px;text-anchor:end">B3</text>
+<rect x="70" y="268" width="68" height="34" fill="rgb(255,215,156)" stroke="#888"/>
+<text class="t" x="104.0" y="290" style="font-size:10px;fill:#000">0.22</text>
+<rect x="140" y="268" width="68" height="34" fill="rgb(255,191,129)" stroke="#888"/>
+<text class="t" x="174.0" y="290" style="font-size:10px;fill:#000">0.35</text>
+<rect x="210" y="268" width="68" height="34" fill="rgb(255,76,0)" stroke="#888"/>
+<text class="t" x="244.0" y="290" style="font-size:10px;fill:#fff">1.00</text>
+<rect x="280" y="268" width="68" height="34" fill="rgb(255,143,75)" stroke="#888"/>
+<text class="t" x="314.0" y="290" style="font-size:10px;fill:#fff">0.62</text>
+<rect x="350" y="268" width="68" height="34" fill="rgb(255,87,12)" stroke="#888"/>
+<text class="t" x="384.0" y="290" style="font-size:10px;fill:#fff">0.94</text>
+<rect x="420" y="268" width="68" height="34" fill="rgb(255,182,118)" stroke="#888"/>
+<text class="t" x="454.0" y="290" style="font-size:10px;fill:#000">0.41</text>
+<rect x="490" y="268" width="68" height="34" fill="rgb(255,245,189)" stroke="#888"/>
+<text class="t" x="524.0" y="290" style="font-size:10px;fill:#000">0.05</text>
+<text class="t" x="52" y="338" style="font-size:11px;text-anchor:end">B4</text>
+<rect x="70" y="304" width="68" height="34" fill="rgb(255,223,164)" stroke="#888"/>
+<text class="t" x="104.0" y="326" style="font-size:10px;fill:#000">0.18</text>
+<rect x="140" y="304" width="68" height="34" fill="rgb(255,197,135)" stroke="#888"/>
+<text class="t" x="174.0" y="326" style="font-size:10px;fill:#000">0.32</text>
+<rect x="210" y="304" width="68" height="34" fill="rgb(255,76,0)" stroke="#888"/>
+<text class="t" x="244.0" y="326" style="font-size:10px;fill:#fff">1.00</text>
+<rect x="280" y="304" width="68" height="34" fill="rgb(255,143,75)" stroke="#888"/>
+<text class="t" x="314.0" y="326" style="font-size:10px;fill:#fff">0.62</text>
+<rect x="350" y="304" width="68" height="34" fill="rgb(255,125,55)" stroke="#888"/>
+<text class="t" x="384.0" y="326" style="font-size:10px;fill:#fff">0.72</text>
+<rect x="420" y="304" width="68" height="34" fill="rgb(255,182,118)" stroke="#888"/>
+<text class="t" x="454.0" y="326" style="font-size:10px;fill:#000">0.41</text>
+<rect x="490" y="304" width="68" height="34" fill="rgb(255,241,185)" stroke="#888"/>
+<text class="t" x="524.0" y="326" style="font-size:10px;fill:#000">0.07</text>
+<text class="t" x="52" y="374" style="font-size:11px;text-anchor:end">B1</text>
+<rect x="70" y="340" width="68" height="34" fill="rgb(255,215,156)" stroke="#888"/>
+<text class="t" x="104.0" y="362" style="font-size:10px;fill:#000">0.22</text>
+<rect x="140" y="340" width="68" height="34" fill="rgb(255,191,129)" stroke="#888"/>
+<text class="t" x="174.0" y="362" style="font-size:10px;fill:#000">0.35</text>
+<rect x="210" y="340" width="68" height="34" fill="rgb(255,76,0)" stroke="#888"/>
+<text class="t" x="244.0" y="362" style="font-size:10px;fill:#fff">1.00</text>
+<rect x="280" y="340" width="68" height="34" fill="rgb(255,143,75)" stroke="#888"/>
+<text class="t" x="314.0" y="362" style="font-size:10px;fill:#fff">0.62</text>
+<rect x="350" y="340" width="68" height="34" fill="rgb(255,87,12)" stroke="#888"/>
+<text class="t" x="384.0" y="362" style="font-size:10px;fill:#fff">0.94</text>
+<rect x="420" y="340" width="68" height="34" fill="rgb(255,182,118)" stroke="#888"/>
+<text class="t" x="454.0" y="362" style="font-size:10px;fill:#000">0.41</text>
+<rect x="490" y="340" width="68" height="34" fill="rgb(255,245,189)" stroke="#888"/>
+<text class="t" x="524.0" y="362" style="font-size:10px;fill:#000">0.05</text>
+<text class="t" x="52" y="410" style="font-size:11px;text-anchor:end">H0</text>
+<rect x="70" y="376" width="68" height="34" fill="rgb(255,255,200)" stroke="#888"/>
+<text class="t" x="104.0" y="398" style="font-size:10px;fill:#000">0.00</text>
+<rect x="140" y="376" width="68" height="34" fill="rgb(255,204,143)" stroke="#888"/>
+<text class="t" x="174.0" y="398" style="font-size:10px;fill:#000">0.28</text>
+<rect x="210" y="376" width="68" height="34" fill="rgb(255,76,0)" stroke="#888"/>
+<text class="t" x="244.0" y="398" style="font-size:10px;fill:#fff">1.00</text>
+<rect x="280" y="376" width="68" height="34" fill="rgb(255,143,75)" stroke="#888"/>
+<text class="t" x="314.0" y="398" style="font-size:10px;fill:#fff">0.62</text>
+<rect x="350" y="376" width="68" height="34" fill="rgb(255,76,0)" stroke="#888"/>
+<text class="t" x="384.0" y="398" style="font-size:10px;fill:#fff">1.00</text>
+<rect x="420" y="376" width="68" height="34" fill="rgb(255,182,118)" stroke="#888"/>
+<text class="t" x="454.0" y="398" style="font-size:10px;fill:#000">0.41</text>
+<rect x="490" y="376" width="68" height="34" fill="rgb(255,221,162)" stroke="#888"/>
+<text class="t" x="524.0" y="398" style="font-size:10px;fill:#000">0.19</text>
+</svg>

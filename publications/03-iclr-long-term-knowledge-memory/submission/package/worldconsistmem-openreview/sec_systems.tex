@@ -1,0 +1,39 @@
+\section{Evaluated Memory Systems}
+\label{sec:systems}
+
+Systems are \textbf{reference implementations} for evaluation. We describe them factually. We do not claim architectural superiority for any design, including the structured hierarchical reference.
+
+\subsection{Oracle and flat stores}
+
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Oracle / gold.} Predictions equal gold answers (validation upper bound; Acc $=$ BCR $=$ 1 on well-formed bundles).
+\item \textbf{Flat append-only (unconstrained).} All observations retained; reader consults the full store.
+\item \textbf{Latest-only.} Retain only the most recent observation(s) under a simple currency rule; older evidence is discarded.
+\item \textbf{Capacity-limited flat.} Fixed logical-record budget with eviction: \textbf{recency}, \textbf{compact padding} (drop low-priority padding/status noise first), or \textbf{reservoir} sampling.
+\end{itemize}
+
+\subsection{Retrieval baselines}
+
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Recency-$k$.} Retrieve the $k$ most recent observations.
+\item \textbf{BM25-$k$.} Lexical retrieval of top-$k$ observations for the query text.
+\end{itemize}
+Reported operating points include $k\in\{3,8\}$ under the frozen scaled protocol.
+
+\subsection{Structured hierarchical reference (H0)}
+
+H0 is a structured lifecycle-aware store with multiple internal components (working/session-style buffers, long-term assertions with validity, graph edges, provenance, archive/conflict bookkeeping). At query time it returns an evidence pack under a retrieval budget (e.g., ret8 at capacity 150).
+
+\paragraph{Role in the paper.} H0 is a \textbf{reproducible structured baseline}, not presented as a superior architecture. Symbolic matched-budget comparisons and the Qwen reader study report Acc and consistency for H0 under the WorldConsistMem metrics. Completed Qwen results do \textbf{not} support a consistency advantage for H0 (Section~\ref{sec:results}).
+
+\subsection{Readers}
+
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Symbolic / deterministic reader.} Exact structured matching over retrieved or stored records (primary scaled symbolic tables).
+\item \textbf{Local LLM reader.} \texttt{Qwen2.5-3B-Instruct-4bit} with frozen prompt, temperature 0, max tokens, JSON early-stop, and parser (H4 subset).
+\end{itemize}
+Evidence packs are isolated per query under the frozen H4 protocol so that cross-query leakage through the prompt is not an uncontrolled confound.
+
+\subsection{Fairness limitations (explicit)}
+
+Comparisons are informative but not perfectly matched (internal structure, capacity accounting for H0 metadata, retrieval-budget identity, and compact-flat padding eviction). Full fairness caveats appear in Appendix~\ref{app:fairness}. These limits bound interpretation: gaps support metric claims; they do not license claims of architectural superiority.
