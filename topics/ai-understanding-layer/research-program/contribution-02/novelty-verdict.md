@@ -150,3 +150,66 @@ persistent engineering artifact") should be updated to the binding-centric
 formulation above, which is more precise and, per this audit, more
 defensible against the strongest available objections (4, 7, 8) than the
 original formulation would have been.
+
+---
+
+## Post-experiment update (2026-08-23)
+
+The reconstruction experiment designed in `experiment-design/` (design
+verdict: READY FOR IMPLEMENTATION) was implemented and executed on
+2026-08-23. Full report: `experiment/analysis/experiment-report.md`; short
+verdict: `experiment/RESULT.md`; raw data: `experiment/results/`. This
+section records the empirical consequence for the thesis above. It does
+not replace or erase the pre-experiment verdict recorded above this line.
+
+**Result, in one line:** the retroactive-correction half of the binding
+mechanism (`../temporal-semantics.md`'s transaction-time/valid-time
+confound) was confirmed with a clean, categorical, non-marginal empirical
+result (Regime C's Temporal Correctness = 1.00 and False Historical
+Confidence = 0.00 vs. Regime B's 0.00 and 0.50–1.00, on Cases 3, 8, and 9,
+with B ≈ C exactly on every non-retroactive case). The concurrency-
+ambiguity half of the mechanism (Case 10) was **not tested** by this run —
+a disclosed implementation choice (exact, non-fault-injected timestamp
+semantics) meant Case 10 never exercised genuine ambiguity, so B and C
+tied there. Overall classification against the pre-registered
+interpretation table (`experiment-design/preregistered-interpretation.md`):
+**PARTIAL SUPPORT** — closest to row 1 (strong support) restricted to the
+retroactive-correction mechanism, combined with row 8's shape for the
+untested concurrency mechanism.
+
+**Consequence for the surviving thesis:** this result **narrows and
+empirically grounds** the thesis; it does not broaden, weaken, or falsify
+it. Specifically:
+
+- The thesis's central claim — "retained system state does not, by
+  default, bind a decision to the temporally valid versions... that made
+  it valid when it occurred" — now has direct empirical support for the
+  retroactive-correction mechanism in a controlled, synthetic setting, not
+  merely a design-level argument for why it should be true.
+- The thesis should be read as **empirically demonstrated for one of its
+  two named mechanisms** (retroactive correction) and **still open, not
+  yet tested, for the other** (concurrency/attribution ambiguity under
+  timestamp imprecision). Prior to this experiment, both mechanisms had
+  equal (design-level, untested) standing; after it, they do not.
+- Nothing in this result licenses claims beyond a synthetic, ten-case,
+  controlled diagnostic study: not prevalence, not severity, not
+  generalization to production AI systems, not compliance or
+  trustworthiness claims (`experiment-design/validity-and-confounders.md`'s
+  external-validity limitations remain fully in force and are unaddressed
+  by this run).
+- The event-sourcing collision question (`preservation-regimes.md`) also
+  received direct empirical confirmation of its own narrow prediction:
+  Regime B's event trace, which captures raw *values* rather than version
+  *identifiers*, fully protected the evidence-supersession case (5) without
+  binding, but did not protect policy/authority identification under
+  retroactive correction — the exact, narrow distinction the design
+  predicted, now measured rather than only argued.
+
+**Contribution 2 remains independently publishable** under the thesis as
+stated, with the scope of its empirical support now precisely bounded:
+strong, controlled, synthetic evidence for the retroactive-correction
+mechanism; no evidence yet, either direction, for the concurrency-
+ambiguity mechanism. **Next step, not performed here and requiring a new
+authorization:** a follow-up run of Case 10 with genuine clock/timestamp-
+precision fault injection, to actually test the mechanism that run's clean
+implementation left untested.

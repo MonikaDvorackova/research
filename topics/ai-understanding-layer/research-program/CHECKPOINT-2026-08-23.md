@@ -216,3 +216,44 @@ questions from earlier passes are not repeated here.
    research step.
 5. **Whether/how to revise `source-b-original-book-proposal.md`** beyond
    this checkpoint's contact-info redaction remains undecided.
+
+---
+
+## Experiment execution update (2026-08-23)
+
+The Contribution 2 reconstruction experiment described above under
+"Next Exact Action" was implemented and executed in this session, under
+explicit human authorization for both steps of the two-step gate.
+
+- **Implementation:** complete.
+  `contribution-02/experiment/` (`src/`, `tests/`, `results/`,
+  `analysis/`). Pure Python 3 standard library. 31 pre-execution invariant
+  tests, all passing. The B/C information-equivalence invariant
+  (`preservation-regimes.md`) is machine-checked and held for every case.
+- **Execution date:** 2026-08-23. Fully deterministic (no randomness used
+  anywhere; no seed required). Raw output: `experiment/results/`.
+- **Result classification:** **PARTIAL SUPPORT** for H1, against the
+  pre-registered interpretation table
+  (`experiment-design/preregistered-interpretation.md`). The
+  retroactive-correction mechanism (Cases 3, 8, 9) was confirmed with a
+  clean, categorical result (Regime C: TC=1.00/FHC=0.00 vs. Regime B:
+  TC=0.00/FHC=0.50–1.00; B ≈ C exactly on every non-retroactive case). The
+  concurrency-ambiguity mechanism (Case 10) was not tested by this run — a
+  disclosed implementation choice (exact, non-fault-injected timestamps)
+  meant no genuine ambiguity was present for Regime B to fail on. Full
+  report: `experiment/analysis/experiment-report.md`; short verdict:
+  `experiment/RESULT.md`.
+- **Contribution 2 status:** thesis narrowed and empirically grounded, not
+  broadened or weakened. See `contribution-02/novelty-verdict.md`'s
+  post-experiment update (appended, dated, does not erase the
+  pre-experiment verdict). Contribution 2 remains independently
+  publishable under the thesis as stated, with its empirical support now
+  precisely scoped to the retroactive-correction mechanism.
+- **Exact next step:** a follow-up run of Case 10 with genuine
+  clock/timestamp-precision fault injection is required before the
+  concurrency-ambiguity mechanism can be reported as tested in either
+  direction. This is new work requiring its own explicit authorization —
+  it was not performed in this session, per the hard-stop instruction this
+  session operated under (no exploratory follow-up experiments, no case
+  tuning, no post-hoc metrics without a new human decision). No other
+  contribution (1 or 3) was touched in this session.

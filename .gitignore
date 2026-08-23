@@ -8,6 +8,11 @@ Thumbs.db
 *.swp
 *.swo
 
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
 # Node / Astro (when site/ is populated)
 node_modules/
 site/dist/
