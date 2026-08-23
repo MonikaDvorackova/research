@@ -249,11 +249,50 @@ explicit human authorization for both steps of the two-step gate.
   pre-experiment verdict). Contribution 2 remains independently
   publishable under the thesis as stated, with its empirical support now
   precisely scoped to the retroactive-correction mechanism.
-- **Exact next step:** a follow-up run of Case 10 with genuine
-  clock/timestamp-precision fault injection is required before the
-  concurrency-ambiguity mechanism can be reported as tested in either
-  direction. This is new work requiring its own explicit authorization —
-  it was not performed in this session, per the hard-stop instruction this
-  session operated under (no exploratory follow-up experiments, no case
-  tuning, no post-hoc metrics without a new human decision). No other
-  contribution (1 or 3) was touched in this session.
+- **Exact next step (superseded by the follow-up below):** a follow-up
+  run of Case 10 with genuine clock/timestamp-precision fault injection
+  is required before the concurrency-ambiguity mechanism can be reported
+  as tested in either direction. This is new work requiring its own
+  explicit authorization — it was not performed in this session, per the
+  hard-stop instruction this session operated under (no exploratory
+  follow-up experiments, no case tuning, no post-hoc metrics without a
+  new human decision). No other contribution (1 or 3) was touched in this
+  session.
+
+---
+
+## Follow-up Case 10 execution update (2026-08-23)
+
+The follow-up named above was separately, explicitly authorized and
+executed in a later session on the same date. Implementation:
+`contribution-02/experiment/followup-case10/`. **The primary experiment
+(commit `31c58ddc6e95b5f66153b4c2dd35d91f4ae8e725`) was not modified** —
+this follow-up is fully isolated (its own `src/`, `tests/`, `results/`,
+`analysis/`), reusing only the primary experiment's stable schema
+(`domain.py`) read-only.
+
+- **Mechanism tested:** timestamp precision loss (distinct from the
+  primary experiment's retroactive correction). Six cases; Regime B vs.
+  C only; 17 follow-up tests plus all 31 original primary-experiment
+  tests re-run unmodified, all passing.
+- **Result:** where no causal signal exists, complete version history
+  cannot uniquely resolve a decision's consumed version under precision
+  loss (Regime C succeeds, Regime B honestly reports ambiguity — never a
+  confident wrong answer, False Historical Confidence = 0.00 throughout).
+  A disclosed negative control (F10-6) showed an ordinary, non-binding
+  causal consumption event resolves the same ambiguity exactly as well
+  as explicit binding does.
+- **Consequence:** narrows the surviving thesis from "explicit
+  decision-time binding is required" to "a preserved causal relation
+  between decision and consumed version is required; explicit binding is
+  one general, buildable implementation, not the only one." Full
+  statement: `contribution-02/novelty-verdict.md`'s follow-up-dated
+  update.
+- **Integrated Contribution 2 empirical verdict: NARROWED SUPPORT.**
+- **Contribution 2 empirical phase: CLOSED.** No further pre-drafting
+  empirical question is currently known to be a must-have.
+- **Exact next step:** human review of Contribution 2's evidence (primary
+  + follow-up) before drafting. Per this follow-up's own hard-stop
+  instruction, no further Contribution 2 experiments, no paper drafting,
+  no O'Reilly revision, and no Contribution 3 work were performed in this
+  session.

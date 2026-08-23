@@ -1,0 +1,85 @@
+[
+  {
+    "case_id": "F10-1",
+    "decision_id": "DF1",
+    "description": "No-ambiguity control: no version boundary near the observable bucket.",
+    "true_t0": "2026-03-01T12:00:00.200000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [],
+    "n_policy_history_rows": 1,
+    "n_authority_history_rows": 1,
+    "n_model_history_rows": 1,
+    "has_causal_consumption_event": false
+  },
+  {
+    "case_id": "F10-2",
+    "decision_id": "DF2",
+    "description": "Policy-only ambiguity: v1/v2 boundary falls inside the observable bucket.",
+    "true_t0": "2026-03-01T12:00:00.750000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [
+      "policy"
+    ],
+    "n_policy_history_rows": 2,
+    "n_authority_history_rows": 1,
+    "n_model_history_rows": 1,
+    "has_causal_consumption_event": false
+  },
+  {
+    "case_id": "F10-3",
+    "decision_id": "DF3",
+    "description": "Authority-only ambiguity: Agent-1/Agent-2 boundary inside the observable bucket.",
+    "true_t0": "2026-03-01T12:00:00.750000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [
+      "authority"
+    ],
+    "n_policy_history_rows": 1,
+    "n_authority_history_rows": 2,
+    "n_model_history_rows": 1,
+    "has_causal_consumption_event": false
+  },
+  {
+    "case_id": "F10-4",
+    "decision_id": "DF4",
+    "description": "Model/config-only ambiguity: m1/m2 boundary inside the observable bucket.",
+    "true_t0": "2026-03-01T12:00:00.750000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [
+      "model"
+    ],
+    "n_policy_history_rows": 1,
+    "n_authority_history_rows": 1,
+    "n_model_history_rows": 2,
+    "has_causal_consumption_event": false
+  },
+  {
+    "case_id": "F10-5",
+    "decision_id": "DF5",
+    "description": "Combined ambiguity: policy AND authority boundaries both inside the observable bucket.",
+    "true_t0": "2026-03-01T12:00:00.750000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [
+      "policy",
+      "authority"
+    ],
+    "n_policy_history_rows": 2,
+    "n_authority_history_rows": 2,
+    "n_model_history_rows": 1,
+    "has_causal_consumption_event": false
+  },
+  {
+    "case_id": "F10-6",
+    "decision_id": "DF6",
+    "description": "Negative control: policy ambiguity as F10-2, plus a causal consumption event on B only.",
+    "true_t0": "2026-03-01T12:00:00.750000",
+    "observed_t0": "2026-03-01T12:00:00",
+    "ambiguous_dimensions": [
+      "policy"
+    ],
+    "n_policy_history_rows": 2,
+    "n_authority_history_rows": 1,
+    "n_model_history_rows": 1,
+    "has_causal_consumption_event": true
+  }
+]

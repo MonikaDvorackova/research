@@ -213,3 +213,82 @@ ambiguity mechanism. **Next step, not performed here and requiring a new
 authorization:** a follow-up run of Case 10 with genuine clock/timestamp-
 precision fault injection, to actually test the mechanism that run's clean
 implementation left untested.
+
+---
+
+## Follow-up Case 10 update (2026-08-23)
+
+A narrowly scoped follow-up experiment, explicitly authorized separately
+from the primary experiment above, was implemented and executed to
+resolve the one gap the primary run's post-experiment update named as its
+required next step. Full report:
+`experiment/followup-case10/analysis/experiment-report.md`; short verdict:
+`experiment/followup-case10/RESULT.md`; raw data:
+`experiment/followup-case10/results/`. **The primary experiment above is
+unmodified: its commit (`31c58ddc6e95b5f66153b4c2dd35d91f4ae8e725`), raw
+results, and reported metrics are unchanged.** This section only adds to
+the record; it does not revise anything above this line.
+
+**Mechanism tested:** timestamp precision loss (a decision's true moment
+is truncated to whole-second observable precision before being
+persisted), distinct from the primary experiment's retroactive-correction
+mechanism. Six cases (F10-1 through F10-6); Regime B vs. Regime C only.
+
+**Result, in one line:** where no causal signal connects a decision to
+the specific version it consumed, complete version history genuinely
+cannot resolve which version applied when a boundary falls inside the
+decision's observable timestamp window (Regime C: Correct-Unique on
+every such case; Regime B: honestly `AMBIGUOUS`, never confidently wrong
+— False Historical Confidence = 0.00 throughout this run) — **but** a
+disclosed negative control (F10-6) showed that an ordinary, non-binding
+causal consumption event resolves the same ambiguity exactly as well as
+Regime C's explicit binding does.
+
+**Consequence for the surviving thesis: narrowed, not weakened or
+broadened.** The concurrency/precision-ambiguity mechanism — the one
+half of the original two-mechanism thesis the primary experiment left
+untested — is now empirically demonstrated. At the same time, the
+specific formulation "explicit decision-time binding is required" does
+not survive as the narrowest account: the negative control shows the
+operative requirement is **a preserved causal relation between a
+decision and the specific version it consumed**, of which Regime C's
+`DecisionBindingRecord` is one general, systematic, buildable
+implementation — not the only one, and not shown here to be uniquely
+necessary.
+
+**Updated thesis statement**, superseding the "binding-centric"
+formulation earlier in this document for the purpose of any future
+drafting, without erasing it (it remains the correct description of what
+was tested and found *before* this follow-up):
+
+> Retained system state — including logs, traces, and provenance
+> records — does not, by default, preserve a causal relation between a
+> decision and the temporally valid versions of the evidence, policy, and
+> authority that made it valid when it occurred. That causal relation,
+> not any of the individual artifacts it would reference, is the missing
+> engineering property; explicit decision-time binding is one general,
+> systematic way to guarantee it exists for every decision, but this
+> research programme has not shown it to be the only sufficient
+> mechanism.
+
+Working shorthand, updated: **"Versioned is not bound — and what's
+missing is a causal link, not necessarily a specific binding schema."**
+
+**Integrated Contribution 2 empirical verdict: NARROWED SUPPORT.** Both
+named failure mechanisms (retroactive correction — primary experiment;
+timestamp-precision ambiguity — this follow-up) are now empirically
+demonstrated in a controlled, synthetic setting. The thesis is
+simultaneously strengthened (a second, previously untested mechanism is
+now confirmed) and narrowed (the necessary property is causal linkage in
+general, not the specific binding schema this contribution names).
+
+**Contribution 2 remains independently publishable**, under the updated
+thesis statement above. **Contribution 2's empirical phase is CLOSED**:
+no further pre-drafting empirical question is currently known to be a
+must-have (a study combining both mechanisms, testing clock skew across
+independent components, or testing unreliable/contested causal signals
+would be legitimate future work, not a blocker to drafting — per the
+explicit instruction governing this follow-up not to generate additional
+experiments merely because more are possible). Drafting Contribution 2
+should use the updated (causal-relation) thesis statement above, not the
+binding-centric formulation that preceded this follow-up.
