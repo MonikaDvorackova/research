@@ -296,3 +296,46 @@ this follow-up is fully isolated (its own `src/`, `tests/`, `results/`,
   instruction, no further Contribution 2 experiments, no paper drafting,
   no O'Reilly revision, and no Contribution 3 work were performed in this
   session.
+
+---
+
+## Contribution 2 drafting-readiness review
+
+The human review named above as the exact next step was performed in a
+later session on the same date, producing the authoritative drafting
+package at `contribution-02/drafting-readiness/`
+(`contribution-definition.md`, `novelty-review.md`, `prior-art-matrix.md`,
+`claim-ledger.md`, `evidence-review.md`, `non-obvious-result.md`,
+`thesis-and-titles.md`, `terminology.md`, `formalization.md`,
+`article-spine.md`, `diagram-plan.md`, `contribution-boundary-check.md`,
+`VERDICT.md`). **No experimental result, manifest, or case definition was
+altered** — this phase interprets the existing evidence from the primary
+experiment and the Case 10 follow-up; it does not rerun or modify either.
+
+- **Final thesis:** complete version history answers "what does the
+  retained record now say was valid at t0," not "what did this decision
+  actually consume" — the two diverge under retroactive correction
+  (confidently wrong) and under observational precision loss (honestly
+  ambiguous); closing the gap requires a preserved causal relation
+  between decision and consumed context, of which explicit binding is one
+  sufficient, general implementation, not the only one (`VERDICT.md`).
+- **Novelty classification:** primarily new synthesis, empirically
+  demonstrated for the first time in this programme across two
+  independent mechanisms; not a new mechanism, not a new architecture
+  (`contribution-definition.md`).
+- **Publication-readiness verdict: YES — independently publishable**
+  (`VERDICT.md`).
+- **Article working title:** "Retained Is Not Consumed: A Measured
+  Causal Gap in AI Decision Reconstruction" (technical); "Why Keeping
+  Every Version Still Isn't Enough to Explain an AI Decision"
+  (publication) (`thesis-and-titles.md`).
+- **Contribution 2 empirical phase: CLOSED** (confirmed, not reopened, by
+  this review).
+- **Contribution 3 non-consumption:** explicitly scanned
+  (`contribution-boundary-check.md`) — no leakage found; all mentions of
+  "understanding layer" / capability-vs-understanding / fragmentation
+  terminology appear only inside explicit exclusion statements.
+- **Exact next step:** human approval of the Contribution 2 drafting
+  position (`VERDICT.md`) before any article is drafted. No article was
+  drafted in this session; no work was performed on Contribution 1,
+  Contribution 3, or the O'Reilly synthesis.
