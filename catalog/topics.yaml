@@ -36,3 +36,30 @@ topics:
       - venue: radar
         working_title: "O'Reilly Radar follow-up (solution demonstration)"
         status: planned
+
+  - id: ai-understanding-layer
+    title: "Capability vs. Understanding: From Evidence-Gated AI to an Understanding Layer"
+    status: active
+    path: topics/ai-understanding-layer
+    created: 2026-08-21
+    updated: 2026-08-21
+    owners:
+      - "Monika Dvořáčková"
+    tags:
+      - conceptual
+      - architecture
+      - ai-systems
+    keywords:
+      - understanding
+      - capability
+      - decision-provenance
+      - evidence-gated-ai
+      - auditability
+      - software-engineering-history
+      - ai-systems-architecture
+    related_topics: []
+    research_questions:
+      - "What is the deepest engineering claim underlying the original Auditable AI / Evidence-Gated AI book proposal, independent of its marketing framing?"
+      - "What conceptual step does the Missing Layer text add when the argument moves from auditability/evidence/enforcement to preservation of system knowledge/understanding?"
+      - "Which points in the resulting argument chain could support a genuinely independent article, and what is the smallest set needed to develop the chain without exhausting the terminal thesis prematurely?"
+    candidate_publications: []

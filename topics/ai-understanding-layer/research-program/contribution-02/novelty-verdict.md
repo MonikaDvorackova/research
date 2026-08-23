@@ -1,0 +1,152 @@
+---
+id: note-contribution-02-novelty-verdict
+title: "Contribution 2 — Novelty Decomposition and Surviving Thesis Verdict"
+topic: ai-understanding-layer
+type: note
+status: active
+created: 2026-08-23
+updated: 2026-08-23
+tags: [contribution-02, novelty-verdict, thesis]
+refs: [prior-art-audit.md, collision-tests.md, temporal-semantics.md, minimal-decision-record.md]
+---
+
+## Contribution 2 — Novelty Decomposition and Surviving Thesis Verdict
+
+Scope: Tasks 9, 10, and 11. This document does the actual adversarial work
+the brief demands: it does not choose the flattering verdict, and it applies
+the same disqualifying standard already used against Contribution 1 in
+`article-01-decision-level-control/novelty-audit.md` (Position B: new
+synthesis, not new mechanism).
+
+---
+
+## Task 9 — Does Contribution 2 need the word "knowledge"?
+
+**No.** Tested against the candidate meanings in the brief:
+
+- *Sufficient information for historical reconstruction* — this is what
+  Contribution 2 actually needs, and it is expressible without the word
+  "knowledge" at all: as the binding, developed in
+  `minimal-decision-record.md`, between a decision and the temporally valid
+  versions of the evidence, policy, and authority that applied to it.
+- *Explanatory context* — subsumed by the binding above; not a separate
+  requirement.
+- *Provenance* — a real, existing technical term (W3C PROV) that Contribution
+  2 uses precisely, in its narrow sense (lineage relations), not loosely.
+- *Justification / decision rationale* — this is sub-problem G specifically,
+  already named without needing "knowledge" as an umbrella term.
+- *Temporal context* — this is `temporal-semantics.md`'s subject matter,
+  again nameable without "knowledge."
+
+"Knowledge" is not required by any of Contribution 2's actual claims. It
+introduces exactly the epistemological baggage the brief warns about, and it
+collides — unnecessarily — with Contribution 3's reserved territory
+(capability vs. understanding, the nature of "understanding" as a systems
+property). **Recommendation: retire "knowledge" from Contribution 2's
+technical vocabulary entirely.** It may remain in practitioner-register
+framing exactly where it already lives (Source A's prose, the O'Reilly
+drafts) without being promoted to a formal thesis term — consistent with
+`claim-graph.md`'s own C6 precision concern, now resolved rather than merely
+flagged.
+
+---
+
+## Task 10 — Novelty decomposition
+
+| Dimension | Rating | Reasoning |
+|---|---|---|
+| **Historical decision reconstruction as a problem (general, not AI-specific)** | None | Already well-addressed piecemeal by bitemporal databases (D/E), event sourcing (A/B), and PROV (lineage) for non-AI systems. The general problem of "was this decision valid under the rules in force then" is old — it is the subject matter of financial audit, legal discovery, and compliance engineering long before AI. Claiming novelty at this level would not survive scrutiny. |
+| **AI-specific decision reconstruction** | Moderate | The specific set of transient dependencies (prompts, live retrieval corpora, policy-as-config, agent delegation) is a genuinely AI/LLM-era pattern not addressed by name in any surveyed source. The underlying mechanisms needed are all pre-existing (per the collision tests), but their *combination*, applied to *this* dependency set, is not found packaged elsewhere. |
+| **Decision-context preservation (the binding concept itself)** | Moderate-strong | The distinction between "artifacts are versioned elsewhere" and "a decision is bound, at t0, to specific versions of those artifacts" (Objection 8) is the most defensible, checkable finding in this audit — genuinely not found stated this way in the surveyed prior art, though it is a modest, assemblable idea once stated, not a deep theoretical discovery. |
+| **Temporal evidence continuity** | Weak | Bitemporal database theory already fully solves the *representational* problem (Objection 4). What remains novel is narrowly the *application* to AI-specific objects, not the temporal theory itself. |
+| **Policy/authority continuity** | Weak, for the same reason as temporal evidence continuity | Structurally identical to bitemporal modeling of role/delegation validity — a solved database problem, unapplied by default in AI tooling. |
+| **Minimal decision record (as a named artifact)** | Moderate | No existing schema (PROV, in-toto Predicate, SLSA provenance, EU AI Act Art. 12 minimum) matches the field set derived in `minimal-decision-record.md`, but every field individually maps onto an existing schema's concept — this is assembly novelty, not conceptual novelty. |
+| **Reconstruction completeness criteria (replay vs. reconstruction)** | Moderate-strong | Confirmed, in `collision-tests.md` Task 6, as not found formalized this way in the prior art surveyed (the ACM reproducibility taxonomy covers only the replay half). This is the single cleanest, most citable novel distinction to emerge from the audit. |
+| **Reconstruction failure experiments** | None yet — this is a method, not a finding | No claim to novelty is being made here; `empirical-next-step.md` treats this as future design work, refined from `empirical-program.md`'s existing sketch, not as an already-novel contribution. |
+
+**Overall pattern:** identical in shape to Contribution 1's own audit
+(`article-01-decision-level-control/novelty-audit.md`): every mechanism is
+old (bitemporal databases, PROV, in-toto/Sigstore, event sourcing); what is
+new, where anything is, is the specific synthesis and the specific
+application to AI's transient-context problem — never a new primitive.
+
+---
+
+## Task 11 — Surviving thesis verdict
+
+**Verdict: B — Narrowed survival.**
+
+Reasoning, tested against the four options honestly:
+
+- **Not A (strong survival).** Existing mechanisms are not absent — they are
+  abundant and, in the case of bitemporal databases specifically,
+  completely sufficient in theory for two of the four sub-problems this
+  contribution cares about (D, E). Claiming that "existing mechanisms do
+  not adequately represent the reconstruction problem" would be false; they
+  represent most of it perfectly well, on paper.
+- **Not C (framing only).** This was seriously considered: if bitemporal
+  modeling + PROV + in-toto attestation can be composed straightforwardly,
+  is the "synthesis" trivial enough that Contribution 2 is just relabeling
+  existing engineering? Tested directly against `minimal-decision-record.md`
+  and `collision-tests.md` Objection 8: no — because the **binding**
+  property (a decision explicitly pinned, at t0, to specific valid-time
+  slices of policy/evidence/authority) is not automatically produced by
+  composing these mechanisms; it requires a deliberate architectural
+  decision to record it, one that is not standard practice in any of the
+  surveyed tooling (MLflow, vector databases, prompt stores, policy-config
+  services). If this were purely a framing exercise, an example of an
+  existing system already doing this by accident would be expected to turn
+  up in the audit; none did.
+- **Not D (falsified).** The distinctions found (replay vs. reconstruction;
+  versioning-existing vs. binding-recorded; integrity vs. completeness in
+  audit logs; execution-preservation vs. justification-preservation even in
+  aviation safety practice) are checkable, survived nine adversarial
+  objections, and are not merely restatements of things already solved.
+- **B fits:** most of the individual primitives required (bitemporal
+  validity, structured signed evidence, provenance graphs) already exist in
+  mature, separate literatures. What Contribution 2 actually contributes is
+  a **synthesis**: the recognition that AI-mediated decisions require these
+  three primitives combined and bound per-decision, applied specifically to
+  a dependency set (prompts, live retrieval, policy-as-config, delegated
+  agent authority) that current AI/ML tooling does not, by default, treat
+  this way.
+
+**This is the same verdict shape Contribution 1 reached (Position B: new
+synthesis, not new mechanism).** That consistency is a point in favor of the
+audit's honesty, not evidence of a rubber-stamped process — the two
+contributions were audited independently, against different prior-art
+fields, and landed on the same modest, defensible claim shape.
+
+---
+
+## Recommended precise thesis (replacing "State Is Not Knowledge")
+
+> **Retained system state — including logs, traces, and provenance
+> records — does not, by default, bind a decision to the temporally valid
+> versions of the evidence, policy, and authority that made it valid when
+> it occurred. That binding, not any of the individual artifacts it would
+> reference, is the missing engineering artifact, and closing the gap
+> requires applying existing bitemporal and attestation primitives — not
+> inventing new ones — to a set of AI-specific transient dependencies
+> (prompts, live retrieval corpora, policy-as-config, delegated agent
+> authority) that current tooling does not treat this way by default.**
+
+Shorthand for practitioner framing (not a technical claim in itself):
+**"Versioned is not bound."** This deliberately replaces "State Is Not
+Knowledge" — the earlier phrase survives only as historical/practitioner
+color in Source A's own prose, not as this contribution's operative thesis.
+
+---
+
+## Is Contribution 2 still independently publishable?
+
+**Yes**, under the narrowed thesis above, for the same reasons
+`contribution-boundaries.md` already established structurally (independent
+truth conditions from Contribution 1, independent evidence type, now
+independently audited prior art) — with one required correction to that
+earlier document: the thesis statement it anticipated ("current state is
+insufficient... because AI-specific context... was never treated as a
+persistent engineering artifact") should be updated to the binding-centric
+formulation above, which is more precise and, per this audit, more
+defensible against the strongest available objections (4, 7, 8) than the
+original formulation would have been.

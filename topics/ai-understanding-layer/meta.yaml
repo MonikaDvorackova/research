@@ -1,0 +1,30 @@
+# Topic metadata for ai-understanding-layer
+
+id: ai-understanding-layer
+title: "Capability vs. Understanding: From Evidence-Gated AI to an Understanding Layer"
+status: active
+created: 2026-08-21
+updated: 2026-08-21
+owners:
+  - "Monika Dvořáčková"
+related_topics: []
+keywords:
+  - understanding
+  - capability
+  - decision-provenance
+  - evidence-gated-ai
+  - auditability
+  - software-engineering-history
+  - ai-systems-architecture
+tags:
+  - conceptual
+  - architecture
+  - ai-systems
+research_questions:
+  - "What is the deepest engineering claim underlying the original Auditable AI / Evidence-Gated AI book proposal, independent of its marketing framing?"
+  - "What conceptual step does the Missing Layer text add when the argument moves from auditability/evidence/enforcement to preservation of system knowledge/understanding?"
+  - "What is the strongest natural argument chain connecting the two source documents?"
+  - "Which points in that chain could support a genuinely independent article, and what is the smallest set of articles needed to develop the chain without collapsing independent contributions or exhausting the terminal thesis prematurely?"
+  - "Where does Evidence-Gated AI / decision-level enforcement belong in the deeper model: central thesis, implementation response, architectural mechanism, or empirical test case?"
+  - "Which parts of the argument are testable by repository audit, controlled failure experiment, or an AIGov Core demonstration, versus purely conceptual or legal argument?"
+candidate_publications: []
