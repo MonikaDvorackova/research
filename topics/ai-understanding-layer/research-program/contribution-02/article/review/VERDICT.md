@@ -203,3 +203,53 @@ or RECONCEPTUALIZE because no experiment, structure, or number changes.)
 
 **YES** — pending human authorization, per the authorizing brief's hard
 stop. `revision-plan-v2.md` is implementation-ready as written.
+
+---
+
+## POST-REVIEW VERIFICATION UPDATE (2026-08-24)
+
+The headline finding above ("a correctly transaction-time-anchored
+bitemporal query... would return the pre-correction value") was
+subjected to a dedicated, rigorous verification pass against the actual
+executed fixtures (`bitemporal-verification.md`, `BITEMPORAL-VERDICT.md`)
+— not the design's prose description, which is what the original finding
+had reasoned from. **This section corrects that finding; the original
+text above is retained unmodified for the record, not deleted.**
+
+**Correction:** the specific transaction-time-anchoring mechanism is
+**rejected** — Regime B's fixture construction (`_close_and_append`)
+overwrites a superseded row's transaction time (`recorded_at`) to the
+correction's own time, destroying the original pre-correction fact,
+confirmed by direct execution and cross-checked against authoritative
+SQL:2011 system-versioned-table documentation (Microsoft, MariaDB), both
+confirming a genuine system-versioned table would never do this. A
+narrower, different mechanism was found instead: Regime B's event trace
+retains the *raw value* actually read at t0, and in Cases 3 and 9 this
+value happens to uniquely identify the correct policy version if
+cross-referenced — a real but fixture-specific, non-generalizing escape
+hatch that does **not** extend to Case 8's authority dimension, which
+remains clean, unqualified, undiminished evidence.
+
+**Revised scores requiring adjustment:** Technical correctness and
+Empirical credibility (both scored 3/5 above) remain 3/5 — the
+underlying conclusion (the article's lead retroactive-correction claim is
+overstated as currently written) is unchanged, only the *reason* changes.
+Prior-art fairness (scored 3/5 above) also remains 3/5 for the same
+reason, with a corrected required fix (see `revision-plan-v2.md`'s
+revised P0-1).
+
+**Revised single strongest weakness:** the primary experiment's
+retroactive-correction result, aggregated across Cases 3, 8, and 9, mixes
+one case with a genuine, unrescuable information gap (Case 8, authority
+dimension) with two cases (3, 9) where the tested reconstruction
+algorithm — not Regime B's retained information — is what produces the
+reported failure, because it does not cross-reference the event trace's
+own captured values against superseded version rows.
+
+**Revised required revision level: unchanged at MODERATE** — narrower and
+more precisely scoped than before, not larger in effort.
+
+**All other verdict fields (survives: YES WITH MAJOR REVISION;
+independently publishable: YES; classification: C; prior art narrows,
+does not destroy; ready for v2: YES) are confirmed unchanged by this
+verification pass.**

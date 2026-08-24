@@ -210,6 +210,82 @@ P3 (polish).
 
 ---
 
+## POST-REVIEW VERIFICATION UPDATE (2026-08-24)
+
+A dedicated verification pass (`bitemporal-verification.md`,
+`BITEMPORAL-VERDICT.md`) rigorously tested P0-1's original mechanism
+claim against the actual executed fixtures, not the design's prose
+description. **The original P0-1/P0-2 text above is retained unmodified
+for the record — do not silently rewrite it — but it is superseded by
+this update for drafting purposes.** The specific claim that a
+transaction-time-anchored (`SYSTEM_TIME AS OF t0`) query recovers the
+correct answer from Regime B's *actually retained* data is **REJECTED**:
+the fixture's row-closing logic (`_close_and_append`) overwrites the
+closed row's `recorded_at` to the correction's own time, destroying the
+original pre-correction transaction time — confirmed by direct execution
+and cross-checked against two independent, authoritative bitemporal
+database sources (Microsoft SQL Server and MariaDB documentation of the
+SQL:2011 system-versioning model), both confirming that a *genuine*
+system-versioned table never overwrites a superseded row's original
+start time. This experiment's Regime B implementation does not fully
+realize that discipline.
+
+**A different, narrower, and only partially-rescuing mechanism was found
+in its place:** Regime B's event trace retains the *raw threshold value*
+actually read at t0 (`0.50`), unaffected by the later correction. In
+Cases 3 and 9, this value uniquely matches the historically correct
+policy row (`v1`, threshold `0.50`) against the incorrect one (`v1bis`,
+threshold `0.45`) — an algorithm that cross-referenced this captured
+value against all retained policy rows (not just the valid-time-matching
+one) would recover the correct answer using only Regime B's own data.
+Case 8's authority dimension has no analogous field and is **unaffected
+by this finding** — it remains valid, undiminished evidence for the
+thesis.
+
+### Revised P0-1 (supersedes the original P0-1 above)
+
+- **Location:** same three locations (Experiment 1's final paragraph;
+  the bitemporal-databases paragraph in "This Is Not a New Provenance
+  System"; the closing summary in "What the Experiments Do — and Do Not
+  — Show").
+- **Required change:** do **not** frame the correction around
+  transaction-time-anchored bitemporal querying (that specific mechanism
+  is rejected — see `BITEMPORAL-VERDICT.md`). Instead: (a) note that the
+  Case 3/9 policy-only retroactive-correction result reflects a
+  reconstruction-algorithm choice — the tested procedure does not
+  cross-reference the event trace's own captured values against
+  superseded version rows, and doing so would have recovered the correct
+  answer in these two cases using only Regime B's data; (b) preserve
+  Case 8's result as the article's primary, unqualified illustration of
+  the retroactive-correction mechanism, since its authority dimension has
+  no such escape hatch and is not affected by this finding. The
+  bitemporal-databases prior-art paragraph should state that bitemporal
+  valid-time/transaction-time modeling, *as this experiment actually
+  implemented it*, does not fully preserve original transaction times
+  across corrections (a fixture-implementation property, disclosed
+  plainly), rather than claiming bitemporal databases in general solve
+  only the non-retroactive cases.
+- **Reason:** `bitemporal-verification.md`, `BITEMPORAL-VERDICT.md`.
+- **Evidence/source:** direct execution of
+  `experiment/src/cases.py`'s case builders; Microsoft Learn and MariaDB
+  system-versioned-table documentation (both fetched live in this
+  verification pass).
+- **Expected effect:** the primary experiment's headline claim becomes
+  narrower still than the original P0-1 anticipated — Case 8 alone
+  should carry the article's main illustrative weight for the
+  retroactive-correction mechanism, with Cases 3/9 either reframed as a
+  secondary, algorithm-specific finding or folded into the limitations
+  discussion.
+
+### Revised P0-2
+
+Add the FHC qualification precisely as stated in
+`BITEMPORAL-VERDICT.md`'s "False Historical Confidence" section: Case
+8's FHC=1.00 is unqualified, valid evidence; Cases 3/9's FHC values
+require the algorithm-limitation caveat above.
+
+---
+
 ## What must NOT change
 
 - Experiment 2's section and the negative-control section require **no
