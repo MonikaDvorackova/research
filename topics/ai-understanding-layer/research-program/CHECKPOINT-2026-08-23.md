@@ -462,9 +462,55 @@ Full verdict: `contribution-03/VERDICT.md`.
   five questions (above all: can system-level "understanding" be
   operationalized at all) are open.
 - **O'Reilly synthesis: NOT STARTED**, unchanged.
-- **Next step:** per `contribution-03/VERDICT.md`, resolve
-  `contribution-03/research-questions.md`'s open questions (a further,
-  more targeted research pass, or an explicit human decision to drop the
-  capability-vs-understanding framing) before any Article 3 drafting is
-  authorized. No experiment is required to proceed; one is desirable but
-  not yet actionable until the operationalization question is resolved.
+- **Next step (superseded by the narrow follow-up pass below):** per
+  `contribution-03/VERDICT.md`, resolve
+  `contribution-03/research-questions.md`'s open questions before any
+  Article 3 drafting is authorized.
+
+---
+
+## Contribution 3 — narrow follow-up pass (RQ1/RQ3)
+
+One final, narrow research pass, answering exactly the two blocking
+questions the prior verdict left open. Full record:
+`contribution-03/FINAL-RESEARCH-VERDICT.md`. New documents:
+`operationalization-review.md`, `diagnosability-review.md`,
+`assurance-integration-review.md`, `composition-review.md`,
+`generalization-from-c2.md`, `article-03-options.md`; `source-ledger.md`
+updated (11 new sources). The prior historical/comparative review
+(`VERDICT.md` and all documents from the first pass) is preserved
+unmodified.
+
+- **Contribution 1: COMPLETE.**
+- **Contribution 2: COMPLETE.**
+- **Contribution 3 research: NARROW PASS COMPLETE.** RQ1 (can system-
+  level understanding be operationalized?) — **PARTIALLY**: only as a
+  vector of already-named properties (reconstructability ≈
+  diagnosability, observability, interpretability, predictability ≈
+  system identification, verifiability), not one new scalar or umbrella.
+  RQ3 (does Contribution 2 generalize?) — **PARTIALLY**: fully supported
+  at the single-decision level (G1); only a plausible, unconfirmed
+  extension to execution-level (G2); trajectory-level and beyond (G3+)
+  require new evidence. Integration gap **NARROWED** (dynamic/continuous
+  assurance cases already exist and are being applied to AI systems —
+  the gap is adoption/composition with Contribution 2's specific claim
+  type, not absent coordinating infrastructure). Measurement gap
+  **CONFIRMED**. Composition effect **PLAUSIBLE** for reconstructability
+  specifically (directly SUPPORTED only for the adjacent property of
+  behavioral predictability). "Understanding Layer": **DEMOTED TO
+  METAPHOR**, further weakened. Capability-vs-understanding: **RETIRED
+  from Article 3.**
+- **Article 3 classification: C — research agenda article** (not a new
+  technical property, not a strong-enough synthesis given dynamic
+  assurance cases already exist). Surviving candidate thesis: whether
+  Contribution 2's earned per-decision reconstructability guarantee
+  composes to the trajectory level — genuinely open, not yet tested.
+- **Independent publication: UNCERTAIN**, conditional on further
+  empirical work not yet done.
+- **Article 3: NOT STARTED. Not ready to draft.**
+- **O'Reilly synthesis: NOT STARTED**, unchanged.
+- **Next step (exactly one action):** a human decision on whether to
+  authorize the experiment `FINAL-RESEARCH-VERDICT.md` specifies
+  (testing whether per-decision reconstructability composes to
+  trajectory-level reconstructability) — no further unscoped research
+  pass, and no Article 3 drafting, until that decision is made.
