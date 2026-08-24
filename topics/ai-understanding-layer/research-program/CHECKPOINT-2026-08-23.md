@@ -339,3 +339,28 @@ experiment and the Case 10 follow-up; it does not rerun or modify either.
   position (`VERDICT.md`) before any article is drafted. No article was
   drafted in this session; no work was performed on Contribution 1,
   Contribution 3, or the O'Reilly synthesis.
+
+---
+
+## Article 2 draft-v1
+
+Written in a later session, on explicit authorization, from the drafting
+package above. `contribution-02/article/draft-v1.md` (2,723 words),
+`editorial-notes.md`, `draft-v1-audit.md` (self-audit against novelty
+inflation, empirical overreach, negative-control honesty, prior-art
+fairness, Article 3 leakage, terminology, evidence traceability, and
+reader value — all PASS, one accuracy fix applied).
+
+- **Article 2 draft-v1: COMPLETE.**
+- **Empirical phase: still CLOSED** — no experiment was rerun or altered;
+  every number in the draft was checked directly against the committed
+  CSVs in `contribution-02/experiment/results/` and
+  `contribution-02/experiment/followup-case10/results/`.
+- **Drafting phase: IN REVIEW.**
+- **No publication venue locked.** Written as an independent article, not
+  adapted for O'Reilly (see `article/editorial-notes.md`'s "Publication
+  venue questions").
+- **Exact next step:** human editorial review of Contribution 2
+  draft-v1. No draft-v2, no submission, no O'Reilly adaptation, no
+  Contribution 3 work, and no further experiments were performed in this
+  session.
