@@ -430,3 +430,41 @@ made.
   `contribution-02/article/FINAL-ACCEPTANCE.md`'s "Later O'Reilly
   synthesis" section for the boundary note on what Article 2 should and
   should not contribute to it, when that work is eventually authorized.
+
+---
+
+## Contribution 3 — historical/comparative review
+
+`research-roadmap.md` Step 6 (`contribution-03/`) executed on explicit
+authorization: 14 documents, ~29 external sources across version-control/
+transaction-log/tracing history, program comprehension, architectural
+knowledge management, observability, provenance/replay, ML systems
+(Hidden Technical Debt), foundation-model/agent interpretability and
+observability, XAI, formal/runtime verification, and assurance cases.
+Full verdict: `contribution-03/VERDICT.md`.
+
+- **Contribution 1: COMPLETE** (unchanged).
+- **Contribution 2: COMPLETE** (unchanged, frozen at
+  `contribution-02/article/draft-v2.md`).
+- **Contribution 3: HISTORICAL/COMPARATIVE REVIEW COMPLETE.** Terminal
+  thesis survives **narrowed**, not as originally stated — decomposed
+  into five separable claims, of which only the AI-specific-complications
+  claim and a much-weakened historical-pattern claim survive; the
+  comparative "capability outpaces understanding" claim is classified
+  **untested conjecture, bordering unfalsifiable**; "Understanding
+  Layer" is **demoted to metaphor** (no specifiable invariant, interface,
+  or boundary found). Residual gap: **integration + measurement**, not a
+  missing mechanism or architecture. Novelty: primary **new synthesis**.
+  Strongest collision: **epistemic opacity** (philosophy of
+  science/STS), a near-identical existing thesis to Source A's
+  diagnostic claim.
+- **Article 3: NOT STARTED.** Not ready to draft — `contribution-03/research-questions.md`'s
+  five questions (above all: can system-level "understanding" be
+  operationalized at all) are open.
+- **O'Reilly synthesis: NOT STARTED**, unchanged.
+- **Next step:** per `contribution-03/VERDICT.md`, resolve
+  `contribution-03/research-questions.md`'s open questions (a further,
+  more targeted research pass, or an explicit human decision to drop the
+  capability-vs-understanding framing) before any Article 3 drafting is
+  authorized. No experiment is required to proceed; one is desirable but
+  not yet actionable until the operationalization question is resolved.
