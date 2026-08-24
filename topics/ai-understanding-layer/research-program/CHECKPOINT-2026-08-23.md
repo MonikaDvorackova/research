@@ -398,3 +398,35 @@ Consumed: Why Version History Doesn't Guarantee Decision Reconstruction."
 - **Exact next step:** human editorial review of Contribution 2
   draft-v2. No draft-v3, no submission, no O'Reilly adaptation, and no
   Contribution 3 work were performed in this session.
+
+---
+
+## Article 2 final acceptance
+
+The human editorial review named above as the exact next step was
+performed in a later session. Full record:
+`contribution-02/article/FINAL-ACCEPTANCE.md`. **Verdict: ACCEPT.** No
+blocking issue was found on independent re-verification against the
+committed raw results; `draft-v2.md` was left unmodified, per the
+acceptance gate's own rule that zero blocking issues means no edit is
+made.
+
+- **Contribution 2 research: COMPLETE.**
+- **Empirical phase: CLOSED.**
+- **Article 2: COMPLETE.**
+- **Argument/evidence: FROZEN** — `contribution-02/article/draft-v2.md`
+  (2,519 words, title "Retained Is Not Consumed: Why Version History
+  Doesn't Guarantee Decision Reconstruction") is the frozen article
+  text; `draft-v1.md` remains as the unmodified historical first draft;
+  the full review and verification trail
+  (`contribution-02/article/review/`) is preserved unmodified.
+- **Publication venue: NOT LOCKED.**
+- **Next research-program step: Contribution 3** — not started in this
+  session. Per `contribution-boundaries.md` and this checkpoint's own
+  publication-architecture section, Contribution 3 requires Contributions
+  1 and 2 as earned scaffolding and a dedicated historical/comparative
+  literature review (Step 6) not yet performed.
+- **O'Reilly synthesis:** unchanged, not drafted in this session; see
+  `contribution-02/article/FINAL-ACCEPTANCE.md`'s "Later O'Reilly
+  synthesis" section for the boundary note on what Article 2 should and
+  should not contribute to it, when that work is eventually authorized.
