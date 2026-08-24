@@ -364,3 +364,37 @@ reader value — all PASS, one accuracy fix applied).
   draft-v1. No draft-v2, no submission, no O'Reilly adaptation, no
   Contribution 3 work, and no further experiments were performed in this
   session.
+
+---
+
+## Article 2 draft-v2
+
+Written on explicit authorization, as a substantive corrective revision
+of draft-v1 (which remains unmodified, at
+`contribution-02/article/draft-v1.md`) incorporating the adversarial
+review and dedicated bitemporal-verification pass
+(`contribution-02/article/review/`). New title: "Retained Is Not
+Consumed: Why Version History Doesn't Guarantee Decision Reconstruction."
+
+- **Article 2 draft-v2: COMPLETE** (`contribution-02/article/draft-v2.md`,
+  2,519 words; `editorial-notes-v2.md`; `draft-v2-audit.md`, all eight
+  audited dimensions PASS).
+- **Technical correction incorporated:** the overstated bitemporal claim
+  from draft-v1 is removed. Case 8 (retroactive authority correction) is
+  now the article's primary, clean retroactive-correction evidence; Cases
+  3 and 9 (retroactive policy correction) are explicitly reframed as a
+  reconstruction-algorithm limitation, not an information-architecture
+  gap — matching `contribution-02/article/review/BITEMPORAL-VERDICT.md`
+  exactly.
+- **Primary experiment interpretation: narrowed**, per the above. The
+  Case 10 follow-up and its F10-6 negative control now carry more of the
+  article's argumentative weight, presented earlier in the revised
+  structure.
+- **Empirical phase: still CLOSED** — no experiment was rerun, no raw
+  result or implementation file was touched; every number added or
+  retained in draft-v2 was checked directly against the committed CSVs.
+- **Drafting phase: IN HUMAN REVIEW.**
+- **No publication venue locked**, publication architecture unchanged.
+- **Exact next step:** human editorial review of Contribution 2
+  draft-v2. No draft-v3, no submission, no O'Reilly adaptation, and no
+  Contribution 3 work were performed in this session.
