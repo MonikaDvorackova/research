@@ -645,3 +645,45 @@ and `book-implications.md`.
   authorizing O'Reilly drafting — no O'Reilly drafting, no Article 1/2
   modification, no Article 3 v2, no C3-into-C2 merge, no further
   experiments, until that review authorizes the next step.
+
+---
+
+## O'Reilly synthesis review — final human-reviewed decision (2026-08-25)
+
+The prior section's "Next step" has been executed: an adversarial
+re-review of `OREILLY-SYNTHESIS-MAP.md`'s own recommendation, not a
+re-trust of it. Full record: `OREILLY-FINAL-BRIEF.md` (new,
+authoritative for drafting), and an appended "FINAL HUMAN-REVIEWED
+SYNTHESIS DECISION" section in `OREILLY-SYNTHESIS-MAP.md` (historical
+reasoning above it left unmodified).
+
+- **O'Reilly synthesis review: COMPLETE.**
+- **Final thesis:** "A production AI decision must be authorized before
+  it happens and explainable after it happens — and neither is possible
+  without preserving the right relations, not just the right artifacts,
+  around the decision itself, not just the model that produced it." This
+  **replaces** the synthesis map's prior Rank-1 recommendation
+  ("Auditability is relational"), which is demoted to a supporting
+  subthesis after adversarial testing found it flattens the earned
+  control/reconstruction duality and risks a relational-database
+  misreading for an ML/MLOps audience.
+- **Final article format:** Tier B — one 3,500–5,000 word deep O'Reilly
+  article. Multi-part series and book formats explicitly considered and
+  not selected; book proposal at original scope explicitly rejected.
+- **GO/NO-GO: GO WITH CONDITIONS.** Six drafting-discipline conditions
+  recorded in `OREILLY-FINAL-BRIEF.md` §"GO / NO-GO" (combined-thesis
+  wording; the "not only the model" qualifier; Contribution 3 capped at
+  one ~400-word section; dynamic/continuous assurance-case literature
+  cited explicitly; no forced umbrella noun; 3,500–5,000 word target).
+  No blocking research gap was found or claimed.
+- **Contribution 3 role in the article:** one short section (Option A),
+  honest-ambiguity principle only, no experiment-internal vocabulary.
+- **Understanding Layer / capability-vs-understanding:** both confirmed
+  RETIRED, grep-checked against every new document this pass — every
+  occurrence found is inside an explicit prohibition/retirement
+  statement, never a live claim.
+- **Book proposal:** not modified; not reopened at original scope.
+- **Exact next step:** "Draft O'Reilly article from
+  `OREILLY-FINAL-BRIEF.md`." No further research, no experiments, no
+  reopening of Contributions 1–3, until that drafting pass is
+  separately authorized.

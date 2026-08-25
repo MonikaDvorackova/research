@@ -381,3 +381,55 @@ trajectory-composition mechanisms) is later authorized and completed.
 **C (book proposal remains justified as originally scoped) is
 explicitly rejected** — the earned evidence base is narrower than the
 original 12-chapter, three-part proposal assumed.
+
+---
+
+## FINAL HUMAN-REVIEWED SYNTHESIS DECISION — 2026-08-25
+
+An adversarial re-review of this map's own recommendation was performed
+before drafting — not a re-trust of §5's ranking. **The recommendation
+changed.** Full reasoning: `OREILLY-FINAL-BRIEF.md`, now the
+authoritative document for drafting.
+
+**What changed:** §5's Rank 1 thesis, "Auditability is relational," was
+**demoted from headline thesis to supporting subthesis.** The insight
+survives (it is real and earned — auditability comes from preserving
+relations, not artifact volume), but as a standalone headline it
+flattens the control/reconstruction duality this whole programme worked
+to establish and confirm (`recommended-program.md`'s adversarial
+self-review: control does not logically entail reconstruction), and
+"relational" risks a distracting misreading for an ML/MLOps audience
+already primed to hear "relational database." The review also found and
+tested eight new thesis candidates beyond §5's original five, most
+significantly **"the decision, not only the model, is the unit that
+must be authorized and later explained"** — directly earned by Article
+1's own audited model-vs-decision inversion, extended by Contribution
+2's decision-scoped reconstruction object and Contribution 3's
+trajectory-as-composed-decisions framing.
+
+**Final thesis (combined form, replacing §5's Rank 1):**
+
+> A production AI decision must be authorized before it happens and
+> explainable after it happens — and neither is possible without
+> preserving the right relations, not just the right artifacts, around
+> the decision itself, not just the model that produced it.
+
+**What did not change:** §1's layer map, §2–4's per-contribution
+extraction guidance, §7–8's prior-art audit tables, and §11's format
+family (article, not book) all remain valid inputs to
+`OREILLY-FINAL-BRIEF.md` and are drawn on directly there. §11's specific
+length recommendation is refined (single deep article, 3,500–5,000
+words, tier B) rather than reversed.
+
+**New prior-art finding this review surfaced:** dynamic/continuous
+assurance-case literature (source-ledger.md S33–S36) is the closest
+existing field to the *combined* thesis — closer than treating Article
+1's and Article 2's prior art separately, as §7–8 above effectively did.
+This must be credited explicitly when drafting.
+
+**Verdict: GO WITH CONDITIONS.** See `OREILLY-FINAL-BRIEF.md` for the
+six drafting conditions. No blocking research gap was found.
+
+`OREILLY-FINAL-BRIEF.md` is authoritative for drafting. This document's
+historical reasoning above (§1–§11, unmodified) remains the record of
+how the original recommendation was derived.
