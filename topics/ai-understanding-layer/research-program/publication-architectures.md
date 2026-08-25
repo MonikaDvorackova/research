@@ -10,6 +10,14 @@ tags: [research-program, publication-architectures]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** The three-standalone-article
+> architecture recommended below (Architecture C) has been superseded by
+> a human editorial decision — see `PUBLICATION-ARCHITECTURE-FINAL.md`,
+> the current authoritative publication map. Contribution 3 is now
+> retained as a supporting research note, not a standalone Article 3.
+> This document's analysis is left unmodified as a historical record of
+> how that recommendation was originally reasoned.
+
 ## Research Programme — Alternative Publication Architectures
 
 Scope: Task 8. Builds on the minimum independent contribution set established in `contribution-boundaries.md` (three contributions: Decision-Level Control; Preservation & Reconstruction; The Understanding Layer) and the research-form classification in `empirical-program.md`. This file only moves from contributions to publications — it does not repeat the falsification testing or the AIGov Core analysis, both housed in their own files. No venues, journals, conferences, or publishers are assigned anywhere below, per instruction.

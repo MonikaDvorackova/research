@@ -599,3 +599,49 @@ unmodified.
   Contribution 3 draft-v1 — no draft-v2, no submission, no O'Reilly
   revision, no further experiments, until that review authorizes the
   next step.
+
+---
+
+## Publication architecture — human editorial decision (2026-08-25)
+
+Following the completed adversarial review of Contribution 3 draft-v1
+(`contribution-03/article/review/VERDICT.md`), a human editorial
+decision on publication architecture was made. Full record:
+`PUBLICATION-ARCHITECTURE-FINAL.md`,
+`contribution-03/FINAL-EDITORIAL-DISPOSITION.md`,
+`contribution-03/ARTICLE-2-INTEGRATION-CANDIDATES.md`,
+`OREILLY-SYNTHESIS-MAP.md`. This is a publication-architecture decision,
+not a finding of factual invalidity — every experiment, draft, and
+review in Contribution 3 remains part of the permanent research record,
+preserved unmodified. Superseded-architecture notices were added
+(append-only, historical analysis left intact) to
+`publication-architectures.md`, `recommended-program.md`,
+`research-roadmap.md`, `contribution-boundaries.md`, `oreilly-role.md`,
+and `book-implications.md`.
+
+- **Contribution 1:** independent core article. Unchanged.
+- **Contribution 2:** independent core article, frozen. Unchanged.
+- **Contribution 3:** research complete; standalone full-article
+  development closed; retained as supporting research note ("Trajectory
+  Reconstruction and Honest Ambiguity"). `draft-v1.md` frozen as a
+  historical research-note draft; no draft-v2 authorized.
+- **Three-standalone-article architecture: CLOSED / SUPERSEDED** by the
+  two-core-articles-plus-supporting-research-note architecture in
+  `PUBLICATION-ARCHITECTURE-FINAL.md`.
+- **Current publication architecture:** 2 core articles + 1 supporting
+  research note + future O'Reilly synthesis (not yet drafted).
+- **Understanding Layer: RETIRED.** Confirmed not resurrected anywhere
+  in the new governance documents (grep-checked in
+  `OREILLY-SYNTHESIS-MAP.md` §8).
+- **Capability-vs-understanding: RETIRED.** Same confirmation.
+- **O'Reilly: NOT YET DRAFTED.** A synthesis map exists
+  (`OREILLY-SYNTHESIS-MAP.md`) — a dependency map, not publication prose.
+  Recommended format: article first, book later (§11).
+- **Article 2 integration:** identified as candidates only
+  (`contribution-03/ARTICLE-2-INTEGRATION-CANDIDATES.md`), recommendation
+  KEEP SEPARATE for now / USE ONLY IN O'REILLY. Article 2's frozen
+  `draft-v2.md` was not modified.
+- **Exact next step:** human review of `OREILLY-SYNTHESIS-MAP.md` before
+  authorizing O'Reilly drafting — no O'Reilly drafting, no Article 1/2
+  modification, no Article 3 v2, no C3-into-C2 merge, no further
+  experiments, until that review authorizes the next step.

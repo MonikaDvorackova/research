@@ -10,6 +10,15 @@ tags: [research-program, roadmap]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** Step 7 below ("Draft The
+> Understanding Layer capstone") is superseded — Contribution 3 is now
+> retained as a supporting research note, not drafted as a standalone
+> capstone article, and "Understanding Layer" is retired as an
+> architectural claim. See `PUBLICATION-ARCHITECTURE-FINAL.md` and
+> `contribution-03/FINAL-EDITORIAL-DISPOSITION.md`. Steps 1–6 remain an
+> accurate historical record of how the programme was actually executed
+> and are left unmodified.
+
 ## Research Programme — Execution Roadmap
 
 Scope: Task 12. An execution sequence for the recommended architecture (`recommended-program.md`). Every step specifies its research question, why it comes now (not earlier or later), required reading/prior-art work, required formalization, required empirical work, required implementation work, deliverable, stop condition, and what must be learned before the next step. The next step is never assumed to be prose drafting unless the step's own logic actually calls for it.

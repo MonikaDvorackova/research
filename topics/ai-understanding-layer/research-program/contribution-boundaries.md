@@ -10,6 +10,15 @@ tags: [research-program, contribution-boundaries, falsification]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** The three-contribution *research*
+> boundaries below remain accurate — this document is not about
+> publication format. What is superseded is the assumption, made
+> elsewhere (`publication-architectures.md`, `recommended-program.md`),
+> that each of the three contributions becomes its own standalone
+> article. Contribution 3's research stands as described below; its
+> *publication* form is now a supporting research note, not a standalone
+> article — see `PUBLICATION-ARCHITECTURE-FINAL.md`.
+
 ## Research Programme — Contribution Boundaries and Minimum Independent Set
 
 Scope: Tasks 4 and 5. Tests every candidate contribution named in the brief, plus the new claim nodes from `claim-graph.md` (C1c, C5h, C9m, and the C9a/C9b split), against the ten-question falsification test, then derives the smallest set of genuinely independent contributions.

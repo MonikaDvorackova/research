@@ -10,6 +10,13 @@ tags: [research-program, recommendation, adversarial-review]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** The recommendation below (three
+> standalone publication units) has been superseded by a human editorial
+> decision — see `PUBLICATION-ARCHITECTURE-FINAL.md`. Contribution 3 is
+> now retained as a supporting research note, not a standalone Article 3.
+> This document's adversarial self-review remains historically accurate
+> and is left unmodified.
+
 ## Research Programme — Recommended Architecture and Adversarial Self-Review
 
 Scope: Task 9, plus the brief's required adversarial self-review, which is treated as gating this recommendation rather than as a closing formality — if either of the two decisive self-review questions had returned "no," this recommendation would need to be rewritten, not merely footnoted.

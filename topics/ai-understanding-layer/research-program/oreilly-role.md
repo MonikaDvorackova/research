@@ -10,6 +10,15 @@ tags: [research-program, oreilly, positioning]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** This document's "Option 3 capstone"
+> analysis assumed Contributions 1, 2, and 3 would each become a
+> standalone article. Contribution 3 is now retained as a supporting
+> research note, not a standalone article — see
+> `PUBLICATION-ARCHITECTURE-FINAL.md` and, for the current O'Reilly
+> synthesis plan, `OREILLY-SYNTHESIS-MAP.md`. This document's analysis of
+> Option 1 (the early practitioner article, i.e. Article 1) remains
+> accurate and unmodified.
+
 ## Research Programme — Role of the O'Reilly Piece
 
 Scope: Task 10. Determined only after the research architecture (Tasks 1–9) was fixed, per the brief's explicit sequencing (DEEP RESEARCH PROBLEM → CLAIM GRAPH → INDEPENDENT CONTRIBUTIONS → RESEARCH/EVIDENCE → INDIVIDUAL PUBLICATIONS → CROSS-PAPER SYNTHESIS → O'REILLY → BOOK). Does not revise any O'Reilly draft.

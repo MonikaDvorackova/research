@@ -10,6 +10,18 @@ tags: [research-program, book-proposal, source-b]
 refs: []
 ---
 
+> **SUPERSEDED NOTICE (2026-08-25):** The three-part book arc proposed
+> below (Parts I–III mirroring Contributions 1–3) assumed Contribution 3
+> would become a full capstone. It is now retained as a supporting
+> research note instead — see `PUBLICATION-ARCHITECTURE-FINAL.md`. The
+> current recommendation on O'Reilly format is "article first, book
+> later" (`OREILLY-SYNTHESIS-MAP.md` §11), not a book proposal at this
+> document's originally assumed scope. This document's chapter-by-
+> chapter diagnosis of Source B remains a useful historical analysis and
+> is left unmodified; the strict claim-by-claim audit in
+> `OREILLY-SYNTHESIS-MAP.md` §7 supersedes it as the current
+> authoritative version.
+
 ## Research Programme — Implications for the Original Book Proposal
 
 Scope: Task 11. Diagnosis only, as instructed — the book proposal itself is not rewritten here. Answers all nine sub-questions from the brief in order, returning to the complete Source B, not a summary of it.
