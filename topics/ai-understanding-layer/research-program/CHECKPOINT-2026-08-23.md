@@ -710,3 +710,40 @@ The prior section's "Next step" has been executed. Full record:
   Source A/B remain unmodified.
 - **Exact next step:** "Adversarial editorial review of O'Reilly
   draft-v1."
+
+---
+
+## O'Reilly draft-v2 — final revision and acceptance (2026-08-25)
+
+The prior section's "Next step" (adversarial review) was completed
+separately and is recorded in `oreilly/article/review/`. This section
+records the resulting final revision. Full record: `oreilly/article/
+draft-v2.md`, `oreilly/article/editorial-notes-v2.md`,
+`oreilly/article/draft-v2-audit.md`, `oreilly/article/FINAL-
+ACCEPTANCE.md`. `draft-v1.md` and the full review package are preserved
+unmodified.
+
+- **draft-v2: COMPLETE.**
+- **Title:** "Authorized Now, Reconstructable Later."
+- **Word count:** 3,783 (article body, excluding References).
+- **Acceptance verdict: ACCEPT.** No P0 issue found; no correction
+  required under the acceptance gate.
+- **O'Reilly article argument/evidence status: COMPLETE.** Publication/
+  editorial submission formatting: **NOT YET PERFORMED.**
+- **Major corrections from v1 implemented:** the consumption-relation
+  requirement restated as informational, not representational (fixing
+  the P0 contradiction with Article 2's frozen position); bitemporal
+  databases and event logs explicitly confirmed sufficient when properly
+  instrumented; three unsupported-prevalence claims removed; two
+  deterministic "will eventually" claims softened to a design-necessity
+  framing; Section 7's checklist split into decision-time facts vs.
+  later reconstruction-process output; title changed to remove a false
+  dichotomy and cover both halves of the article; "explainable" replaced
+  with "reconstructable" as the primary term; five citations added
+  (Kubernetes, XACML/PDP-PEP, in-toto, SLSA, Buneman et al.).
+- **Research remains CLOSED.** Contributions 1–3, both experiments,
+  Source A/B, `OREILLY-FINAL-BRIEF.md`, and `OREILLY-SYNTHESIS-MAP.md`
+  all unchanged.
+- **Book: NOT STARTED.**
+- **Exact next step:** "Venue/submission formatting and human
+  publication review." Not begun in this pass.
