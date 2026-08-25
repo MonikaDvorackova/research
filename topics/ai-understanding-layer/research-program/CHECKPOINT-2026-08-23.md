@@ -514,3 +514,47 @@ unmodified.
   (testing whether per-decision reconstructability composes to
   trajectory-level reconstructability) — no further unscoped research
   pass, and no Article 3 drafting, until that decision is made.
+
+---
+
+## Contribution 3 — trajectory-composition experiment (2026-08-25)
+
+The experiment the prior section's "Next step" named has been
+authorized, designed, pre-registered, executed, and reported. Full
+record: `contribution-03/experiment/RESULT.md`,
+`contribution-03/experiment/analysis/experiment-report.md`,
+`contribution-03/experiment/analysis/results-summary.md`, raw data in
+`contribution-03/experiment/results/`. `FINAL-RESEARCH-VERDICT.md`
+updated with an appended (not rewritten) `POST-VERDICT EXPERIMENT
+UPDATE` section. Prior Contribution 3 research (both the first-pass
+historical review and the narrow RQ1/RQ3 follow-up) preserved
+unmodified.
+
+- **Contribution 3 empirical phase: CLOSED**, pending separate
+  authorization to draft Article 3.
+- **Result: H1 supported.** Per-decision reconstructability
+  (Local Decision Reconstruction = 1.00, both regimes, all 6 cases) does
+  not necessarily compose into trajectory-level reconstructability
+  (Trajectory Identifiability = 0.33 without the cross-decision relation
+  vs. 1.00 with it). No false confidence occurred in this run
+  (Dependency Edge Accuracy = 1.00, False Global Confidence Rate = 0.00
+  across all cases) — a genuine, disclosed asymmetry with Contribution
+  2's Case 8 finding (which did produce false historical confidence),
+  attributable to testing a structurally different mechanism, not to
+  this experiment being more favorable in general.
+- **Article 3 consequence:** technical article now survivable, narrowly
+  framed as "trajectory reconstructability requires an explicit retained
+  cross-decision relation, not merely more per-decision detail" —
+  extending, not replacing, Contribution 2's "retained is not consumed"
+  thesis. "Understanding Layer" and "capability-vs-understanding"
+  remain retired from Article 3, per the prior verdict.
+- **Article 3: still NOT STARTED. Still not ready to draft** — this
+  update closes the empirical precondition the prior verdict left open;
+  it does not itself authorize drafting.
+- **O'Reilly synthesis: NOT STARTED**, unchanged. One consequence
+  paragraph recorded (not drafted) in
+  `contribution-03/experiment/analysis/experiment-report.md`.
+- **Next step (exactly one action):** a human decision on whether to
+  authorize drafting Article 3, using the narrow framing above — no
+  further experiments, and no Article 3 drafting, until that decision is
+  made.

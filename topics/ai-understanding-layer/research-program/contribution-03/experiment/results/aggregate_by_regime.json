@@ -1,0 +1,20 @@
+{
+  "T1": {
+    "regime": "T1",
+    "n_cases": 6,
+    "local_decision_reconstruction_rate": 1.0,
+    "trajectory_identifiability_rate": 0.3333333333333333,
+    "dependency_edge_accuracy": 1.0,
+    "ambiguity_detection_rate": 1.0,
+    "false_global_confidence_rate": 0.0
+  },
+  "T2": {
+    "regime": "T2",
+    "n_cases": 6,
+    "local_decision_reconstruction_rate": 1.0,
+    "trajectory_identifiability_rate": 1.0,
+    "dependency_edge_accuracy": 1.0,
+    "ambiguity_detection_rate": 0.0,
+    "false_global_confidence_rate": 0.0
+  }
+}

@@ -5,7 +5,7 @@ topic: ai-understanding-layer
 type: note
 status: active
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-25
 tags: [contribution-03, final-verdict]
 refs: [operationalization-review.md, diagnosability-review.md, assurance-integration-review.md, composition-review.md, generalization-from-c2.md, article-03-options.md]
 ---
@@ -161,3 +161,54 @@ for reconstructability specifically. Not designed here.
 > reconstructability guarantee composes across a trajectory of
 > interdependent decisions — which current compositional-verification
 > research gives good reason not to assume holds by default.
+
+---
+
+## POST-VERDICT EXPERIMENT UPDATE (2026-08-25)
+
+This section is appended, not a rewrite of anything above. The
+"desirable" experiment this verdict called for (see "Experiment" above)
+has since been designed, pre-registered, executed, and reported in
+`experiment/`. Nothing above is superseded by this update — the update
+answers the open question the prior verdict deliberately left open.
+
+**Result: H1 supported.** Per-decision reconstructability (Local
+Decision Reconstruction = 1.00 in both tested regimes, all 6 cases) does
+**not necessarily** compose into trajectory-level reconstructability
+(Trajectory Identifiability = 0.33 under the locally-complete-but-
+globally-unlinked regime, vs. 1.00 once the one missing cross-decision
+relation is supplied). Critically, the failure mode observed was honest
+ambiguity, not false confidence: Dependency Edge Accuracy = 1.00, False
+Global Confidence Rate = 0.00 across all cases tested. Full detail:
+`experiment/RESULT.md`, `experiment/analysis/experiment-report.md`,
+`experiment/analysis/results-summary.md`, raw data in
+`experiment/results/`.
+
+**Consequence for this verdict's own conclusions:**
+
+- "Independent publication: UNCERTAIN" (above) is now **narrower but
+  answerable**: the empirical precondition that section named
+  ("conditional on further empirical work... that has not been done")
+  has been done. A technical article is now survivable under the
+  framing given in `experiment/RESULT.md` — "trajectory
+  reconstructability requires an explicit retained cross-decision
+  relation, not merely more per-decision detail" — strictly as an
+  extension of Contribution 2's existing thesis, not a new named
+  property, per this verdict's own repeated caution against resurrecting
+  "Understanding Layer" or "capability-vs-understanding" framing.
+- "Ready to draft? NO" (above) is **not overturned by this update**.
+  Drafting Article 3 was explicitly out of scope for the experiment pass
+  that produced this result and remains a separate authorization.
+- "Strongest final thesis" (above) stands as the open question; this
+  update reports that, for the two specific mechanisms tested
+  (identical-value/branch/state-write provenance collision, and
+  concurrent/near-concurrent ordering ambiguity), the answer to that
+  open question is no, composition does not hold by default — consistent
+  with, not contradicting, this verdict's prediction that
+  compositional-verification research "gives good reason not to assume
+  holds by default."
+
+**Contribution 3 empirical phase: CLOSED**, pending separate
+authorization to draft Article 3. See `experiment/RESULT.md` for full
+scientific limitations (synthetic testbed, two mechanisms only, no
+prevalence claim, no claim about human understanding).

@@ -1,0 +1,13 @@
+case_id,regime,local_decision_reconstruction,trajectory_identifiable,n_dependent_edges
+C3-1,T1,1.0,True,1
+C3-1,T2,1.0,True,1
+C3-2,T1,1.0,False,1
+C3-2,T2,1.0,True,1
+C3-3,T1,1.0,False,1
+C3-3,T2,1.0,True,1
+C3-4,T1,1.0,False,1
+C3-4,T2,1.0,True,1
+C3-5,T1,1.0,False,1
+C3-5,T2,1.0,True,1
+C3-6,T1,1.0,True,1
+C3-6,T2,1.0,True,1
