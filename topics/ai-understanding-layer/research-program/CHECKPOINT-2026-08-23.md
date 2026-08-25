@@ -747,3 +747,39 @@ unmodified.
 - **Book: NOT STARTED.**
 - **Exact next step:** "Venue/submission formatting and human
   publication review." Not begun in this pass.
+
+---
+
+## O'Reilly submission package prepared (2026-08-25)
+
+The prior section's "Next step" was executed. Full record:
+`oreilly/submission/` (`article-submission.md`, `SUBMISSION-PACKAGE.md`,
+`PUBLICATION-QA.md`, `HUMAN-REVIEW.md`, `references.md`,
+`diagram-spec.md`, `CURRENT-OREILLY-ROUTE.md`). `draft-v2.md`,
+`FINAL-ACCEPTANCE.md`, the full review package, `OREILLY-FINAL-
+BRIEF.md`, and `OREILLY-SYNTHESIS-MAP.md` are unmodified.
+
+- **O'Reilly publication package: PREPARED.**
+- **Article content status: COMPLETE** (unchanged from `FINAL-
+  ACCEPTANCE.md`'s ACCEPT verdict; only modest, disclosed publication-
+  only edits applied to the submission copy — inline hyperlinks
+  replacing bracket citations, a bitemporal-database definition added
+  at first use, and a tightened dek — none altering a substantive
+  claim).
+- **Publication QA verdict: PASS.** No blocking issue
+  (`oreilly/submission/PUBLICATION-QA.md`).
+- **Submission: NOT YET PERFORMED.** No email sent, no form submitted,
+  no proposal transmitted to O'Reilly.
+- **O'Reilly route:** general proposal route verified
+  (workwithus@oreilly.com, `oreilly.com/work-with-us`); no Radar-
+  specific process publicly documented (`oreilly/submission/CURRENT-
+  OREILLY-ROUTE.md`).
+- **Five items remain for human decision before outreach**
+  (`oreilly/submission/HUMAN-REVIEW.md`): title confirmation, diagram
+  format, pitch routing (Radar-specific vs. general), author-bio
+  specificity, and article-first framing in the pitch.
+- **Research remains CLOSED.** Contributions 1–3, both experiments,
+  Source A/B, the original book proposal, `OREILLY-FINAL-BRIEF.md`, and
+  `OREILLY-SYNTHESIS-MAP.md` all unchanged.
+- **Exact next step:** "Human approval of the submission package, then
+  O'Reilly outreach/submission." Not begun in this pass.
