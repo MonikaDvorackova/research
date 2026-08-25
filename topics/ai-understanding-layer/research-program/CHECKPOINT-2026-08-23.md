@@ -558,3 +558,44 @@ unmodified.
   authorize drafting Article 3, using the narrow framing above — no
   further experiments, and no Article 3 drafting, until that decision is
   made.
+
+---
+
+## Contribution 3 — Article 3 draft-v1 (2026-08-25)
+
+The prior section's "Next step" has been authorized and completed.
+Full record: `contribution-03/article/draft-v1.md` (3,257 words),
+`contribution-03/article/editorial-notes.md`,
+`contribution-03/article/draft-v1-audit.md`. Title: "When
+Reconstructable Decisions Produce an Unreconstructable System." Prior
+Contribution 3 research and the experiment results are preserved
+unmodified; Contribution 2's frozen article and results are preserved
+unmodified.
+
+- **Contribution 3 research: COMPLETE.**
+- **Empirical phase: CLOSED.**
+- **Article 3 draft-v1: COMPLETE.**
+- **Drafting phase: IN REVIEW.**
+- **"Understanding Layer": RETIRED as technical architecture** — zero
+  resurrection in draft-v1 (verified by grep, `draft-v1-audit.md`).
+- **Capability-vs-understanding: RETIRED from Article 3** — zero
+  resurrection in draft-v1 (verified by grep, `draft-v1-audit.md`).
+- **Thesis drafted:** decision-level reconstructability does not
+  necessarily compose into trajectory-level reconstructability; the
+  missing ingredient is a preserved cross-decision dependency relation,
+  not a new mechanism. Framed as an extension of Contribution 2's
+  "retained is not consumed" thesis, one level up.
+- **Novelty framing:** controlled empirical demonstration, not a new
+  provenance/graph-theory/observability/diagnosability result — five
+  real citations used (W3C PROV, OpenTelemetry, Fowler's Event Sourcing,
+  Sampath et al. 1995 diagnosability, Bakirtzis & Topcu 2022
+  compositional verification), all independently verified before
+  drafting.
+- **O'Reilly synthesis: NOT STARTED**, unchanged. One framing note
+  recorded (not drafted) in `contribution-03/article/editorial-notes.md`.
+- **Article 3: draft-v1 only. NOT marked complete.** No draft-v2, no
+  submission.
+- **Next step (exactly one action):** human editorial review of
+  Contribution 3 draft-v1 — no draft-v2, no submission, no O'Reilly
+  revision, no further experiments, until that review authorizes the
+  next step.
