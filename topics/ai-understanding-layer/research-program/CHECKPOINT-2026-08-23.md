@@ -687,3 +687,26 @@ reasoning above it left unmodified).
   `OREILLY-FINAL-BRIEF.md`." No further research, no experiments, no
   reopening of Contributions 1–3, until that drafting pass is
   separately authorized.
+
+---
+
+## O'Reilly draft-v1 (2026-08-25)
+
+The prior section's "Next step" has been executed. Full record:
+`oreilly/article/draft-v1.md`, `oreilly/article/draft-v1-audit.md`,
+`oreilly/article/editorial-notes.md`.
+
+- **O'Reilly draft-v1: COMPLETE.**
+- **Title:** "What Your AI Audit Trail Is Missing: The Relations, Not
+  the Records."
+- **Word count:** 3,882 (article body, excluding References).
+- **Drafting status: IN REVIEW.**
+- **Self-audit:** 14/14 PASS (`oreilly/article/draft-v1-audit.md`), one
+  minor mechanical phrasing correction made during audit (a bare "not
+  the model" instance corrected to "not only the model," against the
+  final brief's locked qualifier condition) — recorded transparently,
+  not a substantive change.
+- **No research reopened.** Contributions 1–3, both experiments, and
+  Source A/B remain unmodified.
+- **Exact next step:** "Adversarial editorial review of O'Reilly
+  draft-v1."
