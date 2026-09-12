@@ -1,38 +1,22 @@
 \section{Discussion and Limitations}
 \label{sec:discussion}
 
-\subsection{What the residual supports}
+WorldConsistMem isolates a measurable Acc--BCR failure mode for memory systems over evolving synthetic worlds. Completed evidence supports dissociation under corruption, symbolic retrieval, Qwen Option~A, and labelled robustness checks.
 
-WorldConsistMem's residual is methodological: dependent bundles over one gold evolving world, machine-checkable cross-query constraints, BCR, and CSR make Acc and joint world-answer consistency separately measurable for memory systems. Completed evidence is consistent with these quantities diverging under corruption, symbolic retrieval baselines, and a local Qwen reader.
+\subsection{Threats to validity}
+\label{sec:threats}
 
-\subsection{Strict versus partial consistency}
+\paragraph{Leakage / shortcuts.} LLM evidence packs assert no gold/constraint fields in prompts. Shortcut baselines (Section~\ref{sec:robustness}) show that answer marginals can yield Acc$>$0 with BCR~$=$~0; gold recovers BCR~$=$~1. Symbolic readers use structured match over retrieved observations, not free-form generation.
 
-BCR is the right strict rate for ``fully coherent bundle.'' When BCR floors, CSR and violation distributions remain informative and should be reported. Partial ConsAcc grids should be reported in full; they are not a license to replace BCR with a favorable threshold cell.
+\paragraph{Generator dependence.} Worlds are templated; seed sweeps show limited diversity for B3 under wpt$=$6. Relation-density overrides preserve gaps but do not strongly change event counts in the tested medium regime. Distractors are a null factor for symbolic B3/B4. Results characterize this generator, not all synthetic worlds.
 
-\subsection{Synthetic-world and template limits}
+\paragraph{Model dependence.} Option~A uses one local 3B Qwen reader with high abstention. Stronger readers were not completed here. Low Acc limits how far Qwen tables speak beyond Acc$\neq$consistency and BCR-floor/CSR questions.
 
-Worlds are synthetic; observations are templated; ecological validity for open-domain conversation is \textbf{not} claimed. Difficulty labels are structural. Results characterize controlled WorldConsistMem regimes, not production assistants.
+\paragraph{Synthetic scope / sample size.} Ecological validity is not claimed. Full symbolic $N{=}102$ worlds; Qwen H4 uses 18 worlds; labelled robustness uses smaller protocols and must not be read as Option~A.
 
-\subsection{Reader limits}
+\paragraph{Fairness.} Compact-flat saturation and H0 metadata taxation bound matched-budget interpretation (Appendix~\ref{app:fairness}).
 
-The LLM condition uses a single local 3B-class Qwen model with frozen short-form JSON decoding. Stronger models, cloud APIs, and Phi were not part of the frozen Option A decision. Low Acc and high abstention limit how far Qwen tables can speak to ``human-level'' memory behavior; they remain valid for the Acc$\neq$consistency and BCR-floor/CSR questions under this reader.
+\subsection{When to use BCR vs CSR}
+BCR is the strict rate for fully coherent bundles. When BCR floors, report CSR, violation multiplicity, and family hits; do not replace BCR with a favorable PConsAcc cell.
 
-\subsection{Compact-flat strength and fairness}
-
-Under symbolic matched budgets, compact flat can match or exceed H0 on BCR by discarding padding while retaining focal events; capacity accounting taxes H0 metadata (Section~\ref{sec:systems}). Structure is a reference design under test, not a proven necessity.
-
-\subsection{Negative architecture result under Qwen}
-
-The hierarchical reference does \textbf{not} earn a consistency win under Qwen (BCR~$=$~0 for all; CSR highest for BM25). Within the frozen Qwen evaluation, Acc improvements and structural memory do not reliably yield joint coherence. This negative result is reported as a limitation of architecture claims under WorldConsistMem, not as a contribution headline.
-
-\subsection{Adjacent logical-consistency literature}
-
-As discussed in Section~\ref{sec:related}, cross-query logical consistency work~\citep{salla2026crossQueryContradictions,chaudhry2026logicVault} already separates Acc from global coherence for multi-query reasoning, but not for persistent memory systems over evolving multi-entity gold worlds with world-history-derived constraints.
-
-Coverage bounds for the frozen evaluation are summarized in Table~\ref{tab:coverage} (Appendix~\ref{app:extrafigs}).
-
-\subsection{Proper scope of conclusions}
-
-Safe conclusions: Acc$\neq$consistency for this benchmark; BCR can floor; CSR can still separate systems; architecture superiority is unsupported under the frozen Qwen protocol.
-
-Unsafe conclusions: real-world generality; state-of-the-art rankings; necessity of hierarchy; BCR sufficiency alone in low-Acc regimes without CSR.
+Coverage: Table~\ref{tab:coverage}.

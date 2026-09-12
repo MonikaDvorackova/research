@@ -7,12 +7,19 @@
 
 \paragraph{Systems.} Headline reference systems: B1 capacity-limited compact flat; B3 recency retrieval; B4 BM25 retrieval; H0 structured hierarchical reference. Ablations and capacity sweeps are reported in the released artefacts.
 
-\paragraph{Metrics.} Primary consistency rate: BCR. Complementary: CSR, ConsAcc / PConsAcc grid, $\Gapq$, family violation rates. World-level bootstrap 95\% CIs accompany Acc/BCR/CSR where released.
+\paragraph{Metrics.} Primary consistency rate: BCR. Complementary: CSR, ConsAcc / PConsAcc grid, $\Gapq$, family violation rates. World-level bootstrap 95\% CIs accompany BCR/CSR (and world-mean Acc) in frozen CSVs.
+
+\paragraph{Labelled rescue sanity (not Option A).} Re-evaluating gold answers on the H4 subset yields Acc$=$BCR$=$ConsAcc$=$1. NEW robustness (seeds; density; distractors; shortcuts; retrieval-budget) is in Section~\ref{sec:robustness}. Confirmatory artefacts live under \texttt{results/confirmatory/} and \texttt{results/new/stronger\_reader\_pilot/} (proprietary-reader transfer; Appendix~\ref{app:prop-transfer}). The Table~\ref{tab:b2vignette} extract is \texttt{results/new/b2\_vignette\_ss0100\_ceo0.json}.
+
+\paragraph{Reader coverage (updated).}
+Option~A completed \texttt{Qwen2.5-3B-Instruct-4bit}. A separately labelled proprietary-reader transfer check used requested alias \texttt{gpt-4.1-mini} on a frozen stratified H0 subset (149/22). Phi-3.5 local MLX runs remain blocked in some environments. We do \textbf{not} claim frontier-model coverage.
+
+\paragraph{Checksum anchors.} Scaled manifest sha256 \texttt{37aa8604c3e6d87691332f66d2f7c0ab93578f2fe468bc29f7e8217c1675af3f}; symbolic \texttt{system\_results.csv} sha256 \texttt{eb5bd5fa87496586bd830e5f685b9950e119f9fd0ac491194b3f003343f9a2a8}; smoke dataset canonical sha256 \texttt{3aa67ed1b6a39be3d9e1805d14f7d5ce7cc05f4655bdce0bc4ff49900c14c7ab}.
 
 \section{Artifact Checklist}
 \label{app:artifacts}
 
-Released artefacts accompanying this submission include: dataset generators and manifests; symbolic system results and predictions; Qwen H4 system/query-family/constraint-family results; partial-consistency recomputes; corruption-suite metrics; and figure sources corresponding to Figures~\ref{fig:pipeline}--\ref{fig:constraints}. Anonymized supplementary material is provided with the OpenReview submission; identifying repository URLs are omitted from this PDF.
+Released artefacts accompanying this submission include: dataset generators and manifests; symbolic system results and predictions; Qwen H4 system/query-family/constraint-family results; partial-consistency recomputes; corruption-suite metrics; labelled NEW robustness JSON; and smoke/reproduction scripts. Manuscript figures are static PDFs; figure-drawing source scripts were not present in the experiment tree. Anonymized supplementary material is provided with the OpenReview submission; identifying repository URLs are omitted from this PDF.
 
 \section{Extended Related Work}
 \label{app:related}
@@ -131,8 +138,98 @@ conflict\_validity & 0.462 & 0.462 & 0.462 & 0.000 \\
 
 \begin{table}[t]
 \centering
-\caption{Evaluation coverage and hard limits (frozen).}
+\caption{\textbf{Frozen.} Symbolic H0 component ablations (reprinted from freeze CSV). Large Acc--BCR gaps under archive/temporal/graph removals.}
+\label{tab:ablations}
+\small
+\begin{tabular}{lrrr}
+\toprule
+System & Acc & BCR & $\Gapq$ \\
+\midrule
+H0 unconstrained & 1.000 & 1.000 & 0.000 \\
+H0 cap150 ret8 & 0.976 & 0.844 & 0.132 \\
+H--archive & 0.876 & 0.375 & 0.501 \\
+H--temporal-validity & 0.876 & 0.375 & 0.501 \\
+H--graph & 0.938 & 0.594 & 0.344 \\
+H--provenance & 1.000 & 1.000 & 0.000 \\
+H--conflict & 0.800 & 0.812 & $-$0.012 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Labelled NEW.} Retrieval-budget sensitivity (seed 100; 6 worlds/tier; 18/192/1{,}260; symbolic). Identical Acc with different BCR for B2 vs.\ B3-$k3$.}
+\label{tab:budget}
+\small
+\begin{tabular}{lrrr}
+\toprule
+System & Acc & BCR & $\Gapq$ \\
+\midrule
+B2 latest-only & 0.4905 & 0.2188 & 0.2717 \\
+B3 recency-$k3$ & 0.4905 & 0.0000 & 0.4905 \\
+B3 recency-$k5$ & 0.5095 & 0.0208 & 0.4887 \\
+B3 recency-$k8$ & 0.5667 & 0.0625 & 0.5042 \\
+B4 BM25-$k3$ & 0.7968 & 0.3750 & 0.4218 \\
+B4 BM25-$k8$ & 0.9317 & 0.5938 & 0.3379 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Labelled NEW.} Shortcut baselines (seed 100; 6 worlds/tier; symbolic scoring). Family-majority uses oracle gold marginals by query family.}
+\label{tab:shortcuts}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Baseline & Acc & BCR & $\Gapq$ \\
+\midrule
+Empty answers & 0.000 & 0.000 & 0.000 \\
+Family-majority (gold marginals) & 0.352 & 0.000 & 0.352 \\
+Family-shuffle of gold answers & 0.280 & 0.000 & 0.280 \\
+Gold oracle & 1.000 & 1.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Labelled NEW.} Seed sweep summary (symbolic B3/B4 $k{=}8$; 6 worlds/tier; seeds 100--105). B3 identical across seeds (limited diversity).}
+\label{tab:seeds}
+\small
+\begin{tabular}{lrrr}
+\toprule
+System & Acc range & BCR & $\Gapq$ range \\
+\midrule
+B3 recency-$k8$ & 0.567--0.567 & 0.0625 & 0.504--0.504 \\
+B4 BM25-$k8$ & 0.929--0.932 & 0.5938 & 0.335--0.338 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Labelled NEW.} Generator controls (symbolic). Density: 8 medium worlds, seed base 200. Distractors: seed 100, wpt$=$6.}
+\label{tab:density}
+\small
+\begin{tabular}{llrrr}
+\toprule
+Control & Setting & System & Acc & BCR \\
+\midrule
+Relation density & 0.0 / 1.0 & B4 & 0.917 / 0.909 & 0.600 / 0.600 \\
+Relation density & 0.0 / 1.0 & B3 & 0.545 / 0.545 & 0.000 / 0.000 \\
+Distractors & on / off & B4 & 0.932 / 0.932 & 0.594 / 0.594 \\
+Distractors & on / off & B3 & 0.567 / 0.567 & 0.062 / 0.062 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Evaluation coverage and hard limits.}
 \label{tab:coverage}
+\small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{ll}
 \toprule
 Dimension & Coverage \\
@@ -140,10 +237,37 @@ Dimension & Coverage \\
 Paper shape & Benchmark + evaluation methodology \\
 Symbolic reader & Full scaled (102 / 1{,}088 / 7{,}140) \\
 LLM reader & Qwen2.5-3B-Instruct-4bit; H4 subset only \\
-Phi / cloud models & Not run for Option A \\
+Stronger LLM readers & Proprietary GPT-4.1~mini transfer (22 bundles); not frontier coverage \\
 Architecture superiority & Unsupported under Qwen (all BCR~$=$~0) \\
 Ecological validity & Not claimed (synthetic worlds) \\
 Primary consistency metric & BCR (strict); CSR complementary \\
+Labelled robustness & Seeds/density/distractors/shortcuts/retrieval-budget (separate) \\
+B3 seed diversity & Identical Acc/BCR across seeds 100--105 (not replication) \\
+Proprietary transfer & Frozen stratified H0 subset; Acc 45.6\%; BCR $0/22$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
+
+\section{Qwen parser sensitivity (confirmatory)}
+\label{app:parser}
+
+Re-scoring frozen H4 \texttt{raw\_output} (no re-inference). Model: \texttt{mlx-community/Qwen2.5-3B-Instruct-4bit}. Across strict JSON, relaxed JSON, and answer-field regex, H0 Acc~$\approx$~0.187 and BCR~$=$~0; B4 Acc~$\approx$~0.147 and BCR~$=$~0; B3 Acc~$\approx$~0.075 and BCR~$=$~0. Abstention rates $\approx$0.48--0.70; malformed rates $\le$0.029. Cache-wide error channels: abstention $\approx$54\%, substantive/unchecked $\approx$44\%, malformed $\approx$1.5\%. A fixed raw-output sample (seed 20260908; $n{=}12$ H0 rows) shows majority three-parser agreement; occasional field-regex recoveries of malformed strings do not change BCR. Low Acc means this rejects a single-parser artefact without supporting high-Acc Acc--BCR divergence for Qwen.
+
+\section{Naturalistic transfer details (confirmatory)}
+\label{app:transfer}
+
+Independent scenarios $n{=}36$; queries/scenario~$=$~4; total queries~$=$~144; scenarios sha256 \texttt{b84dfa83\ldots}. Definitions: gold oracle emits gold answers; last-event uses only the last narrative sentence (current-like entity; abstains on historical/transition/temporal); entity-prior collapses to a P1/LOC1 shortcut; narrative-heuristic is full-narrative regex extraction. Scenario-level Acc CIs: last-event $[0.174,0.236]$; gold $[1,1]$. Role Acc (last-event): current~$0.833$, others~$0$. Correct-query counts (last-event): 0 in 6 scenarios, 1 in 30. Conjunction diagnostic (reference only): last-event $p^{4}\!\approx\!0.0019$ and role-product~$=$~0, so observed BCR~$=$~0 is consistent with low-$p$ conjunction rather than a high-Acc residual. Narrative heuristic Acc~$=$~0.875 with BCR~$=$~1 (negative $\Gapq$; consistent-but-not-fully-factual). No LLM reader completed on these scenarios.
+
+\section{Proprietary-reader transfer check (NEW)}
+\label{app:prop-transfer}
+
+\paragraph{Sampling.} Frozen stratified transfer subset of H4/H0: deterministic proportional allocation by (tier $\times$ difficulty), seed 20260909, complete bundles only (22 bundles / 149 queries). Manifest sha256 \texttt{dd9790c8\ldots}. Primary report sha256 \texttt{e3ac10ae\ldots}.
+
+\paragraph{Protocol.} Requested alias \texttt{gpt-4.1-mini}; independent smoke resolution \texttt{gpt-4.1-mini-2025-04-14}; cache rows store the alias. Temperature 0; max tokens 48; prompt \texttt{prompt\_v3\_k3\_mt48}; H0/LTKM evidence; same JSON parse. Statuses: 102 ok / 41 abstain / 6 malformed. All six malformed have \texttt{completion\_tokens}$=$48 (truncated JSON); counted incorrect; no selective retry.
+
+\paragraph{CIs.} Acc: bundle-level bootstrap, 10{,}000 resamples, seed 20260911, percentile interval. BCR~$=$~0/22: exact Clopper--Pearson two-sided $[0,15.4\%]$; one-sided 95\% upper $12.7\%$. Does not prove population BCR is exactly zero.
+
+\paragraph{Matched Qwen.} Exact same 149 query IDs from frozen \texttt{run2} H0 predictions (sha256 \texttt{5905b081\ldots}); Acc~$=$~20.1\%, BCR~$=$~0/22. Analysis outputs under \texttt{results/confirmatory/proprietary\_reader\_transfer/} (not pooled with Option~A).
+
+\paragraph{Family Acc (GPT-4.1 mini).} current $17/22$; historical $22/22$; contradiction $6/6$; temporal\_order $7/11$; counterfactual $6/11$; conflict\_validity $5/11$; multi\_hop $5/22$; transition $0/22$ (incl.\ 6 truncations); provenance $0/22$. BCR is not reported by family (bundle-level metric).
+

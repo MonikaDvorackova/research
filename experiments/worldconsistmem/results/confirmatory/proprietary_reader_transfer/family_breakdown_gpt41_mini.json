@@ -1,0 +1,74 @@
+{
+  "conflict_validity": {
+    "abstentions": 6,
+    "accuracy": 0.45454545454545453,
+    "correct": 5,
+    "malformed": 0,
+    "n": 11,
+    "valid_outputs": 5
+  },
+  "contradiction": {
+    "abstentions": 0,
+    "accuracy": 1.0,
+    "correct": 6,
+    "malformed": 0,
+    "n": 6,
+    "valid_outputs": 6
+  },
+  "counterfactual": {
+    "abstentions": 0,
+    "accuracy": 0.5454545454545454,
+    "correct": 6,
+    "malformed": 0,
+    "n": 11,
+    "valid_outputs": 11
+  },
+  "current_state": {
+    "abstentions": 4,
+    "accuracy": 0.7727272727272727,
+    "correct": 17,
+    "malformed": 0,
+    "n": 22,
+    "valid_outputs": 18
+  },
+  "historical_state": {
+    "abstentions": 0,
+    "accuracy": 1.0,
+    "correct": 22,
+    "malformed": 0,
+    "n": 22,
+    "valid_outputs": 22
+  },
+  "multi_hop": {
+    "abstentions": 14,
+    "accuracy": 0.22727272727272727,
+    "correct": 5,
+    "malformed": 0,
+    "n": 22,
+    "valid_outputs": 8
+  },
+  "provenance": {
+    "abstentions": 5,
+    "accuracy": 0.0,
+    "correct": 0,
+    "malformed": 0,
+    "n": 22,
+    "valid_outputs": 17
+  },
+  "temporal_order": {
+    "abstentions": 4,
+    "accuracy": 0.6363636363636364,
+    "correct": 7,
+    "malformed": 0,
+    "n": 11,
+    "valid_outputs": 7
+  },
+  "transition": {
+    "abstentions": 8,
+    "accuracy": 0.0,
+    "correct": 0,
+    "malformed": 6,
+    "n": 22,
+    "valid_outputs": 8
+  }
+}

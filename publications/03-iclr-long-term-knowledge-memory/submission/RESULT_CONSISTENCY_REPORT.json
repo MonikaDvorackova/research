@@ -1,0 +1,33 @@
+{
+  "generated": "2026-09-08",
+  "frozen_hashes_unchanged": true,
+  "frozen_hashes": {
+    "data/scaled/manifest.json": "37aa8604c3e6d87691332f66d2f7c0ab93578f2fe468bc29f7e8217c1675af3f",
+    "results/scaled/system_results.csv": "eb5bd5fa87496586bd830e5f685b9950e119f9fd0ac491194b3f003343f9a2a8"
+  },
+  "pdf": {
+    "sha256": "c837e39967699f0a279e6a01148f1764378babdc1b8b56d0d189ba95edd8302d",
+    "pages": 13,
+    "conclusion_page": 6,
+    "ai_use_refs_page": 7,
+    "appendix_a_page": 8,
+    "main_text_le_9": true,
+    "anonymous": true
+  },
+  "confirmatory": {
+    "alt_explanations": "experiments/worldconsistmem/results/confirmatory/alt_explanations/alt_explanations_summary.json",
+    "naturalistic_transfer": "experiments/worldconsistmem/results/confirmatory/naturalistic_transfer/transfer_summary.json",
+    "qwen_parser_sensitivity": "experiments/worldconsistmem/results/confirmatory/readers/qwen_parser_sensitivity.json",
+    "phi_blocker": "experiments/worldconsistmem/results/confirmatory/readers/PHI_BLOCKER.json",
+    "headline": {
+      "B4_acc": 0.9249,
+      "B4_acc_pow_n": 0.7144,
+      "B4_bcr": 0.591,
+      "transfer_last_event_acc": 0.2083,
+      "transfer_last_event_bcr": 0.0,
+      "qwen_parser_bcr_all_zero": true
+    }
+  },
+  "compilation": {"status": "ok", "undefined_citations": 0, "undefined_references": 0},
+  "n_fail": 0
+}

@@ -1,4 +1,2 @@
-WorldConsistMem — ICLR OpenReview source (anonymous)
-
-Build: tectonic -X compile worldconsistmem.tex
-Do NOT uncomment \iclrfinalcopy for blind submission.
+WorldConsistMem ICLR 2027 anonymous source package.
+Compile: tectonic -X compile worldconsistmem.tex

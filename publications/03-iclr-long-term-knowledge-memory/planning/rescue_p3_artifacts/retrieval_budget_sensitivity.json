@@ -1,0 +1,62 @@
+{
+  "label": "NEW \u2014 not Option A",
+  "protocol": "seed100; wpt=6; retrieval-budget / latest-only sensitivity",
+  "purpose": "Show Acc can match while BCR differs (B2 vs B3_k3); B3 varies with k, not only seeds",
+  "runtime_sec": 20.19,
+  "rows": [
+    {
+      "Acc": 0.4905,
+      "BCR": 0.2188,
+      "Gapq": 0.2717,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B2_latest_only"
+    },
+    {
+      "Acc": 0.4905,
+      "BCR": 0.0,
+      "Gapq": 0.4905,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B3_recency_k3"
+    },
+    {
+      "Acc": 0.5095,
+      "BCR": 0.0208,
+      "Gapq": 0.4887,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B3_recency_k5"
+    },
+    {
+      "Acc": 0.5667,
+      "BCR": 0.0625,
+      "Gapq": 0.5042,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B3_recency_k8"
+    },
+    {
+      "Acc": 0.7968,
+      "BCR": 0.375,
+      "Gapq": 0.4218,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B4_bm25_k3"
+    },
+    {
+      "Acc": 0.9317,
+      "BCR": 0.5938,
+      "Gapq": 0.338,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "system": "B4_bm25_k8"
+    }
+  ]
+}

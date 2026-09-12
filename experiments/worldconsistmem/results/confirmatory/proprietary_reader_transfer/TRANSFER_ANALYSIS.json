@@ -1,0 +1,286 @@
+{
+  "gpt41_mini": {
+    "acc_ci95_bundle_bootstrap": {
+      "hi": 0.506578947368421,
+      "lo": 0.4041095890410959,
+      "mean": 0.4563758389261745,
+      "method": "bundle_resample_with_replacement_query_weighted_acc",
+      "n_boot": 10000.0,
+      "n_bundles": 22.0,
+      "seed": 20260911.0
+    },
+    "bcr": 0.0,
+    "bcr_ci95_clopper_pearson": {
+      "hi": 0.15437251281557463,
+      "k": 0.0,
+      "lo": 0.0,
+      "method": "clopper_pearson_exact_zero_success",
+      "n": 22.0,
+      "one_sided_upper_95": 0.12730543165483876
+    },
+    "bcr_point": "0/22",
+    "family_breakdown": {
+      "conflict_validity": {
+        "abstentions": 6,
+        "accuracy": 0.45454545454545453,
+        "correct": 5,
+        "malformed": 0,
+        "n": 11,
+        "valid_outputs": 5
+      },
+      "contradiction": {
+        "abstentions": 0,
+        "accuracy": 1.0,
+        "correct": 6,
+        "malformed": 0,
+        "n": 6,
+        "valid_outputs": 6
+      },
+      "counterfactual": {
+        "abstentions": 0,
+        "accuracy": 0.5454545454545454,
+        "correct": 6,
+        "malformed": 0,
+        "n": 11,
+        "valid_outputs": 11
+      },
+      "current_state": {
+        "abstentions": 4,
+        "accuracy": 0.7727272727272727,
+        "correct": 17,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 18
+      },
+      "historical_state": {
+        "abstentions": 0,
+        "accuracy": 1.0,
+        "correct": 22,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 22
+      },
+      "multi_hop": {
+        "abstentions": 14,
+        "accuracy": 0.22727272727272727,
+        "correct": 5,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 8
+      },
+      "provenance": {
+        "abstentions": 5,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 17
+      },
+      "temporal_order": {
+        "abstentions": 4,
+        "accuracy": 0.6363636363636364,
+        "correct": 7,
+        "malformed": 0,
+        "n": 11,
+        "valid_outputs": 7
+      },
+      "transition": {
+        "abstentions": 8,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 6,
+        "n": 22,
+        "valid_outputs": 8
+      }
+    },
+    "gap_acc_bcr": 0.4563758389261745,
+    "mean_acc": 0.4563758389261745,
+    "n_abstain": 41,
+    "n_bundles": 22,
+    "n_malformed": 6,
+    "n_ok": 102,
+    "n_queries": 149,
+    "reader_id": "gpt-4.1-mini",
+    "source_path": "results/new/stronger_reader_pilot/predictions.jsonl",
+    "source_sha256": "ffbc4f49fd185ff91c2556da95d9c2a38e190a1af2e2aeb95df57fafc076c5bf"
+  },
+  "label": "NEW_proprietary_reader_transfer_analysis",
+  "malformed_policy": "six truncated JSON outputs at completion_tokens==48 counted conservatively incorrect; no selective retry",
+  "matched_qwen": {
+    "acc_ci95_bundle_bootstrap": {
+      "hi": 0.2708333333333333,
+      "lo": 0.13245033112582782,
+      "mean": 0.20134228187919462,
+      "method": "bundle_resample_with_replacement_query_weighted_acc",
+      "n_boot": 10000.0,
+      "n_bundles": 22.0,
+      "seed": 20260911.0
+    },
+    "bcr": 0.0,
+    "bcr_ci95_clopper_pearson": {
+      "hi": 0.15437251281557463,
+      "k": 0.0,
+      "lo": 0.0,
+      "method": "clopper_pearson_exact_zero_success",
+      "n": 22.0,
+      "one_sided_upper_95": 0.12730543165483876
+    },
+    "bcr_point": "0/22",
+    "family_breakdown": {
+      "conflict_validity": {
+        "abstentions": 6,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 0,
+        "n": 11,
+        "valid_outputs": 5
+      },
+      "contradiction": {
+        "abstentions": 4,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 0,
+        "n": 6,
+        "valid_outputs": 2
+      },
+      "counterfactual": {
+        "abstentions": 11,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 0,
+        "n": 11,
+        "valid_outputs": 0
+      },
+      "current_state": {
+        "abstentions": 1,
+        "accuracy": 0.5909090909090909,
+        "correct": 13,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 21
+      },
+      "historical_state": {
+        "abstentions": 0,
+        "accuracy": 0.6363636363636364,
+        "correct": 14,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 22
+      },
+      "multi_hop": {
+        "abstentions": 14,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 0,
+        "n": 22,
+        "valid_outputs": 8
+      },
+      "provenance": {
+        "abstentions": 5,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 3,
+        "n": 22,
+        "valid_outputs": 14
+      },
+      "temporal_order": {
+        "abstentions": 3,
+        "accuracy": 0.2727272727272727,
+        "correct": 3,
+        "malformed": 2,
+        "n": 11,
+        "valid_outputs": 6
+      },
+      "transition": {
+        "abstentions": 18,
+        "accuracy": 0.0,
+        "correct": 0,
+        "malformed": 2,
+        "n": 22,
+        "valid_outputs": 2
+      }
+    },
+    "gap_acc_bcr": 0.20134228187919462,
+    "mean_acc": 0.20134228187919462,
+    "n_abstain": 62,
+    "n_bundles": 22,
+    "n_malformed": 7,
+    "n_ok": 80,
+    "n_queries": 149,
+    "reader_id": "Qwen2.5-3B-Instruct-4bit",
+    "source_path": "results/scaled/run2/run2_predictions/Qwen2.5-3B-Instruct-4bit__H0_ltkm_cap150_ret8.jsonl",
+    "source_sha256": "5905b081bdb4549caf2192827397e31a74cd8f98aa35dd3332af3468563451ba"
+  },
+  "matched_qwen_extract_path": "results/confirmatory/proprietary_reader_transfer/qwen_matched_subset_predictions.jsonl",
+  "matched_qwen_extract_sha256": "34b7f81ae358a01a2e0601c7b68fd06e28c98684c19890abcd5b598f188dc7df",
+  "matched_qwen_meta": {
+    "available": true,
+    "checked": [
+      "results/scaled/run2/run2_predictions/Qwen2.5-3B-Instruct-4bit__H0_ltkm_cap150_ret8.jsonl"
+    ],
+    "missing_ids": [],
+    "n_found": 149,
+    "n_needed": 149,
+    "source_path": "results/scaled/run2/run2_predictions/Qwen2.5-3B-Instruct-4bit__H0_ltkm_cap150_ret8.jsonl",
+    "source_sha256": "5905b081bdb4549caf2192827397e31a74cd8f98aa35dd3332af3468563451ba"
+  },
+  "model_requested_alias": "gpt-4.1-mini",
+  "not_option_a": true,
+  "provenance": {
+    "all_ok": true,
+    "cache_n": 149,
+    "cache_unique_q": 149,
+    "file_checks": {
+      "COST_ESTIMATE.json": {
+        "ok": true,
+        "sha256": "c478952a4a81d64b52dfc9e222626aa32995c385e274c94fc40d191716fbb9c2"
+      },
+      "PILOT_CONFIG.json": {
+        "ok": true,
+        "sha256": "dd742cae6bdb548243bd1f606b4046fcea922c35d3e34475d94b13f4cf2916f9"
+      },
+      "api_cache.jsonl": {
+        "ok": true,
+        "sha256": "89ce7069b8cfb45922caea662b304e4445335a96c2ad9f23dc88409d82bdb330"
+      },
+      "metrics.json": {
+        "ok": true,
+        "sha256": "015e2f91720e7a456bdfa017b2a73e468be7d04f3faba25897b5c918cb1258e2"
+      },
+      "predictions.jsonl": {
+        "ok": true,
+        "sha256": "ffbc4f49fd185ff91c2556da95d9c2a38e190a1af2e2aeb95df57fafc076c5bf"
+      },
+      "sample_manifest.jsonl": {
+        "ok": true,
+        "sha256": "dd9790c8f75bd8956b85298f5fa8d8f9a75620ed43e3f55cd1425637280dfb5d"
+      },
+      "spend_ledger.jsonl": {
+        "ok": true,
+        "sha256": "566b7e31675fc31436803e6f034b852982e02fd964e6f57cf310d92c8c652ca1"
+      }
+    },
+    "malformed_all_completion_tokens_48": true,
+    "malformed_n": 6,
+    "manifest_bundles": 22,
+    "manifest_n": 149,
+    "manifest_unique_q": 149,
+    "matches_expected_user_sha": true,
+    "option_a": {
+      "data/scaled/manifest.json": {
+        "ok": true,
+        "sha256": "37aa8604c3e6d87691332f66d2f7c0ab93578f2fe468bc29f7e8217c1675af3f"
+      },
+      "results/scaled/system_results.csv": {
+        "ok": true,
+        "sha256": "eb5bd5fa87496586bd830e5f685b9950e119f9fd0ac491194b3f003343f9a2a8"
+      }
+    },
+    "preds_n": 149,
+    "preds_set_eq_manifest": true,
+    "report_sha256": "e3ac10ae4b6395966f594bbc280ebaf2a2e996e29003d6b0b7e429ffd4f4e06d",
+    "sidecar_match": true
+  },
+  "smoke_test_resolved_model": "gpt-4.1-mini-2025-04-14",
+  "snapshot_note": "Requested alias gpt-4.1-mini; independent smoke test resolved to gpt-4.1-mini-2025-04-14. Stored API cache rows record the requested alias, not resp['model']."
+}

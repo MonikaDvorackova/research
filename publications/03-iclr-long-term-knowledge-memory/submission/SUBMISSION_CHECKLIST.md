@@ -2,63 +2,57 @@
 id: pub-03-openreview-submission-checklist
 title: "OpenReview submission checklist"
 type: planning
-status: final
+status: active
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-09-07
 ---
 
-# OpenReview submission checklist — WorldConsistMem
+# OpenReview submission checklist — WorldConsistMem (ICLR 2027)
 
 **PDF:** `publications/03-iclr-long-term-knowledge-memory/submission/worldconsistmem.pdf`  
 **Source zip:** `publications/03-iclr-long-term-knowledge-memory/submission/package/worldconsistmem-openreview.zip`  
-**Compile log:** `publications/03-iclr-long-term-knowledge-memory/submission/logs/compile.log`
+**Compile log:** `publications/03-iclr-long-term-knowledge-memory/submission/logs/compile_rescue.log`  
+**Rescue plan/report:** `planning/iclr-poster-rescue-plan.md`, `planning/iclr-poster-rescue-report.md`
 
 ## Venue / format
 
-- [x] Official ICLR 2026 style (`iclr2026_conference.sty` / `.bst` from ICLR Master-Template)
+- [x] Official ICLR **2027** style (`iclr2027_conference.sty` / `.bst`)
 - [x] Anonymous authors (`%\iclrfinalcopy` remains commented)
 - [x] Compiles with tectonic (BibTeX + PDF)
-- [x] Bibliography rendered (10 keys)
-- [x] No undefined citations / references in log
-- [x] Ethics statement present (synthetic data; N/A for human subjects)
+- [x] Bibliography rendered
+- [x] Mandatory **AI Use Statement** present (outside page limit)
+- [x] Ethics statement present
 - [x] Reproducibility statement present
 - [x] Acknowledgements omitted for double-blind
-- [x] Appendix present (related work detail, fairness, extra tables/figures)
-
-## Content hygiene (packaging)
-
-- [x] YAML / freeze notes / planning paths / experiment paths removed from submission PDF
-- [x] Duplicate inline result tables removed (single publication tables)
-- [x] Numeric display synced (round half-up to 3 decimals): B3 BCR **0.063**, H0 Abs **0.483**, etc.
-- [x] Figures appear in order 1→5 by first reference (difficulty figure in appendix as Fig.~5)
-- [x] No author-identifying local paths in PDF
+- [x] Appendix present
 
 ## Page budget (ICLR main text ≤ 9 pages)
 
-| Section | Approx.\ start page (current PDF) |
+| Marker | Page (current PDF) |
 |---|---|
-| Intro | 1 |
-| Related (short) | 3 |
-| Object | 3 |
-| Benchmark | 5 |
-| Metrics | 6 |
-| Systems | 7 |
-| Setup | 8 |
-| **Results** | **9** |
-| Failures / Discussion / Conclusion | 11–13 |
-| Appendix | 15+ |
+| Results start | 4 |
+| Discussion | 5 |
+| Conclusion | 7 |
+| References start | 8 |
+| Appendix | 9–12 |
 
-- [x] Results section begins within the first 9 pages
-- [ ] Optional author follow-up: further compress §§3–6 if you want full Qwen tables inside pages 1–9
+- [x] Main text through Conclusion is within 9 pages (currently ends p.7)
 
-## Upload steps (manual)
+## Content hygiene
 
-1. OpenReview → ICLR 2026 → Create submission  
-2. Upload `worldconsistmem.pdf` as primary PDF  
-3. Upload `worldconsistmem-openreview.zip` as supplementary source (if required)  
-4. Confirm anonymity checklist on OpenReview  
-5. Do **not** uncomment `\iclrfinalcopy` until camera-ready  
+- [x] No author-identifying local paths in PDF
+- [x] Numeric display synced (half-up 3 decimals)
+- [x] Architecture superiority not claimed
+- [x] BCR=0 defended with gold H4 sanity + multi-violation diagnostics
+- [x] New rescue experiments labelled separately from Option A freeze
+
+## Still manual before upload
+
+- [ ] Anonymized code/data zip from `~/worldconsistmem-experiments` (research `experiments/worldconsistmem/` is empty)
+- [ ] Coauthor edit of AI Use Statement to match actual practice
+- [ ] OpenReview abstract by 2026-09-18 AOE; full paper by 2026-09-25 AOE
+- [ ] Confirm reciprocal-reviewing / author-quota rules for all coauthors
 
 ## Scientific freeze
 
-No changes to RQ, benchmark, experiments, metrics definitions, conclusions, or scientific claims. Display rounding synchronized only.
+Option A Qwen/symbolic freeze remains authoritative. Rescue P1 outputs in `planning/rescue_p1_artifacts/` are labelled NEW and must not silently replace freeze tables.

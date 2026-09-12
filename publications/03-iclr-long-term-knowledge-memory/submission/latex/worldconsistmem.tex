@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{iclr2026_conference,times}
+\usepackage{iclr2027_conference,times}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
@@ -28,16 +28,7 @@ Paper under double-blind review
 
 \maketitle
 
-\begin{abstract}
-Long-term memory (LTM) systems support agents that operate over evolving interactions and changing world states. Most existing evaluations primarily report per-query or per-instance outcomes such as answer accuracy, retrieval fitness, conflict handling, or lifecycle metrics. These protocols leave open whether answers about the same persistent world jointly describe one coherent history.
-
-We introduce an evaluation framework for cross-query world-history consistency. WorldConsistMem is a synthetic evolving-world benchmark based on dependent query bundles grounded in one deterministic gold history. Constraints are derived automatically from that history; a reader's predicted answer set---conditioned on the memory state---is scored by machine-checkable predicates, independently of memory internals. Strict Bundle Consistency Rate (BCR) measures full constraint satisfaction; Constraint Satisfaction Rate (CSR) provides partial diagnostic resolution when BCR floors. We also report Acc--consistency gaps and ConsAcc diagnostics.
-
-Across a corruption suite and a scaled symbolic study (102 worlds, 1{,}088 bundles, 7{,}140 queries), per-query accuracy and bundle consistency diverge: high Acc with BCR~$=$~0 and low Acc with BCR~$=$~1 both occur, and retrieval systems can retain high Acc while violating bundle constraints. Under a frozen Qwen reader on an H4 subset, BCR floors at 0 for all evaluated systems while mean CSR remains discriminative (about 0.26--0.33). The structured hierarchical reference attains the highest Acc (0.185) but not the strongest CSR (BM25 leads at 0.329); architecture superiority is not supported.
-
-Contributions: (i) a formal cross-query consistency evaluation methodology; (ii) the WorldConsistMem benchmark; (iii) strict and partial consistency metrics (BCR, CSR, ConsAcc, gaps); (iv) an empirical characterization with released reference systems.
-\end{abstract}
-
+\input{sec_abstract}
 \input{sec_intro}
 \input{sec_related}
 \input{sec_object}
@@ -51,7 +42,7 @@ Contributions: (i) a formal cross-query consistency evaluation methodology; (ii)
 \input{sec_conclusion}
 
 \bibliography{references}
-\bibliographystyle{iclr2026_conference}
+\bibliographystyle{iclr2027_conference}
 
 \appendix
 \input{sec_appendix}

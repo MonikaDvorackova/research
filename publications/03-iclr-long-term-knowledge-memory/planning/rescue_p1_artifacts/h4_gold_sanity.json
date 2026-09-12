@@ -1,0 +1,50 @@
+{
+  "experiment_id": "rescue_p1_h4_gold_sanity",
+  "label": "NEW \u2014 not part of Option A freeze",
+  "n_worlds": 18,
+  "n_bundles": 192,
+  "n_queries": 1260,
+  "metrics": {
+    "n_bundles": 192,
+    "n_queries": 1260,
+    "mean_query_accuracy": 1.0,
+    "bundle_accuracy_rate": 1.0,
+    "bcr": 1.0,
+    "consacc_strict": 1.0,
+    "consacc_relaxed": 1.0,
+    "relaxed_acc_threshold": 0.8,
+    "gap_mean_acc_minus_bcr": 0.0,
+    "gap_bundle_acc_minus_consacc": 0.0,
+    "high_acc_inconsistent_rate": 0.0,
+    "temporal_violation_rate": 0.0,
+    "provenance_violation_rate": 0.0,
+    "constraint_violation_rates": {
+      "uniqueness": 0.0,
+      "temporal": 0.0,
+      "transition": 0.0,
+      "relational": 0.0,
+      "provenance": 0.0,
+      "multi_hop": 0.0,
+      "contradiction": 0.0
+    },
+    "family_accuracy": {
+      "current_state": 1.0,
+      "historical_state": 1.0,
+      "transition": 1.0,
+      "multi_hop": 1.0,
+      "provenance": 1.0,
+      "temporal_order": 1.0,
+      "contradiction": 1.0,
+      "counterfactual": 1.0,
+      "conflict_validity": 1.0
+    },
+    "notes": {
+      "primary_gap": "Gap_query = MeanQueryAccuracy - BCR (frozen primary)",
+      "secondary_gap": "Gap_bundle = BundleAccuracy - ConsAcc_strict (frozen secondary)",
+      "gap_mean_acc_minus_bcr": "PRIMARY Gap_query: MeanQueryAccuracy - BCR",
+      "gap_bundle_acc_minus_consacc": "SECONDARY Gap_bundle: Acc_bundle - ConsAcc_strict (Acc_bundle = fraction of fully-correct bundles)",
+      "metric_freeze": "configs/METRIC_FREEZE.md \u2014 BCR/ConsAcc/Acc semantics unchanged from smoke; primary=Gap_query, secondary=Gap_bundle."
+    }
+  },
+  "n_violations": 0
+}

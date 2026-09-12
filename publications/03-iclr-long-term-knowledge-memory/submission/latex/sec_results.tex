@@ -1,92 +1,111 @@
 \section{Results}
 \label{sec:results}
 
-We organize results around five questions. Symbolic and Qwen conditions are never pooled.
+Frozen Option~A is primary. Confirmatory outputs are labelled and never pooled into Option~A tables. Independent units: \textbf{world} for frozen BCR CIs; \textbf{scenario} for transfer CIs.
 
-\subsection{Are accuracy and consistency distinct?}
+\subsection{RQ1: How large is Acc vs.\ complete belief consistency?}
 
-\paragraph{Corruption suite (smoke).} Gold predictions attain Acc $=$ BCR $=$ ConsAcc $=$ 1. Controlled corruptions separate the metrics (Table~\ref{tab:corruption}). High Acc with BCR~$=$~0 and low Acc with BCR~$=$~1 both occur. This supports that $\Phi$ is not redundant with Acc.
+\paragraph{Corruption.} Gold Acc$=$BCR$=$1. Controlled corruptions move Acc and BCR independently (Table~\ref{tab:corruption}).
 
 \begin{table}[t]
 \centering
-\caption{Corruption-suite validation (smoke; frozen).}
+\caption{\textbf{Frozen.} Corruption: Acc and BCR move independently.}
 \label{tab:corruption}
+\small
 \begin{tabular}{lrrr}
 \toprule
 Corruption & Acc & BCR & $\Gapq$ \\
 \midrule
 high\_acc\_inconsistent & 0.849 & 0.000 & 0.849 \\
-wrong\_provenance & 0.849 & 0.000 & 0.849 \\
 consistent\_wrong\_world & 0.394 & 1.000 & $-$0.606 \\
 transition\_inconsistency & 0.939 & 0.600 & 0.339 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Does the distinction persist at scale?}
-
-\paragraph{Symbolic scaled (102 worlds).} Retrieval baselines show large Acc--BCR gaps (Table~\ref{tab:symbolic}; Figure~\ref{fig:accbcr}, left). B4 retains high Acc while BCR remains materially lower ($\Gapq=0.338$). The Acc--consistency distinction survives scaling under the deterministic reader. World-level bootstrap CIs are reported in the frozen statistical analysis artefacts.
+\paragraph{Scaled symbolic.} Table~\ref{tab:symbolic} and Figure~\ref{fig:accbcr}: B2/B3-$k3$ share Acc~$=$~0.4905 with BCR 0.219 vs.\ 0.000; B4 Acc~$=$~0.929 with BCR~$=$~0.591 ($\Gapq{=}0.338$). Table~\ref{tab:b2vignette} shows a concrete B2 belief set with Acc~$=$~0.75 and $\Phi{=}0$.
 
 \begin{table}[t]
 \centering
-\caption{Symbolic scaled results (102 worlds; frozen). Acc, BCR, CSR rounded half-up to three decimals from frozen point estimates.}
+\caption{\textbf{Frozen.} Symbolic scaled (102/1{,}088/7{,}140). Brackets: world-level 95\% CIs.}
 \label{tab:symbolic}
+\small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 System & Acc & BCR & $\Gapq$ & mean CSR \\
 \midrule
-B3 recency-$k8$ & 0.567 & 0.063 & 0.504 & 0.507 \\
-B4 BM25-$k8$ & 0.929 & 0.591 & 0.338 & 0.881 \\
-B1 compact (cap150) & 1.000 & 1.000 & 0.000 & 1.000 \\
-H0 LTKM (cap150, ret8) & 0.976 & 0.844 & 0.132 & 0.973 \\
+B2 latest-only & 0.490 & 0.219 & 0.272 & --- \\
+B3 recency-$k3$ & 0.490 & 0.000 & 0.490 & --- \\
+B3 recency-$k8$ & 0.567 & 0.063$_{[0.049,0.084]}$ & 0.504 & 0.507$_{[0.483,0.547]}$ \\
+B4 BM25-$k8$ & 0.929 & 0.591$_{[0.586,0.596]}$ & 0.338 & 0.881$_{[0.870,0.890]}$ \\
+H0 LTKM (cap150, ret8) & 0.976 & 0.844$_{[0.820,0.898]}$ & 0.132 & 0.973$_{[0.970,0.983]}$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/fig3-acc-vs-bcr-csr.pdf}
-\caption{Acc versus BCR and CSR under symbolic and Qwen readers.}
+\includegraphics[width=0.92\linewidth]{figures/fig3-acc-vs-bcr-csr.pdf}
+\caption{\textbf{Frozen.} Acc vs BCR/CSR.}
 \label{fig:accbcr}
 \end{figure}
 
-\subsection{Which systems show the largest gaps?}
+\subsection{RQ2: Persistence across systems/readers?}
 
-Under the symbolic reader, \textbf{recency retrieval} exhibits the largest $\Gapq$ among the headline retrieval points (0.504). \textbf{BM25} narrows but does not close the gap. \textbf{Compact flat at capacity 150} saturates Acc and BCR in this generator regime (fairness caveat: padding eviction can preserve focal lifecycle evidence; Section~\ref{sec:systems}). \textbf{H0 at cap150/ret8} achieves high Acc and high BCR/CSR, but does \textbf{not} beat compact flat on BCR ($\Delta$BCR vs compact $=$ $-$0.156 at this point; matched lift vs compact fails the frozen gate). H0 does beat matched \textbf{recency} flat on BCR in the frozen capacity study; that is a matched-baseline comparison, not a claim of architectural superiority over all flat stores.
-
-Selective ablations (archive, temporal-validity, graph, conflict) produce family-level Acc drops in the frozen ablation table; they are diagnostic of component--family links under the symbolic reader, not evidence that a multi-component store is necessary. Stratified Acc/BCR by difficulty and tier are shown in Figure~\ref{fig:difficulty} (Appendix~\ref{app:extrafigs}).
-
-\subsection{What happens under the Qwen reader?}
-
-\paragraph{H4 subset; frozen Qwen Option A.} All four systems have \textbf{BCR~$=$~0}. Acc remains ordered (Table~\ref{tab:qwen}; Figure~\ref{fig:accbcr}, right). Because the constraint suite is satisfiable for gold/oracle predictions and yields non-trivial BCR on the deterministic symbolic reader (Section~\ref{sec:benchmark} smoke confirmation and Section~\ref{sec:results} symbolic results), the Qwen BCR floor reflects difficulty in producing jointly constraint-satisfying answers under this frozen reader/parsing pipeline, not an intrinsically inconsistent constraint definition.
+Symbolic gaps persist across systems/tiers/ablations (Figure~\ref{fig:difficulty}; Table~\ref{tab:ablations}). Under frozen Qwen2.5-3B H4, all four systems have BCR~$=$~0 while Acc$\in[0.093,0.185]$ (Table~\ref{tab:qwen}); gold H4 yields Acc$=$BCR$=$1. Because item Acc is low, the LLM BCR floor is primarily a difficulty/abstention probe, not high-Acc/low-BCR divergence. \textbf{Confirmatory:} re-parsing frozen Qwen \texttt{raw\_output} with three extractors leaves Acc/BCR unchanged at BCR~$=$~0 (H0 Acc~$\approx$~0.187; Appendix~\ref{app:parser}). Phi-3.5 confirmatory H4 was \textbf{blocked} (no MLX runtime/weights in this environment).
 
 \begin{table}[t]
 \centering
-\caption{Qwen H4 Option A results (18 worlds, 192 bundles; frozen). Values rounded half-up to three decimals. All PConsAcc grid cells at $(\tau,\tau_c)\in\{0.5,0.8\}\times\{0.8,0.9\}$ are 0.}
+\caption{\textbf{Frozen Option~A.} Qwen2.5-3B-Instruct-4bit; H4. All BCR~$=$~0.}
 \label{tab:qwen}
-\begin{tabular}{lrrrrr}
+\small
+\begin{tabular}{lrrrr}
 \toprule
-System & Acc & BCR & mean CSR & Abs & Mal \\
+System & Acc & BCR & Abs & Mal \\
 \midrule
-B1 compact & 0.096 & 0.000 & 0.258 & 0.728 & 0.007 \\
-B3 recency-$k8$ & 0.093 & 0.000 & 0.258 & 0.728 & 0.007 \\
-B4 BM25-$k8$ & 0.148 & 0.000 & 0.329 & 0.579 & 0.001 \\
-H0 LTKM & 0.185 & 0.000 & 0.284 & 0.483 & 0.029 \\
+B1 compact & 0.096 & 0.000 & 0.728 & 0.007 \\
+B4 BM25-$k8$ & 0.148 & 0.000 & 0.579 & 0.001 \\
+H0 LTKM & 0.185 & 0.000 & 0.483 & 0.029 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{Reading.}
-\begin{itemize}[leftmargin=*,itemsep=1pt]
-\item In this Qwen setting, H0 has the \textbf{highest Acc} and lower abstention than flats/recency.
-\item B4 has the \textbf{highest CSR}.
-\item H0's CSR is above B1/B3 ($+$0.026) but \textbf{below B4 ($-$0.045)}.
-\item \textbf{No architecture consistency advantage is supported} under Qwen: BCR ties at 0; CSR does not rank H0 highest.
-\item Acc gains must not be converted into consistency claims.
-\end{itemize}
+\subsection{RQ3: Only belief-set size, length, abstention, or parsing?}
+\label{sec:robustness}
 
-\subsection{Does CSR provide resolution when BCR floors?}
+\paragraph{Conjunction diagnostic (confirmatory).}
+On frozen predictions re-scored read-only, B4 has Acc~$=$~0.925, mean $\Acc^{n}{=}0.714$, BCR~$=$~0.591: $\Acc-\BCR{=}0.334$ decomposes into Acc$-\Acc^{n}$ (conjunctive) plus $\Acc^{n}-$BCR~$=$~0.123 beyond the i.i.d.\ baseline (world-level BCR CI $[0.586,0.596]$). H0 similarly sits below $\Acc^{n}$ (BCR~$=$~0.844 vs.\ $0.897$). Thus BCR is stricter than Acc, and not identical to $\Acc^{n}$.
 
-Yes, within limits. With BCR~$=$~0 for all Qwen systems, mean CSR still separates B4 (0.329) from B1/B3 (0.258) and H0 (0.284). Mean violations per bundle remain high ($\approx$3.3--3.6). Acc--CSR Pearson correlation is positive for B1/B3/B4 ($\approx$0.30--0.43) but near zero/slightly negative for H0 ($-$0.04), consistent with H0 answering more questions without proportional joint constraint satisfaction.
+\paragraph{Abstention.} Bundles without abstentions often achieve BCR~$=$~1 under symbolic B2/H0; abstaining bundles drive many $\Phi{=}0$ outcomes. This explains part of the gap without erasing it: Acc still counts remaining correct items (Table~\ref{tab:b2vignette}).
 
-\paragraph{Conclusion of Section~\ref{sec:results}.} Acc and consistency are empirically distinct; the distinction persists symbolically at scale; under Qwen, strict BCR floors while CSR remains weakly diagnostic; the structured reference H0 is not supported as a consistency winner under Qwen.
+\paragraph{Retrieval / shortcuts (NEW).} Family-majority Acc~$=$~0.352 with BCR~$=$~0; B2/B3-$k3$ Acc-tie under different $k$ (Table~\ref{tab:budget}).
+
+\paragraph{Parsers.} Qwen BCR~$=$~0 is stable across strict/relaxed/field parsers, but Acc remains low under all three (Appendix~\ref{app:parser}); parser agreement does not by itself prove semantic memory failure.
+
+\subsection{RQ4: Controlled naturalistic transfer (confirmatory probe)}
+
+We froze 36 independent NL scenarios (4 queries each; 144 scored queries; seed 20260908) as a separately frozen confirmatory study. Bounded conclusions only: gold Acc$=$BCR$=$1; last-event Acc~$=$~0.208 with BCR~$=$~0 (low Acc; difficulty/control probe). Details in Appendix~\ref{app:transfer}.
+
+\subsection{RQ5: Proprietary-reader transfer check?}
+\label{sec:prop-transfer}
+
+On a frozen stratified transfer subset of the H4/H0 protocol (149 queries in 22 complete bundles; seed 20260909; not Option~A), we re-read identical evidence packs with requested alias \texttt{gpt-4.1-mini} (temperature 0; 48-token ceiling; prompt \texttt{prompt\_v3\_k3\_mt48}). An independent smoke test resolved the alias to \texttt{gpt-4.1-mini-2025-04-14}; stored rows record the alias, not \texttt{resp[model]}. Six outputs hit the ceiling with truncated JSON and are counted as incorrect (no selective retry). Table~\ref{tab:prop-transfer} reports the check alongside an exact matched-subset extraction of frozen Qwen H0 predictions for the same 149 IDs.
+
+\begin{table}[t]
+\centering
+\caption{Proprietary-reader transfer check on a frozen stratified H0 subset (NEW; not Option~A). Acc CIs: bundle-level bootstrap (10{,}000 resamples). BCR CIs: exact Clopper--Pearson for observed $0/22$ (two-sided hi $15.4\%$; one-sided $95\%$ upper $12.7\%$). Six GPT-4.1~mini responses hit the 48-token ceiling with truncated JSON and were conservatively counted incorrect (no selective retry).}
+\label{tab:prop-transfer}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrcccccc}
+\toprule
+Reader & $Q$ & $B$ & Acc & Acc 95\% CI & BCR & BCR 95\% CI & Gap & Abs / Trunc \\
+\midrule
+GPT-4.1 mini & 149 & 22 & 45.6\% & $[40.4,50.7]$ & $0/22$ & $[0,15.4]$ & 45.6 & 41 / 6 \\
+Qwen 3B (matched) & 149 & 22 & 20.1\% & $[13.2,27.1]$ & $0/22$ & $[0,15.4]$ & 20.1 & 62 / 7 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Substantial query-level Acc can therefore coexist with complete observed bundle-consistency failure, and the Acc--BCR gap transfers from the open-weight H0 evaluation to an independently evaluated proprietary reader under the same system stack (model $+$ frozen prompt $+$ H0/LTKM retrieval $+$ parser $+$ strict $\Phi$). This does not establish failure across frontier models.

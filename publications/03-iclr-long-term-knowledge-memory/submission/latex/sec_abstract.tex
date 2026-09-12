@@ -1,0 +1,7 @@
+\begin{abstract}
+Standard long-term memory evaluations score answers one query at a time. A system can therefore look accurate while its answers fail as one coherent world history, so aggregate Acc can overstate joint reconstruction and mis-rank systems.
+
+\textbf{WorldConsistMem} evaluates that discrepancy. Dependent query bundles are grounded in one gold evolving history; machine-checkable constraints $\mathcal{C}$ induce a joint predicate $\Phi$ on the predicted answer set. Acc scores local gold match; Bundle Consistency Rate (BCR) is the fraction of bundles with $\Phi=1$; $\Gapq=\Acc-\BCR$ measures the gap. We treat BCR as a different evaluation object from Acc, while explicitly accounting for conjunctive strictness via an $\Acc^{n}$ independence diagnostic.
+
+On frozen Option~A (102/1{,}088/7{,}140), Acc and BCR diverge---including identical Acc with different BCR (0.4905 with BCR 0.219 vs.\ 0.000) and BM25 Acc~$=$~0.929 with BCR~$=$~0.591 (below $\Acc^{n}$). On a frozen stratified transfer subset (149 queries / 22 complete bundles), a proprietary-reader check with GPT-4.1~mini yields 45.6\% mean query Acc while BCR~$=$~0/22, so substantial item Acc coexists with complete observed bundle-consistency failure under the same H0 protocol. Scope: controlled diagnostic plus bounded transfer checks---not open-world or frontier-model coverage.
+\end{abstract}

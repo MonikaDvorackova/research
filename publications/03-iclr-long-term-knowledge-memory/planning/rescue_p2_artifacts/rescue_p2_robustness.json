@@ -1,0 +1,498 @@
+{
+  "label": "NEW \u2014 not Option A freeze",
+  "environment_blockers": [
+    "Stronger LLM reader NOT RUN: mlx_lm missing; disk ~2.1GiB"
+  ],
+  "experiments": {
+    "seed_sweep_wpt6": {
+      "protocol": "symbolic B3/B4 k8; wpt=6; seeds 100-105; distractors ON",
+      "note": "B3 Acc/BCR identical across seeds under this protocol (template-heavy generator). B4 Acc varies slightly; Gap_query remains large. Do not treat as full seed diversity.",
+      "B3_gap_range": [
+        0.5042,
+        0.5042
+      ],
+      "B4_gap_range": [
+        0.3348,
+        0.338
+      ],
+      "B4_acc_range": [
+        0.9286,
+        0.9317
+      ],
+      "B4_bcr_constant": 0.5938,
+      "runs": [
+        {
+          "seed": 100,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9317,
+            "BCR": 0.5938,
+            "Gap": 0.338
+          }
+        },
+        {
+          "seed": 101,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9302,
+            "BCR": 0.5938,
+            "Gap": 0.3364
+          }
+        },
+        {
+          "seed": 102,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9302,
+            "BCR": 0.5938,
+            "Gap": 0.3364
+          }
+        },
+        {
+          "seed": 103,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9286,
+            "BCR": 0.5938,
+            "Gap": 0.3348
+          }
+        },
+        {
+          "seed": 104,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9286,
+            "BCR": 0.5938,
+            "Gap": 0.3348
+          }
+        },
+        {
+          "seed": 105,
+          "B3": {
+            "Acc": 0.5667,
+            "BCR": 0.0625,
+            "Gap": 0.5042
+          },
+          "B4": {
+            "Acc": 0.9286,
+            "BCR": 0.5938,
+            "Gap": 0.3348
+          }
+        }
+      ]
+    },
+    "relation_density_medium": {
+      "protocol": "symbolic B3/B4; seed_base=200; 8 medium worlds; density override",
+      "runtime_sec": 19.55,
+      "runs": [
+        {
+          "relation_density": 0.0,
+          "mean_events": 97.0,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5455,
+              "bcr": 0.0,
+              "gap_query": 0.5455,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5262,
+              "acc_world_ci95": [
+                0.5262,
+                0.5262
+              ],
+              "bcr_world_mean": 0.0,
+              "bcr_world_ci95": [
+                0.0,
+                0.0
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9167,
+              "bcr": 0.6,
+              "gap_query": 0.3167,
+              "consacc_strict": 0.6,
+              "acc_world_mean": 0.9083,
+              "acc_world_ci95": [
+                0.9,
+                0.9208
+              ],
+              "bcr_world_mean": 0.6,
+              "bcr_world_ci95": [
+                0.6,
+                0.6
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            }
+          }
+        },
+        {
+          "relation_density": 0.2,
+          "mean_events": 97.0,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5455,
+              "bcr": 0.0,
+              "gap_query": 0.5455,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5262,
+              "acc_world_ci95": [
+                0.5262,
+                0.5262
+              ],
+              "bcr_world_mean": 0.0,
+              "bcr_world_ci95": [
+                0.0,
+                0.0
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9167,
+              "bcr": 0.6,
+              "gap_query": 0.3167,
+              "consacc_strict": 0.6,
+              "acc_world_mean": 0.9083,
+              "acc_world_ci95": [
+                0.9,
+                0.9208
+              ],
+              "bcr_world_mean": 0.6,
+              "bcr_world_ci95": [
+                0.6,
+                0.6
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            }
+          }
+        },
+        {
+          "relation_density": 0.5,
+          "mean_events": 97.0,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5455,
+              "bcr": 0.0,
+              "gap_query": 0.5455,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5262,
+              "acc_world_ci95": [
+                0.5262,
+                0.5262
+              ],
+              "bcr_world_mean": 0.0,
+              "bcr_world_ci95": [
+                0.0,
+                0.0
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9129,
+              "bcr": 0.6,
+              "gap_query": 0.3129,
+              "consacc_strict": 0.6,
+              "acc_world_mean": 0.9042,
+              "acc_world_ci95": [
+                0.9,
+                0.9125
+              ],
+              "bcr_world_mean": 0.6,
+              "bcr_world_ci95": [
+                0.6,
+                0.6
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            }
+          }
+        },
+        {
+          "relation_density": 0.8,
+          "mean_events": 97.0,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5455,
+              "bcr": 0.0,
+              "gap_query": 0.5455,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5262,
+              "acc_world_ci95": [
+                0.5262,
+                0.5262
+              ],
+              "bcr_world_mean": 0.0,
+              "bcr_world_ci95": [
+                0.0,
+                0.0
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9091,
+              "bcr": 0.6,
+              "gap_query": 0.3091,
+              "consacc_strict": 0.6,
+              "acc_world_mean": 0.9,
+              "acc_world_ci95": [
+                0.9,
+                0.9
+              ],
+              "bcr_world_mean": 0.6,
+              "bcr_world_ci95": [
+                0.6,
+                0.6
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            }
+          }
+        },
+        {
+          "relation_density": 1.0,
+          "mean_events": 97.0,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5455,
+              "bcr": 0.0,
+              "gap_query": 0.5455,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5262,
+              "acc_world_ci95": [
+                0.5262,
+                0.5262
+              ],
+              "bcr_world_mean": 0.0,
+              "bcr_world_ci95": [
+                0.0,
+                0.0
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9091,
+              "bcr": 0.6,
+              "gap_query": 0.3091,
+              "consacc_strict": 0.6,
+              "acc_world_mean": 0.9,
+              "acc_world_ci95": [
+                0.9,
+                0.9
+              ],
+              "bcr_world_mean": 0.6,
+              "bcr_world_ci95": [
+                0.6,
+                0.6
+              ],
+              "n_worlds": 8,
+              "n_bundles": 80,
+              "n_queries": 528
+            }
+          }
+        }
+      ]
+    },
+    "distractor_ablation": {
+      "protocol": "symbolic B3/B4; seed100 wpt=6; toggle distractors",
+      "runtime_sec": 21.17,
+      "runs": [
+        {
+          "include_distractors": true,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5667,
+              "bcr": 0.0625,
+              "gap_query": 0.5042,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5537,
+              "acc_world_ci95": [
+                0.52,
+                0.5874
+              ],
+              "bcr_world_mean": 0.0667,
+              "bcr_world_ci95": [
+                0.0222,
+                0.1111
+              ],
+              "n_worlds": 18,
+              "n_bundles": 192,
+              "n_queries": 1260
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9317,
+              "bcr": 0.5938,
+              "gap_query": 0.338,
+              "consacc_strict": 0.5938,
+              "acc_world_mean": 0.9273,
+              "acc_world_ci95": [
+                0.9197,
+                0.9333
+              ],
+              "bcr_world_mean": 0.5944,
+              "bcr_world_ci95": [
+                0.5907,
+                0.5981
+              ],
+              "n_worlds": 18,
+              "n_bundles": 192,
+              "n_queries": 1260
+            }
+          }
+        },
+        {
+          "include_distractors": false,
+          "systems": {
+            "B3_recency_k8": {
+              "mean_query_accuracy": 0.5667,
+              "bcr": 0.0625,
+              "gap_query": 0.5042,
+              "consacc_strict": 0.0,
+              "acc_world_mean": 0.5537,
+              "acc_world_ci95": [
+                0.52,
+                0.5874
+              ],
+              "bcr_world_mean": 0.0667,
+              "bcr_world_ci95": [
+                0.0222,
+                0.1111
+              ],
+              "n_worlds": 18,
+              "n_bundles": 192,
+              "n_queries": 1260
+            },
+            "B4_bm25_k8": {
+              "mean_query_accuracy": 0.9317,
+              "bcr": 0.5938,
+              "gap_query": 0.338,
+              "consacc_strict": 0.5938,
+              "acc_world_mean": 0.9273,
+              "acc_world_ci95": [
+                0.9197,
+                0.9333
+              ],
+              "bcr_world_mean": 0.5944,
+              "bcr_world_ci95": [
+                0.5907,
+                0.5981
+              ],
+              "n_worlds": 18,
+              "n_bundles": 192,
+              "n_queries": 1260
+            }
+          }
+        }
+      ]
+    },
+    "shortcut_baselines": {
+      "protocol": "seed100 wpt=6; empty / family-majority / family-shuffle / gold",
+      "runtime_sec": 7.01,
+      "empty": {
+        "mean_query_accuracy": 0.0,
+        "bcr": 0.0,
+        "gap_query": 0.0,
+        "consacc_strict": 0.0
+      },
+      "family_majority": {
+        "mean_query_accuracy": 0.3524,
+        "bcr": 0.0,
+        "gap_query": 0.3524,
+        "consacc_strict": 0.0
+      },
+      "family_shuffle": {
+        "mean_query_accuracy": 0.2802,
+        "bcr": 0.0,
+        "gap_query": 0.2802,
+        "consacc_strict": 0.0
+      },
+      "gold": {
+        "mean_query_accuracy": 1.0,
+        "bcr": 1.0,
+        "gap_query": 0.0,
+        "consacc_strict": 1.0
+      }
+    },
+    "frozen_h0_ablations_reprinted": {
+      "source": "ablation_results.csv",
+      "rows": [
+        {
+          "system": "H0_ltkm_unconstrained",
+          "Acc": 1.0,
+          "BCR": 1.0,
+          "Gap_query": 0.0
+        },
+        {
+          "system": "H0_ltkm_cap150_ret8",
+          "Acc": 0.9762,
+          "BCR": 0.8438,
+          "Gap_query": 0.1324
+        },
+        {
+          "system": "H-archive",
+          "Acc": 0.8762,
+          "BCR": 0.375,
+          "Gap_query": 0.5012
+        },
+        {
+          "system": "H-temporal-validity",
+          "Acc": 0.8762,
+          "BCR": 0.375,
+          "Gap_query": 0.5012
+        },
+        {
+          "system": "H-graph",
+          "Acc": 0.9381,
+          "BCR": 0.5938,
+          "Gap_query": 0.3443
+        },
+        {
+          "system": "H-provenance",
+          "Acc": 1.0,
+          "BCR": 1.0,
+          "Gap_query": 0.0
+        },
+        {
+          "system": "H-conflict",
+          "Acc": 0.8,
+          "BCR": 0.8125,
+          "Gap_query": -0.0125
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "gpt41_mini_acc_ci95": {
+    "hi": 0.506578947368421,
+    "lo": 0.4041095890410959,
+    "mean": 0.4563758389261745,
+    "method": "bundle_resample_with_replacement_query_weighted_acc",
+    "n_boot": 10000.0,
+    "n_bundles": 22.0,
+    "seed": 20260911.0
+  },
+  "gpt41_mini_bcr_ci95": {
+    "hi": 0.15437251281557463,
+    "k": 0.0,
+    "lo": 0.0,
+    "method": "clopper_pearson_exact_zero_success",
+    "n": 22.0,
+    "one_sided_upper_95": 0.12730543165483876
+  },
+  "gpt41_mini_bcr_point": "0/22",
+  "qwen_matched_acc_ci95": {
+    "hi": 0.2708333333333333,
+    "lo": 0.13245033112582782,
+    "mean": 0.20134228187919462,
+    "method": "bundle_resample_with_replacement_query_weighted_acc",
+    "n_boot": 10000.0,
+    "n_bundles": 22.0,
+    "seed": 20260911.0
+  },
+  "qwen_matched_bcr_ci95": {
+    "hi": 0.15437251281557463,
+    "k": 0.0,
+    "lo": 0.0,
+    "method": "clopper_pearson_exact_zero_success",
+    "n": 22.0,
+    "one_sided_upper_95": 0.12730543165483876
+  },
+  "qwen_matched_bcr_point": "0/22"
+}

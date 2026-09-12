@@ -1,0 +1,23 @@
+{
+  "math_commands.tex": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9",
+  "sec_appendix.tex": "b6faa45e1115fdf9709743209077a4d95c636f47927edc951164e1aa491c610f",
+  "sec_benchmark.tex": "64a8a461873bd4a09f09f81b5fb596c1bc66c8feca5c831b3e4a66a32019cc50",
+  "sec_conclusion.tex": "7813dc9e34075fa3efb12630f816a1104f902b420b0c226929a6ee849bfb73a6",
+  "sec_discussion.tex": "fe48f5bfec3d8fdba1b4eb601423f6ec738658d96e333268f236a02c5b6847a1",
+  "sec_failures.tex": "65767f4551bc0ec8f71ea3626f9817f24e4fba159436ff8e19c67d0ccf469e7a",
+  "sec_intro.tex": "6f4791596d000584c8ae4023a7c920eea310fa0a8fd08f9785552a6a1c8cf52d",
+  "sec_metrics.tex": "73eb178c147132ff66f781ae34de6f8d50e0bdb26c997d4e341b1e74f8397c61",
+  "sec_object.tex": "af52c08d1221bd7e3b425c7e7c542f071711ce7938f1890fcca51ec0155bce27",
+  "sec_related.tex": "9c74f13b6129a6dc301c7fe4036919c2bbb7d87106819d5531683e112bec3766",
+  "sec_results.tex": "d66df8bb86a5e51437bdbf95f9c5cac00ccf0950187c1adea34509add94e4567",
+  "sec_setup.tex": "cb4547d4ab2397b9191a10f9fbaf928b9e7c83157c4269fff361461e582091b5",
+  "sec_systems.tex": "be3bfab22c7fae74ecbbdcf87c259b740765798230f997e3875fe56524242e52",
+  "worldconsistmem.tex": "90856b09b29897445d8097e57a5eeae13277774bef55f4e953093dca9d54efa1",
+  "references.bib": "846c34be223f3d1337a5fb5f5034716c94c9b8b911d3efb800bc0af4c9e89de4",
+  "fancyhdr.sty": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea",
+  "iclr2026_conference.sty": "a4852f68e080d6c5245057ca2039100b409e31727898aa93c03d78ddb84374a3",
+  "iclr2027_conference.sty": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6",
+  "natbib.sty": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
+  "iclr2026_conference.bst": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5",
+  "iclr2027_conference.bst": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5"
+}

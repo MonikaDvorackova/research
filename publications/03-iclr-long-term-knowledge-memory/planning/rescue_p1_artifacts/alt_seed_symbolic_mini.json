@@ -1,0 +1,72 @@
+{
+  "protocol": "symbolic B3/B4 k8; worlds_per_tier=6; seeds 100/101/102; new labelled study",
+  "note": "Seed 100 here is a downsampled protocol, not the frozen 34/tier Option A study.",
+  "runs": [
+    {
+      "experiment_id": "rescue_p1_alt_seed_symbolic_mini",
+      "label": "NEW \u2014 not part of Option A freeze",
+      "seed": 100,
+      "worlds_per_tier": 6,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "systems": {
+        "B3_recency_k8": {
+          "mean_query_accuracy": 0.5667,
+          "bcr": 0.0625,
+          "gap_query": 0.5042
+        },
+        "B4_bm25_k8": {
+          "mean_query_accuracy": 0.9317,
+          "bcr": 0.5938,
+          "gap_query": 0.338
+        }
+      },
+      "runtime_sec": 7.09
+    },
+    {
+      "experiment_id": "rescue_p1_alt_seed_symbolic_mini",
+      "label": "NEW \u2014 not part of Option A freeze",
+      "seed": 101,
+      "worlds_per_tier": 6,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "systems": {
+        "B3_recency_k8": {
+          "mean_query_accuracy": 0.5667,
+          "bcr": 0.0625,
+          "gap_query": 0.5042
+        },
+        "B4_bm25_k8": {
+          "mean_query_accuracy": 0.9302,
+          "bcr": 0.5938,
+          "gap_query": 0.3364
+        }
+      },
+      "runtime_sec": 6.37
+    },
+    {
+      "experiment_id": "rescue_p1_alt_seed_symbolic_mini",
+      "label": "NEW \u2014 not part of Option A freeze",
+      "seed": 102,
+      "worlds_per_tier": 6,
+      "n_worlds": 18,
+      "n_bundles": 192,
+      "n_queries": 1260,
+      "systems": {
+        "B3_recency_k8": {
+          "mean_query_accuracy": 0.5667,
+          "bcr": 0.0625,
+          "gap_query": 0.5042
+        },
+        "B4_bm25_k8": {
+          "mean_query_accuracy": 0.9302,
+          "bcr": 0.5938,
+          "gap_query": 0.3364
+        }
+      },
+      "runtime_sec": 6.21
+    }
+  ]
+}

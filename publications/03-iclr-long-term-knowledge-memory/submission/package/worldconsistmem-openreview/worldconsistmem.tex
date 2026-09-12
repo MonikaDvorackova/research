@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{iclr2026_conference,times}
+\usepackage{iclr2027_conference,times}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
@@ -29,13 +29,11 @@ Paper under double-blind review
 \maketitle
 
 \begin{abstract}
-Long-term memory (LTM) systems support agents that operate over evolving interactions and changing world states. Most existing evaluations primarily report per-query or per-instance outcomes such as answer accuracy, retrieval fitness, conflict handling, or lifecycle metrics. These protocols leave open whether answers about the same persistent world jointly describe one coherent history.
+Standard long-term memory evaluations score answers one query at a time. This misses a concrete failure mode: a system can answer individual questions correctly while violating constraints that link those answers into one coherent world history.
 
-We introduce an evaluation framework for cross-query world-history consistency. WorldConsistMem is a synthetic evolving-world benchmark based on dependent query bundles grounded in one deterministic gold history. Constraints are derived automatically from that history; a reader's predicted answer set---conditioned on the memory state---is scored by machine-checkable predicates, independently of memory internals. Strict Bundle Consistency Rate (BCR) measures full constraint satisfaction; Constraint Satisfaction Rate (CSR) provides partial diagnostic resolution when BCR floors. We also report Acc--consistency gaps and ConsAcc diagnostics.
+\textbf{WorldConsistMem} is a controlled synthetic diagnostic for that failure mode. Dependent query bundles are grounded in one deterministic gold history; machine-checkable constraints $\mathcal{C}$ are derived from that history; a reader conditioned on the memory state is scored by a joint predicate $\Phi$ independent of memory internals. Per-query Acc measures exact match to gold; Bundle Consistency Rate (BCR) measures the fraction of bundles with $\Phi=1$. The gap $\Gapq=\Acc-\BCR$ is therefore a different evaluation object from Acc, not a monotone transform of it. Constraint Satisfaction Rate (CSR) provides partial diagnostics when BCR floors.
 
-Across a corruption suite and a scaled symbolic study (102 worlds, 1{,}088 bundles, 7{,}140 queries), per-query accuracy and bundle consistency diverge: high Acc with BCR~$=$~0 and low Acc with BCR~$=$~1 both occur, and retrieval systems can retain high Acc while violating bundle constraints. Under a frozen Qwen reader on an H4 subset, BCR floors at 0 for all evaluated systems while mean CSR remains discriminative (about 0.26--0.33). The structured hierarchical reference attains the highest Acc (0.185) but not the strongest CSR (BM25 leads at 0.329); architecture superiority is not supported.
-
-Contributions: (i) a formal cross-query consistency evaluation methodology; (ii) the WorldConsistMem benchmark; (iii) strict and partial consistency metrics (BCR, CSR, ConsAcc, gaps); (iv) an empirical characterization with released reference systems.
+Empirically (frozen Option~A: 102 worlds, 1{,}088 bundles, 7{,}140 queries), Acc and BCR diverge under corruption and at symbolic scale (e.g., BM25 Acc~$=$~0.929 with BCR~$=$~0.591). Under a local 3B Qwen reader, BCR~$=$~0 for all systems while CSR remains weakly discriminative (0.258--0.329); gold answers on the same subset achieve BCR~$=$~1. Labelled robustness checks (seeds, relation density, distractors, shortcut baselines) preserve large Acc--BCR gaps and are reported separately from the freeze. Architecture superiority is \textbf{not} supported. The benchmark is a diagnostic instrument for synthetic evolving worlds, not a real-world memory proxy.
 \end{abstract}
 
 \input{sec_intro}
@@ -51,7 +49,7 @@ Contributions: (i) a formal cross-query consistency evaluation methodology; (ii)
 \input{sec_conclusion}
 
 \bibliography{references}
-\bibliographystyle{iclr2026_conference}
+\bibliographystyle{iclr2027_conference}
 
 \appendix
 \input{sec_appendix}

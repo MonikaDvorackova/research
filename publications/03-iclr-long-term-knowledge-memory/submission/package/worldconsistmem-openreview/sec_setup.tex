@@ -1,10 +1,1 @@
-\section{Experimental Setup}
-\label{sec:setup}
-
-All results in Sections~\ref{sec:results}--\ref{sec:failures} use frozen artefacts. No weights, prompts, metrics, or datasets were altered for this manuscript.
-
-\paragraph{Symbolic reader.} Full scaled WorldConsistMem (102 worlds, 1{,}088 bundles, 7{,}140 queries), including flat, retrieval, capacity-matched, H0, and selective ablation systems.
-
-\paragraph{Qwen reader (H4 Option A).} \texttt{Qwen2.5-3B-Instruct-4bit} on 18 worlds / 192 bundles / 1{,}260 queries for B1 compact, B3 recency-$k8$, B4 BM25-$k8$, and H0 (cap150, ret8). Per-query isolated evidence packs; temperature 0; max tokens 48; frozen parser. Phi was not used for Option A.
-
-\paragraph{Validation and statistics.} Smoke corruptions confirm Acc and $\Phi$ can move in opposite directions (Section~\ref{sec:results}). World-level bootstrap 95\% CIs; symbolic and Qwen tables reported separately. CSR/PConsAcc recomputed offline from frozen predictions. Extended protocol details appear in Appendix~\ref{app:repro}.
+% Setup merged into sec_systems.tex (sec:setup label retained there).
