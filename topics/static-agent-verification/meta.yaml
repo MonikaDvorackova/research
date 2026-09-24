@@ -1,0 +1,20 @@
+id: static-agent-verification
+title: "Static Verification of Python AI Agents"
+status: active
+created: 2026-09-24
+updated: 2026-09-24
+owners:
+  - "Monika Dvořáčková"
+tags:
+  - static-analysis
+  - ai-agents
+  - programming-languages
+related_topics: []
+research_questions:
+  - "Which P1–P3 claims can be verified before execution for ordinary Python, and under what closed-world assumptions?"
+  - "Which approval and effect guarantees require a trusted runtime boundary?"
+  - "Do existing typed subsets and mediators leave an important irreducible gap that warrants a new language?"
+candidate_publications:
+  - venue: website
+    working_title: "What Can Static Analysis Actually Prove About Python AI Agents?"
+    status: draft

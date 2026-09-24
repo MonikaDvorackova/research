@@ -36,3 +36,30 @@ topics:
       - venue: radar
         working_title: "O'Reilly Radar follow-up (solution demonstration)"
         status: planned
+  - id: static-agent-verification
+    title: "Static Verification of Python AI Agents"
+    status: active
+    path: topics/static-agent-verification
+    created: 2026-09-24
+    updated: 2026-09-24
+    owners:
+      - "Monika Dvořáčková"
+    tags:
+      - static-analysis
+      - ai-agents
+      - programming-languages
+    keywords:
+      - python
+      - security
+      - taint-analysis
+      - capabilities
+      - approval
+    related_topics: []
+    research_questions:
+      - "Which P1–P3 claims can be verified before execution for ordinary Python, and under what closed-world assumptions?"
+      - "Which approval and effect guarantees require a trusted runtime boundary?"
+      - "Do existing typed subsets and mediators leave an important irreducible gap that warrants a new language?"
+    candidate_publications:
+      - venue: website
+        working_title: "What Can Static Analysis Actually Prove About Python AI Agents?"
+        status: draft
