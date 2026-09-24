@@ -14,3 +14,5 @@ tags: [static-analysis, ai-agents, security, programming-languages]
 This topic records an independent, bounded research experiment. It is not part of AIGov and does not propose a new programming language. The [charter](charter.md) defines scope; the [claim inventory](notes/claim-inventory.md) is the canonical source for a possible article; [evidence and reproducibility](notes/evidence-and-reproducibility.md) identifies the external implementation repository and separates observed results from assumptions.
 
 An unpublished website [article draft](../../publications/articles/static-verification-python-agents.md) is a projection of these notes. Revise claims here first, then update that draft.
+
+The follow-up [recipient-bound flow comparison](notes/recipient-flow-comparison.md) records a closed-IR experiment and its unverified existing-language candidate. Its conclusions are narrower than an end-to-end P2 proof.
