@@ -2,4 +2,12 @@
 # Every publications/** draft intended for tracking must have an entry.
 # venue status values: planned | draft | review | submitted | accepted | published
 
-publications: []
+publications:
+  - id: pub-static-verification-python-agents
+    title: "What Can Static Analysis Actually Prove About Python AI Agents?"
+    type: article
+    path: publications/articles/static-verification-python-agents.md
+    status: draft
+    publish: false
+    venues: [website]
+    source_topics: [static-agent-verification]
