@@ -63,3 +63,28 @@ topics:
       - venue: website
         working_title: "What Can Static Analysis Actually Prove About Python AI Agents?"
         status: draft
+  - id: bostrom-world-models
+    title: "Epistemic Identifiability of Agents Embedded in Learned World Models"
+    status: active
+    path: topics/bostrom-world-models
+    created: 2026-11-03
+    updated: 2026-11-03
+    owners:
+      - "Monika Dvořáčková"
+    tags:
+      - philosophy-of-ai
+      - world-models
+      - hypothesis-testing
+    keywords:
+      - simulation-argument
+      - learned-world-models
+      - observational-equivalence
+      - sequential-testing
+    related_topics: []
+    research_questions:
+      - "When an embedded agent detects or fails to detect a discrepancy between its environment and a learned world model, what may it infer about how the environment is generated?"
+      - "Which additional premises does the inference to 'simulated' require?"
+    candidate_publications:
+      - venue: journal
+        working_title: "From Bostrom's Simulation Argument to Learned World Models: Epistemic Identifiability of Embedded Agents (Minds and Machines)"
+        status: planned
