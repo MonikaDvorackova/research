@@ -27,7 +27,7 @@ Bostrom (2003) argues about the probability that we are simulated; it says nothi
 
 ### Current status
 
-`active`. Phase 1 (literature and novelty) is complete at the level recorded in `notes/phase1-decision.md`, with open verification items listed there. No experiments have been run.
+`active`. Phase 1 and Phase 2 are recorded in `notes/phase1-decision.md` (decision: REVISE, continue). A small proof-of-concept experiment has been executed (`notes/results.md`); open verification items are listed in the decision note and verification log.
 
 ### Key questions
 
@@ -42,4 +42,10 @@ Bostrom (2003) argues about the probability that we are simulated; it says nothi
 | Comparison matrix | `literature/comparison-matrix.md` |
 | Novelty and gap | `notes/novelty-and-gap.md` |
 | Formal feasibility | `notes/formal-feasibility.md` |
-| Phase 1 decision | `notes/phase1-decision.md` |
+| Phase 1 and 2 decision | `notes/phase1-decision.md` |
+| Formal framework and proofs | `notes/formal-framework.md` |
+| Philosophical analysis | `notes/philosophical-analysis.md` |
+| Experiment design | `notes/experiment-design.md` |
+| Results and limits | `notes/results.md` |
+| Reviewer-style assessment | `reviews/2026-11-03-minds-and-machines-reviewer-assessment.md` |
+| Implementation | `implementations/epistemic-identifiability/` |

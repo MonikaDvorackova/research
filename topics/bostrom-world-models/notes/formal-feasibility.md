@@ -11,6 +11,8 @@ tags: [formal, proof-obligations]
 
 ## Formal feasibility
 
+> Superseded by [formal-framework.md](formal-framework.md), which gives the statements and proofs. Kept for the Phase 1 record; the numbering P5–P8 there maps to Propositions 1, 3, 4 and 5.
+
 Setting: E0 and E1 are controlled stochastic processes with kernels p_i(o_t | h_{t-1}, a_t) over a shared action and observation space. A policy π maps histories to action distributions. P_i^π is the law of the T-step history. H0: data from P_0^π; H1: data from P_1^π. Nothing below is proved yet; the table separates what is known from what must be shown.
 
 | Proposition | Status | Notes / proof obligation |

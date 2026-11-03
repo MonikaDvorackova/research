@@ -39,3 +39,23 @@ Search was done with a web search tool, not bibliographic databases. Most source
 ### Next step
 
 Phase 2 formal write-up of P6–P8 with proofs, in parallel with closing conditions 1–5. No experiments have been executed.
+
+## Phase 2 update (2026-11-03)
+
+Status of the five conditions set in Phase 1:
+
+| # | Condition | Status |
+|---|---|---|
+| 1 | Read Ikram et al. in full | **Partly met.** Abstract obtained through a search-tool summary only (OpenReview blocks automated access). It concerns unrealistic *generated* states inside model-based RL, not environment discrimination by an agent. Overlap with this project is small; the full text is still unread. |
+| 2 | Citation searches (Bostrom, Armstrong, Castro) | **Partly met.** 512 Bostrom citing records filtered; none pairs the argument with learned world models or agent-side detection. Armstrong and Castro forward searches failed. |
+| 3 | Read arXiv:1404.1718 and 2609.10864 | **Met at abstract level.** 2609.10864 is not about simulation (earlier characterisation withdrawn); 1404.1718 uses algorithmic probability with no visible detection analysis. New neighbours to read: Brogioli (empirical equivalence via simulation), the 2026 "glitch" detection paper, Campbell et al. |
+| 4 | Verify P5 and sources for P6 | **Proofs written; sources not verified.** Propositions 1–6 are proved in `notes/formal-framework.md` and checked by exact enumeration; provenance labels say Known or Elementary. Literature check of Proposition 1 against Armstrong/Castro is obligation O4. |
+| 5 | Philosophical literature search | **Not met.** Chalmers, Hanson, Dainton, Kulczycki, Weatherson not read. |
+
+### Decision after Phase 2: REVISE (continue, do not write the manuscript yet)
+
+- The narrowed gap is **defensible but narrow and unproven**: absence of discovered prior work, from partial citation analysis.
+- No theorem is claimed as new. The mathematics is framing; the philosophical theses may already exist in the literature.
+- The proof-of-concept gives an informative negative result (the agent's own learned theory is the failure point under OOD interventions) and a passing equivalent negative control, but the result may depend on Q and W sharing architecture.
+- Required before any manuscript: close conditions 1, 2 and 5; run the two ablations in `reviews/2026-11-03-minds-and-machines-reviewer-assessment.md` (different architecture for Q; an analytically correct theory in place of Q).
+- No large-scale experiments are justified yet.

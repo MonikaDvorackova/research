@@ -24,9 +24,12 @@ tags: [literature, novelty]
 | Naghshvar and Javidi 2013 (abstract only) | Optimal action choice in sequential testing | Bounds and asymptotically optimal heuristic (Chernoff sense) | None | None | **Known theory for the value of active experimentation; must not be restated as new** | Not applied to world-model error structure |
 | Warrier et al. 2026 (abstract only) | Do agents learn models that answer environment-level queries | WorldTest protocol | AutumnBench; humans vs five frontier models | None | Evaluation of learned world knowledge | Tests knowledge, not discrimination between generating processes |
 | Tan et al. 2026 (abstract only) | What physical information do latents encode | Training-objective analysis | PokeWorld, RH20T | None | Latent content vs model quality | Not detection by an embedded agent |
-| Ikram et al. 2026 (**not read**) | Anomaly detection with world models (title only) | Unknown | Unknown | Unknown | Possibly the mismatch-detection component | Cannot be assessed until read |
+| Ikram et al. 2026 (abstract via search summary; full text unread) | Unrealistic generated states in model-based RL | Method: linear latent prior flags generated states | Atari100k; DreamerV3 +9% HNS | None | Small: anomaly handling inside learning, not environment discrimination by an agent | Does not address embedded-agent discrimination or inference from anomalies |
 | Hafner et al. 2025 | General model-based RL via learned world models | Method | 150+ tasks | None | Defines the class of learned model E1 | Not about detectability |
-| arXiv:1404.1718, 2609.10864 (snippets only) | Whether mind-states or embedded observers can access realising mechanism | Informal / algorithmic-probability arguments | None | Related | **Closest philosophical-formal neighbours; read before claiming novelty** | Provisional |
+| Leuenberger arXiv:1404.1718 (abstract) | Formal models of philosophical puzzles incl. simulation argument | Algorithmic probability, observer localisation | None | Models the argument | Different framework; no detection analysis visible | Full text unread |
+| Ramezanian arXiv:2609.10864 (abstract) | Predetermination and P = NP for embedded observers | Observer-relative unprovability | None | None | Not about simulation (earlier characterisation withdrawn) | None |
+| Campbell et al. arXiv:1703.00058 (abstract) | Can rendering-on-observation be tested | Physics proposal | Proposed experiments | Motivated by simulation theory | Fidelity-indexed sub-hypothesis example | Full text unread |
+| Brogioli 2019 (PhilSci Archive; snippet) | Empirical equivalence via simulated systems and an experimenting robot | Sufficient condition via complexity-class transformation | Numerical simulations | None found | **Closest formal neighbour for empirical equivalence** | Must be read before submission |
 
 ### Result of the novelty search
 
