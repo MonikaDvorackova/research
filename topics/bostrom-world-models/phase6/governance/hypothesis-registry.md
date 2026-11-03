@@ -21,3 +21,16 @@ Status values: supported (C), rejected, unresolved, proposed.
 | H-cov | Learned-observer failure is determined by training coverage, for all learner families | Phase 5 stress tests (X) | unresolved; to be tested in X3 | – |
 | H-X1-1…6 | Criticism design / validity / barrier / P10 prediction | Phase 6 proposal | proposed (not frozen) | `phase6/08-next-experiment-prereg.md` |
 | H-A | A tight frontier statement beyond Prop. 3 exists | Phase 6 | proposed (T1) | `results/phase6/prediction_vs_identification.txt` (seed only) |
+
+## Phase 7 (X1, confirmatory, seeds 600–629; prereg commit 02bad01)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-X1-1 (H1) | Type-I ≤ α for all policies | **supported** (1.69 %) | `results/x1_confirm/analysis.md` |
+| H-X1-2 (H2) | Barrier without action 2 | **supported** | same |
+| H-X1-3 (H3) | Random wide power ≥ 0.8 within 1500 (anticipated) | **supported** (1.000) | same |
+| H-X1-4a (H4a) | P4 ≥ 1.5× faster than random, anticipated | **supported** (2.01/1.74/1.85) | same |
+| H-X1-4b (H4b) | same, unanticipated | **rejected** (1.24, 1.02) | same |
+| H-X1-4c (H4c) | P4 ≥ 1.5× faster than P5 (equal information) | **rejected** (1.13/0.87/0.88) | same |
+| H-X1-5 (H5) | P3 not faster than random | **inconclusive by rule** (pc0 +1.44×; pc1/pc2 −6–8×) | same |
+| H-cov | learned-observer failure is coverage-determined for all learners | unresolved → X3 | – |
+| H-X4 | A valid learned-null class-adequacy test retains useful power | proposed | `phase7/08-…` |

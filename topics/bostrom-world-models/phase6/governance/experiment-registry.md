@@ -22,3 +22,8 @@ tags: [governance, experiments]
 | X1 | 6 (proposed) | confirmatory (planned) | not yet written | dev 500–505; conf 600–619 | – | proposal |
 | X3 | planned | confirmatory | – | ≥ 20 | – | not designed in detail |
 | X2 | planned | exact/theory | – | – | – | not started |
+| x1_dev_v0_5policies | 7 | development | 5 policies (P0–P4), earlier version of `x1_dev.yaml` (config stored in its meta.json) | 500–505 | `results/x1_dev_v0_5policies` | kept for the record; superseded by `x1_dev` (P5 added) |
+| x1_dev | 7 | development | `configs/x1_dev.yaml` | 500–505 | `results/x1_dev` | frozen; used for implementation validation and sample-size reasoning only |
+| x1_confirm | 7 | **confirmatory** | `configs/x1_confirm.yaml` @ 02bad01 | 600–629 | `results/x1_confirm` | complete; checksums in `MANIFEST_raw.sha256` |
+| x1_audit | 7B | independent checks | `scripts/x1_independent_audit.py` | – | `results/x1_audit` | pass |
+| x1 supplementary | 7B | exploratory | `scripts/x1_supplementary_analysis.py` | 600–629 | `results/x1_confirm/supplementary_exploratory.md` | labelled exploratory |

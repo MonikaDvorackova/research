@@ -17,3 +17,6 @@ tags: [governance, proofs]
 | PO-4 | Validity of anytime-valid class-adequacy e-process under predictable adaptive designs | open; to be proved (Ville + policy factors cancel) and checked by exact enumeration at small T (X1) |
 | PO-5 | Precise equivalence class of POMDPs (minimal PSR dimension) for the benchmark | open |
 | PO-6 | Posterior consistency statements for infinite classes | out of scope |
+| PO-4 (update, Phase 7) | Validity of the anytime-valid class-adequacy e-process under predictable adaptive designs | **discharged** (elementary): proof in `phase7/02-design-review-D1.md` §1 (supermartingale + Ville, policy factors cancel); exhaustive enumeration for deterministic adaptive rules (P3–P5, 2×3 steps) and empirical 1.69 % type-I; not covered: non-stationary truths, learned (estimated) nulls |
+| PO-7 | Validity when the null class is learned/estimated (X4) | open |
+| PO-8 | Adaptive-design minimax statement for the margin law (power iff N(d_M − d_A) ≳ ln K + ln(1/α) up to regret) | open; currently heuristic (S5 agreement ±30 %) |

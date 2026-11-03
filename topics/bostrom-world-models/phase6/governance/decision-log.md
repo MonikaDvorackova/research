@@ -18,3 +18,8 @@ tags: [governance, decisions]
 | 2026-11-03 (Ph. 5) | REVISE; original framing NO-GO; pre-register Bayesian observer runs | Gates 4–5 not passed | `notes/results-phase5.md` |
 | 2026-11-03 (Ph. 6) | Treat project as open-ended programme; question may change. Candidate directions X1–X7 designed; X1, X3, X2 selected; X4–X7 deferred | `phase6/05-prioritisation.md` | `phase6/*` |
 | 2026-11-03 (Ph. 6) | Do not implement X1 until L1 (primary-source reading) and D1 (design review) gates | Novelty risk from Gelman–Shalizi/universal inference | `phase6/07-roadmap.md` |
+| 2026-11-03 (Ph. 7) | L1 passed with downgraded ambition: X1 is a known application (universal inference + EDI-style design) | partial full-text reading of three sources | `phase7/01-…` |
+| 2026-11-03 (Ph. 7) | D1 passed (self-review) after revision: new alternative family, P5 added, RMST, N = 3000, 30 seeds | exact feasibility; information confound | `phase7/02-…` |
+| 2026-11-03 (Ph. 7) | Preregistration frozen at 02bad01 (13:01:50) before the confirmatory run (13:01:59) | – | `phase7/03-…` |
+| 2026-11-03 (Ph. 7B) | Integrity passed; frozen analysis executed unmodified; X1 design-benefit hypothesis not supported under the fair comparison | `phase7/05-…`, `06-…` | – |
+| 2026-11-03 (Ph. 7B) | X1 closed as a separate line; next: X3 combined with X4 (learned-null test); X2 as a bounded proof attempt | `phase7/08-…` | – |

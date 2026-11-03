@@ -64,3 +64,11 @@ Brogioli (no full text), Ikram et al. (abstract only), Edge (no access), Norton 
 | N10 | A finite-sample valid test that the truth lies in a finite model class | Wasserman, Ramdas, Balakrishnan, PNAS 2020 (universal inference, sequential use) | Split likelihood-ratio / sequential version gives anytime-valid tests without regularity | High (test); design for the test: not found |
 | N11 | Predictive accuracy without mechanism identification | Hyvärinen–Pajunen; Locatello et al.; Khemakhem et al.; causal hierarchy theorem | Nonidentifiability of latent models and of higher causal layers from lower-layer data is established | High (qualitative) |
 | N12 | Limits to inference by embedded observers | Wolpert, "Physical limits of inference" | Impossibility results for inference devices embedded in the universe, independent of physical laws | Medium (abstract-level; scope differs) |
+
+## Phase 7 additions (2026-11-03; after partial full-text reading of three sources via extracted PDF text — see `phase7/01-literature-gate-L1.md`)
+| # | Component | Closest prior work | Assessment after reading | Threat |
+|---|---|---|---|---|
+| N10′ | Anytime-valid test under adaptive hidden-state data | Wasserman et al. Thm 9 (i.i.d.; read) | Same argument holds with conditional likelihoods; extension elementary, proved in D1 | High |
+| N13 | Criticism-oriented design | Catanach–Das EDI = KL(p(Y\|d,M\*)‖p(Y\|d,M)) (read) | EDI already targets detection of modeling failures with a specified alternative | High |
+| N14 | Criticism target brings no advantage over identity-EIG under equal information (when the alternative contains the truth) | Not found in what was read | A negative result in one benchmark; generality untested | Medium (unknown) |
+| N15 | Anticipated vs unanticipated structure of inadequacy detection (margin law) | Laudan–Leplin (summary), Gelman–Shalizi (partly read), Wald-type rates | Quantified instance only | High |
