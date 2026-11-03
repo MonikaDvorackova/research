@@ -78,3 +78,6 @@ N16 relative taxonomy (Medium-High); N17 absorption of non-stationarity (High; C
 
 ## Phase 9 additions
 N26–N35 in `phase9/03-literature-and-novelty.md` (adaptive e-process validity = Emmenegger et al. Thm 1 / Wasserman et al.; episode-level e-process = Shin et al. with i.i.d. class; predictive-comparison CS = Choe–Ramdas family (not read); Occam window = Jeffreys–Lindley; Chernoff-normalised design comparison; EM approximate maximiser audit; reset taxonomy). **No component is new.**
+
+## Phase 10 additions
+N36–N45 in `phase10/09-novelty-threat-matrix.md`: certified learned null = Emmenegger et al. Thm 1 + Ville (High); exponent price = Stein/Chernoff/GROW (High); regret scaling = KT/Rissanen (High); predictable-range comparison = Choe–Ramdas corollary (Medium–High); EM optimiser-asymmetry dose–response (Medium; restricted empirical); certification cost for latent nulls (N45: not found, not analysed). **No component is new.**

@@ -68,3 +68,28 @@ def test_procedures_receive_only_data_arrays_no_environment_objects():
     tree = ast.parse(inspect.getsource(e6proc))
     ids = {n.id for n in ast.walk(tree) if isinstance(n, ast.Name)} | {n.attr for n in ast.walk(tree) if isinstance(n, ast.Attribute)}
     assert not (ids & {"truth", "env", "pomdp", "labels"})                       # code (not docstrings) never references a true environment
+
+
+def test_adaptive_range_boundary_is_valid_under_dependent_noise_with_predictable_ranges():
+    from eid.e6proc import conditional_range
+    rej = 0; reps = 300
+    for i in range(reps):
+        r = np.random.default_rng([61, i]); n = 4000; S = 0.0; V = 0.0; s = 1.0; hit = False
+        for t in range(n):
+            R = 0.2 + 1.8 * r.random() * (1 if (t // 50) % 2 else 0.2)          # predictable conditional range (depends only on t and an independent stream)
+            s = -s if r.random() < 0.3 else s
+            z = s * (R / 2) * r.choice([-1.0, 1.0])                              # conditionally mean zero given the past, |Z| = R/2 (range R)
+            S += z; V += R ** 2 / 4
+            if S >= np.sqrt((V + 1.0) * np.log((V + 1.0) / (1.0 * 0.05 ** 2))):
+                hit = True; break
+        rej += hit
+    assert rej / reps <= 0.05
+
+
+def test_adaptive_range_detects_a_mean_shift_the_worst_case_boundary_misses():
+    from eid.e6proc import comp_cs_test, comp_cs_test_adaptive
+    r = np.random.default_rng(3); n = 12000
+    p = np.tile([.5, .3, .2], (n, 1)); q = np.tile([.45, .33, .22], (n, 1))      # nearly equal forecasts
+    y = r.choice(3, size=n, p=[.4, .35, .25])                                   # q is closer to the truth: class forecaster p is worse
+    assert comp_cs_test(p, q, y) is None
+    assert comp_cs_test_adaptive(p, q, y) is not None

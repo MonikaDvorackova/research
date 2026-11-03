@@ -116,3 +116,6 @@ Targeted web-search scan (10 queries; see `phase6/03-literature-search-log.md`).
 
 ## Phase 9 update (2026-11-04)
 Full source-verification table with access levels in `phase9/03-literature-and-novelty.md`. Read from extracted PDF text (TH level): Wasserman et al. §2/§8; Emmenegger–Mutný–Krause Thm 1 (arXiv 2311.04402); Shin–Ramdas–Rinaldo §2 (arXiv 2203.03532); Allman–Matias–Rhodes §6.1/Thm 6 (arXiv 0809.5032); Choi–Yeung–Zhang (1999). Abstract/intro only: Arnold et al. (arXiv 2404.18678v4). Downloaded, not read: Ramdas et al. 2009.03167, 2210.01948. Not accessible: Brogioli, Ikram et al. (full text), Edge, Norton, Weatherson (text).
+
+## Phase 10 update (2026-11-04)
+Full table in `phase10/01-literature-verification.md`. Theorem-level reading from extracted PDF text: Choe–Ramdas arXiv 2110.00115v6 (Thm 1–2, stitching boundary), Howard et al. arXiv 1810.08240 (Thm 1 stitched boundary; k₂ cut off). Abstract/first page only: Henzi–Ziegel 2103.08402v3, Naghshvar–Javidi 1203.4626v4, Ruf et al. 2203.04485v3, Podkopaev–Ramdas 2305.00143v2. Search description only: Safe Testing (1906.07801), robust Hellinger testing. Not accessed: Chernoff 1959, Berbee, Yu (no attempt in Phase 10), Le Cam, Ingster–Suslina, Lai–Xing, Rissanen, Abe–Warmuth (memory only).

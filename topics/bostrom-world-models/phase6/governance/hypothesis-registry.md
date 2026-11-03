@@ -51,3 +51,12 @@ Status values: supported (C), rejected, unresolved, proposed.
 | H-P8-S | stationarity e-process robust to hidden-state misspecification | **withdrawn**: null false there; non-rejection = low power (Phase 9 A2); only in-class validity claimed | `phase9/01`, dev |
 | H-P8-T5 | identification decays with n | **corrected**: non-generic truth only; window for others | `phase9/01` §3 |
 | H-E6′-A…F | null ladder; validity; false attribution; certified learned null; approximate maximiser type-I; ensemble disagreement | proposed (not frozen); dev machinery only | `phase9/05` |
+
+## Phase 10 (development; no confirmatory claim)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P10-cert | LR-confidence-set learned null has type-I ≤ α + δ under adaptive designs | **proved** (theorem) + checked (exact coverage, exact E[E] ≤ 0.23, 0/7200, adversary 0/300) | `phase10/04` |
+| H-P10-price | observed delay inflation follows the exact exponent ratio | supported in development (mean log ratio −0.05, +0.13, +0.19) | `phase10/07` |
+| H-P10-zero | Phase 9 zero power = impossibility | **rejected**: regret (E_ep) and boundary conservatism (E_comp) | `phase10/07` |
+| H-P10-EM | under-optimised EM denominators invalidate the e-process; worse for good alternatives | supported (15 %, 44 % vs 0/120 for strong optimisers) | `phase10/05` |
+| H-E6′ (v2) | H1–H4 of the confirmatory proposal | proposed, **not frozen, not authorised** | `phase10/11` |

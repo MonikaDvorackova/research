@@ -25,3 +25,4 @@ tags: [governance, decisions]
 | 2026-11-03 (Ph. 7B) | X1 closed as a separate line; next: X3 combined with X4 (learned-null test); X2 as a bounded proof attempt | `phase7/08-…` | – |
 | 2026-11-03 (Ph. 8) | Question reformulated: identifiability of the four explanations is relative to declared structure; first experiment E6 (validity map) subject to external design review | Gates A–F | `phase8/06-…` |
 | 2026-11-04 (Ph. 9) | Corrected formal-null semantics; withdrew T4′ robustness and T5 monotone claims; E6 re-scoped to E6′ (price of validity); **no confirmatory E6/E6′**: REVISE | audit + gates G1–G7 | `phase9/09` |
+| 2026-11-04 (Ph. 10) | Price of validity defined as (exponent loss, evidence overhead); certified LR-set learned null adopted; EM denominators excluded from validity claims; confirmatory E6′ NOT authorised; theory (PO-13) prioritised | `phase10/12`, `phase10/11` |

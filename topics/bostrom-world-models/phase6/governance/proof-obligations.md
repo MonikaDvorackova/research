@@ -26,3 +26,4 @@ tags: [governance, proofs]
 | PO-12 | Reset with a persistent regime does not break the C/D confound | open |
 | PO-7 (update, Phase 8) | Confidence-set denominator gives type-I ≤ α + α₁ | **proved** (T6d); power not studied |
 | Phase 9 status updates | PO-2 PROVED; PO-7 PROVED under stated assumptions; PO-8 REDUCED TO KNOWN (Chernoff); PO-10 REDUCED TO KNOWN (+ PROVED impossibility for persistent regimes); PO-12 PROVED (R1–R5); O5 REDUCED TO KNOWN; PO-9, PO-11, O1–O4, O6, O7 open | `phase9/04` |
+| Phase 10 status updates | PO-7 PROVED (LR confidence set, categorical contexts); PO-8 REDUCED TO KNOWN; PO-10 REDUCED TO KNOWN + impossibility; new: PO-13 (certified supremum for latent nulls) OPEN, PO-14 (delay lower bound with unknown pre-change law) OPEN, PO-15 (retained-exponent rate) OPEN, PO-16 (external check of the predictable-range boundary) PROVED here/unverified, PO-17, PO-18 PROVED | `phase10/13` |

@@ -35,3 +35,8 @@ tags: [governance, negative]
 24. Phase 9 dev: policy shift + misspecification produced no false-attribution events in random instances (exact discrepancy ≤ 2.5×10⁻³ nats/observation).
 25. Phase 9 audit: pooled run-level binomial bounds undercover under clustering; 20 runs per structure cannot certify a per-structure rate bound; even cluster intervals cover 0.85–0.93 at R = 20.
 26. Phase 9: the E6 validity map as specified is mostly fixed by theory (G7 failed); re-scoped to E6′.
+27. Phase 10: the certified test never rejected under the null (0/7200): calibration cannot be distinguished from conservatism; exact crossing probabilities at the enumerable horizon were 0.0000 (vacuous).
+28. Phase 10: proof attempts that failed or were stopped: minimax delay lower bound with unknown pre-change law (two reductions); robust validity of restricted-kernel stationarity tests under mixing (disproved); "approximate EM preserves validity" (disproved); rate of 1 − ρ̄(n) (not attempted).
+29. Phase 10: the confirmatory E6′ as designed would mostly confirm theory-predicted quantities and does not cover latent/neural nulls (G7 failed); not authorised.
+30. Phase 10: K = 64, 128 cells not detected within 12 000 observations; the 10.4 nats/cell slope is measured only for K ≤ 32.
+31. Phase 10: oracle delays are floored at the first checkpoint (25 episodes), compressing ratios; run-level correlation of predicted vs observed delay ratio is only 0.16.

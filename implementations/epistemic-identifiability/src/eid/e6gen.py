@@ -53,6 +53,15 @@ def gen_controlled(idx):
     return POMDP(T, p.Z, p.b0), d
 
 
+def gen_hmm_small(idx):
+    """Small hidden-state POMDP (S in {2, 3}) for optimiser studies where near-global optimisation is feasible."""
+    r = _rng("hmm", 50_000 + idx)
+    S = int(r.integers(2, 4))
+    cT = float(np.exp(r.uniform(np.log(0.3), np.log(2.0)))); cZ = float(np.exp(r.uniform(np.log(0.3), np.log(2.0))))
+    T = r.dirichlet(np.full(S, cT), size=(A, S)); Z = r.dirichlet(np.full(O, cZ), size=S); b0 = r.dirichlet(np.ones(S))
+    return POMDP(T, Z, b0), dict(family="hmm_small", S=S, conc_T=cT, conc_Z=cZ)
+
+
 def gen_regime_pair(idx):
     """Persistent latent regime: two independently drawn kernels K0, K1 (regime-conditional), regime flips between episodes with probability eps."""
     r = _rng("regime", idx)

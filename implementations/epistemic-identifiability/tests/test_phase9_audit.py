@@ -95,3 +95,14 @@ def test_adaptive_wald_lower_bound_on_expected_stopping_time():
             t += 1
         taus.append(t)
     assert np.mean(taus) >= np.log(omega) / dmax - 3 * np.std(taus) / np.sqrt(len(taus))
+
+
+def test_exact_supremum_is_valid_and_grid_maximiser_is_not_exact_dp():
+    """Bernoulli stream, truth p = 0.5 inside the null interval [0.3, 0.7].  Exact sup: P(reject by N) <= alpha (Ville).  Denominator maximised over the
+    grid {0.3, 0.7} only (the true value missed): rejection probability is far above alpha and grows with N.  Exact dynamic programming, no Monte Carlo."""
+    from eid.phase10_exact import rejection_probability, sup_grid, sup_interval
+    alpha = 0.05
+    valid = rejection_probability(0.5, 1500, alpha, lambda k, n: sup_interval(k, n, 0.3, 0.7))
+    grid = lambda k, n: sup_grid(k, n, [0.3, 0.7])
+    bad_500 = rejection_probability(0.5, 500, alpha, grid); bad_1500 = rejection_probability(0.5, 1500, alpha, grid)
+    assert valid <= alpha and bad_1500 > 0.5 and bad_1500 >= bad_500 > alpha

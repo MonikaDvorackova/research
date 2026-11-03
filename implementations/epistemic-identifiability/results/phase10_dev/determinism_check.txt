@@ -1,0 +1,4 @@
+certified-run determinism: re-executed 7 stored jobs; mismatches: 0
+(superseded: that comparison mixed tuples with lists; see the next lines)
+EM e-process job (2,1) re-executed, compared after JSON round-trip (tuples vs lists): identical = True
+EM e-process job (11,0) re-executed, compared after JSON round-trip (tuples vs lists): identical = True

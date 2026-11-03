@@ -32,3 +32,6 @@ tags: [governance, experiments]
 | phase9 dev semantics | 9 | development (exploratory) | `scripts/phase9_dev_semantics.py` | namespace 9000 (10 instances × 3 reps × 10 scenarios) | `results/phase9_dev/` | done; determinism 30/30 |
 | phase9 dev audit / EM / CS / trade-off | 9 | development (exact + small simulations) | `scripts/phase9_dev_audit.py`, `phase9_dev_em_cs.py` | namespace 9000 | `results/phase9_dev/` | done |
 | E6′ | 9 (proposed) | confirmatory (planned) | not written | dev 9000 + reserved 700–719; confirmatory ≥ 60 structures per family (to be extended from reserved 800–829) | – | **not launched; REVISE** |
+| phase10 certified | 10 | development | `scripts/phase10_certified.py` | namespace 10000, 60 Markov structures | `results/phase10_dev/` | done |
+| phase10 K-scaling / comparison / EM / stats | 10 | development | `scripts/phase10_{kscaling,comp,em,stats}.py` | namespace 10000 | `results/phase10_dev/` | done; determinism checked |
+| E6′ confirmatory | 10 (proposed) | confirmatory (planned) | not written | reserved 800–829 (insufficient for the proposed ≥ 130 structures) | – | **NO-GO** |

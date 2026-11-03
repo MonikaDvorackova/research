@@ -148,3 +148,24 @@ def cs_repair_etest(ctx_tr, obs_tr, ctx, obs, alpha=ALPHA, a1=0.05, step=25):
         if logE >= np.log(1 / alpha):
             return k * step
     return None
+
+
+def conditional_range(p_class, p_comp):
+    """Predictable conditional range R_t of Delta_t = Brier(class) - Brier(comparator) given the two forecasts p (class), q (comparator): whatever the outcome law,
+    Delta takes one of the values d_o = (||p||^2 - ||q||^2) - 2 (p_o - q_o), o = 1..k, so R_t = 2 (max_o (p_o - q_o) - min_o (p_o - q_o))."""
+    diff = p_class - p_comp
+    return 2.0 * (diff.max(1) - diff.min(1))
+
+
+def comp_cs_test_adaptive(p_class, p_comp, y, alpha=ALPHA, rho=1.0):
+    """Variance-adaptive version of comp_cs_test using the PREDICTABLE conditional range R_t (known once the forecasts are issued).
+    Conditionally on the past, Z_t = Delta_t - E[Delta_t | F_{t-1}] lies in an interval of length R_t, hence is (R_t/2)^2-sub-Gaussian (Hoeffding's lemma);
+    V_t = sum_{s<=t} R_s^2/4 is predictable and exp(lam S^Z_t - lam^2 V_t/2) is a nonnegative supermartingale for every lam.  Mixing lam ~ N(0, 1/rho) gives
+    sqrt(rho/(rho+V_t)) exp(S_t^2 / (2 (rho + V_t))); Ville => P(exists t: S^Z_t >= sqrt((V_t+rho) ln((V_t+rho)/(rho alpha^2)))) <= alpha.
+    Under the weak null (sum E[Delta_s | F_{s-1}] <= 0 for all t) the rejection event is S_t = sum Delta_s >= that boundary.  Returns the first rejection time or None."""
+    d = brier(p_class, y) - brier(p_comp, y)
+    V = np.cumsum(conditional_range(p_class, p_comp) ** 2 / 4.0)
+    S = np.cumsum(d)
+    u = np.sqrt((V + rho) * np.log((V + rho) / (rho * alpha ** 2)))
+    hit = np.flatnonzero(S >= u)
+    return (int(hit[0]) + 1) if len(hit) else None

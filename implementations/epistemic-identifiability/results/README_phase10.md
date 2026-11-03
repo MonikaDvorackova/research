@@ -1,0 +1,2 @@
+# Phase 10 results (development only; exploratory)
+`phase10_dev/`: `certified_runs.jsonl` + `certified_summary.md` (coverage, type-I, price, adversary); `kscaling.md`; `comp_adaptive.md` + `comp_runs.jsonl` (predictive-comparison scenarios); `em_runs.jsonl` + `em_summary.md` (EM optimiser gap and e-process validity); `exact_checks.md` (exhaustive/DP checks); `stats_audit.md`, `design_inputs.md` (dependence, coverage, sample sizes); `determinism_check.txt`; `registry_*.jsonl` (structure registries). `MANIFEST_phase10.sha256`: checksums. No confirmatory data exist.
