@@ -1,0 +1,15 @@
+# DEVELOPMENT configuration for the partially observed benchmark (exploratory). Development seeds 200-203.
+seeds: [200, 201, 202, 203]
+R: 40
+steps: 60
+episode_len: 10
+checkpoints: [10, 20, 40, 60]
+regimes: [oracle, learned, bma]
+policies: [passive, random, sweep, eig, eig2]
+train_episodes: 40000
+train_horizon: 12
+train_steps: 3000
+hidden: 64
+train_p2: 0.02
+# observer's alternative guesses of what a learned world model looks like (episodes): first entry is the 'main' one used by the learned regime
+wp_sizes: [40000, 5000, 5000, 15000, 15000, 40000, 40000]

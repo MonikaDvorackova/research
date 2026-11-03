@@ -1,0 +1,12 @@
+# EXPLORATORY stress test: observer theories trained over the probed action range (coverage). Stress seeds 400-405, never used in confirmatory claims.
+steps: 80
+episode_len: 10
+checkpoints: [10, 20, 40, 80]
+q_train_n: 5000
+train_steps: 1500
+R: 60
+seeds: [400, 401, 402, 403, 404, 405]
+w_train_n: 12500
+q_amp: 3.0
+regimes: [oracle, learned, bma]
+policies: [passive, wide, eig]
