@@ -1,0 +1,13 @@
+# CONFIRMATORY configuration for the Bayesian observer on environment 1. FROZEN before any confirmatory data exist
+# (see topics/bostrom-world-models/notes/preregistration-phase5.md). Seeds 300-311 are held out: never used for development.
+seeds: [300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311]
+R: 100
+steps: 80
+episode_len: 10
+checkpoints: [10, 20, 40, 80]
+regimes: [oracle, learned, bma]
+policies: [passive, wide, sweep, eig]
+q_train_n: 5000
+w_train_n: 12500
+train_steps: 1500
+q_amp: 1.0
