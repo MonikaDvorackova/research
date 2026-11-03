@@ -1,0 +1,65 @@
+{
+ "config": {
+  "steps": 80,
+  "episode_len": 10,
+  "checkpoints": [
+   10,
+   20,
+   40,
+   80
+  ],
+  "q_train_n": 5000,
+  "train_steps": 1500,
+  "R": 60,
+  "seeds": [
+   400,
+   401,
+   402,
+   403,
+   404,
+   405
+  ],
+  "w_train_n": 12500,
+  "q_amp": 1.0,
+  "regimes": [
+   "oracle",
+   "learned",
+   "bma"
+  ],
+  "policies": [
+   "wide",
+   "eig"
+  ],
+  "complete": [
+   "no_h1",
+   "no_h2",
+   "only_ood",
+   "only_alt"
+  ],
+  "priors": {
+   "uniform": [
+    0.3333333333,
+    0.3333333333,
+    0.3333333333
+   ],
+   "mislead_h0": [
+    0.98,
+    0.01,
+    0.01
+   ],
+   "mislead_h2": [
+    0.01,
+    0.01,
+    0.98
+   ]
+  }
+ },
+ "environment": {
+  "python": "3.12.1",
+  "torch": "2.15.0",
+  "numpy": "2.5.4",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "torch_threads_per_worker": 1
+ }
+}

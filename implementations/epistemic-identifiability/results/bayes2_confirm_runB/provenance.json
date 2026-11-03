@@ -1,0 +1,62 @@
+{
+ "config": {
+  "seeds": [
+   300,
+   301,
+   302,
+   303,
+   304,
+   305,
+   306,
+   307,
+   308,
+   309,
+   310,
+   311
+  ],
+  "R": 100,
+  "steps": 200,
+  "episode_len": 10,
+  "checkpoints": [
+   25,
+   50,
+   100,
+   200
+  ],
+  "regimes": [
+   "oracle",
+   "learned",
+   "bma"
+  ],
+  "policies": [
+   "passive",
+   "random",
+   "sweep",
+   "eig",
+   "eig2",
+   "no2"
+  ],
+  "train_episodes": 40000,
+  "train_horizon": 12,
+  "train_steps": 3000,
+  "hidden": 64,
+  "train_p2": 0.02,
+  "wp_sizes": [
+   40000,
+   5000,
+   5000,
+   15000,
+   15000,
+   40000,
+   40000
+  ]
+ },
+ "environment": {
+  "python": "3.12.1",
+  "torch": "2.15.0",
+  "numpy": "2.5.4",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "torch_threads_per_worker": 1
+ }
+}

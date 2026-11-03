@@ -225,3 +225,19 @@ Setting: an observer with a finite class M of kernels and prior ν selects inter
 ### Corrections log
 
 See `notes/corrections-log.md`.
+
+
+### Proposition 1′ (equivalence relative to an intervention class). Elementary; same proof as Proposition 1.
+
+For a class Π of policies, write E ≈_Π E′ if P_E^π = P_{E′}^π for every π ∈ Π and every T. If Π is the class of all policies that put probability zero on a set B of actions, then E ≈_Π E′ iff the kernels agree at every reachable history for every action outside B. In particular two environments that differ only at actions in B are observationally equivalent relative to Π and distinguishable (total variation > 0 under a policy that steers into the difference) relative to any class containing a policy that uses B.
+
+*Proof.* Proposition 1's proof uses, for each (h, a), the deterministic policy that plays the actions along h and then a; that policy belongs to Π exactly when h and a avoid B. Replace "all policies" by Π throughout. ∎
+
+*Checks.* Exact enumeration in `tests/test_class_relative_equivalence.py` (randomised, forbidden action varied) and in the POMDP benchmark (`tests/test_pomdp.py`: the transition-perturbed control has TV = 0 under every action sequence avoiding action 2); exact demonstration that a Bayesian observer with both hypotheses keeps the prior odds exactly under such a policy (`scripts/equivalence_demo.py`, deviation 0.00e+00). This separates **fundamental equivalence relative to an intervention class** (no amount of data helps) from **finite-sample uncertainty** (the oracle's accuracy rises with budget when action 2 is used) and from **misspecification** (the learned observer's accuracy stays flat).
+
+### Remarks on statistical versus computational identifiability and on finite horizon (no new theorem)
+
+1. **Finite horizon.** Propositions 2, 5, 6, 7(a) hold at every finite horizon and give ceilings; Proposition 8's concentration statements are asymptotic in the number of episodes (consistency, exponent KL); at finite budgets the oracle observer's posterior remains uncertain but calibrated (simulation-based calibration; ECE about 0.06 in the POMDP development run). Kernel differences beyond the horizon are unconstrained (Proposition 1 on unreachable histories).
+2. **Statistical identifiability** means the laws differ (TV > 0 under some admissible policy). **Computational identifiability** asks whether a resource-bounded observer can *use* the difference. Two relevant facts. (a) For finite POMDPs the Bayes-optimal posterior is exactly computable by filtering (used here); for implicit or neural simulators the likelihood is generally not available, and the "learned-likelihood" regimes in the experiments are a computational surrogate whose failure is a *misspecification* effect, not a computational-complexity result. (b) A simulation driven by a cryptographically strong pseudorandom generator seeded once is deterministic, hence statistically distinguishable from an environment with true randomness over a long enough horizon, yet computationally indistinguishable for polynomially bounded observers under standard cryptographic assumptions (not tested here; sources not verified). Armstrong's (2018) abstract states a related finite-horizon equivalence between stochastic POMDPs and deterministic POMDPs with random initial state; I have not read the full text.
+3. **Adaptive policies** are covered by history-dependent policies in all statements. They change distinguishability only when the discrepancy is state-dependent and observable (Proposition 9), and they cannot exceed the ceilings of Proposition 7(a).
+4. **Misspecified hypothesis spaces** change what identification means (Propositions 8(b), 10): posteriors are class-relative, blind to deviations outside the members' disagreement set, and design by information gain optimises only within the class.

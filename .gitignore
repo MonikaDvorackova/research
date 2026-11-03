@@ -34,3 +34,6 @@ tmp/
 
 # Optional large sources — prefer linking; if used, track deliberately
 # references/sources/**/*.pdf
+
+# Phase 5 run B raw arrays are bit-reproducible from the committed code and configuration; their SHA-256 hashes are in MANIFEST_phase5.sha256
+implementations/epistemic-identifiability/results/*_runB/seed*.npz

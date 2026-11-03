@@ -87,3 +87,18 @@ Genin and Kelly (2017); SEP "Formal Learning Theory" (about 90%, via a fetch sum
 ### Remaining unread neighbours that could change the assessment
 
 Brogioli (formal empirical equivalence with an experimenting robot in a simulated system); Norton and Laudan–Leplin primary texts; Weatherson (2003) and Bostrom's replies; Edge (2024); Reality+ (book). Until these are read, "not found" for the last three rows means only that.
+
+## Phase 5 update (2026-11-03)
+
+### Record for each important work (thesis, assumptions, relation, reading status)
+
+The detailed table with verified metadata, exact theses, and reading levels for the central works is in [novelty-threat-matrix.md](novelty-threat-matrix.md). Additional points from this phase:
+
+- **Bostrom and Kulczycki (2011), full text.** The paper locates a mathematical non sequitur in the formula for the fraction of observers who are simulated and offers patches, one of which requires "empirical indexical evidence" with stated conditions; it also gives an example of what would be evidence against the simulation hypothesis (a defeater built on computer-age birth rank). *Relation to our claims:* it shows that Bostrom himself allows empirical evidence to bear on the hypothesis, but the evidence is **indexical** (where in history we are), not **detection** of artifacts from within; it does not discuss detectability by embedded observers. It does not anticipate the formal bound on discriminating evidence (Corollary), but it makes clear that the corollary concerns only one route by which evidence could bear on the argument.
+- **SEP "Underdetermination" (summary).** States that "any judgment of empirical equivalence is both defeasible and relativized to a particular state of science" (Laudan and Leplin). *Relation:* anticipates the relativisation of equivalence to what is observable and to auxiliary assumptions; our intervention-class relativity (Proposition 1′) is an exact finite instance.
+- **SEP "Abduction" (summary).** IBE as a reply to underdetermination and to brain-in-a-vat scepticism (simplicity and explanatory considerations favour the ordinary-world hypothesis); the "bad lot" objection; adding a catch-all hypothesis "gives little assurance, because that hypothesis is usually uninformative". *Relation:* the scientific-realism and IBE response is a philosophical route to rung 4 of our ladder that does **not** rely on observational detection (explanatory virtues set priors and likelihoods); our analysis is silent about it, and a manuscript must say so. The catch-all remark is the philosophical counterpart of Proposition 10(c).
+- **Chalmers "The Matrix as Metaphysics" (summary).** The note in the Notre Dame review that Chalmers's conclusion strengthens the standard IBE reply to scepticism (because the matrix hypothesis is not sceptical) is relevant: on his view the question "are we in a simulation?" is not an epistemic threat, which changes the stakes of our results.
+
+### Does the proposed philosophical thesis already exist?
+
+Components: yes (see the threat matrix); the conjunction as an analysis of what a **fallible, learned observer** can infer, with a quantified account of Bostrom's proviso: not found in the sources reached, with the unread sources listed. The honest summary is **integration of established ideas with new controlled empirical instances**, not a new philosophical thesis.

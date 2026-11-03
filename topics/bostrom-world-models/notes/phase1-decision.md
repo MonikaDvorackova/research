@@ -97,3 +97,14 @@ All previously launched ablations were confirmed finished (nothing running; no d
 ### Decision: REVISE (unchanged), now with a precise reformulation and a short list of blocking items
 
 See `reviews/2026-11-03-phase4-publication-readiness.md`. Do not begin the manuscript until the Bayesian model-selection observer, a second environment, and the reading of the unread philosophical sources are done.
+
+
+## Phase 5 update (2026-11-03): gates and decision
+
+- **Gate 1 (theory): passed with corrections.** One statement false as worded (corollary), two missing assumptions, one refuted conjecture; no proposition refuted.
+- **Gate 2 (experimental validity): passed, one item unresolved** (environment 1 learned-regime negative control not established by the pre-specified rule; its decision differs between runs A and B). A reproducibility defect was found and fixed; run B is bit-reproducible (exact re-run of one seed per environment, 0 mismatching arrays).
+- **Gate 3 (robustness): passed for a narrowed claim.** Learned-likelihood Bayesian observers are overconfident and mislabel the reference in both environments; the failure is coverage-dependent; H1-versus-H2 separability is environment-specific; the information-gain-ratio diagnostic did not replicate.
+- **Gate 4 (originality): not passed for the original framing;** passed only for an integrative reformulation whose novelty is unproven (novelty threat matrix).
+- **Gate 5 (publication readiness): not passed.**
+
+**Decision: REVISE** (continue research; do not draft). The original framing is a NO-GO. See `reviews/2026-11-03-phase5-publication-readiness.md` for the reformulated question and title and for the three highest-value next actions.

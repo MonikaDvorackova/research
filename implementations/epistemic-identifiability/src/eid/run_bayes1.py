@@ -79,6 +79,7 @@ def run_seed(cfg, seed):
     ctx = build_materials(cfg, seed)
     out, timing = {}, {}
     prior_sets = cfg.get("priors", {"uniform": [1 / 3, 1 / 3, 1 / 3]})
+    cell = 0   # deterministic, collision-free index of each (regime, completeness, prior, scenario, policy) cell
     for regime in cfg["regimes"]:
         for complete in cfg.get("complete", ["full"]):
             for pname, prior in prior_sets.items():
@@ -86,7 +87,8 @@ def run_seed(cfg, seed):
                 for sc in cfg.get("scenarios", SCENARIOS):
                     env = scenario_env(sc, ctx)
                     for pol in cfg["policies"]:
-                        rng = brng(seed, "sim", (hash((regime, complete, pname, sc, pol)) % 100000))
+                        rng = brng(seed, "sim", cell)
+                        cell += 1
                         r = run_observer(space, env, pol, rng, R=cfg["R"], steps=cfg["steps"], episode_len=cfg["episode_len"],
                                          checkpoints=tuple(cfg["checkpoints"]))
                         key = f"{regime}|{complete}|{pname}|{sc}|{pol}"

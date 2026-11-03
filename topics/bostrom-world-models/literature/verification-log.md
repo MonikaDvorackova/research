@@ -93,3 +93,20 @@ Chernoff (1959), Chaloner and Verdinelli (1995), Ferns et al. bisimulation metri
 - **Verified metadata:** Berk (1966) *Ann. Math. Statist.* 37(1):51-58; Kleijn and van der Vaart (2006) *Ann. Statist.* 34(2):837-877, DOI 10.1214/009053606000000029 (both from Project Euclid / arXiv listings; abstracts only). Nalisnick et al. (ICLR 2019, arXiv:1810.09136) and Ren et al. (NeurIPS 2019, arXiv:1906.02845) from search results.
 - **Attempt that was blocked and not retried (Phase 3):** fetching the OpenReview PDF of Ikram et al. with a spoofed browser identity.
 - **Still inaccessible or unread:** Ikram et al. (OpenReview), Brogioli, Edge (403), Norton (certificate), Laudan and Leplin (primary text), Weatherson (primary text), Bostrom's replies (2005, 2009), Bostrom and Kulczycki (2011), Chalmers's *Reality+* book, Schneider, Schwitzgebel, Godfrey-Smith, Kelly's book text.
+
+## Phase 5 update (2026-11-03)
+
+**Newly read (full text):** Bostrom and Kulczycki (2011), "A Patch for the Simulation Argument", *Analysis* 71(1):54–61 (author's PDF, 8 pages, text extracted locally). Bostrom (2003) and Chalmers (2024) were read in full in earlier phases.
+
+**Newly read (summary level, via a fetch summary of the page):** Stanford, "Underdetermination of Scientific Theory" (SEP, rev. 4 April 2023); Douven, "Abduction" (SEP, rev. 18 June 2025).
+
+**Metadata verified from Crossref:** Weatherson (2003), "Are You a Sim?", *Phil. Quarterly* 53(212):425–431, DOI 10.1111/1467-9213.00323. Content not read.
+
+**Newly identified neighbours (abstract level only):** Catanach and Das (arXiv:2304.07949), expected information gain under model misspecification and a measure of discrepancy detection; "Improving Robustness to Model Misspecification in Bayesian Experimental Design" (OpenReview; auxiliary model with a misspecification indicator); "On the Misinformation in a Statistical Experiment" (AISTATS 2026 poster); "Robust Experimental Design via Generalised Bayesian Inference" (arXiv:2511.07671). These make Proposition 10 a high novelty threat (see `novelty-threat-matrix.md`).
+
+**Access outcomes this phase (none bypassed):**
+- Semantic Scholar API: HTTP 429 (rate limit) on three title searches (Ikram et al., Brogioli, Weatherson); not retried within the phase and not worked around. No abstract for Ikram et al. or Brogioli was obtained from it.
+- PhilSci Archive (Brogioli): certificate error; PhilPapers: 403; PhilArchive (Edge): 403; Springer journal-scope pages: authentication redirect; OpenReview (Ikram et al.): bot challenge.
+- Consequently Ikram et al. and Brogioli remain **abstract/snippet only**, and conclusions about them are limited accordingly.
+
+**Still unread (limits stated in the novelty threat matrix):** Brogioli, Ikram et al. (full text), Edge, Norton, Laudan and Leplin (primary), Weatherson (primary), Bostrom (2005, 2009 replies), Brueckner (2008), *Reality+* (book), Schneider, Schwitzgebel, Godfrey-Smith, the full texts of Catanach and Das and of Genin and Kelly.

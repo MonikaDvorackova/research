@@ -75,3 +75,38 @@ Composite: achievable detection ≤ ceiling set by (1) at the probed regime; rea
 ### Version history
 
 - v1 (Phase 5 start): created.
+- v2 (Phase 5 end): status changes and new claims below; no claim was promoted from exploratory to confirmatory without a pre-specified test.
+
+
+## Version 2 (end of Phase 5)
+
+### Status changes to v1 claims
+
+| v1 id | Claim | v1 status | v2 status | Reason |
+|---|---|---|---|---|
+| F10 | E[τ] ≥ ln ω / KL (Bostrom corollary) | Math | Math | Unchanged after audit; the earlier wording was already marked Contra and corrected. |
+| F11 | EIG design blind to deviations outside the members' disagreement set (Prop. 10a,b) | Math (finite example) | Math (finite example); **novelty threatened** | Catanach and Das and related BED-misspecification work (abstracts) cover the phenomenon; only the exact illustration is ours. |
+| F12 | A catch-all makes myopic EIG explore | Contra | Contra | Unchanged; non-myopic design with a catch-all succeeds in the exact example (Math). |
+| E2 | Inversion independent of architecture, sample, W architecture | Emp (weak) | **Emp (post hoc equivalence-tested; 12/12 contrasts within ±0.10 AUROC)** | Post hoc TOST, margins fixed beforehand; many cells at the AUROC floor, so equivalence partly reflects a shared floor. |
+| E4 | Fine-tuning adaptive observer absorbs the anomaly | Emp (one protocol) | Emp (one protocol); **scope narrowed** | A Bayesian observer whose class contains the truth identifies it (oracle, both environments); one whose class is learned does not (D1, G2). Absorption is a property of the fine-tuning protocol, not of learning from the environment in general. |
+| E8 | Equivalent control not exploited | Emp (weak) | **Emp**: environment 1 TOST 25/27 (post hoc); confirmatory E3a,c yes, E3b **not established**; environment 2 E1a–c yes | Equivalence now tested. |
+| E9 | Reproducibility | Emp (seed 0 only) | Emp for Phase 1–4; **Phase 5 run A not bit-reproducible (defect found and fixed)**; run B deterministic | See corrections log #14. |
+| P3 | T6: learning from the environment under test cannot supply the reference | Phil + Emp (one protocol) | Phil + Emp (scope narrowed as for E4) | Same. |
+| P7 | Novelty | Unver | Unver; novelty threat matrix completed | Components anticipated; conjunction not found in the sources reached. |
+
+### New claims
+
+| # | Claim | Status | Evidence | Assumptions / scope |
+|---|---|---|---|---|
+| B1 | A Bayesian observer with learned likelihoods is far less accurate and far worse calibrated than the oracle under informative interventions, and mislabels the reference (environment 1) | **Emp (confirmatory, D1–D4, D7)** | 12 held-out seeds, pre-specified, Holm-adjusted | Gaussian toy; theories trained on a narrow range; one world-model architecture |
+| B2 | The same holds in a partially observed POMDP with GRU learners (G2, G3) | **Emp (confirmatory)** | 12 held-out seeds | One POMDP family; GRU only |
+| B3 | In the POMDP the correctly specified observer's accuracy rises with budget (finite-sample) while learned observers stay flat (G1, flat curves) | **Emp (confirmatory G1; flat curves exploratory)** | as above | 200-step horizon |
+| B4 | Equivalence relative to an intervention class is exact: with no use of action 2 the transition-perturbed mechanism is unidentifiable by any observer; with action 2 the oracle identifies it (0.116 versus 0.705 versus 0.950) | **Math (exact) + Emp (confirmatory G7)** | exact enumeration; posterior odds unchanged to 0.00e+00 | Specific POMDP; exact kernels |
+| B5 | Information-gain design helps a correctly specified observer (G4: +0.176) and does not help learned observers (G5: −0.025; environment 1 E1/E2 not established, EIG worse in 11/12 and 9/12 seeds) | **Emp (confirmatory G4, G5)**; env-1 reading **Expl** | | Myopic EIG in environment 1; two-step in environment 2 |
+| B6 | The learned observer separates a learned world model from non-learned alternatives well in environment 1 (D6: 0.928) but not in the POMDP (G6: 0.569) | **Emp (confirmatory both)**; the contrast is a **robustness limit** | | Environment-specific |
+| B7 | The failure of learned observers is coverage-dependent: training the observer's theories over the probed range removes it | **Expl** (stress seeds 400–405, n = 6) | acc3 0.983, ECE 0.011 | Environment 1 only |
+| B8 | Incomplete hypothesis spaces yield confident misclassification even for an oracle | **Math (Props. 8b, 10a) + Expl (stress)** | ECE 0.33 for the oracle with a class absent | |
+| B9 | Oracle observers are insensitive to misleading priors; learned observers are sensitive | **Expl** | stress | |
+| B10 | The realised/expected information-gain ratio diagnoses misspecification | **Contra (not replicated)** | environment 1: 0.97 versus 5.0; environment 2: 0.94, 1.00, 0.97 | Exploratory finding withdrawn as a general claim |
+| B11 | The inversion mechanism (the environment nearer the theory in cross-entropy looks normal) holds for Bayesian observers too | **Expl** | environment 1: H0 accuracy 0.31–0.37 for learned and bma; environment 2: H1-vs-H0 AUROC 0.44–0.49 | Direction only; no mechanism check for the Bayesian observers |
+| B12 | The confirmatory conclusions hold in a bit-reproducible rerun | **Emp**: environment 1, 12 of 13 decisions identical (E3b differs: not claimed); environment 2, 11 of 11 identical; stress accuracies within 0.018 | `results/compare_runs_bayes*.md`; exact re-run of one seed per environment: 0 mismatching arrays | One machine; run B shares observer materials and truths with run A, so it replicates the interaction randomness and the code path, not the training randomness |

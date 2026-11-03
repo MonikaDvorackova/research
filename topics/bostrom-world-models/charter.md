@@ -48,4 +48,11 @@ Bostrom (2003) argues about the probability that we are simulated; it says nothi
 | Experiment design | `notes/experiment-design.md` |
 | Results and limits | `notes/results.md` |
 | Reviewer-style assessment | `reviews/2026-11-03-minds-and-machines-reviewer-assessment.md` |
+| Claim-evidence-assumption matrix | `notes/claim-evidence-assumption-matrix.md` |
+| Pre-specification (Phase 5) | `notes/preregistration-phase5.md` |
+| Phase 5 results | `notes/results-phase5.md` |
+| Corrections log | `notes/corrections-log.md` |
+| Reproducibility | `notes/reproducibility-phase5.md` |
+| Novelty threat matrix | `literature/novelty-threat-matrix.md` |
+| Phase 5 gates and readiness review | `reviews/2026-11-03-phase5-publication-readiness.md` |
 | Implementation | `implementations/epistemic-identifiability/` |

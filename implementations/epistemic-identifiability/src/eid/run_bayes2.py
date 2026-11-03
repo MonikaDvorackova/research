@@ -147,13 +147,15 @@ def run_seed(cfg, seed):
     torch.set_num_threads(1)
     c = build_materials(cfg, seed)
     out, timing = {}, {}
+    cell = 0   # deterministic, collision-free index of each (regime, completeness, prior, scenario, policy) cell
     for regime in cfg["regimes"]:
         for complete in cfg.get("complete", ["full"]):
             for pname, prior in cfg.get("priors", {"uniform": [1 / 3, 1 / 3, 1 / 3]}).items():
                 for sc in cfg.get("scenarios", SCENARIOS):
                     for pol in cfg["policies"]:
                         space = build_space2(regime, c, prior, complete)
-                        rng = rs(seed, "sim", abs(hash((regime, complete, pname, sc, pol))) % 100000)
+                        rng = rs(seed, "sim", cell)
+                        cell += 1
                         r = run_observer2(space, scenario_env(sc, c), pol, rng, R=cfg["R"], steps=cfg["steps"], episode_len=cfg["episode_len"],
                                           checkpoints=tuple(cfg["checkpoints"]))
                         key = f"{regime}|{complete}|{pname}|{sc}|{pol}"

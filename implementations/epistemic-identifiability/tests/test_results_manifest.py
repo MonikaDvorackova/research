@@ -19,3 +19,21 @@ def test_phase4_results_are_unmodified():
                 bad.append(path)
     assert not missing, missing
     assert not bad, bad
+
+
+def test_phase5_results_are_unmodified():
+    """Phase 5 result files; run B raw arrays are git-ignored (bit-reproducible) and are verified only if present locally."""
+    bad, missing, skipped = [], [], 0
+    for line in open(os.path.join(ROOT, "results", "MANIFEST_phase5.sha256")):
+        h, path = line.rstrip("\n").split("  ", 1)
+        full = os.path.join(ROOT, path)
+        if not os.path.exists(full):
+            if "_runB/" in path and path.endswith(".npz"):
+                skipped += 1
+                continue
+            missing.append(path)
+            continue
+        if hashlib.sha256(open(full, "rb").read().replace(b"\r\n", b"\n")).hexdigest() != h:
+            bad.append(path)
+    assert not missing, missing
+    assert not bad, bad
