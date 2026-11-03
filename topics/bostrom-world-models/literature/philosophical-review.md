@@ -17,7 +17,7 @@ Reading levels: **Full text** (text extracted and read this session); **Abstract
 
 | Source | Access outcome |
 |---|---|
-| Thomas and Didierjean, "Inattentional incoherence blindness: If the world were to 'glitch,' would we even be capable of detecting it?", *Psychonomic Bulletin & Review* 33(3), published 17 Feb 2026, DOI 10.3758/s13423-026-02867-x | Bibliographic record confirmed via Crossref and Semantic Scholar. **The publisher has elided the abstract from both; Springer redirects to an authentication step. Content unread.** Only the title and authorship can be used: it concerns whether people could notice a "glitch", i.e. human perceptual detection, and it is listed as citing Bostrom. Nothing about its method or findings is known. |
+| Thomas and Didierjean, "Inattentional incoherence blindness: If the world were to 'glitch,' would we even be capable of detecting it?", *Psychonomic Bulletin & Review* 33(3), published 17 Feb 2026, DOI 10.3758/s13423-026-02867-x | **Abstract now obtained** from PubMed (PMID 41703184) and Europe PMC; the publisher withholds it from Crossref and Semantic Scholar, and Springer redirects to an authentication step, so the **full text remains unread**. From the abstract: an experimental psychology study (two experiments, N = 44 each, undergraduates) in which a magician's trick makes a four-digit code seem known to an experimenter elsewhere, a logical impossibility; most participants failed to notice the incoherence unless it was explicitly highlighted and did not reconstruct the event in memory; the authors name this "inattentional incoherence blindness". It is evidence about human observers' limits in noticing logical anomalies, not a formal or philosophical analysis of simulation detection; its relation to Bostrom (listed as citing him per Semantic Scholar) is not stated in the abstract. |
 | Brogioli, "A computational complexity approach to the definition of empirical equivalence" (PhilSci Archive, 2019; later versions 2021) | PhilSci Archive: certificate error on every attempt; PhilPapers: HTTP 403. **Only a search-result description is available**: empirical equivalence investigated via numerical simulations of hypothetical systems with known rules, including a robot performing an experiment; a sufficient condition for equivalence in terms of a transformation in a given complexity class; no journal publication found. Not read. |
 | Ikram et al. 2026 (TMLR) | OpenReview bot challenge; abstract summary only. |
 | Edge, "Testing the Simulation Hypothesis" (PhilArchive) | HTTP 403. Seen only as a search-result description (examines whether the hypothesis can be tested; discusses Campbell et al.). Unread. |
@@ -58,3 +58,32 @@ Reading levels: **Full text** (text extracted and read this session); **Abstract
 ### Assessment
 
 The qualitative content of theses T1 and T2 is **largely anticipated** by Chalmers's perfect/imperfect distinction and by the detection proposals in physics. The residue that may be new is (i) the explicit decomposition into three inferences with stated premises, (ii) quantitative bounds tied to a class of interventions (Props. 3–6), and (iii) the learned-world-model instantiation with the observer's own theory as part of the test. Whether any of these is new in the philosophical literature has not been established: the search was unsystematic, and several directly relevant sources (Brogioli, the glitch paper, Edge, Kelly's definitions, the Glymour–Malament–Manchak–Norton papers) were not read.
+
+
+## Phase 4 update (2026-11-03)
+
+### Sources read first-hand this phase
+
+- **Bostrom (2003), full text.** Two points matter for this project. (1) The argument builds in indistinguishability: simulators can fill in detail on demand and "could easily edit the states of any brains that have become aware of an anomaly before it spoils the simulation", or rerun the simulation; the stated cost is of simulations "indistinguishable from physical reality for human minds". (2) The credence step is licensed by "a very weak indifference principle", stated for the case where "we don't have any information that indicate that our own particular experiences are any more or less likely than other human-type experiences to have been implemented in vivo rather than in machina". The argument is thus explicitly conditional on the absence of discriminating information.
+- **Chalmers, "The Matrix as Metaphysics"** (via a fetch summary): the Matrix Hypothesis is metaphysical, not sceptical; "From the inside, there is no way to tell for sure that I am not in the situation of the brain in a vat"; Bostrom is cited.
+- **Chalmers (2024)** two papers: read in full in Phase 3.
+
+### Read at abstract level this phase
+
+Genin and Kelly (2017); SEP "Formal Learning Theory" (about 90%, via a fetch summary); Kelly (1996) table of contents; Weinstein and LaValle (2024); Berk (1966); Kleijn and van der Vaart (2006); Nalisnick et al. (2019); Ren et al. (2019); Thomas and Didierjean (2026) abstract.
+
+### What these sources establish for the project's theses
+
+| Thesis or claim | Where it is already established | Status |
+|---|---|---|
+| Unrestricted "we are in a simulation" cannot be settled by observation; indistinguishable hypotheses cannot be identified, even in the limit | Bostrom builds indistinguishability in; Chalmers (explicit); formal learning theory: hypotheses that give the same data stream cannot be reliably identified (SEP, Glymour's architecture example; Kelly 1996, Genin and Kelly 2017 for the statistical case) | **Established.** T1 in this form is not a contribution. |
+| Detection can refute only specific, fidelity-indexed hypotheses | Popper/Duhem tradition; Beane et al. and Campbell et al. as instances; Chalmers on low-grade simulations | **Established qualitatively.** |
+| Evidence cannot shift credence when experiences match | Bostrom's indifference principle (conditional on no discriminating information); Chalmers's defeat argument | **Established.** Prop. 4 is a formal restatement. |
+| Anomaly tests are relative to the observer's theory | Duhem–Quine (qualitative); statistical misspecification theory (Berk 1966; Kleijn and van der Vaart 2006) | **Established qualitatively.** |
+| A learned model's likelihood can rate unfamiliar data as *more* typical than familiar data | Nalisnick et al. (2019), Ren et al. (2019) for static deep generative models | **Known phenomenon in density estimation.** The sequential, interventional instance and its philosophical use were not found, in the sources I could reach. |
+| Adaptation to the environment under test absorbs the discrepancy | Posterior consistency (Doob/Schwartz; Berk 1966) | **Known statistics**; the application to simulation detection was not found. |
+| How much discriminating evidence defeats the proviso of the indifference principle | Not found in the sources read | **Possibly new as an application**; elementary mathematics (Corollary in the formal framework). |
+
+### Remaining unread neighbours that could change the assessment
+
+Brogioli (formal empirical equivalence with an experimenting robot in a simulated system); Norton and Laudan–Leplin primary texts; Weatherson (2003) and Bostrom's replies; Edge (2024); Reality+ (book). Until these are read, "not found" for the last three rows means only that.

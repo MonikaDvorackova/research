@@ -79,3 +79,21 @@ Philosophical literature review ([philosophical-review.md](../literature/philoso
 - **Smallest defensible reformulation:** a paper on *what an anomaly shows when the observer's own theory is a learned model*, with the L1/L2/L3 distinction and Propositions 4-6 as framework, the ablation table as evidence, and Bostrom as motivation. Philosophy & Technology is the more realistic first target; Minds and Machines is possible but doubtful.
 - **Before drafting:** read Kelly's definitions and the Glymour-Malament-Manchak-Norton papers; obtain Brogioli and the glitch paper (or have the user paste their abstracts); read Weatherson; check for precedents of quantified theory-relativity in philosophy of science and ML-evaluation literature; add a second environment (partially observed) and a second W architecture.
 - **Not justified:** large-scale experiments; any claim of a new theorem.
+
+## Phase 4 update (2026-11-03)
+
+### What was done
+
+All previously launched ablations were confirmed finished (nothing running; no duplicate runs). Added four conditions (independently trained theory; W = ReLU with a differing and a shared theory architecture; adaptive observer). Statistical, practical-significance and figure analyses; a mechanism check; a leakage audit; first-hand reading of Bostrom (2003) and further sources; abstract of the 2026 glitch paper obtained from PubMed; Propositions 7–9 and a Bostrom-specific corollary with exact-enumeration checks; a publication-readiness assessment.
+
+### Answers to the Phase 4 questions
+
+1. *Does the central finding survive independent architectures and training distributions?* Yes for architectures (ReLU theory; W tanh and W ReLU; shared or different) and for an independent training sample: all in-distribution-trained neural theories invert under out-of-distribution interventions. It does not survive a theory that covers the probed range or is exact.
+2. *Does adaptive experimentation improve identifiability?* Not for the tested protocol. Fine-tuning on the environment under test removes false alarms and the power to detect together (balanced accuracy 0.503, AUROC 0.491 at wide T = 10). Proposition 8 explains this and states when a Bayesian observer would differ; that observer was not implemented.
+3. *Where do the limits come from?* Both: the intervention regime sets the ceiling (oracle AUROC 0.884 passive, 1.000 out-of-distribution); the observer's theory sets the realised fraction (0.026–0.989 at the same interventions); in-distribution the environment is the binding limit.
+4. *Is the thesis already established?* T1–T3 yes; T4 qualitatively yes, its inversion for static learned models is known; T6, T7 not found but elementary and unverified against unread sources.
+5. *Any new formal result?* No theorem is claimed. Propositions 7–9 and the corollary are elementary, with provenance stated.
+
+### Decision: REVISE (unchanged), now with a precise reformulation and a short list of blocking items
+
+See `reviews/2026-11-03-phase4-publication-readiness.md`. Do not begin the manuscript until the Bayesian model-selection observer, a second environment, and the reading of the unread philosophical sources are done.

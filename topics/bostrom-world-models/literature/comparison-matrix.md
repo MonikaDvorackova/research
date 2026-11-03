@@ -31,6 +31,14 @@ tags: [literature, novelty]
 | Campbell et al. arXiv:1703.00058 (abstract) | Can rendering-on-observation be tested | Physics proposal | Proposed experiments | Motivated by simulation theory | Fidelity-indexed sub-hypothesis example | Full text unread |
 | Brogioli 2019 (PhilSci Archive; snippet) | Empirical equivalence via simulated systems and an experimenting robot | Sufficient condition via complexity-class transformation | Numerical simulations | None found | **Closest formal neighbour for empirical equivalence** | Must be read before submission |
 
+| Bostrom 2003 (full text read) | At least one of three propositions holds | Probabilistic trilemma; bland indifference principle conditional on no discriminating information | None | Is the argument; builds in simulators that edit anomalies | Defines both the target and the proviso our Corollary addresses | Silent on how much evidence would defeat the proviso |
+| Chalmers 2024 (two papers, full text) and "Matrix as Metaphysics" (summary) | Epistemic and metaphysical status of the simulation hypothesis | Philosophical arguments | None | Direct engagement | Perfect-simulation indistinguishability; defeat by indifference; imperfect sims may be sceptical | No quantitative or experimental treatment |
+| SEP Formal Learning Theory; Kelly 1996 (TOC); Genin and Kelly 2017 (abstract) | When can hypotheses be verified, refuted, identified in the limit | Topological and computability characterisations | None | None | Formal home for "indistinguishable hypotheses cannot be identified" | Not applied to simulation or learned observers |
+| Berk 1966; Kleijn and van der Vaart 2006 (abstracts) | Posterior behaviour under misspecification | Concentration on the KL minimiser | None | None | Underlies Prop. 8 | Not applied to detection of generated environments |
+| Nalisnick et al. 2019; Ren et al. 2019 (abstracts) | Deep generative models assign higher likelihood to OOD data | Empirical and analytical explanation | Image benchmarks | None | Known analogue of the inversion (static, not interventional) | No sequential/interventional setting; no philosophical reading |
+| Thomas and Didierjean 2026 (abstract) | Can people detect logical impossibilities they experience | None | Two experiments, N = 44 each | Cites Bostrom per Semantic Scholar | Evidence on human observers' detection limits | Not formal; not about simulation theory; full text unread |
+| Weinstein and LaValle 2024 (abstract) | When can robots not tell environments apart | Covering maps (sufficient), bisimulation (necessary) | None | None | Robotics-side formalisation of environment equivalence | Exact, not statistical |
+
 ### Result of the novelty search
 
 No publication was found that both (a) connects Bostrom's argument to learned world models and (b) studies detectability by embedded agents with controlled experiments. This is an absence of discovered work from a limited search, not evidence that none exists.

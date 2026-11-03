@@ -48,6 +48,25 @@ def train_gauss(X, A, Y, seed: int, steps: int = 1500, lr: float = 3e-3, batch: 
     return model
 
 
+def finetune_gauss(model: GaussMLP, X, A, Y, seed: int, steps: int = 300, lr: float = 1e-3, batch: int = 256) -> GaussMLP:
+    """Continue training a copy of ``model`` on new data (the adaptive observer's belief update)."""
+    import copy
+    torch.manual_seed(seed)
+    model = copy.deepcopy(model)
+    opt = torch.optim.Adam(model.parameters(), lr=lr)
+    x, a, y = (torch.as_tensor(v, dtype=torch.float32) for v in (X, A, Y))
+    g = torch.Generator().manual_seed(seed)
+    n = x.shape[0]
+    for _ in range(steps):
+        idx = torch.randint(0, n, (min(batch, n),), generator=g)
+        mu, logstd = model(x[idx], a[idx])
+        nll = (0.5 * ((y[idx] - mu) / logstd.exp()) ** 2 + logstd).mean()
+        opt.zero_grad()
+        nll.backward()
+        opt.step()
+    return model
+
+
 class Ensemble:
     """Agent-side theory Q: moment-matched mixture of K Gaussian models."""
 

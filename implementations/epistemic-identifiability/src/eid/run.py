@@ -14,9 +14,9 @@ import yaml
 from .agent import POLICIES, interact
 from .env import COUPLING, SIGMA, LearnedEnv, RefEnv, gauss_logpdf, kl_gauss, ref_mean, sample_x0
 from .metrics import auroc, platt_ece_brier, prefix_stat
-from .model import AnalyticTheory, Ensemble, train_gauss, train_poly
+from .model import AnalyticTheory, Ensemble, finetune_gauss, train_gauss, train_poly
 
-TAGS = {"q": 1, "w": 2, "test": 3, "alt": 4, "eval": 5, "cal": 6, "alto_eval": 7, "alto_cal": 8}
+TAGS = {"q": 1, "w": 2, "test": 3, "alt": 4, "eval": 5, "cal": 6, "alto_eval": 7, "alto_cal": 8, "q2": 9, "adapt": 10}
 EP_LEN = 20
 
 
@@ -50,8 +50,9 @@ def model_quality(model, rng, n: int = 4000):
 
 
 def _build_ensemble(cfg, seed, steps, arch, amp):
-    Xq, Aq, Yq = collect(cfg["q_train_n"], rng_for(seed, "q"), amp)
-    brng = rng_for(seed, "q", 1)
+    stream = cfg.get("q_data", "q")  # "q2": an independent sample of E0 data for the agent's theory (ablation)
+    Xq, Aq, Yq = collect(cfg["q_train_n"], rng_for(seed, stream), amp)
+    brng = rng_for(seed, stream, 1)
     members = []
     for k in range(cfg["ensemble_k"]):
         idx = brng.integers(0, len(Xq), len(Xq))
@@ -63,7 +64,26 @@ def _build_ensemble(cfg, seed, steps, arch, amp):
             members.append(train_poly(Xq[idx], Aq[idx], Yq[idx]))
         else:
             raise ValueError(arch)
-    return Ensemble(members)
+    ens = Ensemble(members)
+    ens.data = (Xq, Aq, Yq)  # kept for replay by the adaptive observer
+    return ens
+
+
+def _adapt(Q, env, policy, cfg, seed, stream_id):
+    """Adaptive observer: explore the environment under test with the given policy, then fine-tune a copy of the
+    theory on the new transitions plus a replay sample of its original (reference) data."""
+    ad = cfg["adaptive"]
+    X, A, _ = interact(env, policy, Q, ad["episodes"], ad["horizon"], rng_for(seed, "adapt", stream_id))
+    xs, as_, ys = X[:, :-1].reshape(-1, 2), A.reshape(-1), X[:, 1:].reshape(-1, 2)
+    Xq, Aq, Yq = Q.data
+    rr = rng_for(seed, "adapt", 1000 + stream_id)
+    ridx = rr.integers(0, len(Xq), min(ad.get("replay", 2000), len(Xq)))
+    xs, as_, ys = np.r_[xs, Xq[ridx]], np.r_[as_, Aq[ridx]], np.r_[ys, Yq[ridx]]
+    members = [finetune_gauss(m, xs, as_, ys, seed=seed * 1000 + stream_id * 7 + k, steps=ad.get("steps", 300))
+               for k, m in enumerate(Q.members)]
+    new = Ensemble(members)
+    new.data = Q.data
+    return new
 
 
 def run_seed(cfg: dict, seed: int):
@@ -80,7 +100,10 @@ def run_seed(cfg: dict, seed: int):
     envs_alto = {}  # post-hoc control kept apart (own random streams) so v1 columns are reproduced exactly
     for qi, n_train in enumerate(cfg["train_sizes"]):
         Xw, Aw, Yw = collect(n_train, rng_for(seed, "w", qi))
-        W = train_gauss(Xw, Aw, Yw, seed=seed * 100 + 50 + qi, steps=steps)
+        if cfg.get("w_arch", "tanh64") == "relu128":   # ablation: second architecture for the world model W
+            W = train_gauss(Xw, Aw, Yw, seed=seed * 100 + 50 + qi, steps=steps, hidden=128, act="relu", depth=3)
+        else:
+            W = train_gauss(Xw, Aw, Yw, seed=seed * 100 + 50 + qi, steps=steps)
         envs[("W", qi)] = LearnedEnv(W)
         meta[qi] = (W, model_quality(W, rng_for(seed, "test", qi)))
 
@@ -97,13 +120,21 @@ def run_seed(cfg: dict, seed: int):
         envs_alto[("AltO", qi)] = RefEnv("direct", ood_gamma=gamma)
         qual_rows.append(dict(seed=seed, quality=qi, n_train=cfg["train_sizes"][qi], alt_delta=delta, altood_gamma=gamma, kl_matched_wide=klbar, **qual))
 
+    adaptive = cfg.get("adaptive")
     for policy in POLICIES:
         runs = {}
+        all_envs = [(ki, key, env, "main") for ki, (key, env) in enumerate(envs.items())] + \
+                   [(key[1], key, env, "alto") for key, env in envs_alto.items()]
+        theories = {}
+        for ki, key, env, grp in all_envs:
+            if adaptive:   # belief update on adaptation episodes that are disjoint from all test and calibration episodes
+                theories[key] = _adapt(Q, env, policy, cfg, seed, 10 * POLICIES.index(policy) + ki + (100 if grp == "alto" else 0))
+            else:
+                theories[key] = Q
         for split, tag in (("eval", "eval"), ("cal", "cal")):
-            for ki, (key, env) in enumerate(envs.items()):
-                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, tag, 10 * POLICIES.index(policy) + ki), selector)
-            for key, env in envs_alto.items():
-                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, "alto_" + split, 10 * POLICIES.index(policy) + key[1]), selector)
+            for ki, key, env, grp in all_envs:
+                rg = rng_for(seed, tag, 10 * POLICIES.index(policy) + ki) if grp == "main" else rng_for(seed, "alto_" + split, 10 * POLICIES.index(policy) + ki)
+                runs[(split, key)] = interact(env, policy, theories[key], B, Tmax, rg, selector)
         for qi, (W, qual) in meta.items():
             def llr(run):  # experimenter-side oracle: log p_W / log p_E0 along the observed trajectory
                 X, A, _ = run

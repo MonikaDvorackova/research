@@ -1,0 +1,3 @@
+# Output of scripts/mechanism_check.py (exploratory; 10 seeds; quality 3; wide interventions; T = 10; 400 episodes per environment)
+learned   theory: mean NLL(W)-NLL(E0) = -2.174 (seeds with W looking MORE anomalous: 0/10); AUROC of NLL score for W = 0.051 [min 0.033, max 0.075]
+analytic  theory: mean NLL(W)-NLL(E0) = +5.881 (seeds with W looking MORE anomalous: 10/10); AUROC of NLL score for W = 0.993 [min 0.986, max 0.999]
