@@ -110,3 +110,6 @@ Chernoff (1959), Chaloner and Verdinelli (1995), Ferns et al. bisimulation metri
 - Consequently Ikram et al. and Brogioli remain **abstract/snippet only**, and conclusions about them are limited accordingly.
 
 **Still unread (limits stated in the novelty threat matrix):** Brogioli, Ikram et al. (full text), Edge, Norton, Laudan and Leplin (primary), Weatherson (primary), Bostrom (2005, 2009 replies), Brueckner (2008), *Reality+* (book), Schneider, Schwitzgebel, Godfrey-Smith, the full texts of Catanach and Das and of Genin and Kelly.
+
+## Phase 6 update (2026-11-03)
+Targeted web-search scan (10 queries; see `phase6/03-literature-search-log.md`). Verified at **search-description level only**: Wasserman–Ramdas–Balakrishnan PNAS 117(29):16880–16890 (2020); Gelman–Shalizi BJMSP 66(1):8–38 (2013); Catanach–Das arXiv 2304.07949 (plus four later BOED-misspecification arXiv papers); Wolpert arXiv 0708.1362; Locatello et al. arXiv 1811.12359; Zhang et al. arXiv 1906.10437; Baisero–Amato IJCAI 2021; Freeman–Ha–Metz NeurIPS 2019. Beane–Davoudi–Savage: press coverage only. Bahadur–Savage: not found, not cited. No new full text read.

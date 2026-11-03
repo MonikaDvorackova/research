@@ -56,3 +56,11 @@ Purpose: for every component of the proposed contribution, the closest prior wor
 ### What remains inaccessible, and the limit it imposes
 
 Brogioli (no full text), Ikram et al. (abstract only), Edge (no access), Norton (certificate error), Laudan and Leplin (primary text), Weatherson (primary text), Bostrom's 2005 and 2009 replies, Brueckner, *Reality+*, Schneider and Schwitzgebel. For N6 and N8 in particular the conclusion "not found" is limited to the sources listed as read. No access restriction was bypassed; Semantic Scholar returned HTTP 429 and was not worked around.
+
+## Phase 6 additions (2026-11-03; search-description level only — see `phase6/03-literature-search-log.md`)
+| # | Component | Closest prior work | Strongest "already known" argument | Threat |
+|---|---|---|---|---|
+| N9 | Distinguishing updating from hypothesis discovery; model criticism outside Bayesian updating | Gelman and Shalizi (2013) | Their central thesis is that model checking and revision lie outside Bayesian confirmation | High (concept) |
+| N10 | A finite-sample valid test that the truth lies in a finite model class | Wasserman, Ramdas, Balakrishnan, PNAS 2020 (universal inference, sequential use) | Split likelihood-ratio / sequential version gives anytime-valid tests without regularity | High (test); design for the test: not found |
+| N11 | Predictive accuracy without mechanism identification | Hyvärinen–Pajunen; Locatello et al.; Khemakhem et al.; causal hierarchy theorem | Nonidentifiability of latent models and of higher causal layers from lower-layer data is established | High (qualitative) |
+| N12 | Limits to inference by embedded observers | Wolpert, "Physical limits of inference" | Impossibility results for inference devices embedded in the universe, independent of physical laws | Medium (abstract-level; scope differs) |
