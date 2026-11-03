@@ -29,3 +29,6 @@ tags: [governance, experiments]
 | x1 supplementary | 7B | exploratory | `scripts/x1_supplementary_analysis.py` | 600–629 | `results/x1_confirm/supplementary_exploratory.md` | labelled exploratory |
 | phase8 diagnostics | 8 | exploratory exact + simulation | `scripts/phase8_diagnostics.py`, `scripts/phase8_transient.py`, `src/eid/phase8.py` | SeedSequence-keyed integers (8–13) | `results/phase8/` | done; no confirmatory claim |
 | E6 validity map | 8 (proposed) | confirmatory (planned) | not yet written | dev 700–709, conf 800–829 | – | proposal; needs external design review |
+| phase9 dev semantics | 9 | development (exploratory) | `scripts/phase9_dev_semantics.py` | namespace 9000 (10 instances × 3 reps × 10 scenarios) | `results/phase9_dev/` | done; determinism 30/30 |
+| phase9 dev audit / EM / CS / trade-off | 9 | development (exact + small simulations) | `scripts/phase9_dev_audit.py`, `phase9_dev_em_cs.py` | namespace 9000 | `results/phase9_dev/` | done |
+| E6′ | 9 (proposed) | confirmatory (planned) | not written | dev 9000 + reserved 700–719; confirmatory ≥ 60 structures per family (to be extended from reserved 800–829) | – | **not launched; REVISE** |

@@ -75,3 +75,6 @@ Brogioli (no full text), Ikram et al. (abstract only), Edge (no access), Norton 
 
 ## Phase 8 additions (search-description level except where stated; see `phase8/03-literature-and-novelty.md`)
 N16 relative taxonomy (Medium-High); N17 absorption of non-stationarity (High; Choi et al. 1999); N18 Le Cam finite-data ambiguity (High; memory); N19 Occam dissociation (High; Jeffreys–Lindley); N20 approximate-maximiser invalidity (Medium-High; universal-inference text read: EM convergence assumed); N21 stationarity e-process (High; e-detectors); N22 persistent hidden regime fools change detection (Medium); N23 mechanism-shift identifiability needs modularity (High; sparse mechanism shift); N24 policy shift misread by frozen learned null (High). No theorem claimed.
+
+## Phase 9 additions
+N26–N35 in `phase9/03-literature-and-novelty.md` (adaptive e-process validity = Emmenegger et al. Thm 1 / Wasserman et al.; episode-level e-process = Shin et al. with i.i.d. class; predictive-comparison CS = Choe–Ramdas family (not read); Occam window = Jeffreys–Lindley; Chernoff-normalised design comparison; EM approximate maximiser audit; reset taxonomy). **No component is new.**

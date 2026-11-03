@@ -29,3 +29,9 @@ tags: [governance, negative]
 18. Phase 8: the stationarity e-process is **not robust** to persistent hidden regimes (40/40 false alarms, including a stationary start); my initial hypothesis that it was a transient artefact was wrong (control).
 19. Phase 8: mechanism change not representable in the observer's class is invisible to its stationarity test (S6, 0/100).
 20. Phase 8: E2 and E3 judged not worth running (theory fixes the answer).
+21. Phase 9: Phase 8's T4/T6 "false alarm" language was a semantic error (out-of-class truths); T4′ "robustness" and T5 "decays with n" were over-claims (corrected).
+22. Phase 9 dev: robust-valid procedures (episode-level saturated e-process; predictive-comparison confidence sequence) had **zero** rejections at N = 3000, including for a large kernel change.
+23. Phase 9 dev: restricted-kernel stationarity e-process detected a hidden-state mechanism change in 5/30 runs only (misspecification masks change).
+24. Phase 9 dev: policy shift + misspecification produced no false-attribution events in random instances (exact discrepancy ≤ 2.5×10⁻³ nats/observation).
+25. Phase 9 audit: pooled run-level binomial bounds undercover under clustering; 20 runs per structure cannot certify a per-structure rate bound; even cluster intervals cover 0.85–0.93 at R = 20.
+26. Phase 9: the E6 validity map as specified is mostly fixed by theory (G7 failed); re-scoped to E6′.

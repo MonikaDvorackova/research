@@ -60,3 +60,12 @@ Recall Prop X1-V (D1): E_t = q(D_t)/max_{m∈M} p_m(D_t) is valid because max_m 
 | PO-10 | Robust validity of the stationarity e-process under misspecification with mixing assumptions (what dwell/mixing bound suffices?) | open; counterexample for long dwell |
 | PO-11 | Quantitative n\* ≈ (d_rich − d)/(2δ) as a theorem under regularity | open (folklore; one numerical instance) |
 | PO-12 | Reset-with-persistent-regime does not break the C/D confound (T2 sketch) | open |
+
+
+---
+## Erratum (appended in Phase 9; the text above is preserved unchanged)
+1. **Semantics.** "False alarms", "invalid" and "fails" in T4 (counterexample), T6a and T6b refer to rejections under truths **outside the formal null** of each procedure (Markov-in-context; the simple null "environment = p̂"; the searched subclass). Those are rejections of a false null, not type-I errors. The error is the *interpretation* ("mechanism changed"). See `phase9/02-null-and-interpretation-framework.md`.
+2. **T4′ robustness.** "0/100 false alarms in S4/S5" is **not** evidence of robustness: the null was false there; non-rejection was low power (dev: 0/30).
+3. **T5.** The decay of identification holds only at the non-generic truth ψ₀ = ½; for fixed ψ₀ ≠ ½ it recovers (window ≈ c/(ψ₀ − ½)²). See `phase9/01-mathematical-audit.md` §3.
+4. **T6d.** Needs independent training data, coverage on all test contexts, and a time-uniform confidence set; the dev CP-box implementation is not rigorous (A4).
+5. **T2 reset sketch** is replaced by R1–R5 in `phase9/04-proof-obligation-register.md`.

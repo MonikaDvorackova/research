@@ -1,0 +1,2 @@
+# Phase 9 results (development only; exploratory)
+`phase9_dev/`: `runs.jsonl` + `meta.json` (semantics run; namespace 9000), `semantics_table.md`, `audit_dev.md` (Occam window, Chernoff reconciliation, statistical audit, policy-discrepancy), `em_cs_dev.md` (EM maximiser audit; confidence-set denominator), `tradeoff_dev.md`. `MANIFEST_phase9.sha256`: checksums. No confirmatory data exist for E6/E6′.

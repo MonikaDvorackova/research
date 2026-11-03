@@ -113,3 +113,6 @@ Chernoff (1959), Chaloner and Verdinelli (1995), Ferns et al. bisimulation metri
 
 ## Phase 6 update (2026-11-03)
 Targeted web-search scan (10 queries; see `phase6/03-literature-search-log.md`). Verified at **search-description level only**: Wasserman–Ramdas–Balakrishnan PNAS 117(29):16880–16890 (2020); Gelman–Shalizi BJMSP 66(1):8–38 (2013); Catanach–Das arXiv 2304.07949 (plus four later BOED-misspecification arXiv papers); Wolpert arXiv 0708.1362; Locatello et al. arXiv 1811.12359; Zhang et al. arXiv 1906.10437; Baisero–Amato IJCAI 2021; Freeman–Ha–Metz NeurIPS 2019. Beane–Davoudi–Savage: press coverage only. Bahadur–Savage: not found, not cited. No new full text read.
+
+## Phase 9 update (2026-11-04)
+Full source-verification table with access levels in `phase9/03-literature-and-novelty.md`. Read from extracted PDF text (TH level): Wasserman et al. §2/§8; Emmenegger–Mutný–Krause Thm 1 (arXiv 2311.04402); Shin–Ramdas–Rinaldo §2 (arXiv 2203.03532); Allman–Matias–Rhodes §6.1/Thm 6 (arXiv 0809.5032); Choi–Yeung–Zhang (1999). Abstract/intro only: Arnold et al. (arXiv 2404.18678v4). Downloaded, not read: Ramdas et al. 2009.03167, 2210.01948. Not accessible: Brogioli, Ikram et al. (full text), Edge, Norton, Weatherson (text).

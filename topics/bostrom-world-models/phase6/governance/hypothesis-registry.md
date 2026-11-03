@@ -44,3 +44,10 @@ Status values: supported (C), rejected, unresolved, proposed.
 | H-P8-T6b | Under-optimised maximiser voids validity | supported (exploratory): 39/40 vs 0/40 | same |
 | H-P8-S | Stationarity e-process robust to hidden-state misspecification | **partly rejected**: robust with episode resets (0/100), **fails** with persistent hidden regime (40/40, also stationary start) | `diagnostics.md`, `transient.md` |
 | H-P8-E6 | H1–H5 of the E6 validity map | proposed (not frozen) | `phase8/05-…` |
+
+## Phase 9 (development; no confirmatory claim)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P8-S | stationarity e-process robust to hidden-state misspecification | **withdrawn**: null false there; non-rejection = low power (Phase 9 A2); only in-class validity claimed | `phase9/01`, dev |
+| H-P8-T5 | identification decays with n | **corrected**: non-generic truth only; window for others | `phase9/01` §3 |
+| H-E6′-A…F | null ladder; validity; false attribution; certified learned null; approximate maximiser type-I; ensemble disagreement | proposed (not frozen); dev machinery only | `phase9/05` |
