@@ -40,3 +40,5 @@ tags: [governance, negative]
 29. Phase 10: the confirmatory E6′ as designed would mostly confirm theory-predicted quantities and does not cover latent/neural nulls (G7 failed); not authorised.
 30. Phase 10: K = 64, 128 cells not detected within 12 000 observations; the 10.4 nats/cell slope is measured only for K ≤ 32.
 31. Phase 10: oracle delays are floored at the first checkpoint (25 episodes), compressing ratios; run-level correlation of predicted vs observed delay ratio is only 0.16.
+32. Phase 11 closure: K-ratio claim for the type-class bound is false for constrained families (explicit counterexample); interval branch-and-bound is published (not new).
+33. World-models pilot: first σ grid uninformative (passive agents at ceiling); random-amplitude probes worse than passive; an MLP world model's one-step probe cannot show the structural gap; the interface-limited equivalence pair stays at chance for every policy.

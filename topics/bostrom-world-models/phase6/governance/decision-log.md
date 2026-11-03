@@ -26,3 +26,4 @@ tags: [governance, decisions]
 | 2026-11-03 (Ph. 8) | Question reformulated: identifiability of the four explanations is relative to declared structure; first experiment E6 (validity map) subject to external design review | Gates A–F | `phase8/06-…` |
 | 2026-11-04 (Ph. 9) | Corrected formal-null semantics; withdrew T4′ robustness and T5 monotone claims; E6 re-scoped to E6′ (price of validity); **no confirmatory E6/E6′**: REVISE | audit + gates G1–G7 | `phase9/09` |
 | 2026-11-04 (Ph. 10) | Price of validity defined as (exponent loss, evidence overhead); certified LR-set learned null adopted; EM denominators excluded from validity claims; confirmatory E6′ NOT authorised; theory (PO-13) prioritised | `phase10/12`, `phase10/11` |
+| 2026-11-05 (Ph. 11 closure / WM programme) | Phase 11 closed; world-models programme started in `world-models-programme/`; pilot (precision vs stiction) completed; verdict REVISE; no novelty claimed | `world-models-programme/00`–`06` |
