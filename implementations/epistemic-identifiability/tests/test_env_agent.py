@@ -57,3 +57,27 @@ def test_ood_control_coincides_with_e0_in_distribution():
     a_in, a_out = rng.uniform(-1, 1, 1000), rng.uniform(1.5, 3, 1000)
     assert np.allclose(ref_mean_ood(x, a_in, 0.7), ref_mean(x, a_in))
     assert np.abs(ref_mean_ood(x, a_out, 0.7) - ref_mean(x, a_out)).max() > 0.1
+
+
+def test_poly_model_fits_in_distribution_and_fails_outside():
+    from eid.model import train_poly
+    rng = np.random.default_rng(0)
+    x, a = sample_x0(rng, 5000), rng.uniform(-1, 1, 5000)
+    y = RefEnv("direct").step(x, a, rng)
+    m = train_poly(x, a, y)
+    xt, at = sample_x0(rng, 2000), rng.uniform(-1, 1, 2000)
+    assert np.abs(m.predict(xt, at)[0] - ref_mean(xt, at)).mean() < 0.02
+    ao = rng.uniform(2.5, 3, 2000)
+    assert np.abs(m.predict(xt, ao)[0] - ref_mean(xt, ao)).mean() > 0.1  # cubic cannot track sin(a) out there
+
+
+def test_analytic_theory_is_calibrated_for_e0_under_any_policy():
+    """With the true law as null, standardised residuals of E0 are N(0,1) whatever the (adaptive) policy: FPR ~ alpha."""
+    from eid.metrics import prefix_stat
+    from eid.model import AnalyticTheory
+    import torch
+    torch.manual_seed(0)
+    sel = Ensemble([GaussMLP(8) for _ in range(2)])
+    for policy in ("passive", "wide", "active"):
+        _, _, Z = interact(RefEnv("direct"), policy, AnalyticTheory(), 4000, 10, np.random.default_rng(1), sel)
+        assert abs(prefix_stat(Z, 10)[1].mean() - 0.05) < 0.02

@@ -41,14 +41,14 @@ Relation to the literature: this is the statement that a controlled process is i
 **Proposition 2 (limits of distinguishability). Known (Neyman–Pearson/Le Cam; chain rule; Pinsker).** For fixed π and T:
 (a) min over tests of (α + β) = 1 − TV(P_{E0}^π, P_{E1}^π).
 (b) KL(P_{E0}^π ‖ P_{E1}^π) = E_{P_{E0}^π} Σ_t δ_t(h_{t-1}, a_t), where δ_t(h,a) = KL(p_{E0}(·|h,a) ‖ p_{E1}(·|h,a)).
-(c) TV ≤ √(KL/2). Hence a test with α, β ≤ δ < 1/2 requires KL ≥ 2(1 − 2δ)².
+(c) TV ≤ √(KL/2), for KL in either direction. Hence a test with α, β ≤ δ < 1/2 requires TV ≥ 1 − 2δ and therefore KL ≥ 2(1 − 2δ)².
 Active choice of π can improve the sequential-testing error exponent (Chernoff; Naghshvar and Javidi 2013). Not claimed as new.
 
 **Proposition 3 (interventional coverage). Elementary; the application is the point.** Let μ be a training policy and ε_t := E_{d_t^μ}[δ_t], where d_t^π(h,a) := P_{E0}^π(H_{t-1} = h, A_t = a).
 (a) If π(a|h) ≤ c·μ(a|h) for all h, a (c ≥ 1), then KL(P_{E0}^π ‖ P_{E1}^π) ≤ Σ_{t≤T} c^t ε_t.
 (b) For every ε > 0 and M > 0 there exist E0, E1, μ and π with ε_1 ≤ ε and KL(P_{E0}^π ‖ P_{E1}^π) ≥ M. So no bound in terms of in-distribution error alone holds without a coverage condition such as the one in (a).
 
-*Proof.* (a) d_t^π(h,a) = ∏_{s<t} π(a_s|h_{s-1}) p_{E0}(o_s|h_{s-1},a_s) · π(a|h) ≤ c^t ∏_{s<t} μ(a_s|h_{s-1}) p_{E0}(o_s|h_{s-1},a_s) · μ(a|h) = c^t d_t^μ(h,a), the E0 kernel factors being common. Since δ_t ≥ 0, Σ d_t^π δ_t ≤ c^t Σ d_t^μ δ_t = c^t ε_t. Sum over t and use Proposition 2(b).
+*Proof.* (a) d_t^π(h,a) = ∏_{s<t} π(a_s|h_{s-1}) p_{E0}(o_s|h_{s-1},a_s) · π(a|h) ≤ c^t ∏_{s<t} μ(a_s|h_{s-1}) p_{E0}(o_s|h_{s-1},a_s) · μ(a|h) = c^t d_t^μ(h,a), the E0 kernel factors being common. Since δ_t ≥ 0, Σ d_t^π δ_t ≤ c^t Σ d_t^μ δ_t = c^t ε_t. Sum over t and use Proposition 2(b). (If E1 gives probability 0 to an observation that E0 can produce at a history in the support of d_t^π, then δ_t = ∞ there; the same inequality then forces ε_t = ∞, so the statement remains true and vacuous.)
 (b) Take T = 1, A = O = {0,1}. E0: p(o=1|a) = 1/2 for both actions. E1: same for a=0; p(o=1 | a=1) = q. Let k(q) := KL(Ber(1/2) ‖ Ber(q)) = ½ ln(1/(2q)) + ½ ln(1/(2(1−q))), which tends to ∞ as q → 0. Choose q with k(q) ≥ M. Let μ play a=1 with probability w := min(1, ε/k(q)) and π play a=1 with probability 1. Then ε_1 = w k(q) ≤ ε and KL under π equals k(q) ≥ M. For T > 1, pad with identical kernels. ∎
 
 Remark: the bound in (a) grows geometrically in T when c > 1; I do not know whether this is tight (obligation O3). Part (a) is a change-of-measure argument of the kind used in simulation-lemma and compounding-error analyses (sources to be verified before citing).
@@ -61,7 +61,7 @@ where λ_D is the posterior over kernels. In particular, if ν(S | κ = k) is th
 
 Reading: data move credence in "simulated" only through how the prior links observable signatures to simulation status (the *artifact premise*). That link is not supplied by the data.
 
-**Proposition 5 (bounded evidential force of one test outcome). Elementary.** Let S: environment is E1; ¬S: environment is E0. Let τ = TV(P_{E0}^π, P_{E1}^π), and let N be the non-rejection event with P_{E0}(N) = 1 − α. Then
+**Proposition 5 (bounded evidential force of one test outcome). Elementary.** Here S denotes the *fidelity-indexed* simple hypothesis "the environment is E1" (a particular simulator with a particular kernel), against ¬S: "the environment is E0". It does not apply to the unrestricted, composite claim "the world is some simulation", for which no such bound exists (see Proposition 4). Let τ = TV(P_{E0}^π, P_{E1}^π), and let N be the non-rejection event with P_{E0}(N) = 1 − α. Then
 |P_{E1}(N) − P_{E0}(N)| ≤ τ, so P_{E1}(N)/P_{E0}(N) ∈ [1 − τ/(1−α), 1 + τ/(1−α)],
 and for the rejection event R, P_{E1}(R)/P_{E0}(R) ≤ 1 + τ/α. By Proposition 2(c), τ ≤ √(KL/2).
 
@@ -90,3 +90,24 @@ Reading: a rejection is a statement about the pair (environment, agent's theory)
 | O3 | Tightness of the c^t factor in Proposition 3(a): find a lower-bound construction or a better bound. |
 | O4 | Verify Proposition 1 against Armstrong (2018) and Castro et al. (2009) full texts and the predictive-state/observable-operator literature; update provenance labels. |
 | O5 | Composite-null and adaptive-sequential version of Proposition 5 (optional stopping, unknown E0), citing Wald and Chernoff after verifying the sources. |
+
+
+### 5. Review of correctness, originality and dependence (Phase 3)
+
+Each proposition was re-derived from its statement, its edge cases were checked (infinite KL, unreachable histories, deterministic versus randomised policies, simple versus composite hypotheses), and the finite cases were checked numerically by exact enumeration (`tests/test_propositions.py`, 36 parametrised cases).
+
+| Prop. | Correct as stated? | Originality | Depends on | Change made |
+|---|---|---|---|---|
+| 1 | Yes. The reverse direction needs the deterministic steering policy and the equality of prefix probabilities, which the proof supplies. Unreachable histories are unconstrained, as stated. | Known in spirit (a controlled process is identified by its conditional kernels; adjacent to observable-operator and predictive-state equivalence, and to Armstrong's equivalence). Not claimed. | Product formula for histories. | None. |
+| 2 | Yes. (c) holds in either KL direction; the necessity bound uses TV ≥ 1 − 2δ. | Known (Neyman–Pearson, Le Cam, Pinsker, chain rule). | Standard results; the numerical test checks all four relations on random finite processes. | Clarified the KL direction and the step TV ≥ 1 − 2δ. |
+| 3(a) | Yes. The occupancy ratio is c^t because t policy factors appear (t − 1 earlier steps plus the current action). | Elementary change of measure of the kind used in simulation-lemma and compounding-error arguments (sources unverified); not new. Tightness open. | δ_t ≥ 0; chain rule. | Added the infinite-KL remark. |
+| 3(b) | Yes. For T > 1 the padding steps contribute zero. The test uses q = ¼e^(−2M), for which k(q) ≥ M (the second logarithm is at least −½ ln 2). | Elementary; the "no bound without coverage" message is standard in distribution-shift analyses. | Explicit Bernoulli KL. | None. |
+| 4 | Yes for countable M. Requires that D depend on m only through κ(m), which holds by the definition of κ for any (possibly adaptive) policy. | Elementary conditional independence. Close in spirit to Chalmers's defeat argument by indifference (read in full); the formal statement is not claimed as new. | Tower property. | None. |
+| 5 | Yes, but only for the simple hypothesis E1 against E0. The earlier wording could be read as covering "simulation" in general. | Elementary (definition of TV). | |P(A) − Q(A)| ≤ TV. | Wording restricted to the fidelity-indexed simple hypothesis; composite case excluded explicitly. |
+| 6 | Yes. | Elementary. | Same event bound. | None. |
+
+**Overall.** No proposition is original as a theorem. Propositions 2 and 1 are established results; Propositions 3–6 are short corollaries of the TV bound and a change of measure. Their only role is to state, precisely and with proofs, the conditions under which each of the three inferences (discrepancy, mechanism, simulation) is warranted. A mathematically trained referee will not regard them as a contribution in themselves.
+
+### 6. New remark: connection to Armstrong (2018), not yet verified
+
+Armstrong's abstract states that any POMDP is counterfactually equivalent, for any finite number of turns, to a deterministic POMDP with all uncertainty in the initial state. A computer simulation driven by a pseudorandom generator seeded once is such a deterministic process. If the statement carries over as the abstract suggests, then "stochastic world" and "deterministic simulation with a random seed" are indistinguishable over finite horizons by any observer. I have read only the abstract; the precise definitions and the range of the result (finite horizon, finite spaces) must be checked in the full text before the remark is used (obligation O4).

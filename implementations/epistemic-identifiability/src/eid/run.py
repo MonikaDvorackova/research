@@ -14,7 +14,7 @@ import yaml
 from .agent import POLICIES, interact
 from .env import COUPLING, SIGMA, LearnedEnv, RefEnv, gauss_logpdf, kl_gauss, ref_mean, sample_x0
 from .metrics import auroc, platt_ece_brier, prefix_stat
-from .model import Ensemble, train_gauss
+from .model import AnalyticTheory, Ensemble, train_gauss, train_poly
 
 TAGS = {"q": 1, "w": 2, "test": 3, "alt": 4, "eval": 5, "cal": 6, "alto_eval": 7, "alto_cal": 8}
 EP_LEN = 20
@@ -24,13 +24,13 @@ def rng_for(seed: int, tag: str, extra: int = 0):
     return np.random.default_rng(np.random.SeedSequence([seed, TAGS[tag], extra]))
 
 
-def collect(n_transitions: int, rng):
-    """Training transitions from E0 under the training policy (actions in [-1, 1])."""
+def collect(n_transitions: int, rng, amp: float = 1.0):
+    """Training transitions from E0 under the training policy (actions in [-amp, amp]; default [-1, 1])."""
     env, n_ep = RefEnv("direct"), int(np.ceil(n_transitions / EP_LEN))
     x = sample_x0(rng, n_ep)
     X, A, Y = [], [], []
     for _ in range(EP_LEN):
-        a = rng.uniform(-1, 1, n_ep)
+        a = rng.uniform(-amp, amp, n_ep)
         y = env.step(x, a, rng)
         X.append(x), A.append(a), Y.append(y)
         x = y
@@ -49,18 +49,32 @@ def model_quality(model, rng, n: int = 4000):
     return out
 
 
-def run_seed(cfg: dict, seed: int):
-    torch.set_num_threads(1)
-    steps, B, grid = cfg["train_steps"], cfg["eval_episodes"], cfg["horizon_grid"]
-    Tmax = max(grid)
-    # agent's theory Q: independent data, bootstrap ensemble
-    Xq, Aq, Yq = collect(cfg["q_train_n"], rng_for(seed, "q"))
+def _build_ensemble(cfg, seed, steps, arch, amp):
+    Xq, Aq, Yq = collect(cfg["q_train_n"], rng_for(seed, "q"), amp)
     brng = rng_for(seed, "q", 1)
     members = []
     for k in range(cfg["ensemble_k"]):
         idx = brng.integers(0, len(Xq), len(Xq))
-        members.append(train_gauss(Xq[idx], Aq[idx], Yq[idx], seed=seed * 100 + k, steps=steps))
-    Q = Ensemble(members)
+        if arch == "tanh64":
+            members.append(train_gauss(Xq[idx], Aq[idx], Yq[idx], seed=seed * 100 + k, steps=steps))
+        elif arch == "relu128":
+            members.append(train_gauss(Xq[idx], Aq[idx], Yq[idx], seed=seed * 100 + k, steps=steps, hidden=128, act="relu", depth=3))
+        elif arch == "poly3":
+            members.append(train_poly(Xq[idx], Aq[idx], Yq[idx]))
+        else:
+            raise ValueError(arch)
+    return Ensemble(members)
+
+
+def run_seed(cfg: dict, seed: int):
+    torch.set_num_threads(1)
+    steps, B, grid = cfg["train_steps"], cfg["eval_episodes"], cfg["horizon_grid"]
+    Tmax = max(grid)
+    # agent's theory Q: independent data, bootstrap ensemble (ablation options: architecture, training action range,
+    # analytic theory with a separate learned ensemble used only to choose actions)
+    arch, amp = cfg.get("q_arch", "tanh64"), cfg.get("q_action_amp", 1.0)
+    Q = _build_ensemble(cfg, seed, steps, arch, amp) if cfg.get("theory", "ensemble") == "ensemble" else AnalyticTheory()
+    selector = _build_ensemble(cfg, seed, steps, "tanh64", 1.0) if cfg.get("theory") == "analytic" and cfg.get("selector") == "ensemble" else None
 
     qual_rows, rows, envs, meta = [], [], {"E0": RefEnv("direct"), "E0split": RefEnv("split")}, {}
     envs_alto = {}  # post-hoc control kept apart (own random streams) so v1 columns are reproduced exactly
@@ -71,7 +85,7 @@ def run_seed(cfg: dict, seed: int):
         meta[qi] = (W, model_quality(W, rng_for(seed, "test", qi)))
 
     # matched-divergence control Ealt: coupling shift s.t. KL(E0||Ealt) equals KL(E0||W) under wide interventions
-    ref_run = interact(RefEnv("direct"), "wide", Q, 400, EP_LEN, rng_for(seed, "alt"))
+    ref_run = interact(RefEnv("direct"), "wide", Q, 400, EP_LEN, rng_for(seed, "alt"), selector)
     xs, as_ = ref_run[0][:, :-1].reshape(-1, 2), ref_run[1].reshape(-1)
     for qi, (W, qual) in meta.items():
         mu, std = W.predict(xs, as_)
@@ -87,9 +101,9 @@ def run_seed(cfg: dict, seed: int):
         runs = {}
         for split, tag in (("eval", "eval"), ("cal", "cal")):
             for ki, (key, env) in enumerate(envs.items()):
-                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, tag, 10 * POLICIES.index(policy) + ki))
+                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, tag, 10 * POLICIES.index(policy) + ki), selector)
             for key, env in envs_alto.items():
-                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, "alto_" + split, 10 * POLICIES.index(policy) + key[1]))
+                runs[(split, key)] = interact(env, policy, Q, B, Tmax, rng_for(seed, "alto_" + split, 10 * POLICIES.index(policy) + key[1]), selector)
         for qi, (W, qual) in meta.items():
             def llr(run):  # experimenter-side oracle: log p_W / log p_E0 along the observed trajectory
                 X, A, _ = run

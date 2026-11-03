@@ -27,12 +27,12 @@ def choose_action(policy: str, x, ensemble, rng):
     raise ValueError(policy)
 
 
-def interact(env, policy: str, ensemble, batch: int, horizon: int, rng):
+def interact(env, policy: str, ensemble, batch: int, horizon: int, rng, selector=None):
     """Run ``batch`` independent episodes. Returns observations, actions, and Q-standardised residuals."""
     x = sample_x0(rng, batch)
     X, A, Z = [x], [], []
     for _ in range(horizon):
-        a = choose_action(policy, x, ensemble, rng)
+        a = choose_action(policy, x, selector if selector is not None else ensemble, rng)
         mean, var, _ = ensemble.predictive(x, a)
         y = env.step(x, a, rng)
         Z.append((y - mean) / np.sqrt(var))

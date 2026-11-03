@@ -37,4 +37,6 @@ python -m eid.run --config configs/poc.yaml --out results/poc   # about 10 minut
 python -m eid.report --in results/poc       # summary tables
 ```
 
+Ablations (each about 10 minutes): `abl_relu128` (different architecture), `abl_poly3` (different model class), `abl_qwide` (theory trained over the probed action range), `abl_analytic` (true-law theory; actions chosen by a learned ensemble). Compare conditions with `python -m eid.compare`. Check reproducibility of stored results with `python scripts/reproduce_check.py poc_v2 abl_analytic ...` (re-runs seed 0 and compares to the stored CSV).
+
 `configs/smoke.yaml` is a seconds-long configuration used by the tests. Results written to `results/` are the actual outputs of the executed configuration; see [`results/README.md`](results/README.md).

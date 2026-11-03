@@ -59,3 +59,23 @@ Status of the five conditions set in Phase 1:
 - The proof-of-concept gives an informative negative result (the agent's own learned theory is the failure point under OOD interventions) and a passing equivalent negative control, but the result may depend on Q and W sharing architecture.
 - Required before any manuscript: close conditions 1, 2 and 5; run the two ablations in `reviews/2026-11-03-minds-and-machines-reviewer-assessment.md` (different architecture for Q; an analytically correct theory in place of Q).
 - No large-scale experiments are justified yet.
+
+
+## Phase 3 update (2026-11-03)
+
+### What was done
+
+Philosophical literature review ([philosophical-review.md](../literature/philosophical-review.md)); attempts to access Brogioli and the 2026 glitch paper (both inaccessible, recorded); four experimental ablations plus an exact-theory upper bound; review of Propositions 1-6; reproducibility checks.
+
+### Findings that change the decision
+
+1. **Philosophical novelty is lower than hoped.** The qualitative content of T1-T3 is anticipated (Chalmers 2024; Beane et al.; Laudan and Leplin). Not defensible as the contribution.
+2. **The experimental failure is robust and explained.** The failure of active detection is caused by the agent's learned theory being misspecified outside its training coverage, not by active selection and not by one shared architecture. Evidence: exact theory (calibrated, perfect active detection); theory trained over the probed range (works); ReLU theory (failure reproduced); polynomial theory (ranking works, calibration does not).
+3. **A narrower candidate contribution exists** (T4/T5: theory-relativity of detection and its coverage dependence), but it is a quantified instance of a known point (Duhem-Quine).
+4. **The mathematics is correct, elementary and not original.**
+
+### Decision: REVISE (do not submit to Minds and Machines as framed)
+
+- **Smallest defensible reformulation:** a paper on *what an anomaly shows when the observer's own theory is a learned model*, with the L1/L2/L3 distinction and Propositions 4-6 as framework, the ablation table as evidence, and Bostrom as motivation. Philosophy & Technology is the more realistic first target; Minds and Machines is possible but doubtful.
+- **Before drafting:** read Kelly's definitions and the Glymour-Malament-Manchak-Norton papers; obtain Brogioli and the glitch paper (or have the user paste their abstracts); read Weatherson; check for precedents of quantified theory-relativity in philosophy of science and ML-evaluation literature; add a second environment (partially observed) and a second W architecture.
+- **Not justified:** large-scale experiments; any claim of a new theorem.

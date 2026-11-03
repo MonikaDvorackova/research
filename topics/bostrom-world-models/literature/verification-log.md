@@ -68,3 +68,14 @@ Access limits this session: OpenReview returns a bot challenge (an attempt to fe
 ### Still not verified
 
 Chernoff (1959), Chaloner and Verdinelli (1995), Ferns et al. bisimulation metrics, Hanson, Dainton, Kulczycki, Weatherson, Kearns and Singh (simulation lemma) and Ross and Bagnell (compounding error) as bibliographic items (search results only), observable-operator and predictive-state representations.
+
+
+## Phase 3 update (2026-11-03)
+
+- Philosophical sources are catalogued in [philosophical-review.md](philosophical-review.md) with reading level and access outcome for each.
+- **Read in full this session:** Chalmers (2024) *PPR* symposium reply (DOI 10.1111/phpr.13122) and Chalmers (2024) *Oxford Studies in Philosophy of Mind* vol. 4 chapter (DOI 10.1093/9780198924159.003.0017), from the author's own PDFs (text extracted locally).
+- **Inaccessible (recorded, no workaround attempted):** the 2026 glitch paper (Thomas and Didierjean; abstract withheld by the publisher, Springer authentication redirect); Brogioli (PhilSci Archive certificate error, PhilPapers 403); Edge (PhilArchive 403); Ikram et al. (OpenReview bot challenge). One attempt to fetch the OpenReview PDF with a spoofed browser identity was blocked by the environment and was not retried.
+- **Corrections:** Weatherson (2003) details verified from Chalmers's reference list (*Phil. Quarterly* 53(212):425-431; the author is Brian Weatherson). Wolpert's arXiv title at v5 is "Implications of computer science theory for the simulation hypothesis" (a search listing gave a different title). Ramezanian arXiv:2609.10864 remains withdrawn as a neighbour.
+- **New neighbours:** Needham et al. (2025) on evaluation awareness (agent-side detection of constructed environments; empirical; no formal analysis in the description read); Kelly (1996) as a candidate formal framework for underdetermination; Laudan and Leplin (1991) for relativity of empirical equivalence.
+- **Still unverified as bibliographic items or unread:** Glymour (1977), Malament (1977), Manchak, Norton (venues and years), Hanson (2001; reference-list entry only), Faizal et al. (2025; press-level only), Barrow, Dainton, Schneider, Schwitzgebel, Godfrey-Smith, Horgan, Peacocke, Helton, Brueckner (2008), Chernoff (1959), Chaloner and Verdinelli (1995), Ferns et al., Kearns and Singh, Ross and Bagnell.
+- **Citation analysis:** unchanged from Phase 2 (partial).

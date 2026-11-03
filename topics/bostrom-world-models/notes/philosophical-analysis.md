@@ -50,3 +50,36 @@ T1–T3 are philosophical theses supported by the formal propositions; they are 
 - The formal analysis assumes the agent can interact repeatedly and that a reference law exists. A real observer has neither with certainty.
 - Learned world models are not conscious observers; no inference about simulated consciousness is drawn.
 - No generalisation from toy environments to the physical universe is made without bridge premises C1–C3.
+
+
+## Reassessment after the literature review and the ablations (Phase 3)
+
+### What is anticipated in the literature
+
+Having read Chalmers (2024, both papers) in full and the other sources at abstract level (`literature/philosophical-review.md`):
+
+- **T1 and T2 in qualitative form are largely known.** Perfect simulations are undetectable and we cannot know we are not in one (Chalmers's explicit epistemic thesis); lower-grade or imperfect simulations are detectable and may be sceptical scenarios (Chalmers, citing Schneider and Schwitzgebel); physical detection proposals target particular imperfections (Beane et al., Campbell et al.). The point that empirical equivalence is relative to auxiliary assumptions is Laudan and Leplin's.
+- **T3 is a corollary** of the perfect-simulation case: Bostrom builds in simulations good enough for conscious observers, so detection-style evidence cannot bear on the trilemma.
+- **Proposition 4 overlaps in spirit** with Chalmers's defeat argument by indifference: once most beings with matching experiences are sims, experience-internal or external-perceptual evidence does not shift credence.
+
+None of these should be presented as new.
+
+### What the experiments add to the three-way distinction
+
+| Inference | What the experiments show | What they cannot show |
+|---|---|---|
+| **L1 Detectability of a discrepancy** | Detectability is a property of the *pair* (environment, observer's theory), not of the environment alone. The same environment, interventions and test give FPR about 0.05 and perfect detection (exact theory B; covered theory C), FPR up to 1.000 and inverted detection (neural theories trained only in-distribution: baseline and A1), or high AUROC with unusable calibration (different model class, A2). The information to discriminate exists throughout (oracle AUROC 1.000 under OOD interventions). | Anything about the physical world. |
+| **L2 Identification of a generative mechanism** | The score tracks the size of the divergence in the probed region. With a well-specified theory, W ranks above the matched real mismatch AltOOD under adaptive probing, because the probe concentrates where W's error is largest. That ranking cannot be read as identifying a learned model: matching controls on one divergence summary does not match them under another probe distribution. | Whether a mechanism *class* can be identified: Corollary 1 says kernel-equal mechanisms cannot be separated, and the experiment has no kernel-equal pair other than E0/E0split (which is not separated, as predicted). |
+| **L3 Justified inference of simulation** | Nothing. No experiment bears on the artifact, reference or bridge premises. The experiment's own "reference" is a laboratory object whose status as non-simulated is stipulated. | Everything about C1-C3. |
+
+### Revised theses
+
+**T4 (theory-relativity of detection; new candidate, supported by the ablations).** Whether an anomaly can be found, and what a found anomaly shows, depends on the observer's own theory and on how far that theory's evidential base covers the interventions performed. A learned theory trained only on a narrow range of interventions produces false alarms against the true environment and can rate a faithful-in-range imitation as *more* consistent with the theory than reality is. Detection claims therefore license at most "the world departs from my theory under these interventions" (L1); a departure under interventions outside the theory's coverage is weak evidence about the world. This is the Duhem-Quine point (a test confronts a theory together with its auxiliaries) in quantitative form for learned observers; the qualitative point is old, and I do not claim it as new. What may be new is the quantified instance (Propositions 3(b) and 6, and conditions A1, A2, B, C).
+
+**T5 (coverage bound on fidelity-indexed testability; interpretive).** Combining T1 with T4: a fidelity-indexed simulation hypothesis can be tested only in regimes the observer's theory already covers or can be derived to cover. Hypotheses about regimes the observer has never visited (for instance extreme energies) lie outside this range, because the observer has no reference for them (premise C2). This is an interpretation of the experimental structure, not an empirical result about physics.
+
+**Status of T1-T3.** Retained as clarifications of known points, positioned as such. They are not the contribution.
+
+### The smallest defensible reformulation
+
+Make the paper about T4/T5: *what an anomaly shows when the observer's own theory is a learned model*, with the three-way distinction and Propositions 4-6 as the supporting framework, the ablation table as the evidence, and Bostrom's argument as the motivating case (not as the target of the experiments). The claims are then: (i) a precise statement of what L1/L2/L3 each require; (ii) a bound-based explanation of why detection claims are theory-relative; (iii) a controlled demonstration, with ablations and an exact-theory upper bound, that the relativity is large and depends on coverage. The novelty is the quantified, learned-observer instance of a known philosophical point. Whether that is enough for *Minds and Machines* is doubtful; see the reviewer assessment.

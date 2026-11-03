@@ -1,0 +1,9 @@
+n_seeds: 10
+train_sizes: [100, 500, 2500, 12500]
+q_train_n: 5000
+ensemble_k: 5
+train_steps: 1500
+eval_episodes: 200
+horizon_grid: [2, 5, 10, 20, 35, 50]
+theory: analytic   # ablation B: agent theory is the true reference law
+selector: ensemble # actions for the active policy chosen by a separate learned ensemble (disagreement); test uses the analytic theory
