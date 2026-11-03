@@ -20,3 +20,8 @@ tags: [governance, proofs]
 | PO-4 (update, Phase 7) | Validity of the anytime-valid class-adequacy e-process under predictable adaptive designs | **discharged** (elementary): proof in `phase7/02-design-review-D1.md` §1 (supermartingale + Ville, policy factors cancel); exhaustive enumeration for deterministic adaptive rules (P3–P5, 2×3 steps) and empirical 1.69 % type-I; not covered: non-stationary truths, learned (estimated) nulls |
 | PO-7 | Validity when the null class is learned/estimated (X4) | open |
 | PO-8 | Adaptive-design minimax statement for the margin law (power iff N(d_M − d_A) ≳ ln K + ln(1/α) up to regret) | open; currently heuristic (S5 agreement ±30 %) |
+| PO-9 | Minimal latent dimension needed to absorb a deterministic change of known time | open |
+| PO-10 | Robust validity of the stationarity e-process under misspecification (which mixing/reset premise suffices?) | open; counterexample for persistent regimes |
+| PO-11 | n\* ≈ (d_rich − d)/(2δ) as a theorem | open (folklore; one numerical instance) |
+| PO-12 | Reset with a persistent regime does not break the C/D confound | open |
+| PO-7 (update, Phase 8) | Confidence-set denominator gives type-I ≤ α + α₁ | **proved** (T6d); power not studied |

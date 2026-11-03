@@ -27,3 +27,5 @@ tags: [governance, experiments]
 | x1_confirm | 7 | **confirmatory** | `configs/x1_confirm.yaml` @ 02bad01 | 600–629 | `results/x1_confirm` | complete; checksums in `MANIFEST_raw.sha256` |
 | x1_audit | 7B | independent checks | `scripts/x1_independent_audit.py` | – | `results/x1_audit` | pass |
 | x1 supplementary | 7B | exploratory | `scripts/x1_supplementary_analysis.py` | 600–629 | `results/x1_confirm/supplementary_exploratory.md` | labelled exploratory |
+| phase8 diagnostics | 8 | exploratory exact + simulation | `scripts/phase8_diagnostics.py`, `scripts/phase8_transient.py`, `src/eid/phase8.py` | SeedSequence-keyed integers (8–13) | `results/phase8/` | done; no confirmatory claim |
+| E6 validity map | 8 (proposed) | confirmatory (planned) | not yet written | dev 700–709, conf 800–829 | – | proposal; needs external design review |

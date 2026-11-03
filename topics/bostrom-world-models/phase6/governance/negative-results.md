@@ -25,3 +25,7 @@ tags: [governance, negative]
 14. Phase 7 confirmatory: **H4b contradicted** — for unanticipated deviations P4 vs random 1.24 (t05), 1.02 (t10); random has the highest detection probability on t10.
 15. Phase 7 confirmatory: H5 inconclusive by the preregistered rule because the effect is heterogeneous (P3 1.44× faster on pc0, 6–8× slower on pc1/pc2); rule not altered.
 16. Phase 7: the test is conservative (1.7 % vs 5 %): validity holds but the e-process wastes power in the null-calibrated sense.
+17. Phase 8: the absolute four-way partition (epistemic / misspecification / shift / mechanism change) fails Gate A: C and D are not functions of the observable law (absorption, exact check).
+18. Phase 8: the stationarity e-process is **not robust** to persistent hidden regimes (40/40 false alarms, including a stationary start); my initial hypothesis that it was a transient artefact was wrong (control).
+19. Phase 8: mechanism change not representable in the observer's class is invisible to its stationarity test (S6, 0/100).
+20. Phase 8: E2 and E3 judged not worth running (theory fixes the answer).

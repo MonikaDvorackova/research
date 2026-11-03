@@ -34,3 +34,13 @@ Status values: supported (C), rejected, unresolved, proposed.
 | H-X1-5 (H5) | P3 not faster than random | **inconclusive by rule** (pc0 +1.44×; pc1/pc2 −6–8×) | same |
 | H-cov | learned-observer failure is coverage-determined for all learners | unresolved → X3 | – |
 | H-X4 | A valid learned-null class-adequacy test retains useful power | proposed | `phase7/08-…` |
+
+## Phase 8 (exploratory diagnostics; no confirmatory claims)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P8-T4 | Latent-context shift and mechanism change are observationally equivalent in a single trajectory | **established** (exact, elementary) | `test_time_varying_kernel_equals_stationary_counter_model` |
+| H-P8-T5 | Predictive accuracy can improve while mechanism-identification posterior mass decreases | **established** (exact, known Lindley/Occam) | `occam_dissociation` |
+| H-P8-T6a | Frozen learned null false-alarms under pure policy shift | supported (exploratory): 100/100, 98/100, 3/100, 2/100 for n_train = 10², 10³, 10⁴, 10⁵ | `results/phase8/diagnostics.md` |
+| H-P8-T6b | Under-optimised maximiser voids validity | supported (exploratory): 39/40 vs 0/40 | same |
+| H-P8-S | Stationarity e-process robust to hidden-state misspecification | **partly rejected**: robust with episode resets (0/100), **fails** with persistent hidden regime (40/40, also stationary start) | `diagnostics.md`, `transient.md` |
+| H-P8-E6 | H1–H5 of the E6 validity map | proposed (not frozen) | `phase8/05-…` |

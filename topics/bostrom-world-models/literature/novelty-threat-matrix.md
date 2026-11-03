@@ -72,3 +72,6 @@ Brogioli (no full text), Ikram et al. (abstract only), Edge (no access), Norton 
 | N13 | Criticism-oriented design | Catanach–Das EDI = KL(p(Y\|d,M\*)‖p(Y\|d,M)) (read) | EDI already targets detection of modeling failures with a specified alternative | High |
 | N14 | Criticism target brings no advantage over identity-EIG under equal information (when the alternative contains the truth) | Not found in what was read | A negative result in one benchmark; generality untested | Medium (unknown) |
 | N15 | Anticipated vs unanticipated structure of inadequacy detection (margin law) | Laudan–Leplin (summary), Gelman–Shalizi (partly read), Wald-type rates | Quantified instance only | High |
+
+## Phase 8 additions (search-description level except where stated; see `phase8/03-literature-and-novelty.md`)
+N16 relative taxonomy (Medium-High); N17 absorption of non-stationarity (High; Choi et al. 1999); N18 Le Cam finite-data ambiguity (High; memory); N19 Occam dissociation (High; Jeffreys–Lindley); N20 approximate-maximiser invalidity (Medium-High; universal-inference text read: EM convergence assumed); N21 stationarity e-process (High; e-detectors); N22 persistent hidden regime fools change detection (Medium); N23 mechanism-shift identifiability needs modularity (High; sparse mechanism shift); N24 policy shift misread by frozen learned null (High). No theorem claimed.

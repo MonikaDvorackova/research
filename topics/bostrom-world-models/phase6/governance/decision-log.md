@@ -23,3 +23,4 @@ tags: [governance, decisions]
 | 2026-11-03 (Ph. 7) | Preregistration frozen at 02bad01 (13:01:50) before the confirmatory run (13:01:59) | – | `phase7/03-…` |
 | 2026-11-03 (Ph. 7B) | Integrity passed; frozen analysis executed unmodified; X1 design-benefit hypothesis not supported under the fair comparison | `phase7/05-…`, `06-…` | – |
 | 2026-11-03 (Ph. 7B) | X1 closed as a separate line; next: X3 combined with X4 (learned-null test); X2 as a bounded proof attempt | `phase7/08-…` | – |
+| 2026-11-03 (Ph. 8) | Question reformulated: identifiability of the four explanations is relative to declared structure; first experiment E6 (validity map) subject to external design review | Gates A–F | `phase8/06-…` |
