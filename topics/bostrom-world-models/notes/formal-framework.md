@@ -139,7 +139,7 @@ E_{P_1}[s_Q] − E_{P_0}[s_Q] = [H(P_1) − H(P_0)] + [KL(P_1‖Q) − KL(P_0‖
 Let M be a finite class of environments, ν a prior with full support, π a fixed policy, and let n i.i.d. episodes be drawn from the true environment E (possibly not in M). Write ν_n for the posterior.
 (a) If E ∈ M and P_m ≠ P_E for all m ≠ E, then ν_n(E) → 1 almost surely, and (1/n) log[ν_n(m)/ν_n(E)] → −KL(P_E‖P_m).
 (b) If E ∉ M and KL(P_E‖P_m) has a unique minimiser m*, then ν_n(m*) → 1 almost surely, with log-odds rate KL(P_E‖P_m) − KL(P_E‖P_{m*}).
-(c) *Absorption.* Let Q_n := Σ_m ν_n(m) P_m be the posterior-predictive theory. Under (a), TV(P_E, Q_n) → 0 almost surely; hence by Proposition 6, any level-α consistency test against Q_n has asymptotic size at most α **whichever member of M is true**, and so cannot distinguish members of M. The information separating them sits in the posterior ν_n, not in the residuals.
+(c) *Absorption.* Let Q_n := Σ_m ν_n(m) P_m be the posterior-predictive theory. Under (a), TV(P_E, Q_n) → 0 almost surely; hence by Proposition 6, any level-α consistency test against Q_n **applied to episodes independent of those used to form Q_n** has asymptotic size at most α **whichever member of M is true**, and so cannot distinguish members of M. The information separating them sits in the posterior ν_n, not in the residuals.
 
 *Proof.* By the strong law, (1/n) Σ_i log[P_m(h_i)/P_E(h_i)] → −KL(P_E‖P_m) almost surely (if P_m(h) = 0 for some h with P_E(h) > 0, then m is eliminated almost surely). The posterior log-odds of m against m′ equal the prior log-odds plus the difference of these sums, which gives the rates in (a) and (b) and the concentration statements. (c) follows because Q_n → P_E on a finite history space, and Proposition 6. ∎
 
@@ -147,7 +147,7 @@ Let M be a finite class of environments, ν a prior with full support, π a fixe
 
 ### Proposition 9 (active selection and distinguishability). Elementary; (b) is an existence example by exact enumeration.
 
-(a) *No gain without state dependence.* If every kernel depends on the history only through the current action, then sup_π KL(P_0^π‖P_1^π) = T max_a KL_a, attained by the constant policy that plays the best action. Adaptivity gives no gain in KL, hence none in the Stein exponent.
+(a) *No gain without state dependence.* If every kernel depends on the history only through the current action, then sup_π KL(P_0^π‖P_1^π) = T max_a KL_a, attained by the constant policy that plays the best action. Adaptivity gives no gain in KL, hence none in the Stein exponent of a fixed-size test of two simple hypotheses. (This is a statement about KL and fixed-size tests only; it does not assert that adaptivity cannot help for other criteria such as the total-variation distance or both-error exponents.)
 (b) *Gain with state dependence.* Let A = O = {0,1}, T = 2. E_0: both observations are fair coins whatever the action. E_1: as E_0 except that the second observation is Bernoulli(½ + δ) when the second action equals the first observation. Over deterministic policies, sup TV is δ/2 for open-loop policies and δ for history-dependent policies: adaptivity strictly helps, by a factor 2.
 (c) *Never hurts.* The history-dependent supremum is at least the open-loop supremum, and no policy exceeds the ceiling of Proposition 7(a).
 
@@ -158,7 +158,10 @@ Let M be a finite class of environments, ν a prior with full support, π a fixe
 ### Corollary (evidence needed to overturn an indifference prior). Elementary; an application of Propositions 2, 5 and 8.
 
 Let S be a fidelity-indexed simulation hypothesis (the environment is E_1), with prior odds ω = ν(S)/ν(¬S) against ¬S (the environment is E_0). In Bostrom's argument the indifference principle assigns credence x = f_sim to "I am in a simulation" when one lacks information distinguishing one's own experience; if (3) holds, ω can be very large. Suppose the observer then performs n independent intervention episodes under π, and E_0 is true.
-(i) In expectation, ln(posterior odds of S) = ln ω − n KL(P_0‖P_1). The expected number of episodes needed to bring the odds to 1 is n* = ln ω / KL(P_0‖P_1).
+(i) In expectation, ln(posterior odds of S) = ln ω − n KL(P_0‖P_1); the expected log-odds reaches 0 at n* = ln ω / KL(P_0‖P_1).
+(i′) Let τ be the first episode at which the posterior odds of S fall to 1 or below. Then E[τ] ≥ ln ω / KL(P_0‖P_1), and the inequality is strict in general.
+
+> **Correction (Phase 5).** Phase 4 stated that "the expected number of episodes needed to bring the odds to 1 is n*". That wording is false in general. Wald's identity gives E[S_τ] = −KL · E[τ] for the log-likelihood-ratio walk S_n, and S_τ ≤ −ln ω with overshoot, so E[τ] = (ln ω + E[overshoot]) / KL ≥ n*. A simulation (`tests/test_audit_properties.py`) confirms E[τ] > n* strictly. The statement is now (i) and (i′). The qualitative reading (cost grows like ln ω / KL and is unbounded as KL → 0) is unchanged.
 (ii) No single test outcome can do it: a non-rejection has likelihood ratio at least 1 − τ/(1 − α) (Proposition 5), so one null result lowers the odds by at most that factor.
 
 *Proof.* (i) The expected log-likelihood ratio per episode under E_0 is −KL(P_0‖P_1); exact identity checked by enumeration. (ii) Proposition 5. ∎
@@ -180,3 +183,45 @@ No changes. Dependencies and provenance: see section 5.
 | O5 | Composite-null and optional-stopping versions of Proposition 5. |
 | O6 | A theorem, not an example, characterising when adaptivity strictly increases sup TV (Proposition 9(b) is existence only). |
 | O7 | A finite-sample version of the absorption statement (Proposition 8(c)): how many adaptation episodes make the updated theory absorb a given discrepancy, as a function of model class capacity. |
+
+
+## Phase 5: adversarial audit, Proposition 10, and corrections
+
+### Audit procedure and result (Gate 1)
+
+Every proposition was attacked with randomised or exhaustive tests designed to find counterexamples (`tests/test_audit_properties.py`, 129 cases; `tests/test_proposition10_exact.py`; the earlier enumeration tests). Attacks included: zero-probability kernel entries (infinite KL) for Proposition 3(a); unreachable histories for Proposition 1; all 2⁸ measurable regions for Propositions 2, 5 and 6; ties in scores for Proposition 7(a); stopping-time simulation for the corollary.
+
+| Proposition | Attack | Outcome |
+|---|---|---|
+| 1 | Kernels altered on unreachable versus reachable histories | Holds; unreachable histories are unconstrained as stated |
+| 2 | Exhaustive minimum of total error over all 2⁸ deterministic tests; Pinsker in both KL directions | Holds exactly |
+| 3(a) | Random policies with computed ratio bound; E₁ with zeros | Holds, including infinite cases (both sides infinite) |
+| 3(b) | Quantifier order (for all ε, M there exist E₀, E₁, μ, π) | Holds as stated; construction explicit |
+| 4 | Property used only through conditional independence | Holds for countable mechanism sets; measure-theoretic case is obligation O1 |
+| 5 | All regions, non-rejection and rejection | Holds |
+| 6 | Every region R with Q(R) ≤ α | Holds |
+| 7(a) | Integer-valued scores with ties | Holds |
+| 7(b), (c) | Identity; disjoint-support example | Hold |
+| 8 | Finite-class posterior concentration; absorption | Holds; **assumption added**: test episodes independent of adaptation episodes |
+| 9(a), (b) | Exhaustive 2-step deterministic policies | Hold; **scope qualified** for (a) |
+| Corollary | Stopping-time simulation | **Wording false as stated; corrected** (above) |
+
+Result: no proposition was refuted; one statement (the corollary's "expected number of episodes") was wrong as worded and has been corrected; two statements had missing assumptions or scope and have been qualified. No proposition relies on a result not named in its provenance. Gate 1: **passed**, with the corrections above.
+
+### Proposition 10 (design relative to the hypothesis class). Elementary; exact for the finite example.
+
+Setting: an observer with a finite class M of kernels and prior ν selects interventions by expected information gain (EIG) about the class index, I(M; O | a, data), and the truth E₁ may lie outside M.
+
+(a) *Blindness within the class.* For two members m, m′ the posterior ratio ν_n(m)/ν_n(m′) equals the prior ratio times the product, over the steps at which the pair (history, action) lies in the *disagreement set* D(m, m′) of the two kernels, of the kernel ratios. Steps outside D(m, m′) contribute exactly 1. Hence **no deviation of the truth at points where all members agree can change the posterior over M**, however large it is, and EIG about the class index is zero at those points.
+
+(b) *Design manufactures equivalence.* There exist M = {E₀, Eₐ} and a truth E₁ ∉ M with TV(E₁, E₀) large under uniformly random actions, such that the myopic EIG-greedy policy (ties broken towards the first action) never plays the action at which E₁ deviates. Under that policy E₁ and E₀ produce **identical** laws, the posterior concentrates on E₀, and the observer reports high confidence in the wrong class.
+
+(c) *A catch-all class is not enough for myopic design; non-myopic design can succeed.* With a nonparametric catch-all class C (independent uniform prior on each action's success probability), myopic EIG is still exactly zero at the untried action, because C's one-step predictive coincides with E₀'s there, and the policy still never plays it. A two-step non-myopic EIG design does play it and detects the deviation. Without a catch-all, no class-based design succeeds at any horizon, since members agree at that action.
+
+*Proof.* (a) For Markov kernels the likelihood of a history is a product over steps of kernel values; the ratio of two members' likelihoods is the product of kernel ratios, which equals 1 at every step where the kernels agree. The EIG at a point is a mutual information between the class index and the next observation, which is zero when all class-conditional predictive laws coincide. (b), (c) are the exact dynamic-programming computations in `src/eid/finite_bayes.py`: the state is the pair of counts per action; the distribution over states under each policy is propagated exactly over all outcome sequences (T = 40). Numbers (truth: success probabilities (0.5, 0.95); E₀ = (0.5, 0.5); Eₐ = (0.9, 0.5); prior (0.5, 0.5) or (0.45, 0.45, 0.10) with the catch-all): myopic EIG plays the second action 0.00 times in expectation and the posterior mass on E₀ is 0.998 (no catch-all) or 0.918 with P(C > 0.5) = 0.016 (catch-all); two-step EIG with catch-all plays it 24 times in expectation and P(C > 0.5) = 0.928; random and fixed-sweep policies with the catch-all reach P(C > 0.5) of 0.983 and 0.988. ∎
+
+*Provenance and novelty.* The general phenomenon that Bayesian experimental design is only optimal relative to the model and can be poor under misspecification is acknowledged in the design literature (Rainforth et al. 2024 is a review; I have verified only its abstract). The exact statements (a)–(c) are elementary and I have not established that they are new. **The refuted conjecture** that myopic EIG with a catch-all would explore is recorded in the tests as a counterexample.
+
+### Corrections log
+
+See `notes/corrections-log.md`.
