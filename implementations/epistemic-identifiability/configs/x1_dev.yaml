@@ -1,0 +1,8 @@
+# X1 DEVELOPMENT configuration (implementation validation, timing, null calibration). Seeds 500-505; NOT used for confirmatory claims.
+seeds: [500, 501, 502, 503, 504, 505]
+R: 20
+N: 1500
+T: 4
+alpha: 0.05
+truths: [E0, split, n10, n20, t05, t10, pc0, pc1, pc2, shift]
+policies: [P0, P1, P2, P3, P4, P5]

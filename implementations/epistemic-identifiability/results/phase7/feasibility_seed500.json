@@ -1,0 +1,245 @@
+[
+ {
+  "truth": "E0",
+  "role": "null",
+  "q": 0.0,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "E0",
+  "role": "null",
+  "q": 0.02,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "E0",
+  "role": "null",
+  "q": 0.333,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "split",
+  "role": "null",
+  "q": 0.0,
+  "nearest_M": "E0",
+  "KL_M": -3.214900398186262e-17,
+  "KL_MW": -3.214900398186262e-17,
+  "Nstar_M": null
+ },
+ {
+  "truth": "split",
+  "role": "null",
+  "q": 0.02,
+  "nearest_M": "E0",
+  "KL_M": -2.9721717319375176e-17,
+  "KL_MW": -2.9721717319375176e-17,
+  "Nstar_M": null
+ },
+ {
+  "truth": "split",
+  "role": "null",
+  "q": 0.333,
+  "nearest_M": "E0",
+  "KL_M": -1.3467161665108628e-18,
+  "KL_MW": -1.3467161665108628e-18,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n10",
+  "role": "null",
+  "q": 0.0,
+  "nearest_M": "n10",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n10",
+  "role": "null",
+  "q": 0.02,
+  "nearest_M": "n10",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n10",
+  "role": "null",
+  "q": 0.333,
+  "nearest_M": "n10",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n20",
+  "role": "null",
+  "q": 0.0,
+  "nearest_M": "n20",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n20",
+  "role": "null",
+  "q": 0.02,
+  "nearest_M": "n20",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "n20",
+  "role": "null",
+  "q": 0.333,
+  "nearest_M": "n20",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "t05",
+  "role": "unanticipated",
+  "q": 0.0,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "t05",
+  "role": "unanticipated",
+  "q": 0.02,
+  "nearest_M": "E0",
+  "KL_M": 0.0007682449281096499,
+  "KL_MW": 0.0007682449281096499,
+  "Nstar_M": 3899.4494645416216
+ },
+ {
+  "truth": "t05",
+  "role": "unanticipated",
+  "q": 0.333,
+  "nearest_M": "E0",
+  "KL_M": 0.008613955778618697,
+  "KL_MW": 0.008173167433823632,
+  "Nstar_M": 347.7766023584551
+ },
+ {
+  "truth": "t10",
+  "role": "unanticipated",
+  "q": 0.0,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "t10",
+  "role": "unanticipated",
+  "q": 0.02,
+  "nearest_M": "E0",
+  "KL_M": 0.0029943528867892593,
+  "KL_MW": 0.0027864988713167524,
+  "Nstar_M": 1000.4606627264333
+ },
+ {
+  "truth": "t10",
+  "role": "unanticipated",
+  "q": 0.333,
+  "nearest_M": "n05",
+  "KL_M": 0.03327698772810865,
+  "KL_MW": 0.02854834402766948,
+  "Nstar_M": 90.0241421498477
+ },
+ {
+  "truth": "pc0",
+  "role": "anticipated",
+  "q": 0.0,
+  "nearest_M": "n20",
+  "KL_M": 0.01968713364582446,
+  "KL_MW": 0.0,
+  "Nstar_M": 152.16701056882246
+ },
+ {
+  "truth": "pc0",
+  "role": "anticipated",
+  "q": 0.02,
+  "nearest_M": "n20",
+  "KL_M": 0.019976587916061442,
+  "KL_MW": 0.0,
+  "Nstar_M": 149.96216001158948
+ },
+ {
+  "truth": "pc0",
+  "role": "anticipated",
+  "q": 0.333,
+  "nearest_M": "n10",
+  "KL_M": 0.01707800970005059,
+  "KL_MW": 0.0,
+  "Nstar_M": 175.4146019453963
+ },
+ {
+  "truth": "pc1",
+  "role": "anticipated",
+  "q": 0.0,
+  "nearest_M": "n10",
+  "KL_M": 0.0280743704929933,
+  "KL_MW": 0.0,
+  "Nstar_M": 106.70701500864124
+ },
+ {
+  "truth": "pc1",
+  "role": "anticipated",
+  "q": 0.02,
+  "nearest_M": "n10",
+  "KL_M": 0.027962736873905002,
+  "KL_MW": 0.0,
+  "Nstar_M": 107.13301373406073
+ },
+ {
+  "truth": "pc1",
+  "role": "anticipated",
+  "q": 0.333,
+  "nearest_M": "n05",
+  "KL_M": 0.023862764204496473,
+  "KL_MW": 0.0,
+  "Nstar_M": 125.54003584335395
+ },
+ {
+  "truth": "pc2",
+  "role": "anticipated",
+  "q": 0.0,
+  "nearest_M": "E0",
+  "KL_M": 0.0,
+  "KL_MW": 0.0,
+  "Nstar_M": null
+ },
+ {
+  "truth": "pc2",
+  "role": "anticipated",
+  "q": 0.02,
+  "nearest_M": "E0",
+  "KL_M": 0.001244599916432976,
+  "KL_MW": 0.0,
+  "Nstar_M": 2406.9841512923776
+ },
+ {
+  "truth": "pc2",
+  "role": "anticipated",
+  "q": 0.333,
+  "nearest_M": "n10",
+  "KL_M": 0.023736235508295386,
+  "KL_MW": 0.0,
+  "Nstar_M": 126.20924124666004
+ }
+]

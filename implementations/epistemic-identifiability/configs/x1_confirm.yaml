@@ -1,0 +1,8 @@
+# X1 CONFIRMATORY configuration. FROZEN with topics/bostrom-world-models/phase7/03-preregistration-X1.md before any confirmatory outcome exists.
+seeds: [600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629]
+R: 20
+N: 3000
+T: 4
+alpha: 0.05
+truths: [E0, split, n10, n20, t05, t10, pc0, pc1, pc2, shift]
+policies: [P0, P1, P2, P3, P4, P5]
