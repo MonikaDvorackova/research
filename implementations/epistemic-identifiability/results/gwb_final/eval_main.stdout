@@ -1,0 +1,6 @@
+passive 31s
+uniform 30s
+sweep 22s
+randblock 34s
+oracle_eig 39s
+ens_disagree 192s

@@ -36,3 +36,4 @@ tags: [governance, experiments]
 | phase10 K-scaling / comparison / EM / stats | 10 | development | `scripts/phase10_{kscaling,comp,em,stats}.py` | namespace 10000 | `results/phase10_dev/` | done; determinism checked |
 | E6′ confirmatory | 10 (proposed) | confirmatory (planned) | not written | reserved 800–829 (insufficient for the proposed ≥ 130 structures) | – | **NO-GO** |
 | phase12 pilot (precision vs stiction) | 11/12 | development (exploratory) | `scripts/phase12_pilot.py` | namespace 12000 | `results/phase12_dev/` | done; first σ grid uninformative (kept) |
+| gwb learned world models (dev + final-dev) | WM execution | development (exploratory; plan `07` fixed before final-test eval) | `scripts/gwb_*`, `src/eid/gwb/` | train seeds 1–3 (+100 dev); eval namespaces 9001/9100/9150 (select), 9300 (dev), 9200 (final-dev test) | `results/gwb_dev/`, `results/gwb_final/` | done; first RSSM version failed predictive check (kept) |

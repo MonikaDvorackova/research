@@ -1,0 +1,53 @@
+PREDICTIVE excess NLL | rollout16 RMSE/sigma | cover90  (mean±sd over training seeds)
+  rssm_pred      uniform  0.286 | 0.443 | 0.764
+  rssm_pred      sweep    0.329 | 0.921 | 0.761
+  rssm_ici       uniform  0.357 | 0.425 | 0.732
+  rssm_ici       sweep    0.405 | 0.942 | 0.731
+  det_pred       uniform  0.105 | 0.395 | 0.909
+  det_pred       sweep    0.145 | 0.806 | 0.912
+  det_ici        uniform  0.118 | 0.450 | 0.900
+  det_ici        sweep    0.160 | 0.954 | 0.902
+
+== passive: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  rssm_pred      0.564 | 0.598 | 0.184 | 0.070 | 0.482/0.212 | 0.002/0.164
+  rssm_ici       0.573 | 0.600 | 0.230 | 0.064 | 0.544/0.284 | 0.004/0.260
+  det_pred       0.539 | 0.654 | 0.196 | 0.056 | 0.452/0.194 | 0.000/0.154
+  det_ici        0.569 | 0.622 | 0.240 | 0.050 | 0.538/0.214 | 0.000/0.184
+  oracle_bayes         0.657 | 0.746 | 0.478 | ece 0.052 | claim 0.00/0.06
+  oracle_matched_prior 0.699 | 0.636 | 0.518
+  handfeat_gbm         0.469 | 0.438 | 0.186 | ece 0.387 | claim 0.71/0.68
+  supervised_gru       0.595 | 0.638 | 0.248 | ece 0.027 | claim 0.31/0.34
+  leak actions-only acc 0.175   oracle id CI [0.625, 0.691]
+
+== uniform: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  rssm_pred      0.616 | 0.698 | 0.298 | 0.067 | 0.852/0.380 | 0.000/0.290
+  rssm_ici       0.601 | 0.744 | 0.288 | 0.087 | 0.922/0.464 | 0.004/0.372
+  det_pred       0.613 | 0.692 | 0.242 | 0.052 | 0.838/0.356 | 0.002/0.246
+  det_ici        0.595 | 0.698 | 0.292 | 0.078 | 0.904/0.350 | 0.000/0.282
+  oracle_bayes         0.733 | 0.844 | 0.572 | ece 0.071 | claim 0.01/0.03
+  oracle_matched_prior 0.757 | 0.726 | 0.578
+  handfeat_gbm         0.550 | 0.508 | 0.258 | ece 0.331 | claim 0.80/0.71
+  supervised_gru       0.662 | 0.738 | 0.312 | ece 0.028 | claim 0.93/0.38
+  leak actions-only acc 0.175   oracle id CI [0.701, 0.762]
+
+== sweep: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  rssm_pred      0.835 | 0.870 | 0.340 | 0.026 | 0.714/0.656 | 0.006/0.516
+  rssm_ici       0.835 | 0.866 | 0.366 | 0.021 | 0.998/0.532 | 0.010/0.270
+  det_pred       0.843 | 0.864 | 0.342 | 0.031 | 0.844/0.432 | 0.006/0.274
+  det_ici        0.838 | 0.872 | 0.348 | 0.028 | 0.740/0.430 | 0.002/0.176
+  oracle_bayes         0.818 | 0.936 | 0.698 | ece 0.084 | claim 0.00/0.00
+  oracle_matched_prior 0.868 | 0.880 | 0.738
+  handfeat_gbm         0.799 | 0.834 | 0.448 | ece 0.161 | claim 1.00/0.79
+  supervised_gru       0.807 | 0.864 | 0.392 | ece 0.060 | claim 1.00/0.49
+  leak actions-only acc 0.177   oracle id CI [0.789, 0.843]
+
+== oracle_eig: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  rssm_pred      0.760 | 0.802 | 0.390 | 0.042 | 0.716/0.498 | 0.020/0.300
+  rssm_ici       0.765 | 0.816 | 0.414 | 0.042 | 0.842/0.522 | 0.006/0.162
+  det_pred       0.756 | 0.792 | 0.368 | 0.040 | 0.676/0.564 | 0.010/0.240
+  det_ici        0.769 | 0.806 | 0.372 | 0.037 | 0.722/0.548 | 0.016/0.398
+  oracle_bayes         0.931 | 0.932 | 0.808 | ece 0.043 | claim 0.00/0.00
+  oracle_matched_prior 0.946 | 0.850 | 0.828
+  handfeat_gbm         0.719 | 0.774 | 0.428 | ece 0.198 | claim 0.94/0.89
+  supervised_gru       0.833 | 0.840 | 0.484 | ece 0.058 | claim 1.00/0.75
+  leak actions-only acc 0.517   oracle id CI [0.914, 0.949]

@@ -1,0 +1,1 @@
+{"model": "rssm", "lam": 0.0, "seed": 100, "steps": 3000, "batch": 128, "L": 48, "H": 128, "lr": 0.001, "beta": 1.0, "device": "cpu", "threads": 3, "budget_s": 1500.0, "out": "results/gwb_dev/runs/dev_rssm_pred_s100"}
