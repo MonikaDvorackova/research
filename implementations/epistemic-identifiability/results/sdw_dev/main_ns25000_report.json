@@ -1,0 +1,153 @@
+{
+ "H1_supported_vs_best_nonoracle": true,
+ "H2": {
+  "3/sweepA": 1.0,
+  "3/sweepB": 1.0,
+  "3/random": 0.0,
+  "3/ens": 1.0,
+  "3/eig": 0.0,
+  "3/falsify_nou2": 1.0,
+  "5/sweepA": 0.0,
+  "5/sweepB": 0.0,
+  "5/random": 0.0,
+  "5/ens": 1.0,
+  "5/eig": 0.0,
+  "5/falsify_nou2": 0.0,
+  "8/sweepA": 0.0,
+  "8/sweepB": 0.0,
+  "8/random": 0.0,
+  "8/ens": 1.0,
+  "8/eig": 0.0,
+  "8/falsify_nou2": 0.0
+ },
+ "H2_supported": false,
+ "H3": {
+  "3/full": {
+   "osc_claim": 0.05,
+   "in_false_rej": 0.625,
+   "unreach_ok": 0.175,
+   "coverage": 0.09642857142857143,
+   "precision": 0.8518518518518519,
+   "acc": 0.18888888888888888
+  },
+  "3/crit_in": {
+   "osc_claim": 0.05,
+   "in_false_rej": 0.11785714285714285,
+   "unreach_ok": 0.85,
+   "coverage": 0.25357142857142856,
+   "precision": 0.8591549295774648,
+   "acc": 0.36944444444444446
+  },
+  "3/nocrit": {
+   "osc_claim": 1.0,
+   "in_false_rej": 0.0,
+   "unreach_ok": 0.975,
+   "coverage": 1.0,
+   "precision": 0.7071428571428572,
+   "acc": 0.6583333333333333
+  },
+  "5/full": {
+   "osc_claim": 0.05,
+   "in_false_rej": 0.475,
+   "unreach_ok": 0.8,
+   "coverage": 0.41785714285714287,
+   "precision": 0.905982905982906,
+   "acc": 0.4888888888888889
+  },
+  "5/crit_in": {
+   "osc_claim": 0.125,
+   "in_false_rej": 0.125,
+   "unreach_ok": 0.875,
+   "coverage": 0.6142857142857143,
+   "precision": 0.9244186046511628,
+   "acc": 0.6361111111111111
+  },
+  "5/nocrit": {
+   "osc_claim": 1.0,
+   "in_false_rej": 0.0,
+   "unreach_ok": 1.0,
+   "coverage": 1.0,
+   "precision": 0.925,
+   "acc": 0.8305555555555556
+  },
+  "8/full": {
+   "osc_claim": 0.025,
+   "in_false_rej": 0.2642857142857143,
+   "unreach_ok": 0.9,
+   "coverage": 0.7035714285714286,
+   "precision": 0.9695431472081218,
+   "acc": 0.7388888888888889
+  },
+  "8/crit_in": {
+   "osc_claim": 0.025,
+   "in_false_rej": 0.15,
+   "unreach_ok": 0.925,
+   "coverage": 0.8035714285714286,
+   "precision": 0.9733333333333334,
+   "acc": 0.8194444444444444
+  },
+  "8/nocrit": {
+   "osc_claim": 1.0,
+   "in_false_rej": 0.0,
+   "unreach_ok": 1.0,
+   "coverage": 1.0,
+   "precision": 0.9714285714285714,
+   "acc": 0.8666666666666667
+  }
+ },
+ "auroc": {
+  "3/falsify": 0.8657142857142858,
+  "3/sweepB": 0.8146428571428571,
+  "3/grammar_sweep": 0.8146428571428571,
+  "3/bayes_declared": 0.6775892857142857,
+  "5/falsify": 0.9433928571428571,
+  "5/sweepB": 0.8623214285714286,
+  "5/grammar_sweep": 0.8623214285714286,
+  "5/bayes_declared": 0.46660714285714283,
+  "8/falsify": 0.9844642857142857,
+  "8/sweepB": 0.9771428571428571,
+  "8/grammar_sweep": 0.9771428571428571,
+  "8/bayes_declared": 0.5494642857142857
+ },
+ "H4": {
+  "recall_learned_minus_analytic": [
+   0.13214285714285715,
+   0.09285714285714286,
+   0.17142857142857143
+  ],
+  "sindyc_learned_minus_embed": [
+   0.22857142857142856,
+   0.17857142857142858,
+   0.28214285714285714
+  ]
+ },
+ "H5": {
+  "no criticism/3": 0.0,
+  "no criticism/5": 0.0,
+  "no criticism/8": 0.0,
+  "in-sample criticism only/3": 0.0,
+  "in-sample criticism only/5": 0.0,
+  "in-sample criticism only/8": 0.0,
+  "no active design: sweep B/3": 0.0,
+  "no active design: sweep B/5": 0.0,
+  "no active design: sweep B/8": 0.0,
+  "no active design: sweep A/3": 0.0,
+  "no active design: sweep A/5": 0.0,
+  "no active design: sweep A/8": 0.0,
+  "random design/3": 0.0,
+  "random design/5": 0.0,
+  "random design/8": 1.0,
+  "generic ensemble-variance design/3": 1.0,
+  "generic ensemble-variance design/5": 1.0,
+  "generic ensemble-variance design/8": 1.0,
+  "declared-class EIG design (structure search kept)/3": 0.0,
+  "declared-class EIG design (structure search kept)/5": 0.0,
+  "declared-class EIG design (structure search kept)/8": 1.0,
+  "no structure generation (declared class + EIG)/3": 0.0,
+  "no structure generation (declared class + EIG)/5": 0.0,
+  "no structure generation (declared class + EIG)/8": 1.0,
+  "no u2 interventions in pool/3": 0.0,
+  "no u2 interventions in pool/5": 0.0,
+  "no u2 interventions in pool/8": 0.0
+ }
+}
