@@ -18,8 +18,8 @@ def make_batch(step, seed, B, L, dev, family="both"):
     return inst, views
 
 
-def build(kind, H=128):
-    return models.RSSM(H=H) if kind == "rssm" else models.DetGRU(H=H)
+def build(kind, H=128, **kw):
+    return models.RSSM(H=H, **kw) if kind == "rssm" else models.DetGRU(H=H)
 
 
 def evaluate_nll(model, dev, n=512, L=48):
@@ -43,6 +43,8 @@ def main(argv=None):
     ap.add_argument("--lr", type=float, default=1e-3)
     ap.add_argument("--beta", type=float, default=1.0)
     ap.add_argument("--family", default="both", choices=["both", "A", "B"])
+    ap.add_argument("--dec_h_only", type=int, default=0); ap.add_argument("--free_bits", type=float, default=0.1)
+    ap.add_argument("--bal", type=float, nargs=2, default=[0.8, 0.2]); ap.add_argument("--no_prior_loss", type=int, default=0)
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--threads", type=int, default=3)
     ap.add_argument("--budget_s", type=float, default=3600)
@@ -51,7 +53,7 @@ def main(argv=None):
     torch.set_num_threads(a.threads)
     os.makedirs(a.out, exist_ok=True)
     torch.manual_seed(a.seed)
-    model = build(a.model, a.H).to(a.device)
+    model = (build(a.model, a.H, dec_h_only=bool(a.dec_h_only), bal=tuple(a.bal), prior_loss=not a.no_prior_loss) if a.model == "rssm" else build(a.model, a.H)).to(a.device)
     opt = torch.optim.Adam(model.parameters(), lr=a.lr)
     ck = os.path.join(a.out, "ckpt.pt"); start = 0; elapsed = 0.0
     json.dump(vars(a), open(os.path.join(a.out, "config.json"), "w"))
@@ -62,8 +64,8 @@ def main(argv=None):
     t0 = time.time() - elapsed
     for step in range(start, a.steps):
         _, views = make_batch(step, a.seed, a.batch, a.L, a.device, a.family)
-        outs = [model(v[0], v[1]) for v in views]
-        pred = sum(o["nll"].mean() + a.beta * o["kl"].mean() + (o["nll_prior"].mean() if "nll_prior" in o else 0.0) for o in outs) / 2
+        outs = [model(v[0], v[1], free_bits=a.free_bits) for v in views]
+        pred = sum(o["nll"].mean() + a.beta * o["kl"].mean() + (o["nll_prior"].mean() if ("nll_prior" in o and getattr(model, "prior_loss", True)) else 0.0) for o in outs) / 2
         loss = pred; ici = torch.zeros(())
         if a.lam > 0:
             ici = models.info_nce(model.proj(outs[0]["feat"]), model.proj(outs[1]["feat"]))

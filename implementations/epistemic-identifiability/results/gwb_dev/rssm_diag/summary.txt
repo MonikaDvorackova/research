@@ -1,0 +1,9 @@
+RSSM-vs-GRU diagnostic (seed 200, 2000 steps, identical data; eval ns 9300): excess one-step prior-predictive NLL (uniform | sweep), cover90, raw posterior KL (nats/step)
+V0_rssm_current                 0.265 |    0.318  cover90 0.77  KL 1.321
+V1_decode_from_h_only           0.129 |    0.179  cover90 0.87  KL 0.539
+V2_dreamer_free1_bal.5.1        3.355 |    3.361  cover90 0.48  KL 5.857
+V3_no_prior_loss              250.709 |  271.138  cover90 0.09  KL 3.01
+V4_beta5                        0.237 |    0.324  cover90 0.79  KL 0.364
+V5_det_gru                      0.112 |    0.155  cover90 0.91  KL None
+V6_rssm_H256                    0.243 |    0.298  cover90 0.78  KL 1.12
+V7_rssm_dec_h_free1             0.114 |    0.156  cover90 0.89  KL 1.099

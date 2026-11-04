@@ -1,0 +1,1 @@
+{"model": "det", "lam": 0.0, "seed": 200, "steps": 2000, "batch": 128, "L": 48, "H": 128, "lr": 0.001, "beta": 1.0, "family": "both", "dec_h_only": 0, "free_bits": 0.1, "bal": [0.8, 0.2], "no_prior_loss": 0, "device": "cpu", "threads": 3, "budget_s": 1500.0, "out": "results/gwb_dev/rssm_diag/V5_det_gru"}

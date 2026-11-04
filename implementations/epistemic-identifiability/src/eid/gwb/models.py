@@ -18,15 +18,19 @@ def gauss_nll(y, mu, logstd):
 class RSSM(nn.Module):
     """h_t = GRU(h_{t-1}, [z_{t-1}, a_t]); prior p(z_t|h_t); posterior q(z_t|h_t,y_t); decoder p(y_t|h_t,z_t)."""
 
-    def __init__(self, H=128, Z=8, E=64, proj=64):
+    def __init__(self, H=128, Z=8, E=64, proj=64, dec_h_only=False, bal=(0.8, 0.2), prior_loss=True):
         super().__init__()
         self.H, self.Z = H, Z
+        self.dec_h_only, self.bal, self.prior_loss = dec_h_only, bal, prior_loss
         self.inp = nn.Sequential(nn.Linear(Z + 1, E), nn.ELU())
         self.cell = nn.GRUCell(E, H)
         self.prior = nn.Sequential(nn.Linear(H, E), nn.ELU(), nn.Linear(E, 2 * Z))
         self.post = nn.Sequential(nn.Linear(H + 1, E), nn.ELU(), nn.Linear(E, 2 * Z))
         self.dec = nn.Sequential(nn.Linear(H + Z, E), nn.ELU(), nn.Linear(E, 2))
         self.proj = nn.Sequential(nn.Linear(H, E), nn.ELU(), nn.Linear(E, proj))  # ICI head (unused if lambda=0)
+
+    def _zin(self, z):
+        return torch.zeros_like(z) if self.dec_h_only else z
 
     @staticmethod
     def _split(p):
@@ -36,7 +40,7 @@ class RSSM(nn.Module):
     def forward(self, a, y, free_bits=0.1, sample=True):
         B, T = a.shape
         h = a.new_zeros(B, self.H); z = a.new_zeros(B, self.Z)
-        nll, kl, nllp = [], [], []
+        nll, kl, nllp, klraw = [], [], [], []
         mus = []
         for t in range(T):
             h = self.cell(self.inp(torch.cat([z, a[:, t:t + 1]], -1)), h)
@@ -44,19 +48,19 @@ class RSSM(nn.Module):
             # prior-predictive loss (deviation from Dreamer): decode y_t from a PRIOR sample, so the dynamics
             # (not the posterior leak of y_t) must carry the prediction.  Added after dev eval showed the
             # reconstruction decoder otherwise autoencodes observation noise (excess prior-NLL ~390).
-            outp = self.dec(torch.cat([h, pm + ps * torch.randn_like(ps)], -1))
+            outp = self.dec(torch.cat([h, self._zin(pm + ps * torch.randn_like(ps))], -1))
             nllp.append(gauss_nll(y[:, t:t + 1], outp[:, :1], outp[:, 1:].clamp(-5, 2)).squeeze(-1))
             qm, qs = self._split(self.post(torch.cat([h, y[:, t:t + 1]], -1)))
             z = qm + qs * torch.randn_like(qs) if sample else qm
-            out = self.dec(torch.cat([h, z], -1))
+            out = self.dec(torch.cat([h, self._zin(z)], -1))
             mu, ls = out[:, :1], out[:, 1:].clamp(-5, 2)
             nll.append(gauss_nll(y[:, t:t + 1], mu, ls).squeeze(-1)); mus.append(mu.squeeze(-1))
             # KL balancing (0.8 train prior / 0.2 posterior), free bits
             kl_p = _kl(qm.detach(), qs.detach(), pm, ps).sum(-1).clamp_min(free_bits)
             kl_q = _kl(qm, qs, pm.detach(), ps.detach()).sum(-1).clamp_min(free_bits)
-            kl.append(0.8 * kl_p + 0.2 * kl_q)
+            kl.append(self.bal[0] * kl_p + self.bal[1] * kl_q); klraw.append(_kl(qm, qs, pm, ps).sum(-1).detach())
         h = self.cell(self.inp(torch.cat([z, torch.zeros_like(a[:, :1])], -1)), h)  # summary state (dummy zero action)
-        return dict(nll=torch.stack(nll, 1), kl=torch.stack(kl, 1), nll_prior=torch.stack(nllp, 1), mu=torch.stack(mus, 1), feat=h)
+        return dict(nll=torch.stack(nll, 1), kl=torch.stack(kl, 1), nll_prior=torch.stack(nllp, 1), kl_raw=torch.stack(klraw, 1), mu=torch.stack(mus, 1), feat=h)
 
     @torch.no_grad()
     def filter(self, a, y):
@@ -67,7 +71,7 @@ class RSSM(nn.Module):
         for t in range(T):
             h = self.cell(self.inp(torch.cat([z, a[:, t:t + 1]], -1)), h)
             pm, ps = self._split(self.prior(h))
-            out = self.dec(torch.cat([h, pm], -1))     # prior-mean prediction (no access to y_t)
+            out = self.dec(torch.cat([h, self._zin(pm)], -1))     # prior-mean prediction (no access to y_t)
             mus.append(out[:, 0]); lss.append(out[:, 1].clamp(-5, 2))
             qm, _ = self._split(self.post(torch.cat([h, y[:, t:t + 1]], -1)))
             z = qm
@@ -85,7 +89,7 @@ class RSSM(nn.Module):
             h = self.cell(self.inp(torch.cat([z, acts[:, t:t + 1]], -1)), h)
             pm, _ = self._split(self.prior(h))
             z = pm
-            mus.append(self.dec(torch.cat([h, z], -1))[:, 0])
+            mus.append(self.dec(torch.cat([h, self._zin(z)], -1))[:, 0])
         return torch.stack(mus, 1)
 
     def summary(self, h):

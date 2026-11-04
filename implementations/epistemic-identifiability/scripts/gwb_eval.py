@@ -15,7 +15,7 @@ CLF = None
 
 def load(d):
     cfg = json.load(open(os.path.join(d, "config.json")))
-    m = tr.build(cfg["model"], cfg["H"]); m.load_state_dict(torch.load(os.path.join(d, "final.pt"))); m.eval()
+    m = (tr.build(cfg["model"], cfg["H"], dec_h_only=bool(cfg.get("dec_h_only", 0)), bal=tuple(cfg.get("bal", [0.8, 0.2]))) if cfg["model"] == "rssm" else tr.build(cfg["model"], cfg["H"])); m.load_state_dict(torch.load(os.path.join(d, "final.pt"))); m.eval()
     return m, cfg
 
 
