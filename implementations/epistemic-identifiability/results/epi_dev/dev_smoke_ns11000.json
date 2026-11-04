@@ -1,0 +1,2602 @@
+{
+ "args": {
+  "ns": 11000,
+  "scale": 0.1,
+  "calns": 11050,
+  "threads": 8,
+  "wm": [
+   "results/gwb_final/runs/det_pred_s1",
+   "results/gwb_final/runs/det_pred_s2",
+   "results/gwb_final/runs/det_pred_s3"
+  ],
+  "cond": [
+   "results/epi_dev/runs/cond_s1",
+   "results/epi_dev/runs/cond_s2",
+   "results/epi_dev/runs/cond_s3"
+  ],
+  "out": "results/epi_dev/dev_smoke_ns11000.json"
+ },
+ "M4_conformal": {
+  "0.05": {
+   "id": {
+    "singleton_rate": 0.4875,
+    "empty_rate": 0.0,
+    "mean_size": 1.85,
+    "coverage_true": 0.9625
+   },
+   "idnoisy": {
+    "singleton_rate": 0.425,
+    "empty_rate": 0.0,
+    "mean_size": 1.725
+   },
+   "eqA": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.0,
+    "mean_size": 1.025
+   },
+   "eqB": {
+    "singleton_rate": 0.175,
+    "empty_rate": 0.0,
+    "mean_size": 2.3
+   },
+   "eqC": {
+    "singleton_rate": 0.85,
+    "empty_rate": 0.0,
+    "mean_size": 1.2
+   },
+   "eqD": {
+    "singleton_rate": 0.6,
+    "empty_rate": 0.0,
+    "mean_size": 1.6
+   },
+   "approx": {
+    "singleton_rate": 0.775,
+    "empty_rate": 0.0,
+    "mean_size": 1.25
+   },
+   "ooc_sat": {
+    "singleton_rate": 0.2,
+    "empty_rate": 0.0,
+    "mean_size": 2.625
+   },
+   "ooc_osc": {
+    "singleton_rate": 0.65,
+    "empty_rate": 0.0,
+    "mean_size": 1.475
+   },
+   "ooc_qd": {
+    "singleton_rate": 0.35,
+    "empty_rate": 0.0,
+    "mean_size": 2.025
+   }
+  },
+  "0.1": {
+   "id": {
+    "singleton_rate": 0.8125,
+    "empty_rate": 0.0,
+    "mean_size": 1.1875,
+    "coverage_true": 0.825
+   },
+   "idnoisy": {
+    "singleton_rate": 0.9,
+    "empty_rate": 0.0,
+    "mean_size": 1.1
+   },
+   "eqA": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "eqB": {
+    "singleton_rate": 0.75,
+    "empty_rate": 0.0,
+    "mean_size": 1.25
+   },
+   "eqC": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.0,
+    "mean_size": 1.025
+   },
+   "eqD": {
+    "singleton_rate": 0.95,
+    "empty_rate": 0.0,
+    "mean_size": 1.05
+   },
+   "approx": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.0,
+    "mean_size": 1.025
+   },
+   "ooc_sat": {
+    "singleton_rate": 0.575,
+    "empty_rate": 0.05,
+    "mean_size": 1.325
+   },
+   "ooc_osc": {
+    "singleton_rate": 0.95,
+    "empty_rate": 0.0,
+    "mean_size": 1.05
+   },
+   "ooc_qd": {
+    "singleton_rate": 0.825,
+    "empty_rate": 0.0,
+    "mean_size": 1.175
+   }
+  },
+  "0.2": {
+   "id": {
+    "singleton_rate": 0.925,
+    "empty_rate": 0.0,
+    "mean_size": 1.075,
+    "coverage_true": 0.8
+   },
+   "idnoisy": {
+    "singleton_rate": 0.95,
+    "empty_rate": 0.0,
+    "mean_size": 1.05
+   },
+   "eqA": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "eqB": {
+    "singleton_rate": 0.875,
+    "empty_rate": 0.025,
+    "mean_size": 1.075
+   },
+   "eqC": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.025,
+    "mean_size": 0.975
+   },
+   "eqD": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "approx": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "ooc_sat": {
+    "singleton_rate": 0.75,
+    "empty_rate": 0.075,
+    "mean_size": 1.1
+   },
+   "ooc_osc": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "ooc_qd": {
+    "singleton_rate": 0.875,
+    "empty_rate": 0.025,
+    "mean_size": 1.075
+   }
+  },
+  "0.3": {
+   "id": {
+    "singleton_rate": 0.875,
+    "empty_rate": 0.125,
+    "mean_size": 0.875,
+    "coverage_true": 0.7375
+   },
+   "idnoisy": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.025,
+    "mean_size": 0.975
+   },
+   "eqA": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "eqB": {
+    "singleton_rate": 0.85,
+    "empty_rate": 0.15,
+    "mean_size": 0.85
+   },
+   "eqC": {
+    "singleton_rate": 0.975,
+    "empty_rate": 0.025,
+    "mean_size": 0.975
+   },
+   "eqD": {
+    "singleton_rate": 0.95,
+    "empty_rate": 0.05,
+    "mean_size": 0.95
+   },
+   "approx": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "ooc_sat": {
+    "singleton_rate": 0.75,
+    "empty_rate": 0.25,
+    "mean_size": 0.75
+   },
+   "ooc_osc": {
+    "singleton_rate": 1.0,
+    "empty_rate": 0.0,
+    "mean_size": 1.0
+   },
+   "ooc_qd": {
+    "singleton_rate": 0.9,
+    "empty_rate": 0.1,
+    "mean_size": 0.9
+   }
+  }
+ },
+ "methods": {
+  "M2[s1]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7375,
+    "claim_ci": [
+     0.6318083375343555,
+     0.8214272877399715
+    ],
+    "acc_all": 0.775,
+    "wrong_claim_rate": 0.1,
+    "acc_among_claimed": 0.864406779661017
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "acc_all": 0.275,
+    "wrong_claim_rate": 0.675,
+    "acc_among_claimed": 0.2702702702702703
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.598057409330299,
+     0.8581303210445048
+    ],
+    "claim_of_equivalent_member": 0.275
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.45,
+    "claim_ci": [
+     0.30705075280944694,
+     0.6017117011155924
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6249660359590695,
+     0.8768404674532148
+    ]
+   },
+   "threshold": 0.5797484695911408,
+   "cal_acc": 0.75,
+   "auroc_justified_vs_unjustified": 0.5687211981566821,
+   "auroc_justified_vs_unseen_eq": 0.4721774193548387
+  },
+  "M2[s2]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7,
+    "claim_ci": [
+     0.5923163971203269,
+     0.789355708373843
+    ],
+    "acc_all": 0.7875,
+    "wrong_claim_rate": 0.1,
+    "acc_among_claimed": 0.8571428571428571
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "acc_all": 0.3,
+    "wrong_claim_rate": 0.625,
+    "acc_among_claimed": 0.3055555555555556
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.6,
+    "claim_ci": [
+     0.445956198273935,
+     0.7365188938759863
+    ],
+    "claim_of_equivalent_member": 0.2
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6249660359590695,
+     0.8768404674532148
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.475,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.475,
+    "claim_ci": [
+     0.32935229550181694,
+     0.6250289314607027
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ]
+   },
+   "threshold": 0.6158298909664154,
+   "cal_acc": 0.78,
+   "auroc_justified_vs_unjustified": 0.5573696145124716,
+   "auroc_justified_vs_unseen_eq": 0.4787698412698413
+  },
+  "M2[s3]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7875,
+    "claim_ci": [
+     0.6857763938182242,
+     0.8628772578296451
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.125,
+    "acc_among_claimed": 0.8412698412698413
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "acc_all": 0.175,
+    "wrong_claim_rate": 0.75,
+    "acc_among_claimed": 0.1891891891891892
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.6804970794560755,
+     0.9125469700311694
+    ],
+    "claim_of_equivalent_member": 0.525
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.85
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ]
+   },
+   "threshold": 0.5345722258090974,
+   "cal_acc": 0.73,
+   "auroc_justified_vs_unjustified": 0.5480679156908664,
+   "auroc_justified_vs_unseen_eq": 0.451844262295082
+  },
+  "M3[s1]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7375,
+    "claim_ci": [
+     0.6318083375343555,
+     0.8214272877399715
+    ],
+    "acc_all": 0.775,
+    "wrong_claim_rate": 0.1,
+    "acc_among_claimed": 0.864406779661017
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "acc_all": 0.275,
+    "wrong_claim_rate": 0.675,
+    "acc_among_claimed": 0.2702702702702703
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.598057409330299,
+     0.8581303210445048
+    ],
+    "claim_of_equivalent_member": 0.275
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.425,
+    "claim_ci": [
+     0.28509168524815875,
+     0.5780519956394001
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6249660359590695,
+     0.8768404674532148
+    ]
+   },
+   "threshold": 0.5612961554327933,
+   "cal_acc": 0.75,
+   "auroc_justified_vs_unjustified": 0.5704493087557604,
+   "auroc_justified_vs_unseen_eq": 0.475
+  },
+  "M3[s2]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7,
+    "claim_ci": [
+     0.5923163971203269,
+     0.789355708373843
+    ],
+    "acc_all": 0.7875,
+    "wrong_claim_rate": 0.1,
+    "acc_among_claimed": 0.8571428571428571
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "acc_all": 0.3,
+    "wrong_claim_rate": 0.625,
+    "acc_among_claimed": 0.3055555555555556
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.6,
+    "claim_ci": [
+     0.445956198273935,
+     0.7365188938759863
+    ],
+    "claim_of_equivalent_member": 0.2
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6249660359590695,
+     0.8768404674532148
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.475,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.475,
+    "claim_ci": [
+     0.32935229550181694,
+     0.6250289314607027
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ]
+   },
+   "threshold": 0.6158298769272951,
+   "cal_acc": 0.78,
+   "auroc_justified_vs_unjustified": 0.5573696145124716,
+   "auroc_justified_vs_unseen_eq": 0.4787698412698413
+  },
+  "M3[s3]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6721300467523076,
+     0.8526690983021762
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.1125,
+    "acc_among_claimed": 0.8548387096774194
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "acc_all": 0.175,
+    "wrong_claim_rate": 0.725,
+    "acc_among_claimed": 0.19444444444444445
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ],
+    "claim_of_equivalent_member": 0.5
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "claim_of_equivalent_member": 0.825
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ]
+   },
+   "threshold": 0.5125059641380945,
+   "cal_acc": 0.73,
+   "auroc_justified_vs_unjustified": 0.5526346604215457,
+   "auroc_justified_vs_unseen_eq": 0.457172131147541
+  },
+  "M5[s1]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.6451511899886556,
+     0.8319389418790569
+    ],
+    "acc_all": 0.7875,
+    "wrong_claim_rate": 0.1,
+    "acc_among_claimed": 0.8666666666666667
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "acc_all": 0.275,
+    "wrong_claim_rate": 0.525,
+    "acc_among_claimed": 0.27586206896551724
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 0.3,
+    "claim_ci": [
+     0.18074670915695296,
+     0.454303106543204
+    ],
+    "claim_of_equivalent_member": 0.3
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.45,
+    "claim_ci": [
+     0.30705075280944694,
+     0.6017117011155924
+    ],
+    "claim_of_equivalent_member": 0.45
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.45,
+    "claim_ci": [
+     0.30705075280944694,
+     0.6017117011155924
+    ],
+    "claim_of_equivalent_member": 0.45
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "acc_all": 0.4,
+    "wrong_claim_rate": 0.375,
+    "acc_among_claimed": 0.4827586206896552
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.575,
+    "claim_ci": [
+     0.42194800436059987,
+     0.7149083147518411
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ]
+   },
+   "threshold": 0.5849307656288147,
+   "cal_acc": 0.75,
+   "auroc_justified_vs_unjustified": 0.6853174603174603,
+   "auroc_justified_vs_unseen_eq": 0.5648809523809524
+  },
+  "M5[s2]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7875,
+    "claim_ci": [
+     0.6857763938182242,
+     0.8628772578296451
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.1125,
+    "acc_among_claimed": 0.8571428571428571
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.6804970794560755,
+     0.9125469700311694
+    ],
+    "acc_all": 0.225,
+    "wrong_claim_rate": 0.65,
+    "acc_among_claimed": 0.21212121212121213
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 0.4,
+    "claim_ci": [
+     0.2634811061240136,
+     0.5540438017260649
+    ],
+    "claim_of_equivalent_member": 0.4
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.55,
+    "claim_ci": [
+     0.39828829888440775,
+     0.6929492471905531
+    ],
+    "claim_of_equivalent_member": 0.55
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.45,
+    "claim_ci": [
+     0.30705075280944694,
+     0.6017117011155924
+    ],
+    "claim_of_equivalent_member": 0.45
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.598057409330299,
+     0.8581303210445048
+    ],
+    "acc_all": 0.45,
+    "wrong_claim_rate": 0.425,
+    "acc_among_claimed": 0.43333333333333335
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.85,
+    "claim_ci": [
+     0.7092737396097997,
+     0.9293890829149256
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ]
+   },
+   "threshold": 0.5667281091213227,
+   "cal_acc": 0.72,
+   "auroc_justified_vs_unjustified": 0.72903981264637,
+   "auroc_justified_vs_unseen_eq": 0.6311475409836066
+  },
+  "M5[s3]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.6451511899886556,
+     0.8319389418790569
+    ],
+    "acc_all": 0.7375,
+    "wrong_claim_rate": 0.125,
+    "acc_among_claimed": 0.8333333333333334
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.85,
+    "claim_ci": [
+     0.7092737396097997,
+     0.9293890829149256
+    ],
+    "acc_all": 0.25,
+    "wrong_claim_rate": 0.6,
+    "acc_among_claimed": 0.29411764705882354
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 0.475,
+    "claim_ci": [
+     0.32935229550181694,
+     0.6250289314607027
+    ],
+    "claim_of_equivalent_member": 0.475
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.95,
+    "claim_ci": [
+     0.834958291820748,
+     0.9861796228538989
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.6,
+    "claim_ci": [
+     0.445956198273935,
+     0.7365188938759863
+    ],
+    "claim_of_equivalent_member": 0.6
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.6804970794560755,
+     0.9125469700311694
+    ],
+    "acc_all": 0.45,
+    "wrong_claim_rate": 0.45,
+    "acc_among_claimed": 0.45454545454545453
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.625,
+    "claim_ci": [
+     0.47032160054531913,
+     0.7577722646420829
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.85,
+    "claim_ci": [
+     0.7092737396097997,
+     0.9293890829149256
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ]
+   },
+   "threshold": 0.5435295462608337,
+   "cal_acc": 0.7,
+   "auroc_justified_vs_unjustified": 0.7026634382566586,
+   "auroc_justified_vs_unseen_eq": 0.5938559322033897
+  },
+  "M6[ens3]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7375,
+    "claim_ci": [
+     0.6318083375343555,
+     0.8214272877399715
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.1125,
+    "acc_among_claimed": 0.847457627118644
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ],
+    "acc_all": 0.3,
+    "wrong_claim_rate": 0.575,
+    "acc_among_claimed": 0.28125
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.575,
+    "claim_ci": [
+     0.42194800436059987,
+     0.7149083147518411
+    ],
+    "claim_of_equivalent_member": 0.25
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ],
+    "claim_of_equivalent_member": 0.675
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.5,
+    "claim_ci": [
+     0.35199278797099753,
+     0.6480072120290025
+    ]
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ]
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ]
+   },
+   "threshold": 0.5776325990756354,
+   "cal_acc": 0.76,
+   "auroc_justified_vs_unjustified": 0.5925644028103044,
+   "auroc_justified_vs_unseen_eq": 0.49590163934426235
+  },
+  "M1s[oracle,sweep]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.6375,
+    "claim_ci": [
+     0.5281059097698362,
+     0.7342936627574055
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.0875,
+    "acc_among_claimed": 0.8627450980392157,
+    "claim_rate_with_gof": 0.625
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.15,
+    "claim_ci": [
+     0.07061091708507435,
+     0.2907262603902003
+    ],
+    "acc_all": 0.6,
+    "wrong_claim_rate": 0.025,
+    "acc_among_claimed": 0.8333333333333334,
+    "claim_rate_with_gof": 0.15
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 0.025,
+    "claim_ci": [
+     0.0044267174077949195,
+     0.1288165948800778
+    ],
+    "claim_of_equivalent_member": 0.025,
+    "claim_rate_with_gof": 0.025
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.7,
+    "claim_ci": [
+     0.545696893456796,
+     0.8192532908430471
+    ],
+    "acc_all": 0.55,
+    "wrong_claim_rate": 0.275,
+    "acc_among_claimed": 0.6071428571428571,
+    "claim_rate_with_gof": 0.675
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.425,
+    "claim_ci": [
+     0.28509168524815875,
+     0.5780519956394001
+    ],
+    "claim_rate_with_gof": 0.425
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_rate_with_gof": 0.0
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.775,
+    "claim_ci": [
+     0.6249660359590695,
+     0.8768404674532148
+    ],
+    "claim_rate_with_gof": 0.55
+   },
+   "threshold": 0.8654491574039618,
+   "cal_acc": 0.77,
+   "auroc_justified_vs_unjustified": 0.7336943793911006,
+   "auroc_justified_vs_unseen_eq": 0.960860655737705,
+   "gof_threshold": 2.0590500571710173,
+   "reasons": {
+    "id": {
+     "n_abstain": 29,
+     "persistent_frac": 0.6551724137931034,
+     "gof_flag_rate_all": 0.0125,
+     "median_dmax": 5.287258587797176
+    },
+    "idnoisy": {
+     "n_abstain": 34,
+     "persistent_frac": 0.9411764705882353,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.7696992473848003
+    },
+    "eqA": {
+     "n_abstain": 39,
+     "persistent_frac": 0.9487179487179487,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "eqB": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "eqC": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 3.501804738003214e-30
+    },
+    "eqD": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "approx": {
+     "n_abstain": 12,
+     "persistent_frac": 0.4166666666666667,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 15.942813255940973
+    },
+    "ooc_sat": {
+     "n_abstain": 23,
+     "persistent_frac": 0.5217391304347826,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 19.011853393574853
+    },
+    "ooc_osc": {
+     "n_abstain": 1,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 1.0,
+     "median_dmax": 24.813312148066522
+    },
+    "ooc_qd": {
+     "n_abstain": 9,
+     "persistent_frac": 0.3333333333333333,
+     "gof_flag_rate_all": 0.325,
+     "median_dmax": 7.6279033130149205
+    }
+   }
+  },
+  "M1[oracle,adaptive]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7125,
+    "claim_ci": [
+     0.6053944721715182,
+     0.8001321399160374
+    ],
+    "acc_all": 0.825,
+    "wrong_claim_rate": 0.025,
+    "acc_among_claimed": 0.9649122807017544,
+    "claim_rate_with_gof": 0.6875
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.15,
+    "claim_ci": [
+     0.07061091708507435,
+     0.2907262603902003
+    ],
+    "acc_all": 0.675,
+    "wrong_claim_rate": 0.025,
+    "acc_among_claimed": 0.8333333333333334,
+    "claim_rate_with_gof": 0.15
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.0,
+    "claim_ci": [
+     -6.938893903907228e-18,
+     0.08762453925039232
+    ],
+    "claim_of_equivalent_member": 0.0,
+    "claim_rate_with_gof": 0.0
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.598057409330299,
+     0.8581303210445048
+    ],
+    "acc_all": 0.675,
+    "wrong_claim_rate": 0.275,
+    "acc_among_claimed": 0.6333333333333333,
+    "claim_rate_with_gof": 0.75
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.525,
+    "claim_ci": [
+     0.37497106853929735,
+     0.6706477044981831
+    ],
+    "claim_rate_with_gof": 0.525
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_rate_with_gof": 0.45
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.55,
+    "claim_ci": [
+     0.39828829888440775,
+     0.6929492471905531
+    ],
+    "claim_rate_with_gof": 0.55
+   },
+   "threshold": 0.9889302703243077,
+   "cal_acc": 0.93,
+   "auroc_justified_vs_unjustified": 0.8392316017316017,
+   "auroc_justified_vs_unseen_eq": 0.9907196969696971,
+   "gof_threshold": 7.015830325414433,
+   "reasons": {
+    "id": {
+     "n_abstain": 23,
+     "persistent_frac": 0.5217391304347826,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 13.060719698831882
+    },
+    "idnoisy": {
+     "n_abstain": 34,
+     "persistent_frac": 0.8823529411764706,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 1.4070720403027526
+    },
+    "eqA": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "eqB": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "eqC": {
+     "n_abstain": 40,
+     "persistent_frac": 0.975,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 1.2054225031097434e-30
+    },
+    "eqD": {
+     "n_abstain": 40,
+     "persistent_frac": 1.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 0.0
+    },
+    "approx": {
+     "n_abstain": 10,
+     "persistent_frac": 0.3,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 14.560805320153698
+    },
+    "ooc_sat": {
+     "n_abstain": 19,
+     "persistent_frac": 0.5263157894736842,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 14.646310064166347
+    },
+    "ooc_osc": {
+     "n_abstain": 5,
+     "persistent_frac": 0.2,
+     "gof_flag_rate_all": 0.525,
+     "median_dmax": 16.486315117919197
+    },
+    "ooc_qd": {
+     "n_abstain": 18,
+     "persistent_frac": 0.3333333333333333,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 8.660519438027732
+    }
+   }
+  },
+  "M7s[cond1,sweep]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.6625,
+    "claim_ci": [
+     0.5535631838362329,
+     0.7565454018777802
+    ],
+    "acc_all": 0.85,
+    "wrong_claim_rate": 0.05,
+    "acc_among_claimed": 0.9245283018867925,
+    "claim_rate_with_gof": 0.6375
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.7,
+    "claim_ci": [
+     0.545696893456796,
+     0.8192532908430471
+    ],
+    "acc_all": 0.375,
+    "wrong_claim_rate": 0.425,
+    "acc_among_claimed": 0.39285714285714285,
+    "claim_rate_with_gof": 0.15
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 0.975
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "claim_of_equivalent_member": 0.075,
+    "claim_rate_with_gof": 0.375
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.025,
+    "claim_rate_with_gof": 0.975
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.775,
+    "claim_rate_with_gof": 0.725
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.925
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.65,
+    "claim_ci": [
+     0.4950559699353738,
+     0.7786566682895086
+    ],
+    "claim_rate_with_gof": 0.65
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_rate_with_gof": 0.325
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "claim_rate_with_gof": 0.85
+   },
+   "threshold": 0.760423269281351,
+   "cal_acc": 0.81,
+   "auroc_justified_vs_unjustified": 0.44616596638655465,
+   "auroc_justified_vs_unseen_eq": 0.40624999999999994,
+   "gof_threshold": 1.4810101318359385,
+   "reasons": {
+    "id": {
+     "n_abstain": 27,
+     "persistent_frac": 0.7037037037037037,
+     "gof_flag_rate_all": 0.0375,
+     "median_dmax": 5.630831956863403
+    },
+    "idnoisy": {
+     "n_abstain": 12,
+     "persistent_frac": 0.6666666666666666,
+     "gof_flag_rate_all": 0.775,
+     "median_dmax": 2.2494338750839233
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 11.858030319213867
+    },
+    "eqB": {
+     "n_abstain": 11,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.45,
+     "median_dmax": 20.883634567260742
+    },
+    "eqC": {
+     "n_abstain": 1,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 24.80176830291748
+    },
+    "eqD": {
+     "n_abstain": 3,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.225,
+     "median_dmax": 14.311120986938477
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.075,
+     "median_dmax": 6.637535095214844
+    },
+    "ooc_sat": {
+     "n_abstain": 14,
+     "persistent_frac": 0.07142857142857142,
+     "gof_flag_rate_all": 0.075,
+     "median_dmax": 11.5642671585083
+    },
+    "ooc_osc": {
+     "n_abstain": 1,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.675,
+     "median_dmax": 22.11699676513672
+    },
+    "ooc_qd": {
+     "n_abstain": 4,
+     "persistent_frac": 0.25,
+     "gof_flag_rate_all": 0.075,
+     "median_dmax": 7.484068870544434
+    }
+   }
+  },
+  "M7[cond1,adaptive]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.6451511899886556,
+     0.8319389418790569
+    ],
+    "acc_all": 0.8125,
+    "wrong_claim_rate": 0.0625,
+    "acc_among_claimed": 0.9166666666666666,
+    "claim_rate_with_gof": 0.725
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "acc_all": 0.525,
+    "wrong_claim_rate": 0.3,
+    "acc_among_claimed": 0.5862068965517241,
+    "claim_rate_with_gof": 0.2
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.05,
+    "claim_rate_with_gof": 0.425
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "claim_of_equivalent_member": 0.4,
+    "claim_rate_with_gof": 0.725
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.775,
+    "claim_rate_with_gof": 0.725
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.95
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.475,
+    "claim_ci": [
+     0.32935229550181694,
+     0.6250289314607027
+    ],
+    "claim_rate_with_gof": 0.45
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_rate_with_gof": 0.5
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.65,
+    "claim_ci": [
+     0.4950559699353738,
+     0.7786566682895086
+    ],
+    "claim_rate_with_gof": 0.65
+   },
+   "threshold": 0.8563409282196979,
+   "cal_acc": 0.83,
+   "auroc_justified_vs_unjustified": 0.5995604395604396,
+   "auroc_justified_vs_unseen_eq": 0.6426923076923077,
+   "gof_threshold": 1.5860432171821595,
+   "reasons": {
+    "id": {
+     "n_abstain": 20,
+     "persistent_frac": 0.9,
+     "gof_flag_rate_all": 0.0375,
+     "median_dmax": 4.4418206214904785
+    },
+    "idnoisy": {
+     "n_abstain": 11,
+     "persistent_frac": 0.6363636363636364,
+     "gof_flag_rate_all": 0.75,
+     "median_dmax": 2.2956364154815674
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 11.306412696838379
+    },
+    "eqB": {
+     "n_abstain": 3,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.55,
+     "median_dmax": 8.546342849731445
+    },
+    "eqC": {
+     "n_abstain": 11,
+     "persistent_frac": 0.18181818181818182,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 6.6850905418396
+    },
+    "eqD": {
+     "n_abstain": 1,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.25,
+     "median_dmax": 11.892405986785889
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 11.24338150024414
+    },
+    "ooc_sat": {
+     "n_abstain": 21,
+     "persistent_frac": 0.38095238095238093,
+     "gof_flag_rate_all": 0.1,
+     "median_dmax": 4.605538845062256
+    },
+    "ooc_osc": {
+     "n_abstain": 3,
+     "persistent_frac": 0.6666666666666666,
+     "gof_flag_rate_all": 0.5,
+     "median_dmax": 19.750747680664062
+    },
+    "ooc_qd": {
+     "n_abstain": 14,
+     "persistent_frac": 0.5,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 4.65280818939209
+    }
+   }
+  },
+  "M7s[cond2,sweep]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.65,
+    "claim_ci": [
+     0.5407980232189245,
+     0.7454560559017032
+    ],
+    "acc_all": 0.7625,
+    "wrong_claim_rate": 0.025,
+    "acc_among_claimed": 0.9615384615384616,
+    "claim_rate_with_gof": 0.6375
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "acc_all": 0.45,
+    "wrong_claim_rate": 0.375,
+    "acc_among_claimed": 0.4827586206896552,
+    "claim_rate_with_gof": 0.15
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 0.95
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ],
+    "claim_of_equivalent_member": 0.1,
+    "claim_rate_with_gof": 0.325
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.025,
+    "claim_rate_with_gof": 0.925
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_of_equivalent_member": 0.625,
+    "claim_rate_with_gof": 0.575
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.95
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.575,
+    "claim_ci": [
+     0.42194800436059987,
+     0.7149083147518411
+    ],
+    "claim_rate_with_gof": 0.55
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "claim_rate_with_gof": 0.0
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.8,
+    "claim_ci": [
+     0.6524239261814333,
+     0.8950013502683314
+    ],
+    "claim_rate_with_gof": 0.75
+   },
+   "threshold": 0.7093189453357787,
+   "cal_acc": 0.81,
+   "auroc_justified_vs_unjustified": 0.5542154566744731,
+   "auroc_justified_vs_unseen_eq": 0.4665983606557377,
+   "gof_threshold": 1.3884106755256658,
+   "reasons": {
+    "id": {
+     "n_abstain": 28,
+     "persistent_frac": 0.5357142857142857,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 6.7618207931518555
+    },
+    "idnoisy": {
+     "n_abstain": 11,
+     "persistent_frac": 0.2727272727272727,
+     "gof_flag_rate_all": 0.8,
+     "median_dmax": 4.947885036468506
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 17.9700984954834
+    },
+    "eqB": {
+     "n_abstain": 8,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.5,
+     "median_dmax": 10.813920497894287
+    },
+    "eqC": {
+     "n_abstain": 3,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 18.232914924621582
+    },
+    "eqD": {
+     "n_abstain": 5,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.375,
+     "median_dmax": 12.448863983154297
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 6.682804584503174
+    },
+    "ooc_sat": {
+     "n_abstain": 17,
+     "persistent_frac": 0.11764705882352941,
+     "gof_flag_rate_all": 0.15,
+     "median_dmax": 12.304728984832764
+    },
+    "ooc_osc": {
+     "n_abstain": 4,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 1.0,
+     "median_dmax": 58.122596740722656
+    },
+    "ooc_qd": {
+     "n_abstain": 8,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.125,
+     "median_dmax": 9.61500358581543
+    }
+   }
+  },
+  "M7[cond2,adaptive]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.7274225612441251,
+     0.8927946101839012
+    ],
+    "acc_all": 0.8125,
+    "wrong_claim_rate": 0.05,
+    "acc_among_claimed": 0.9393939393939394,
+    "claim_rate_with_gof": 0.8125
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.6804970794560755,
+     0.9125469700311694
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.375,
+    "acc_among_claimed": 0.5454545454545454,
+    "claim_rate_with_gof": 0.25
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 1.0
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "claim_of_equivalent_member": 0.075,
+    "claim_rate_with_gof": 0.375
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_of_equivalent_member": 0.3,
+    "claim_rate_with_gof": 0.85
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.975,
+    "claim_ci": [
+     0.8711834051199223,
+     0.9955732825922052
+    ],
+    "claim_of_equivalent_member": 0.6,
+    "claim_rate_with_gof": 0.65
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.975
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.675,
+    "claim_ci": [
+     0.52017458088898,
+     0.7991568303733828
+    ],
+    "claim_rate_with_gof": 0.6
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_rate_with_gof": 0.425
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_rate_with_gof": 0.85
+   },
+   "threshold": 0.747389434055793,
+   "cal_acc": 0.8,
+   "auroc_justified_vs_unjustified": 0.5692857142857143,
+   "auroc_justified_vs_unseen_eq": 0.6340384615384614,
+   "gof_threshold": 1.469217296838761,
+   "reasons": {
+    "id": {
+     "n_abstain": 14,
+     "persistent_frac": 0.9285714285714286,
+     "gof_flag_rate_all": 0.0125,
+     "median_dmax": 4.330780982971191
+    },
+    "idnoisy": {
+     "n_abstain": 7,
+     "persistent_frac": 0.7142857142857143,
+     "gof_flag_rate_all": 0.725,
+     "median_dmax": 4.759164333343506
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 4.81448769569397
+    },
+    "eqB": {
+     "n_abstain": 4,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.55,
+     "median_dmax": 8.093939542770386
+    },
+    "eqC": {
+     "n_abstain": 5,
+     "persistent_frac": 0.2,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 6.9857964515686035
+    },
+    "eqD": {
+     "n_abstain": 1,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.35,
+     "median_dmax": 5.31018853187561
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 5.102581977844238
+    },
+    "ooc_sat": {
+     "n_abstain": 13,
+     "persistent_frac": 0.6153846153846154,
+     "gof_flag_rate_all": 0.2,
+     "median_dmax": 4.455140948295593
+    },
+    "ooc_osc": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.575,
+     "median_dmax": 10.630194187164307
+    },
+    "ooc_qd": {
+     "n_abstain": 5,
+     "persistent_frac": 0.6,
+     "gof_flag_rate_all": 0.025,
+     "median_dmax": 4.550585746765137
+    }
+   }
+  },
+  "M7s[cond3,sweep]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.7125,
+    "claim_ci": [
+     0.6053944721715182,
+     0.8001321399160374
+    ],
+    "acc_all": 0.8,
+    "wrong_claim_rate": 0.0625,
+    "acc_among_claimed": 0.9122807017543859,
+    "claim_rate_with_gof": 0.6875
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "acc_all": 0.35,
+    "wrong_claim_rate": 0.375,
+    "acc_among_claimed": 0.4827586206896552,
+    "claim_rate_with_gof": 0.075
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 0.95
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.85,
+    "claim_ci": [
+     0.7092737396097997,
+     0.9293890829149256
+    ],
+    "claim_of_equivalent_member": 0.05,
+    "claim_rate_with_gof": 0.375
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.025,
+    "claim_rate_with_gof": 0.925
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_of_equivalent_member": 0.625,
+    "claim_rate_with_gof": 0.6
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.95
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.65,
+    "claim_ci": [
+     0.4950559699353738,
+     0.7786566682895086
+    ],
+    "claim_rate_with_gof": 0.625
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_rate_with_gof": 0.075
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.825,
+    "claim_ci": [
+     0.6804970794560755,
+     0.9125469700311694
+    ],
+    "claim_rate_with_gof": 0.7
+   },
+   "threshold": 0.7502658240941877,
+   "cal_acc": 0.84,
+   "auroc_justified_vs_unjustified": 0.4874441964285714,
+   "auroc_justified_vs_unseen_eq": 0.45175781249999997,
+   "gof_threshold": 1.4105254113674173,
+   "reasons": {
+    "id": {
+     "n_abstain": 23,
+     "persistent_frac": 0.8695652173913043,
+     "gof_flag_rate_all": 0.0375,
+     "median_dmax": 4.226086139678955
+    },
+    "idnoisy": {
+     "n_abstain": 11,
+     "persistent_frac": 0.36363636363636365,
+     "gof_flag_rate_all": 0.775,
+     "median_dmax": 1.214822232723236
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 13.632849216461182
+    },
+    "eqB": {
+     "n_abstain": 6,
+     "persistent_frac": 0.16666666666666666,
+     "gof_flag_rate_all": 0.575,
+     "median_dmax": 6.599241733551025
+    },
+    "eqC": {
+     "n_abstain": 3,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.0,
+     "median_dmax": 23.005452156066895
+    },
+    "eqD": {
+     "n_abstain": 5,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.35,
+     "median_dmax": 11.724751472473145
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 5.686583757400513
+    },
+    "ooc_sat": {
+     "n_abstain": 14,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.1,
+     "median_dmax": 11.347793102264404
+    },
+    "ooc_osc": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.925,
+     "median_dmax": 8.189227819442749
+    },
+    "ooc_qd": {
+     "n_abstain": 7,
+     "persistent_frac": 0.42857142857142855,
+     "gof_flag_rate_all": 0.15,
+     "median_dmax": 7.776864528656006
+    }
+   }
+  },
+  "M7[cond3,adaptive]": {
+   "id": {
+    "n": 80,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.618557347158301,
+     0.8108237715226401
+    ],
+    "acc_all": 0.8375,
+    "wrong_claim_rate": 0.05,
+    "acc_among_claimed": 0.9310344827586207,
+    "claim_rate_with_gof": 0.6875
+   },
+   "idnoisy": {
+    "n": 40,
+    "claim_rate": 0.75,
+    "claim_ci": [
+     0.598057409330299,
+     0.8581303210445048
+    ],
+    "acc_all": 0.525,
+    "wrong_claim_rate": 0.375,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.15
+   },
+   "eqA": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 1.0,
+    "claim_rate_with_gof": 0.95
+   },
+   "eqB": {
+    "n": 40,
+    "claim_rate": 0.925,
+    "claim_ci": [
+     0.8013546984090248,
+     0.9741644432281419
+    ],
+    "claim_of_equivalent_member": 0.075,
+    "claim_rate_with_gof": 0.35
+   },
+   "eqC": {
+    "n": 40,
+    "claim_rate": 0.875,
+    "claim_ci": [
+     0.7388757932976187,
+     0.9454058022645873
+    ],
+    "claim_of_equivalent_member": 0.15,
+    "claim_rate_with_gof": 0.825
+   },
+   "eqD": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "claim_of_equivalent_member": 0.675,
+    "claim_rate_with_gof": 0.625
+   },
+   "approx": {
+    "n": 40,
+    "claim_rate": 1.0,
+    "claim_ci": [
+     0.9123754607496077,
+     1.0
+    ],
+    "acc_all": 0.5,
+    "wrong_claim_rate": 0.5,
+    "acc_among_claimed": 0.5,
+    "claim_rate_with_gof": 0.925
+   },
+   "ooc_sat": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "claim_rate_with_gof": 0.625
+   },
+   "ooc_osc": {
+    "n": 40,
+    "claim_rate": 0.9,
+    "claim_ci": [
+     0.7694792561952611,
+     0.9604211124044252
+    ],
+    "claim_rate_with_gof": 0.4
+   },
+   "ooc_qd": {
+    "n": 40,
+    "claim_rate": 0.725,
+    "claim_ci": [
+     0.5716474916687543,
+     0.8389214656685692
+    ],
+    "claim_rate_with_gof": 0.7
+   },
+   "threshold": 0.7976713427194941,
+   "cal_acc": 0.81,
+   "auroc_justified_vs_unjustified": 0.49554904051172705,
+   "auroc_justified_vs_unseen_eq": 0.5244402985074627,
+   "gof_threshold": 1.4947178149223335,
+   "reasons": {
+    "id": {
+     "n_abstain": 22,
+     "persistent_frac": 0.8181818181818182,
+     "gof_flag_rate_all": 0.0375,
+     "median_dmax": 3.7274441719055176
+    },
+    "idnoisy": {
+     "n_abstain": 10,
+     "persistent_frac": 0.6,
+     "gof_flag_rate_all": 0.775,
+     "median_dmax": 3.317848801612854
+    },
+    "eqA": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 12.364562511444092
+    },
+    "eqB": {
+     "n_abstain": 3,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.65,
+     "median_dmax": 9.927619934082031
+    },
+    "eqC": {
+     "n_abstain": 5,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.05,
+     "median_dmax": 7.9031288623809814
+    },
+    "eqD": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.375,
+     "median_dmax": 11.901895999908447
+    },
+    "approx": {
+     "n_abstain": 0,
+     "persistent_frac": null,
+     "gof_flag_rate_all": 0.075,
+     "median_dmax": 10.769505500793457
+    },
+    "ooc_sat": {
+     "n_abstain": 11,
+     "persistent_frac": 0.2727272727272727,
+     "gof_flag_rate_all": 0.25,
+     "median_dmax": 7.873551607131958
+    },
+    "ooc_osc": {
+     "n_abstain": 4,
+     "persistent_frac": 0.0,
+     "gof_flag_rate_all": 0.6,
+     "median_dmax": 12.70052433013916
+    },
+    "ooc_qd": {
+     "n_abstain": 11,
+     "persistent_frac": 0.5454545454545454,
+     "gof_flag_rate_all": 0.075,
+     "median_dmax": 4.621606111526489
+    }
+   }
+  }
+ },
+ "timing_s": 23.92045283317566
+}

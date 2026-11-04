@@ -170,3 +170,46 @@ def info_nce(e1, e2, tau=0.2):
     logits = e1 @ e2.t() / tau
     tgt = torch.arange(e1.shape[0], device=e1.device)
     return 0.5 * (F.cross_entropy(logits, tgt) + F.cross_entropy(logits.t(), tgt))
+
+
+class CondGRU(nn.Module):
+    """Class-conditional deterministic latent dynamics: p(y_t | y_<t, a_<=t, class c). One network, one-hot class input.
+    Used as a bank of learned per-class simulators (generative classifier + imagined interventional responses)."""
+
+    def __init__(self, H=128, E=64, ncls=6):
+        super().__init__()
+        self.H, self.ncls = H, ncls
+        self.inp = nn.Sequential(nn.Linear(2 + ncls, E), nn.ELU())
+        self.cell = nn.GRUCell(E, H)
+        self.head = nn.Sequential(nn.Linear(H, E), nn.ELU(), nn.Linear(E, 2))
+
+    def _oh(self, c, dev=None):
+        return F.one_hot(c.long(), self.ncls).float()
+
+    def forward(self, a, y, c, **kw):
+        B, T = a.shape
+        oh = self._oh(c); h = a.new_zeros(B, self.H); yp = a.new_zeros(B, 1)
+        nll, mus, lss = [], [], []
+        for t in range(T):
+            h = self.cell(self.inp(torch.cat([yp, a[:, t:t + 1], oh], -1)), h)
+            out = self.head(h); mu, ls = out[:, :1], out[:, 1:].clamp(-5, 2)
+            nll.append(gauss_nll(y[:, t:t + 1], mu, ls).squeeze(-1)); mus.append(mu.squeeze(-1)); lss.append(ls.squeeze(-1))
+            yp = y[:, t:t + 1]
+        return dict(nll=torch.stack(nll, 1), kl=torch.zeros(B, T), mu=torch.stack(mus, 1), ls=torch.stack(lss, 1), feat=h)
+
+    @torch.no_grad()
+    def filter(self, a, y, c):
+        o = self.forward(a, y, c)
+        B, T = a.shape
+        oh = self._oh(c); h = a.new_zeros(B, self.H); yp = a.new_zeros(B, 1)
+        for t in range(T):
+            h = self.cell(self.inp(torch.cat([yp, a[:, t:t + 1], oh], -1)), h); yp = y[:, t:t + 1]
+        return h, yp, o["mu"], o["ls"], o["nll"]
+
+    @torch.no_grad()
+    def rollout(self, h, yp, acts, c):
+        oh = self._oh(c); mus = []
+        for t in range(acts.shape[1]):
+            h = self.cell(self.inp(torch.cat([yp, acts[:, t:t + 1], oh], -1)), h)
+            mu = self.head(h)[:, :1]; mus.append(mu[:, 0]); yp = mu
+        return torch.stack(mus, 1)

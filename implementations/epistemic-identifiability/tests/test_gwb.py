@@ -163,3 +163,84 @@ def test_matched_oracle_restricted_prior_and_hand_features_shape():
 def test_untrained_init_checkpoint_has_no_training(tmp_path):
     tr.main(["--model", "det", "--steps", "0", "--H", "16", "--out", str(tmp_path / "u"), "--seed", "1"])
     assert os.path.exists(tmp_path / "u" / "final.pt")
+
+
+# ---------------- epistemic extension ----------------
+def test_epi_equivalence_sources_have_identical_law():
+    from eid.gwb import epi
+    for kind in ("eqA", "eqB", "eqC", "eqD"):
+        inst = epi.sample_epi(120, kind, seed=3)
+        assert (inst["label"] == -1).all() and inst["eqmask"].sum(1).min() >= 2
+        for pk in ("uniform", "sweep", "block", "pulse"):
+            u = _u(120, kind=pk)
+            x = epi.x_of(inst, u)
+            if kind == "eqC":   # equivalent to the reference (delay 0) implementation of the same K,b
+                ref = gen.simulate(torch.full((120,), 3), inst["K"], inst["b"], torch.zeros(120, dtype=torch.float64), u)
+                assert torch.allclose(x, ref), (kind, pk)
+            else:
+                assert x.abs().max() == 0.0, (kind, pk)
+
+
+def test_eqD_all_classes_of_family_identical_and_oracle_does_not_claim():
+    from eid.gwb import epi
+    inst = epi.sample_epi(200, "eqD", seed=4)
+    g = torch.Generator().manual_seed(1)
+    u, y = agents.interact("uniform", inst, 48, g)
+    with epi.EpiGrid():
+        pr = ev.oracle_probs(inst, u, y)
+    assert pr.max(1).max() < 0.4 + 1e-9
+
+
+def test_approx_family_is_distinguishable_but_weakly_and_ooc_differs_from_all_classes():
+    from eid.gwb import epi
+    ap = epi.sample_epi(100, "approx", seed=5)
+    full = torch.ones(1, 48, dtype=torch.float64)
+    d_other = epi.max_divergence(ap, 0, 0.0, [full, -full])              # vs continuous
+    assert (d_other > 0).all()
+    ooc = epi.sample_epi(60, "ooc_osc", seed=6)
+    u = _u(60, kind="sweep")
+    xo = epi.x_of(ooc, u)
+    best = torch.stack([((xo - gen.simulate(torch.full((60,), c), ooc["K"], ooc["b"], torch.full((60,), pv, dtype=torch.float64), u)) ** 2).sum(-1)
+                        for c, pv in gen.HGRID[0] + gen.HGRID[1]], 1).min(1).values
+    assert (best / ooc["sigma"] ** 2).mean() > 10.0                         # no grid member explains it
+
+
+def test_cond_model_shapes_and_class_dependence():
+    torch.manual_seed(0)
+    m = models.CondGRU(H=16)
+    a = _u(5, 20).float(); y = torch.randn(5, 20)
+    o0 = m(a, y, torch.zeros(5, dtype=torch.long)); o1 = m(a, y, torch.ones(5, dtype=torch.long))
+    assert o0["nll"].shape == (5, 20) and not torch.allclose(o0["mu"], o1["mu"])
+    h, yp, mu, ls, nll = m.filter(a, y, torch.zeros(5, dtype=torch.long))
+    assert m.rollout(h, yp, a[:, :8], torch.zeros(5, dtype=torch.long)).shape == (5, 8)
+
+
+def test_epi_agents_sequential_protocol_and_oracle_persistence():
+    from eid.gwb import epi, epi_agents as ea
+    g = torch.Generator().manual_seed(2)
+    for kind, expect_small in (("eqD", True), ("id", False)):
+        inst = epi.sample_epi(60, kind, seed=8)
+        eps = torch.randn(60, 48, generator=g, dtype=torch.float64); u0 = ea.passive_block(60, g)
+        chooser = lambda blk, u, y, inst: torch.full((u.shape[0],), 3)
+        u, y = ea.run_seq(inst, chooser, u0, eps)
+        assert u.shape == (60, 48) and torch.equal(u[:, :8], u0) and torch.allclose(u[:, 8:16], agents.CAND[3].expand(60, 8))
+        with epi.EpiGrid():
+            o = ea.oracle_outputs(inst, u, y)
+        assert np.allclose(o["post"].sum(1), 1)
+        if expect_small:
+            assert (o["dmax"] < 1e-6).all()                       # exact null-actuation: no candidate separates the top-2
+        else:
+            assert np.median(o["dmax"]) > ea.DELTA_PERSIST       # identifiable: some next block separates top-2 (median)
+
+
+def test_cond_posterior_and_dmax_shapes_untrained():
+    from eid.gwb import epi, epi_agents as ea
+    torch.manual_seed(0)
+    m = models.CondGRU(H=16)
+    inst = epi.sample_epi(10, "id", seed=9); g = torch.Generator().manual_seed(1)
+    u = _u(10, kind="sweep"); eps = torch.randn(10, 48, generator=g, dtype=torch.float64)
+    y = epi.x_of(inst, u) + inst["sigma"][:, None] * eps
+    o = ea.m7_outputs(m, u, y)
+    assert o["post"].shape == (10, 6) and np.allclose(o["post"].sum(1), 1) and o["post_blocks"].shape == (10, 6, 6) and (o["dmax"] >= 0).all()
+    idx = ea.cond_choose(m, u[:, :16], y[:, :16], inst)
+    assert idx.shape == (10,) and idx.max() < agents.NC
