@@ -1,0 +1,7 @@
+free-running imagination of x3 under the 4 probes after context (known families, 90 instances); RMSE vs true noiseless x3
+B 0 large:0.284 small:0.049 neg:0.270 tri:0.153
+B 2 large:0.177 small:0.041 neg:0.165 tri:0.107
+B 4 large:0.124 small:0.055 neg:0.166 tri:0.095
+B 8 large:0.133 small:0.060 neg:0.171 tri:0.103
+reference RMSE of predicting the training-family mean trajectory: large:0.268 small:0.042 neg:0.268 tri:0.149
+typical x3 amplitude (rms): large:0.845 small:0.238 neg:0.845 tri:0.540

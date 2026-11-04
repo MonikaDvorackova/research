@@ -1,0 +1,1 @@
+{"kind": "reg", "seed": 1, "steps": 4000, "batch": 32, "threads": 2, "out": "results/mdw_dev/runs/reg_s1", "budget_s": 2400}
