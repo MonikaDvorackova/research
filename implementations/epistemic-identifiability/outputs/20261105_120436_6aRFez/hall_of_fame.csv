@@ -1,0 +1,12 @@
+Complexity,Loss,Equation
+1,0.29587117,"x2h"
+2,0.2712987,"abs(x)"
+4,0.19343457,"square(x / 0.80321187)"
+5,0.19167827,"cube(abs(x)) * 1.7082311"
+6,0.18928392,"square(square(tanh(x)) * 2.1892664)"
+7,0.18909535,"tanh(square(tanh(square(x)))) * 3.016943"
+8,0.18581192,"square(sin(cube(x) * -2.2317052) * -1.1763674)"
+9,0.18540742,"square(sin(sin(cube(x) * -2.1643934)) * -1.378584)"
+12,0.18526332,"square((sin(x) * 1.5154475) * sqrt_abs(sin(cube(x * 1.3626239))))"
+15,0.18434508,"square((sin(sin(sin(cube(x) * -2.113085))) * sign(max(l3, l7))) * -1.5481269)"
+20,0.18433996,"square(sin(abs(cube(sign(max(l7, x))) * sin(sin(sin(cube(x) * -1.8771621)) * -1.2533205))) * -1.5074639)"
