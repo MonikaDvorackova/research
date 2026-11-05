@@ -37,6 +37,7 @@ def thr(cal, kind, B):
 def discover(U, Y, B, cal, mode, order=STAGE_ORDER):
     """One revision: returns the agent's current explanation with the full generation trace."""
     t0 = time.time(); al, be, sg, st = fit_state(U, Y); tr = []; nc = 0
+    if callable(order): order = order(U, Y, st, sg)
     crit = lambda h: lang.nlp(lang.episode_pvalues(h, al, be, U, Y, sg).min())
     cin = thr(cal, "in", B)
     if mode == "static_all":
@@ -128,3 +129,28 @@ def decide(rec, cal, mode="full"):
 def make_tests(inst, k):
     rng = np.random.default_rng(1_000_000 + k); Ut = np.stack(E.random_programmes(24, rng))
     return Ut, np.stack([bench.simulate(inst, u)[1] for u in Ut])
+
+
+def sweep_ids(n_total):
+    """Episode ids of the matched schedule used by sweepB agents and all baselines: E0, E1, SWEEP_B, then the lowest unused pool index."""
+    ids = [-1, IDX["u1 +1"]]
+    for i in E.SWEEP_B:
+        if len(ids) >= n_total: break
+        if i not in ids: ids.append(i)
+    while len(ids) < n_total: ids.append(next(i for i in range(len(POOL)) if i not in ids))
+    return ids
+
+
+def propose_order(U, Y, st, x2h):
+    """World-model role: order the expansion stages by equation-error evidence on a reconstructed hidden state.  For each stage the best single-column regression
+    of the drive phi = d x2hat/dt + a x2hat - k u2 on the stage's candidate signals (BIC); stages are tried best-first."""
+    from scipy.signal import savgol_filter
+    xe, xm = H0.x1_ends_mid(U[..., 0], st["al"], st["be"]); D = (savgol_filter(x2h, 9, 3, deriv=1, delta=bench.DT, axis=-1) + st["a"] * x2h - st["k"] * U[..., 1]).ravel(); n = D.size
+    def best(sigs):
+        s = np.inf
+        for v in sigs:
+            A = np.stack([v.ravel()], 1); w = np.linalg.lstsq(A, D, rcond=None)[0]; sse = ((D - A @ w) ** 2).sum(); s = min(s, n * np.log(sse / n) + 2 * np.log(n))
+        return s
+    sc = {stg: best([lang.term_sig(k, xe, xm) for k in lang.keys_stage(stg)]) for stg in (1, 2, 3)}
+    sc[4] = best([xm * x2h])
+    return tuple(sorted(sc, key=sc.get))

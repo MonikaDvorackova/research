@@ -161,3 +161,32 @@ def kalman_prof(U, Y, st, sg):
     y, u2 = Y[..., 1], U[..., 1]; th = lambda q: np.log([st["a"], st["b3"], max(st["k"], 0.05), q])
     q = min(QGRID, key=lambda q: _kf(y, u2, th(q), sg))
     return _kf(y, u2, th(q), sg, smooth=True), q
+
+
+# ------------------------------------- role A: symbolic regression on raw observations (no latent state)
+RAW_NAMES = ["x"] + [f"l{k}" for k in LAGS] + ["x3", "u2"]
+
+
+def raw_data(U, Y, st):
+    xe, xm = H0.x1_ends_mid(U[..., 0], st["al"], st["be"]); y3 = savgol_filter(Y[..., 1], 9, 3, axis=-1); d3 = savgol_filter(Y[..., 1], 9, 3, deriv=1, delta=DT, axis=-1)
+    V = np.stack([xm] + lagmat(xe) + [y3, U[..., 1]], -1); return V.reshape(-1, V.shape[-1]), d3.ravel()
+
+
+def simulate_raw(f, st, Ut):
+    """x3' = f([x1 mid, x1 lags, x3, u2]) - a first-order observed-variable model (no latent state)."""
+    xe, xm = H0.x1_ends_mid(Ut[..., 0], st["al"], st["be"]); L = lagmat(xe); R = Ut.shape[0]; h = DT / SUB; x3 = np.zeros(R); out = np.empty((R, T)); div = False
+    for t in range(T):
+        for _ in range(SUB):
+            V = np.stack([xm[:, t]] + [l[:, t] for l in L] + [x3, Ut[:, t, 1]], 1)
+            x3 = np.clip(x3 + h * np.clip(np.asarray(f(V), float).reshape(-1), -CLIP, CLIP), -CLIP, CLIP)
+        out[:, t] = x3
+    return out, div
+
+
+def pysr_fit_raw(V, D, seed, niter=40, timeout=60):
+    from pysr import PySRRegressor
+    m = PySRRegressor(niterations=niter, populations=12, population_size=30, maxsize=22, parallelism="serial", deterministic=True, random_state=seed, progress=False, verbosity=0,
+                      timeout_in_seconds=timeout, model_selection="best", binary_operators=["+", "-", "*", "/", "max"],
+                      unary_operators=["square", "cube", "tanh", "abs", "sin", "exp", "sign", "sqrt_abs(x) = sqrt(abs(x))"],
+                      extra_sympy_mappings={"sqrt_abs": lambda x: __import__("sympy").sqrt(__import__("sympy").Abs(x))})
+    m.fit(V, D, variable_names=RAW_NAMES); return m
