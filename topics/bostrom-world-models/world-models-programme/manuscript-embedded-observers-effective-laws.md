@@ -1,3 +1,5 @@
+> **RESEARCH STATUS — WITHDRAWN AS ORIGINAL-RESEARCH MANUSCRIPT (2026-11-05).** This text was drafted prematurely before establishing a novel research result. It is retained only as a background/conceptual working draft; it must not be submitted or described as a completed scientific contribution. Active research continues in `technical-investigation-counterfactual-coupling.md`. No new theorem or discovery is claimed.
+
 # What Can an Embedded Observer Know? Behavioural Equivalence, World Models, and the Limits of Simulation Detection
 
 **Manuscript draft — conceptual and formal analysis, 5 November 2026.**  
