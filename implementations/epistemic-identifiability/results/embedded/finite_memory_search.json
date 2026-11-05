@@ -1,0 +1,32 @@
+{
+ "K1_m2": {
+  "opt_error": 0.3333333349366886,
+  "hellman_cover_floor": 0.3333333333333333,
+  "hc_half_memory": 0.5
+ },
+ "K1_m3": {
+  "opt_error": 0.20093845182720865,
+  "hellman_cover_floor": 0.2,
+  "hc_half_memory": 0.5
+ },
+ "K1_m4": {
+  "opt_error": 0.22131551811229316,
+  "hellman_cover_floor": 0.1111111111111111,
+  "hc_half_memory": 0.3333333333333333
+ },
+ "K2_m2": {
+  "opt_error": 0.4166666666666667,
+  "hellman_cover_floor": 0.3333333333333333,
+  "hc_half_memory": 0.5
+ },
+ "K2_m3": {
+  "opt_error": 0.3339976421597802,
+  "hellman_cover_floor": 0.2,
+  "hc_half_memory": 0.5
+ },
+ "K2_m4": {
+  "opt_error": 0.2634232456544069,
+  "hellman_cover_floor": 0.1111111111111111,
+  "hc_half_memory": 0.3333333333333333
+ }
+}
