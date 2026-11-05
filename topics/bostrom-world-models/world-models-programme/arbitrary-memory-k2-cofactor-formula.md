@@ -103,3 +103,6 @@ for m, expected in [(4,s.Rational(1,3)),
 ~~~
 
 **Next mathematical target:** Prove a uniform single-crossing sign theorem for the reflected phase-average laws and find a tractable recurrence for the cofactors. Independently check prior-art literature on finite-state binary hypothesis testing and stationary Markov-chain tree formulas. Novelty unverified.
+
+## Update 2026-11-06
+The absolute values in the TV formula can be removed: by Theorem 2c of `mlr-and-single-crossing-theorem.md` (single crossing, proved), TV_m = Σ_{i>(m−1)/2} (μ_+(i) − μ_−(i)). The "numerical evidence only" remark on single crossing is superseded. Caveat from `memory-hierarchy-and-walk-nonoptimality.md`: the formula describes the reflecting-walk observer, which is not optimal among m-state observers.

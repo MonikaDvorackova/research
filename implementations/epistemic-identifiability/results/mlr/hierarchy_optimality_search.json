@@ -1,0 +1,22 @@
+{
+ "monotone_in_m_violations": [],
+ "min_relative_increment": -5.218048215738259e-15,
+ "optimality_search": {
+  "m3_K2_c0.2": {
+   "best_found": 0.994902467080379,
+   "reflecting_walk": 0.2714932126696833
+  },
+  "m3_K2_c0.4": {
+   "best_found": 0.7999962347658978,
+   "reflecting_walk": 0.5741626794258374
+  },
+  "m3_K3_c0.3": {
+   "best_found": 0.4000026442693736,
+   "reflecting_walk": 0.26515151515151514
+  },
+  "m4_K2_c0.2": {
+   "best_found": 0.4448476959074657,
+   "reflecting_walk": 0.39999999999999997
+  }
+ }
+}

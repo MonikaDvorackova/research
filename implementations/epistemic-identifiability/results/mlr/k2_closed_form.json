@@ -1,0 +1,5 @@
+{
+ "max_error_even_m_4_to_40": 4.346523141407488e-14,
+ "TV6_difference_symbolic": "0",
+ "TV10_closed_form": "c*(4*c**2 - 4*c + 5)*(4*c**2 + 4*c + 5)/(16*c**4 + 40*c**2 + 5)"
+}

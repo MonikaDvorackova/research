@@ -57,3 +57,6 @@ because F(i,1)>F(i,0) for every i when m≥2. This contradicts equality of the m
 Seek a **likelihood-ratio ordering** or total-positivity property for the periodic stationary laws. Such a stronger order would imply single crossing of the signed masses, but it must be proved for the actual K-step transition products; ordinary stochastic dominance is insufficient. Another option is to construct a counterexample to single crossing for some m,K,c before pursuing a universal theorem.
 
 **Novelty:** unverified; monotone coupling itself is standard.
+
+## Update 2026-11-06 (supersedes the "does not prove" caveats)
+Single crossing and strict monotone likelihood ratio ordering are now **proved** for all m ≥ 2, K ≥ 1, 0 < c < 1/2 in `mlr-and-single-crossing-theorem.md`, via invariance of the cone of nondecreasing mass functions under the informative and fair kernels plus mirror symmetry. Stochastic dominance (above) remains correct and is implied. The statement that strict dominance does not by itself give single crossing remains true as a logical remark.

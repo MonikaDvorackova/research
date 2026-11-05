@@ -1,0 +1,8 @@
+{
+ "cone_min_increment": 0.0,
+ "exact_cases": 175,
+ "exact_nonmonotone": 0,
+ "exact_mirror_failures": 0,
+ "avg_min_increment_over_max": -9.97321433886261e-17,
+ "mlr_min_relative_cross": 0.00013332444488874345
+}

@@ -1,0 +1,32 @@
+{
+ "m2_K2_c0.2": {
+  "best_found": 0.1999599999339367,
+  "reflecting_walk": 0.2,
+  "exceeds": false
+ },
+ "m3_K2_c0.2": {
+  "best_found": 0.38809104752127643,
+  "reflecting_walk": 0.2714932126696833,
+  "exceeds": true
+ },
+ "m3_K2_c0.4": {
+  "best_found": 0.7793822492025835,
+  "reflecting_walk": 0.5741626794258374,
+  "exceeds": true
+ },
+ "m3_K3_c0.3": {
+  "best_found": 0.38759951333991505,
+  "reflecting_walk": 0.26515151515151514,
+  "exceeds": true
+ },
+ "m4_K2_c0.2": {
+  "best_found": 0.4676693660670598,
+  "reflecting_walk": 0.39999999999999997,
+  "exceeds": true
+ },
+ "m4_K3_c0.3": {
+  "best_found": 0.5074165786498457,
+  "reflecting_walk": 0.39999999999999986,
+  "exceeds": true
+ }
+}
