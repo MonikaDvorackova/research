@@ -1,0 +1,28 @@
+name: Random-phase exact certificate
+
+on:
+  push:
+    paths:
+      - 'topics/bostrom-world-models/world-models-programme/random-phase-independent-audit.py'
+      - '.github/workflows/random-phase-certificate.yml'
+  pull_request:
+    paths:
+      - 'topics/bostrom-world-models/world-models-programme/random-phase-independent-audit.py'
+      - '.github/workflows/random-phase-certificate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-rational-certificate:
+    name: Verify 729 deterministic rules and stochastic witnesses
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run exact rational certificate
+        run: python topics/bostrom-world-models/world-models-programme/random-phase-independent-audit.py
