@@ -1,12 +1,12 @@
 # Exact spectral slowdown of the three-state stochastic observer
 
-Date: 2026-11-06. Independently checked with exact SymPy symbolic arithmetic. This is a result for the explicit family, not a global mixing-time theorem.
+Date: 2026-11-06. Corrected 2026-11-06 after a fresh exact SymPy audit: the characteristic polynomial previously contained an incorrect (1-epsilon)^2 factor; the correct factor is (2-epsilon)^2. Reproduction assertion now passes. This is a result for the explicit family, not a global mixing-time theorem.
 
 For 0<c<1/2 and 0<epsilon<1, let T0=[[1-epsilon,epsilon,0],[0,0,1],[0,0,1]] and T1=[[1,0,0],[1,0,0],[0,epsilon,1-epsilon]]. Put B=(T0+T1)/2, A_h=(1/2-h*c)*T0+(1/2+h*c)*T1 and P_h=A_h*B.
 
 **Exact theorem.** For either h=+1 or -1, the characteristic polynomial is
 
-    det(xI-P_h)=(x-1)*(x^2-x+epsilon*x-epsilon^2*x/2+epsilon^2*(1-epsilon)^2*(1-4*c^2)/16).
+    det(xI-P_h)=(x-1)*(x^2-x+epsilon*x-epsilon^2*x/2+epsilon^2*(2-epsilon)^2*(1-4*c^2)/16).
 
 The nontrivial eigenvalue approaching 1 as epsilon decreases is lambda_2=1-epsilon+O_c(epsilon^2). Thus the spectral relaxation gap is epsilon+O_c(epsilon^2) and the characteristic relaxation scale is asymptotically 1/epsilon periods, i.e. 2/epsilon observations. This is not a sharp mixing-time bound with uniform constants.
 
@@ -30,7 +30,7 @@ c,e,x=s.symbols('c e x',positive=True)
 T0=s.Matrix([[1-e,e,0],[0,0,1],[0,0,1]])
 T1=s.Matrix([[1,0,0],[1,0,0],[0,e,1-e]])
 B=(T0+T1)/2
-q=x*x-x+e*x-e*e*x/2+e*e*(1-e)**2*(1-4*c*c)/16
+q=x*x-x+e*x-e*e*x/2+e*e*(2-e)**2*(1-4*c*c)/16
 for h in (1,-1):
  A=(s.Rational(1,2)-h*c)*T0+(s.Rational(1,2)+h*c)*T1
  assert s.factor((A*B).charpoly(x).as_expr()-(x-1)*q)==0
