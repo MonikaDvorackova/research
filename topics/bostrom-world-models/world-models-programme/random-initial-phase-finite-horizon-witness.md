@@ -34,12 +34,12 @@ Six deterministic reflecting-walk relabelings maximize both (A) and (B) at c=1/5
 
 **Crucial discovery:** epsilon=7/10 fails, but this is NOT a counterexample to stochastic advantage. Varying epsilon in the same stochastic family recovers strict advantages under both conventions:
 
-- For (A), epsilon=9/10, signed law difference is \((9403c/7500,0,-9403c/7500)\). At c=1/5 its TV is **9403/37500**, which exceeds the exact deterministic maximum 1/4 by **7/37500**.
+- For (A), epsilon=9/10, signed law difference is \((9403c/7500,0,-9403c/7500)\). At c=1/5 its TV is **9403/37500**, which exceeds the exact deterministic maximum 1/4 by **7/9375**.
 - For (B), epsilon=17/20, signed law difference is
 \[
 \left(\frac{c(394517545+22626388c^2)}{307200000},0,-\frac{c(394517545+22626388c^2)}{307200000}\right).
 \]
-At c=1/5 its TV is **9885565013/38400000000**, which exceeds 1529/6000 by **?** (compute exactly before quoting).
+At c=1/5 its TV is **9885565013/38400000000**, which exceeds 1529/6000 by **33321671/12800000000**.
 
 Therefore a *genuine random-initial-phase finite-horizon stochastic advantage exists at least at c=1/5* under both readout conventions, with **different witnesses** from the original epsilon=7/10 construction.
 
