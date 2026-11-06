@@ -41,7 +41,6 @@ Ablations (each about 10 minutes): `abl_relu128` (different architecture), `abl_
 
 `configs/smoke.yaml` is a seconds-long configuration used by the tests. Results written to `results/` are the actual outputs of the executed configuration; see [`results/README.md`](results/README.md).
 
-
 ### Phase 5 additions (Bayesian observers, partially observed benchmark, adversarial validation)
 
 | Component | Files |
