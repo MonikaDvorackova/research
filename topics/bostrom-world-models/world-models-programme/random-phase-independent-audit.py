@@ -48,3 +48,25 @@ for kind,e,bound in [('terminal',F(9,10),F(1,4)),('phase',F(17,20),F(1529,6000))
     score=sum(abs(x) for x in d)/2
     assert score>bound,(kind,score,bound)
     print('PASS witness',kind,score,'gap',score-bound)
+
+# Polynomial identity checks: signed differences are odd degree <=3,
+# so equality at two distinct nonzero squared biases proves all-bias identity.
+def assert_signed_identity(a,b,kind,formula):
+    for c in (F(1,5),F(2,5)):
+        d=signed(a,b,c,kind)
+        z=formula(c)
+        assert sorted(d)==[-z,F(0),z],(kind,c,d,z)
+    print('PASS symbolic-degree identity',kind)
+a=mat((0,0,1));b=mat((1,2,2))
+assert_signed_identity(a,b,'terminal',lambda c:5*c/4)
+assert_signed_identity(a,b,'phase',lambda c:c*(61+4*c*c)/48)
+a,b=stochastic(F(9,10))
+assert_signed_identity(a,b,'terminal',lambda c:9403*c/7500)
+a,b=stochastic(F(17,20))
+assert_signed_identity(a,b,'phase',lambda c:c*(394517545+22626388*c*c)/307200000)
+for c in (F(1,5),F(2,5)):
+    terminal=9403*c/7500-5*c/4
+    phase=c*(394517545+22626388*c*c)/307200000-c*(61+4*c*c)/48
+    assert terminal==7*c/1875 and terminal>0
+    assert phase==c*(1372515-991204*c*c)/102400000 and phase>0
+print('PASS exact gap polynomial identities')
