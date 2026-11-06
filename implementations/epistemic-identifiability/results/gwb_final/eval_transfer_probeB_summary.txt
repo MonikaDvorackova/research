@@ -1,0 +1,41 @@
+PREDICTIVE excess NLL | rollout16 RMSE/sigma | cover90  (mean±sd over training seeds)
+  trainedAonly_pred uniform  0.400 | 0.535 | 0.779
+  trainedAonly_pred sweep    0.569 | 1.300 | 0.761
+  trainedAonly_ici uniform  0.399 | 0.515 | 0.777
+  trainedAonly_ici sweep    0.591 | 1.257 | 0.747
+  trainedBonly_pred uniform  0.252 | 0.789 | 0.940
+  trainedBonly_pred sweep    0.338 | 2.137 | 0.930
+  trainedBonly_ici uniform  0.249 | 0.681 | 0.950
+  trainedBonly_ici sweep    0.323 | 2.265 | 0.939
+  trainedBoth_pred uniform  0.100 | 0.391 | 0.907
+  trainedBoth_pred sweep    0.140 | 0.868 | 0.909
+  trainedBoth_ici uniform  0.108 | 0.415 | 0.895
+  trainedBoth_ici sweep    0.154 | 0.918 | 0.900
+  untrained      uniform  1.105 | 1.233 | 0.997
+  untrained      sweep    1.155 | 2.506 | 0.986
+
+== uniform: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  trainedAonly_pred 0.691 | 0.660 | 0.436 | 0.036 | 0.544/0.252 | 0.000/0.128
+  trainedAonly_ici 0.703 | 0.692 | 0.468 | 0.041 | 0.780/0.310 | 0.000/0.152
+  trainedBonly_pred 0.800 | 0.786 | 0.538 | 0.032 | 0.690/0.510 | 0.002/0.284
+  trainedBonly_ici 0.809 | 0.800 | 0.578 | 0.044 | 0.756/0.570 | 0.000/0.338
+  trainedBoth_pred 0.795 | 0.758 | 0.526 | 0.023 | 0.978/0.392 | 0.002/0.148
+  trainedBoth_ici 0.776 | 0.748 | 0.558 | 0.037 | 0.944/0.350 | 0.002/0.188
+  untrained      0.487 | 0.432 | 0.414 | 0.039 | 0.000/0.006 | 0.000/0.008
+  oracle_bayes         0.894 | 0.904 | 0.670 | ece 0.017 | claim 0.00/0.03
+  oracle_matched_prior 0.902 | 0.754 | 0.658
+  handfeat_gbm         0.765 | 0.564 | 0.496 | ece 0.159 | claim 0.99/0.79
+  leak actions-only acc 0.321   oracle id CI [0.873, 0.915]
+
+== sweep: ID acc | hoparam | hosigma | ECE(id) | claim eqA/eqB plain | claim eqA/eqB withEA
+  trainedAonly_pred 0.925 | 0.966 | 0.668 | 0.010 | 0.730/0.904 | 0.000/0.014
+  trainedAonly_ici 0.910 | 0.976 | 0.646 | 0.011 | 0.602/0.554 | 0.000/0.072
+  trainedBonly_pred 0.929 | 0.974 | 0.656 | 0.011 | 0.910/0.700 | 0.000/0.102
+  trainedBonly_ici 0.926 | 0.968 | 0.706 | 0.011 | 0.274/0.510 | 0.000/0.114
+  trainedBoth_pred 0.935 | 0.988 | 0.620 | 0.024 | 0.994/0.728 | 0.000/0.224
+  trainedBoth_ici 0.925 | 0.984 | 0.634 | 0.013 | 0.584/0.674 | 0.000/0.328
+  untrained      0.880 | 0.930 | 0.586 | 0.074 | 0.026/0.170 | 0.000/0.068
+  oracle_bayes         0.925 | 0.992 | 0.736 | ece 0.019 | claim 0.00/0.00
+  oracle_matched_prior 0.951 | 0.988 | 0.756
+  handfeat_gbm         0.907 | 0.958 | 0.624 | ece 0.076 | claim 0.06/0.47
+  leak actions-only acc 0.325   oracle id CI [0.906, 0.943]

@@ -1,0 +1,1 @@
+{"seed": 100, "steps": 2500, "batch": 256, "threads": 3, "out": "results/gwb_dev/runs/dev_clf_s100"}

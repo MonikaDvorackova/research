@@ -1,0 +1,1 @@
+{"seed": 1, "steps": 2500, "batch": 256, "threads": 8, "out": "results/gwb_final/runs/clf_s1"}

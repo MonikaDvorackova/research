@@ -1,0 +1,114 @@
+{
+ "id": {
+  "blocks6": {
+   "median_max_post": 0.9998797076813781,
+   "claim_rate_0p9": 0.8333333333333334,
+   "acc": 0.8733333333333333
+  },
+  "blocks12": {
+   "median_max_post": 0.9999999999999997,
+   "claim_rate_0p9": 0.9666666666666667,
+   "acc": 0.9133333333333333
+  },
+  "blocks24": {
+   "median_max_post": 1.0,
+   "claim_rate_0p9": 0.9933333333333333,
+   "acc": 0.94
+  }
+ },
+ "idnoisy": {
+  "blocks6": {
+   "median_max_post": 0.7445892663917676,
+   "claim_rate_0p9": 0.26666666666666666,
+   "acc": 0.68
+  },
+  "blocks12": {
+   "median_max_post": 0.9466017175545003,
+   "claim_rate_0p9": 0.5866666666666667,
+   "acc": 0.8066666666666666
+  },
+  "blocks24": {
+   "median_max_post": 0.9987577869579547,
+   "claim_rate_0p9": 0.7666666666666667,
+   "acc": 0.8666666666666667
+  }
+ },
+ "approx": {
+  "blocks6": {
+   "median_max_post": 0.9999998364302628,
+   "claim_rate_0p9": 0.88,
+   "acc": 0.7533333333333333
+  },
+  "blocks12": {
+   "median_max_post": 1.0,
+   "claim_rate_0p9": 0.9333333333333333,
+   "acc": 0.72
+  },
+  "blocks24": {
+   "median_max_post": 1.0,
+   "claim_rate_0p9": 0.9466666666666667,
+   "acc": 0.7133333333333334
+  }
+ },
+ "eqA": {
+  "blocks6": {
+   "median_max_post": 0.5731035429479443,
+   "claim_rate_0p9": 0.0
+  },
+  "blocks12": {
+   "median_max_post": 0.5714369873178975,
+   "claim_rate_0p9": 0.0
+  },
+  "blocks24": {
+   "median_max_post": 0.5714285717456391,
+   "claim_rate_0p9": 0.0
+  }
+ },
+ "eqC": {
+  "blocks6": {
+   "median_max_post": 0.5897882036525389,
+   "claim_rate_0p9": 0.006666666666666667
+  },
+  "blocks12": {
+   "median_max_post": 0.588373608589455,
+   "claim_rate_0p9": 0.0
+  },
+  "blocks24": {
+   "median_max_post": 0.5882353236777081,
+   "claim_rate_0p9": 0.0
+  }
+ },
+ "eqD": {
+  "blocks6": {
+   "median_max_post": 0.3333333333333334,
+   "claim_rate_0p9": 0.0
+  },
+  "blocks12": {
+   "median_max_post": 0.33333333333333454,
+   "claim_rate_0p9": 0.0
+  },
+  "blocks24": {
+   "median_max_post": 0.33333333333333454,
+   "claim_rate_0p9": 0.0
+  }
+ },
+ "ooc_osc": {
+  "blocks6": {
+   "median_max_post": 0.9999999999999999,
+   "claim_rate_0p9": 0.9466666666666667
+  },
+  "blocks12": {
+   "median_max_post": 1.0,
+   "claim_rate_0p9": 0.9933333333333333
+  },
+  "blocks24": {
+   "median_max_post": 1.0,
+   "claim_rate_0p9": 1.0
+  }
+ },
+ "eqC_oracle_without_degenerate_members": {
+  "claim_rate_0p9": 0.6666666666666666,
+  "median_max_post": 0.956460550107662,
+  "persistent_frac": 0.68
+ }
+}

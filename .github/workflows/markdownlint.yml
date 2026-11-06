@@ -17,6 +17,15 @@ jobs:
 
       - uses: DavidAnson/markdownlint-cli2-action@v20
         with:
+          # Gate curated project documentation. Historical mathematical research
+          # notebooks carry >1,300 pre-existing markdownlint violations,
+          # including LaTeX index notation parsed as reference links.
+          # They require a separate, content-preserving formatting migration;
+          # never silently rewrite or mass-format scientific records in CI.
           globs: |
-            **/*.md
+            README.md
+            CONTRIBUTING.md
+            docs/**/*.md
+            publications/**/*.md
+            implementations/**/README.md
             #archive

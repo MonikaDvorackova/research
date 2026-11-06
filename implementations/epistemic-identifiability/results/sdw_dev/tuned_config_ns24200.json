@@ -1,0 +1,27 @@
+{
+ "lam_narx": 1.0,
+ "sindy": {
+  "raw": [
+   1,
+   0.05
+  ],
+  "embed": [
+   1,
+   0.1
+  ],
+  "learned": [
+   1,
+   0.05
+  ],
+  "oracle": [
+   1,
+   0.3
+  ]
+ },
+ "sindy_dict": {
+  "raw": 1.0,
+  "embed": 1.0,
+  "learned": 0.3,
+  "oracle": 0.1
+ }
+}

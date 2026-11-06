@@ -1,0 +1,1 @@
+{"model": "rssm", "lam": 0.0, "seed": 200, "steps": 2000, "batch": 128, "L": 48, "H": 128, "lr": 0.001, "beta": 1.0, "family": "both", "dec_h_only": 1, "free_bits": 1.0, "bal": [0.5, 0.1], "no_prior_loss": 0, "device": "cpu", "threads": 3, "budget_s": 1500.0, "out": "results/gwb_dev/rssm_diag/V7_rssm_dec_h_free1"}

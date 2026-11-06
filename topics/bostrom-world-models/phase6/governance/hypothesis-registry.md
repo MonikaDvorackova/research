@@ -1,0 +1,62 @@
+---
+id: topic-bostrom-world-models-hypothesis-registry
+title: "Hypothesis registry"
+topic: bostrom-world-models
+type: note
+status: active
+created: 2026-11-03
+tags: [governance, hypotheses]
+---
+
+# Hypothesis registry
+Status values: supported (C), rejected, unresolved, proposed.
+| ID | Hypothesis | Origin | Status | Evidence |
+|---|---|---|---|---|
+| H-P5-1…8 (env 1) | Eight directional claims on Bayesian observers (oracle vs learned, design, calibration) | `preregistration-phase5.md` | supported (8/8) | `results/bayes1_confirm` |
+| H-P5-1…8 (env 2) | Same for POMDP | same | supported (8/8) | `results/bayes2_confirm` |
+| E-1…3 (env 1) | Equivalence claims | same | 2 established, **E3b not established (run A)** | `results/compare_runs_bayes1.md` |
+| E-1…3 (env 2) | Equivalence claims | same | 3/3 established | `results/bayes2_confirm` |
+| H-conj-1 | Catch-all makes myopic EIG explore | Phase 5 conjecture | **rejected** (exact DP) | `test_proposition10_exact.py` |
+| H-expl-1 | Information-gain ratio separates misspecified observers | exploratory | **not replicated** (env 2) | `results-phase5.md` |
+| H-cov | Learned-observer failure is determined by training coverage, for all learner families | Phase 5 stress tests (X) | unresolved; to be tested in X3 | – |
+| H-X1-1…6 | Criticism design / validity / barrier / P10 prediction | Phase 6 proposal | proposed (not frozen) | `phase6/08-next-experiment-prereg.md` |
+| H-A | A tight frontier statement beyond Prop. 3 exists | Phase 6 | proposed (T1) | `results/phase6/prediction_vs_identification.txt` (seed only) |
+
+## Phase 7 (X1, confirmatory, seeds 600–629; prereg commit 02bad01)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-X1-1 (H1) | Type-I ≤ α for all policies | **supported** (1.69 %) | `results/x1_confirm/analysis.md` |
+| H-X1-2 (H2) | Barrier without action 2 | **supported** | same |
+| H-X1-3 (H3) | Random wide power ≥ 0.8 within 1500 (anticipated) | **supported** (1.000) | same |
+| H-X1-4a (H4a) | P4 ≥ 1.5× faster than random, anticipated | **supported** (2.01/1.74/1.85) | same |
+| H-X1-4b (H4b) | same, unanticipated | **rejected** (1.24, 1.02) | same |
+| H-X1-4c (H4c) | P4 ≥ 1.5× faster than P5 (equal information) | **rejected** (1.13/0.87/0.88) | same |
+| H-X1-5 (H5) | P3 not faster than random | **inconclusive by rule** (pc0 +1.44×; pc1/pc2 −6–8×) | same |
+| H-cov | learned-observer failure is coverage-determined for all learners | unresolved → X3 | – |
+| H-X4 | A valid learned-null class-adequacy test retains useful power | proposed | `phase7/08-…` |
+
+## Phase 8 (exploratory diagnostics; no confirmatory claims)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P8-T4 | Latent-context shift and mechanism change are observationally equivalent in a single trajectory | **established** (exact, elementary) | `test_time_varying_kernel_equals_stationary_counter_model` |
+| H-P8-T5 | Predictive accuracy can improve while mechanism-identification posterior mass decreases | **established** (exact, known Lindley/Occam) | `occam_dissociation` |
+| H-P8-T6a | Frozen learned null false-alarms under pure policy shift | supported (exploratory): 100/100, 98/100, 3/100, 2/100 for n_train = 10², 10³, 10⁴, 10⁵ | `results/phase8/diagnostics.md` |
+| H-P8-T6b | Under-optimised maximiser voids validity | supported (exploratory): 39/40 vs 0/40 | same |
+| H-P8-S | Stationarity e-process robust to hidden-state misspecification | **partly rejected**: robust with episode resets (0/100), **fails** with persistent hidden regime (40/40, also stationary start) | `diagnostics.md`, `transient.md` |
+| H-P8-E6 | H1–H5 of the E6 validity map | proposed (not frozen) | `phase8/05-…` |
+
+## Phase 9 (development; no confirmatory claim)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P8-S | stationarity e-process robust to hidden-state misspecification | **withdrawn**: null false there; non-rejection = low power (Phase 9 A2); only in-class validity claimed | `phase9/01`, dev |
+| H-P8-T5 | identification decays with n | **corrected**: non-generic truth only; window for others | `phase9/01` §3 |
+| H-E6′-A…F | null ladder; validity; false attribution; certified learned null; approximate maximiser type-I; ensemble disagreement | proposed (not frozen); dev machinery only | `phase9/05` |
+
+## Phase 10 (development; no confirmatory claim)
+| ID | Hypothesis | Status | Evidence |
+|---|---|---|---|
+| H-P10-cert | LR-confidence-set learned null has type-I ≤ α + δ under adaptive designs | **proved** (theorem) + checked (exact coverage, exact E[E] ≤ 0.23, 0/7200, adversary 0/300) | `phase10/04` |
+| H-P10-price | observed delay inflation follows the exact exponent ratio | supported in development (mean log ratio −0.05, +0.13, +0.19) | `phase10/07` |
+| H-P10-zero | Phase 9 zero power = impossibility | **rejected**: regret (E_ep) and boundary conservatism (E_comp) | `phase10/07` |
+| H-P10-EM | under-optimised EM denominators invalidate the e-process; worse for good alternatives | supported (15 %, 44 % vs 0/120 for strong optimisers) | `phase10/05` |
+| H-E6′ (v2) | H1–H4 of the confirmatory proposal | proposed, **not frozen, not authorised** | `phase10/11` |

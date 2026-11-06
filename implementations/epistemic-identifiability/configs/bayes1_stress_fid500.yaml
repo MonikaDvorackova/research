@@ -1,0 +1,12 @@
+# EXPLORATORY stress test: low-fidelity world model (500 training transitions).
+steps: 80
+episode_len: 10
+checkpoints: [10, 20, 40, 80]
+q_train_n: 5000
+train_steps: 1500
+R: 60
+seeds: [400, 401, 402, 403, 404, 405]
+w_train_n: 500
+q_amp: 1.0
+regimes: [oracle, learned, bma]
+policies: [passive, wide, eig]

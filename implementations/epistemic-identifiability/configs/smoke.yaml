@@ -1,0 +1,7 @@
+n_seeds: 2
+train_sizes: [100, 400]
+q_train_n: 400
+ensemble_k: 3
+train_steps: 150
+eval_episodes: 60
+horizon_grid: [2, 5]

@@ -1,0 +1,142 @@
+{
+ "manifest_sha256": "f8a09dea01ca1d3807237bd4b041d8ab354c5a78378758a62cbaf40ccbced1d2",
+ "effect_sigma_units": {
+  "lin": {
+   "min": 205.44417322123397,
+   "median": 265.69960597425586,
+   "split": [
+    "calib",
+    "dev"
+   ],
+   "klass": "control"
+  },
+  "sat": {
+   "min": 94.84741095998044,
+   "median": 164.44592648252575,
+   "split": [
+    "calib"
+   ],
+   "klass": "known"
+  },
+  "quad": {
+   "min": 186.90539950875927,
+   "median": 241.660058790034,
+   "split": [
+    "calib"
+   ],
+   "klass": "known"
+  },
+  "gate": {
+   "min": 202.46193068741687,
+   "median": 261.4741189850927,
+   "split": [
+    "calib"
+   ],
+   "klass": "known"
+  },
+  "delay": {
+   "min": 198.81209540260332,
+   "median": 249.55662131681066,
+   "split": [
+    "calib"
+   ],
+   "klass": "known"
+  },
+  "sin": {
+   "min": 225.45205521094965,
+   "median": 290.52708969659443,
+   "split": [
+    "dev"
+   ],
+   "klass": "A_operator"
+  },
+  "rectsq": {
+   "min": 130.55236496684947,
+   "median": 179.95229757401947,
+   "split": [
+    "dev"
+   ],
+   "klass": "C_composition"
+  },
+  "leak": {
+   "min": 133.67387402287773,
+   "median": 183.91398657253268,
+   "split": [
+    "dev"
+   ],
+   "klass": "B_state"
+  },
+  "bilin": {
+   "min": 325.7973058728495,
+   "median": 449.4092562332825,
+   "split": [
+    "dev"
+   ],
+   "klass": "C_composition"
+  },
+  "thresh": {
+   "min": 0.0,
+   "median": 0.0,
+   "split": [
+    "dev"
+   ],
+   "klass": "N_nonidentifiable"
+  },
+  "bump": {
+   "min": 31.236834459484136,
+   "median": 55.26715618990671,
+   "split": [
+    "holdout"
+   ],
+   "klass": "A_operator"
+  },
+  "sqrtabs": {
+   "min": 217.10860490931898,
+   "median": 280.83207583696196,
+   "split": [
+    "holdout"
+   ],
+   "klass": "A_operator"
+  },
+  "rate": {
+   "min": 29.755156845920183,
+   "median": 47.248912313731616,
+   "split": [
+    "holdout"
+   ],
+   "klass": "B_state"
+  },
+  "gdelay": {
+   "min": 197.6985742214124,
+   "median": 250.17015787570057,
+   "split": [
+    "holdout"
+   ],
+   "klass": "C_composition"
+  },
+  "quadlag": {
+   "min": 92.96248301443823,
+   "median": 139.3610005846487,
+   "split": [
+    "holdout"
+   ],
+   "klass": "C_composition"
+  },
+  "bumpfar": {
+   "min": 0.0003281714170382601,
+   "median": 0.0004230175298262738,
+   "split": [
+    "holdout"
+   ],
+   "klass": "N_nonidentifiable"
+  },
+  "saw": {
+   "min": 116.23779858789497,
+   "median": 150.3824932471196,
+   "split": [
+    "holdout"
+   ],
+   "klass": "X_beyond_closure"
+  }
+ }
+}

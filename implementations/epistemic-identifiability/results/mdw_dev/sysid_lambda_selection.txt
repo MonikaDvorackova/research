@@ -1,0 +1,4 @@
+SysID ridge lambda selection on DEV namespace 22000, KNOWN families only; mean normalised descriptor error (sweep data)
+B 2 {0.001: 5.566, 0.01: 3.54, 0.1: 1.187, 1.0: 1.342, 10.0: 2.117}
+B 4 {0.001: 0.189, 0.01: 0.18, 0.1: 0.2, 1.0: 0.251, 10.0: 0.424}
+B 8 {0.001: 0.166, 0.01: 0.153, 0.1: 0.175, 1.0: 0.22, 10.0: 0.326}

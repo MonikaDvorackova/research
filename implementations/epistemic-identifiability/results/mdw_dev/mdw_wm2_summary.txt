@@ -1,0 +1,73 @@
+
+=== budget B=2 episodes: mean normalised descriptor error (95% bootstrap CI over instances); 0 = exact
+method                        known F1-F3                H1 gate            H2 backlash
+prior                  0.67 [ 0.61, 0.74]     2.42 [ 2.34, 2.50]     1.05 [ 1.02, 1.06]
+direct(sweep)          0.29 [ 0.25, 0.32]     1.73 [ 1.68, 1.78]     0.38 [ 0.37, 0.39]
+sysid(sweep)           1.16 [ 1.05, 1.28]     0.99 [ 0.91, 1.10]     2.96 [ 2.92, 3.00]
+sysid(random)          8.98 [ 5.48,14.25]     7.96 [ 3.10,15.95]   89.61 [20.34,204.97]
+bayes(sweep)           0.13 [ 0.10, 0.15]     2.07 [ 1.97, 2.15]     1.18 [ 1.15, 1.22]
+bayes(BED)             0.12 [ 0.09, 0.15]     2.34 [ 2.26, 2.42]     1.19 [ 1.16, 1.22]
+wm(sweep)              0.76 [ 0.69, 0.84]     2.63 [ 2.52, 2.72]     1.73 [ 1.70, 1.76]
+wm(random)             0.76 [ 0.69, 0.84]     5.43 [ 3.45, 8.19]     1.44 [ 1.38, 1.52]
+wm(plan)               0.75 [ 0.68, 0.83]     2.98 [ 2.74, 3.23]     1.37 [ 1.35, 1.40]
+wm(no-context)         0.79 [ 0.74, 0.85]     2.69 [ 2.60, 2.79]     1.37 [ 1.34, 1.40]
+reg(sweep)             0.05 [ 0.04, 0.06]     2.12 [ 2.01, 2.23]     1.04 [ 1.02, 1.07]
+reg(random)            0.23 [ 0.19, 0.28]     2.75 [ 2.62, 2.88]     1.15 [ 1.10, 1.21]
+
+=== budget B=4 episodes: mean normalised descriptor error (95% bootstrap CI over instances); 0 = exact
+method                        known F1-F3                H1 gate            H2 backlash
+prior                  0.67 [ 0.61, 0.74]     2.42 [ 2.34, 2.51]     1.05 [ 1.02, 1.07]
+direct(sweep)          0.14 [ 0.12, 0.16]     0.08 [ 0.07, 0.08]     0.16 [ 0.15, 0.18]
+sysid(sweep)           0.22 [ 0.18, 0.26]     0.12 [ 0.11, 0.13]     0.26 [ 0.25, 0.28]
+sysid(random)          3.30 [ 2.30, 4.46]     2.51 [ 1.73, 3.56]    18.74 [11.00,29.59]
+bayes(sweep)           0.13 [ 0.11, 0.16]     2.74 [ 2.65, 2.83]     1.15 [ 1.12, 1.19]
+bayes(BED)             0.14 [ 0.11, 0.17]     2.45 [ 2.38, 2.53]     1.17 [ 1.13, 1.20]
+wm(sweep)              0.72 [ 0.64, 0.79]     2.62 [ 2.55, 2.69]     1.82 [ 1.78, 1.85]
+wm(random)             0.74 [ 0.68, 0.81]    10.83 [ 5.41,18.74]     1.49 [ 1.40, 1.61]
+wm(plan)               0.71 [ 0.63, 0.81]     2.82 [ 2.60, 3.08]     1.17 [ 1.14, 1.19]
+wm(no-context)         0.79 [ 0.73, 0.85]     2.69 [ 2.60, 2.79]     1.37 [ 1.34, 1.40]
+reg(sweep)             0.09 [ 0.07, 0.10]     2.34 [ 2.25, 2.43]     0.98 [ 0.96, 1.00]
+reg(random)            0.17 [ 0.13, 0.21]     2.70 [ 2.59, 2.83]     1.12 [ 1.07, 1.17]
+
+=== budget B=8 episodes: mean normalised descriptor error (95% bootstrap CI over instances); 0 = exact
+method                        known F1-F3                H1 gate            H2 backlash
+prior                  0.67 [ 0.61, 0.73]     2.42 [ 2.35, 2.51]     1.05 [ 1.03, 1.07]
+direct(sweep)          0.09 [ 0.08, 0.11]     0.06 [ 0.05, 0.06]     0.12 [ 0.11, 0.13]
+sysid(sweep)           0.18 [ 0.15, 0.22]     0.10 [ 0.09, 0.10]     0.22 [ 0.21, 0.24]
+sysid(random)          1.17 [ 0.81, 1.69]     1.48 [ 1.03, 2.25]     8.05 [ 4.03,13.68]
+bayes(sweep)           0.13 [ 0.10, 0.16]     2.75 [ 2.66, 2.84]     1.16 [ 1.12, 1.19]
+bayes(BED)             0.15 [ 0.11, 0.18]     2.56 [ 2.49, 2.63]     1.15 [ 1.11, 1.18]
+wm(sweep)              0.74 [ 0.68, 0.83]     2.64 [ 2.57, 2.72]     1.92 [ 1.88, 1.95]
+wm(random)             0.75 [ 0.68, 0.82]     6.01 [ 4.25, 7.92]     5.31 [ 1.60,11.97]
+wm(plan)               0.89 [ 0.74, 1.07]     3.07 [ 2.64, 3.63]     1.37 [ 1.33, 1.42]
+wm(no-context)         0.79 [ 0.74, 0.86]     2.69 [ 2.60, 2.78]     1.37 [ 1.34, 1.40]
+reg(sweep)             0.08 [ 0.07, 0.09]     2.40 [ 2.32, 2.49]     1.00 [ 0.98, 1.02]
+reg(random)            0.13 [ 0.10, 0.16]     2.69 [ 2.56, 2.79]     1.08 [ 1.04, 1.11]
+
+per-descriptor mean error at B=4 (nl, asym, lat, hyst):
+prior              know: 0.90  0.00  0.90  0.88 | gate: 2.52  4.00  0.40  2.78 | back: 2.63  0.00  0.34  1.21
+direct(sweep)      know: 0.14  0.09  0.13  0.19 | gate: 0.09  0.05  0.06  0.11 | back: 0.16  0.11  0.16  0.22
+sysid(sweep)       know: 0.26  0.09  0.20  0.31 | gate: 0.17  0.01  0.06  0.22 | back: 0.43  0.08  0.13  0.41
+sysid(random)      know: 1.34  8.57  0.79  2.50 | gate: 0.92  3.35  1.88  3.91 | back: 1.90 64.46  2.23  6.35
+bayes(sweep)       know: 0.16  0.00  0.13  0.22 | gate: 3.01  4.00  0.83  3.12 | back: 2.43  0.00  0.96  1.23
+bayes(BED)         know: 0.22  0.00  0.09  0.26 | gate: 1.94  4.00  1.02  2.86 | back: 2.48  0.00  0.70  1.48
+wm(sweep)          know: 0.74  0.28  1.12  0.72 | gate: 2.20  4.11  1.05  3.13 | back: 2.64  1.10  2.24  1.29
+wm(random)         know: 0.81  0.34  0.90  0.91 | gate: 7.08 21.95  2.93 11.35 | back: 2.36  0.77  1.45  1.39
+wm(plan)           know: 0.74  0.35  1.00  0.76 | gate: 2.18  4.75  1.70  2.68 | back: 2.40  0.12  0.57  1.58
+wm(no-context)     know: 0.90  0.46  0.92  0.88 | gate: 2.53  4.46  1.01  2.76 | back: 2.64  0.46  1.15  1.23
+reg(sweep)         know: 0.12  0.01  0.09  0.13 | gate: 1.90  3.99  0.76  2.70 | back: 1.99  0.00  0.63  1.29
+reg(random)        know: 0.24  0.00  0.12  0.30 | gate: 2.55  4.00  0.91  3.34 | back: 2.68  0.00  0.80  0.97
+
+epistemic flags (AUROC: held-out vs known):
+  wm(sweep)@B2           gate 0.09  backlash 0.07
+  wm(plan)@B2            gate 0.52  backlash 0.58
+  bayes(sweep)@B2        gate 0.99  backlash 1.00
+  bayes(BED)@B2          gate 0.94  backlash 0.83
+  wm(sweep)@B4           gate 0.85  backlash 0.02
+  wm(plan)@B4            gate 0.58  backlash 0.46
+  bayes(sweep)@B4        gate 1.00  backlash 0.99
+  bayes(BED)@B4          gate 0.97  backlash 0.84
+  wm(sweep)@B8           gate 0.80  backlash 0.04
+  wm(plan)@B8            gate 0.56  backlash 0.36
+  bayes(sweep)@B8        gate 1.00  backlash 1.00
+  bayes(BED)@B8          gate 0.97  backlash 0.82

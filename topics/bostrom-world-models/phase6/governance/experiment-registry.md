@@ -1,0 +1,44 @@
+---
+id: topic-bostrom-world-models-experiment-registry
+title: "Experiment registry"
+topic: bostrom-world-models
+type: note
+status: active
+created: 2026-11-03
+tags: [governance, experiments]
+---
+
+# Experiment registry
+| ID | Phase | Type | Config / script | Seeds | Results dir | Status |
+|---|---|---|---|---|---|---|
+| poc_v1, poc_v2 | 2–3 | pilot | `configs/poc.yaml` | see config | `results/poc_v*` | frozen; v1 superseded by v2 after stream-collision correction |
+| abl_* | 3–4 | ablations | `configs/abl_*.yaml` | see config | `results/abl_*` | frozen |
+| adaptive_tanh | 4 | adaptive observer | `configs/adaptive_tanh.yaml` | see config | `results/adaptive_tanh` | frozen; negative for original thesis |
+| bayes1_dev / bayes2_dev | 5 | development | `bayes{1,2}_dev.yaml` | 200 | `results/bayes*_dev` | frozen |
+| bayes1_confirm | 5 | confirmatory | `bayes1_confirm.yaml` | 300–311 | `results/bayes1_confirm` (+`_runB`) | frozen |
+| bayes2_confirm | 5 | confirmatory | `bayes2_confirm.yaml` | 300–311 | `results/bayes2_confirm` (+`_runB`) | frozen |
+| stress_{cov,fid500,fid2500,hyp} | 5 | exploratory | `bayes1_stress_*.yaml` | 400–405 | `results/stress_*` | frozen |
+| phase6 prediction-vs-identification | 6 | exploratory exact diagnostic | `scripts/phase6_prediction_vs_identification.py` | none (exact) | `results/phase6/` | done |
+| X1 | 6 (proposed) | confirmatory (planned) | not yet written | dev 500–505; conf 600–619 | – | proposal |
+| X3 | planned | confirmatory | – | ≥ 20 | – | not designed in detail |
+| X2 | planned | exact/theory | – | – | – | not started |
+| x1_dev_v0_5policies | 7 | development | 5 policies (P0–P4), earlier version of `x1_dev.yaml` (config stored in its meta.json) | 500–505 | `results/x1_dev_v0_5policies` | kept for the record; superseded by `x1_dev` (P5 added) |
+| x1_dev | 7 | development | `configs/x1_dev.yaml` | 500–505 | `results/x1_dev` | frozen; used for implementation validation and sample-size reasoning only |
+| x1_confirm | 7 | **confirmatory** | `configs/x1_confirm.yaml` @ 02bad01 | 600–629 | `results/x1_confirm` | complete; checksums in `MANIFEST_raw.sha256` |
+| x1_audit | 7B | independent checks | `scripts/x1_independent_audit.py` | – | `results/x1_audit` | pass |
+| x1 supplementary | 7B | exploratory | `scripts/x1_supplementary_analysis.py` | 600–629 | `results/x1_confirm/supplementary_exploratory.md` | labelled exploratory |
+| phase8 diagnostics | 8 | exploratory exact + simulation | `scripts/phase8_diagnostics.py`, `scripts/phase8_transient.py`, `src/eid/phase8.py` | SeedSequence-keyed integers (8–13) | `results/phase8/` | done; no confirmatory claim |
+| E6 validity map | 8 (proposed) | confirmatory (planned) | not yet written | dev 700–709, conf 800–829 | – | proposal; needs external design review |
+| phase9 dev semantics | 9 | development (exploratory) | `scripts/phase9_dev_semantics.py` | namespace 9000 (10 instances × 3 reps × 10 scenarios) | `results/phase9_dev/` | done; determinism 30/30 |
+| phase9 dev audit / EM / CS / trade-off | 9 | development (exact + small simulations) | `scripts/phase9_dev_audit.py`, `phase9_dev_em_cs.py` | namespace 9000 | `results/phase9_dev/` | done |
+| E6′ | 9 (proposed) | confirmatory (planned) | not written | dev 9000 + reserved 700–719; confirmatory ≥ 60 structures per family (to be extended from reserved 800–829) | – | **not launched; REVISE** |
+| phase10 certified | 10 | development | `scripts/phase10_certified.py` | namespace 10000, 60 Markov structures | `results/phase10_dev/` | done |
+| phase10 K-scaling / comparison / EM / stats | 10 | development | `scripts/phase10_{kscaling,comp,em,stats}.py` | namespace 10000 | `results/phase10_dev/` | done; determinism checked |
+| E6′ confirmatory | 10 (proposed) | confirmatory (planned) | not written | reserved 800–829 (insufficient for the proposed ≥ 130 structures) | – | **NO-GO** |
+| phase12 pilot (precision vs stiction) | 11/12 | development (exploratory) | `scripts/phase12_pilot.py` | namespace 12000 | `results/phase12_dev/` | done; first σ grid uninformative (kept) |
+| gwb learned world models (dev + final-dev) | WM execution | development (exploratory; plan `07` fixed before final-test eval) | `scripts/gwb_*`, `src/eid/gwb/` | train seeds 1–3 (+100 dev); eval namespaces 9001/9100/9150 (select), 9300 (dev), 9200 (final-dev test) | `results/gwb_dev/`, `results/gwb_final/` | done; first RSSM version failed predictive check (kept) |
+| epistemic abstention (dev + final-dev) | WM exec 2 | development (exploratory; plan `11` fixed before ns 11200 eval) | `scripts/epi_*`, `src/eid/gwb/epi*.py` | cond-sim train seeds 701–703; ns 11100/11110 (cal), 11000/11050 (smoke), 11200 (test), 12000 (audit), 13000 (budget) | `results/epi_dev/`, `results/epi_final/` | done |
+| kick-world determinism detection (grid + 20k-step follow-up + window control + RSSM diagnostics) | reassessment | development (exploratory; plan `13`/`14` before runs) | `scripts/kick_*`, `scripts/gwb_rssm_diag.sh`, `src/eid/kick/` | instance gens 14000+, train streams 15000+, eval 16000–18000+ | `results/kick_dev/`, `results/kick_long/`, `results/gwb_dev/rssm_diag/` | done; first mixture-density bit-channel design failed and was replaced (recorded) |
+| MDW active discovery (wm v1/v2, regressor, baselines, unseen-programme prediction) | active discovery | development (exploratory; design `16` before runs; wm v2 = one disclosed revision) | `scripts/mdw_*`, `src/eid/mdw/` | train 21000+, λ-selection 22000, smoke 22100, diag 22200, eval 23000 and 23500 | `results/mdw_dev/` | done |
+| SDW structural discovery (primary look, calibration follow-up, learned estimator, tuning, post-hoc Kalman proposal) | structural discovery | development (exploratory; protocol `19` before runs, addenda A/B record post-contact changes) | `scripts/sdw_*`, `src/eid/sdw/` | est train 24100+, tuning 24200, smoke 24500, eval 25000 (360 inst.), calib 27000 (60), test 28000 (270), test programmes 26000+ | `results/sdw_dev/` |
+| OOL out-of-language discovery (tuning, calibration, dev, frozen holdout, PySR, stress) | phase 22 | development (protocol `23` committed bcf9c9c before the runs) | `scripts/ool_*`, `src/eid/ool/` | tuning seeds 310-312, calib 29000, dev 30000, holdout 31000, stress 32000 | `results/ool_dev/`, `results/README_ool.md`, `results/MANIFEST_ool.sha256` |

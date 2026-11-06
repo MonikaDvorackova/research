@@ -1,0 +1,122 @@
+[
+ {
+  "eps": 0.05,
+  "q": 0.0,
+  "kl_per_episode": 0.0,
+  "kl_wide": 8.188553901004852e-05,
+  "amplification": Infinity,
+  "episodes_for_unit_log_odds": Infinity
+ },
+ {
+  "eps": 0.05,
+  "q": 0.005,
+  "kl_per_episode": 1.6601306110844826e-06,
+  "kl_wide": 8.188553901004852e-05,
+  "amplification": 49.32475701809791,
+  "episodes_for_unit_log_odds": 602362.2438639022
+ },
+ {
+  "eps": 0.05,
+  "q": 0.02,
+  "kl_per_episode": 6.583465904528338e-06,
+  "kl_wide": 8.188553901004852e-05,
+  "amplification": 12.43805925291187,
+  "episodes_for_unit_log_odds": 151895.67539374132
+ },
+ {
+  "eps": 0.05,
+  "q": 0.1,
+  "kl_per_episode": 3.11941530911499e-05,
+  "kl_wide": 8.188553901004852e-05,
+  "amplification": 2.625028439489203,
+  "episodes_for_unit_log_odds": 32057.2896169991
+ },
+ {
+  "eps": 0.05,
+  "q": 0.3333,
+  "kl_per_episode": 8.188553901004852e-05,
+  "kl_wide": 8.188553901004852e-05,
+  "amplification": 1.0,
+  "episodes_for_unit_log_odds": 12212.1684987295
+ },
+ {
+  "eps": 0.2,
+  "q": 0.0,
+  "kl_per_episode": 0.0,
+  "kl_wide": 0.0012512063901482507,
+  "amplification": Infinity,
+  "episodes_for_unit_log_odds": Infinity
+ },
+ {
+  "eps": 0.2,
+  "q": 0.005,
+  "kl_per_episode": 2.556092138060842e-05,
+  "kl_wide": 0.0012512063901482507,
+  "amplification": 48.9499721671797,
+  "episodes_for_unit_log_odds": 39122.2204047246
+ },
+ {
+  "eps": 0.2,
+  "q": 0.02,
+  "kl_per_episode": 0.00010131007117023929,
+  "kl_wide": 0.0012512063901482507,
+  "amplification": 12.350266619058534,
+  "episodes_for_unit_log_odds": 9870.686975627737
+ },
+ {
+  "eps": 0.2,
+  "q": 0.1,
+  "kl_per_episode": 0.0004788127677170437,
+  "kl_wide": 0.0012512063901482507,
+  "amplification": 2.6131433297276985,
+  "episodes_for_unit_log_odds": 2088.499028060492
+ },
+ {
+  "eps": 0.2,
+  "q": 0.3333,
+  "kl_per_episode": 0.0012512063901482507,
+  "kl_wide": 0.0012512063901482507,
+  "amplification": 1.0,
+  "episodes_for_unit_log_odds": 799.2286547397779
+ },
+ {
+  "eps": 0.5,
+  "q": 0.0,
+  "kl_per_episode": 0.0,
+  "kl_wide": 0.007431497838093162,
+  "amplification": Infinity,
+  "episodes_for_unit_log_odds": Infinity
+ },
+ {
+  "eps": 0.5,
+  "q": 0.005,
+  "kl_per_episode": 0.00015310473832244636,
+  "kl_wide": 0.007431497838093162,
+  "amplification": 48.538653470293326,
+  "episodes_for_unit_log_odds": 6531.476497441569
+ },
+ {
+  "eps": 0.5,
+  "q": 0.02,
+  "kl_per_episode": 0.0006064620540164166,
+  "kl_wide": 0.007431497838093162,
+  "amplification": 12.253854612793294,
+  "episodes_for_unit_log_odds": 1648.9077814140217
+ },
+ {
+  "eps": 0.5,
+  "q": 0.1,
+  "kl_per_episode": 0.0028581991443309214,
+  "kl_wide": 0.007431497838093162,
+  "amplification": 2.600062998700816,
+  "episodes_for_unit_log_odds": 349.87065263924814
+ },
+ {
+  "eps": 0.5,
+  "q": 0.3333,
+  "kl_per_episode": 0.007431497838093162,
+  "kl_wide": 0.007431497838093162,
+  "amplification": 1.0,
+  "episodes_for_unit_log_odds": 134.56237514785965
+ }
+]

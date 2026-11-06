@@ -58,7 +58,7 @@ The stronger central proposition is:
 
 Formally, the paper should investigate the non-implication:
 
-```
+```text
 PredictiveValidity(M) ↛ DecisionAuditability(D)
 ```
 
@@ -78,7 +78,7 @@ The current framing as a numerical difference between model performance and just
 
 Do not rely on a subtraction such as:
 
-```
+```text
 Gap = ModelPerformance - JustificationScore
 ```
 
@@ -86,7 +86,7 @@ unless a defensible measurement theory is established.
 
 Prefer defining auditability as an independent property, e.g.:
 
-```
+```text
 A(D, E, P, t) ∈ {0, 1}
 ```
 
@@ -101,7 +101,7 @@ The key empirical question then becomes whether systems with acceptable predicti
 
 Possible probabilistic analysis:
 
-```
+```text
 P(A(D)=1 | PredictivePerformance(M) >= τ)
 ```
 
@@ -130,13 +130,13 @@ A particularly promising technical direction is **temporal and dependency-aware 
 
 A decision may satisfy:
 
-```
+```text
 Valid(D, t0) = 1
 ```
 
 but after a relevant model, dataset, evaluation, policy, or evidence dependency changes:
 
-```
+```text
 Valid(D, t1) = 0
 ```
 
@@ -214,7 +214,7 @@ Independent evaluators should assess the same systems without seeing EGDS verdic
 
 Compare:
 
-```
+```text
 Human/Auditor Ground Truth ↔ EGDS
 ```
 
@@ -272,7 +272,7 @@ At minimum:
 
 Preferably add a controlled audit task:
 
-```
+```text
 T_manual-audit vs T_EGDS-assisted-audit
 ```
 

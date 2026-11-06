@@ -1,0 +1,1 @@
+minimum margin s^2 - F over vertices: 0.0 (1, 0.1, np.float64(0.005), np.float64(0.005), np.float64(0.01), np.float64(0.01))

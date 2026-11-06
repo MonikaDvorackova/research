@@ -1,0 +1,1 @@
+lfsr 8 0 H 128 z 11161.7 frac 0.999 crossR z -78.07 ext {'consistent': True, 'monomials': 56, 'verify_acc_vs_env_clicks': 1.0, 'verify_n': 40960, 'exact': True, 'support': 4} 1262s

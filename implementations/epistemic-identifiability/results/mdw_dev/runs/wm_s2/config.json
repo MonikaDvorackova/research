@@ -1,0 +1,1 @@
+{"kind": "wm", "seed": 2, "steps": 4000, "batch": 32, "threads": 2, "out": "results/mdw_dev/runs/wm_s2", "budget_s": 2400}

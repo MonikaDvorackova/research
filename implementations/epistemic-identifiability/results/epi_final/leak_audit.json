@@ -1,0 +1,13 @@
+{
+ "familyA": {
+  "auroc_eq_vs_id_from_nuisance": 0.5249761517512841,
+  "n": 2242,
+  "eq_fraction": 0.3305084745762712
+ },
+ "familyB": {
+  "auroc_eq_vs_id_from_nuisance": 0.48270907921424205,
+  "n": 2258,
+  "eq_fraction": 0.5575730735163862
+ },
+ "note": "AUROC near 0.5 => passive-block nuisance statistics do not reveal equivalence status within a family; episode length and action range are constant by construction"
+}

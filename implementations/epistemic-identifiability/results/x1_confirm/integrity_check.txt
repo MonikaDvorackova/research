@@ -1,0 +1,8 @@
+expected runs 36000; read 36000; unparsable lines 0; duplicates 0; missing 0; unexpected 0
+non-finite max_logE 0; reject_episode within [1,N+1] True; field set exact True
+confirmatory seeds 600..629 n=30; overlap with development seeds []
+config in meta.json: {"seeds": [600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629], "R": 20, "N": 3000, "T": 4, "alpha": 0.05, "truths": ["E0", "split", "n10", "n20", "t05", "t10", "pc0", "pc1", "pc2", "shift"], "policies": ["P0", "P1", "P2", "P3", "P4", "P5"]}
+execution metadata: python 3.12.1, numpy 2.5.4, macOS-26.2-arm64-arm-64bit, wall 1468s
+7398b5b20559821021eff56bcc38c6aa10cb1d4f0b3b3ac3df8c5e2aab03cd8d runs.jsonl
+fd5fba0ddb5d580d18cb692947e05e30a84ea312c79ec09f33869473d9988d5e meta.json
+INTEGRITY: PASS

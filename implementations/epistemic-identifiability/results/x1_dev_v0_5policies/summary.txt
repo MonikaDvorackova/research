@@ -1,0 +1,12 @@
+truth                   P0                  P1                  P2                  P3                  P4
+E0      rej=0.017 med=  1501  rej=0.000 med=  1501  rej=0.025 med=  1501  rej=0.000 med=  1501  rej=0.042 med=  1501
+split   rej=0.008 med=  1501  rej=0.000 med=  1501  rej=0.025 med=  1501  rej=0.000 med=  1501  rej=0.008 med=  1501
+n10     rej=0.017 med=  1501  rej=0.033 med=  1501  rej=0.017 med=  1501  rej=0.000 med=  1501  rej=0.067 med=  1501
+n20     rej=0.033 med=  1501  rej=0.008 med=  1501  rej=0.017 med=  1501  rej=0.017 med=  1501  rej=0.008 med=  1501
+t05     rej=0.017 med=  1501  rej=0.033 med=  1501  rej=0.150 med=  1501  rej=0.008 med=  1501  rej=0.308 med=  1501
+t10     rej=0.000 med=  1501  rej=0.042 med=  1501  rej=0.700 med=  1016  rej=0.058 med=  1501  rej=0.692 med=   964
+pc0     rej=1.000 med=   270  rej=0.992 med=   303  rej=1.000 med=   342  rej=0.925 med=   272  rej=1.000 med=   160
+pc1     rej=1.000 med=   206  rej=1.000 med=   218  rej=0.992 med=   245  rej=0.233 med=  1501  rej=0.992 med=   130
+pc2     rej=0.000 med=  1501  rej=0.225 med=  1501  rej=1.000 med=   171  rej=0.675 med=  1148  rej=0.992 med=   102
+shift   rej=0.008 med=  1501  rej=0.025 med=  1501  rej=0.000 med=  1501  rej=0.008 med=  1501  rej=0.025 med=  1501
+total run-seconds 900
